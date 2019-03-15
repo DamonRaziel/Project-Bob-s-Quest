@@ -19,3 +19,8 @@ Remake models (General).
 Currently placeholders.
 Make new models.
 Not a technical problem, ony to do with game feel and asset quality.
+
+Make cutscenes.
+Currently only rolling and fixed texts to explain things.
+Create cutscenes with animations in Blender, add camera and camera animation paths in Godot.
+Or create cutscenes entirely inBlender and edit together as video for import in Godot.
