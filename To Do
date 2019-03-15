@@ -1,0 +1,21 @@
+General format;
+Item to do.
+Extra details if needed.
+Possible solutions.
+Misc.
+
+Sort out camera collision layers.
+Currently clips through level meshes.
+Add new layer consisting of only collision shapes that extend a short way away from mesh faces, and assign as the collision layer
+for the camera raycast. 
+Requires reworking all layers (as currently all on one).
+
+Sort out enemy movement.
+Currently based on an older version of the player script. May be using more processing than needed.
+Rewrite code to be more basic.
+Requires more knowledge of A.I. movement scripting.
+
+Remake models (General).
+Currently placeholders.
+Make new models.
+Not a technical problem, ony to do with game feel and asset quality.
