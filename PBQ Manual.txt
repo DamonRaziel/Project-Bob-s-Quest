@@ -1,0 +1,167 @@
+
+Game Story.
+A sorceror used zombies he raised to attack the castle where Bob is a guard, to steal an artifact allowing him to summon stronger shadow creatures.
+There are 3 artifacts, 1 at Bob's castle, 1 at the Mages citadel, and 1 at the Island castle.
+The sorceror is collecting all 3 artifacts to try and open a gateway below the Island castle.
+As a castle guard, your mission starts when the castle comes under attack.
+
+Game Premise/Gameplay.
+Third person action platformer.
+Players can choose from 6 characters, each with different stats and starting equipment.
+Players gain points by defeating enemies.
+Players gain money to spend on equipment and items by collecting coins and earning points.
+Players can gain items and equipment by collecting it in levels, or buying it in the shop in the world map.
+Players attack enemies to earn points and prevent them attacking the player.
+When attacked, there is a probability that the player will prevent the enemy attacking, the more damage the player inflicts with a hit, the more likely the player is to prevent an enemy attack.
+Players can combo up to 3 attacks with melee weapons.
+Players can aim in any direction over the shoulder (including up and down), or normal third person movement (cannot aim up and down).
+
+
+Game Objectives.
+The player must make their way through a series of levels, defeating enemies and locating key npcs to talk to.
+Level objectives are displayed at the top of the screen.
+
+Controls.
+Main levels;
+W - move forward
+S - move backward
+A - strafe left
+D - strafe right
+Space - Jump
+Shift - sprint
+
+Mouse movement - move camera
+Up arrow - move camera closer to player character
+Down arrow - move camera away from player character
+
+Left mouse click/X - attack
+Right mouse click/C - aim
+Middle mouse click/Z - defend
+
+N - magic attack 01
+
+Escape - pause/unpause
+I - open/close inventory
+H - open/close slot quick access display
+
+T - interact (eg talk to npcs)
+
+1 - equip weapon assigned to slot 1 
+2 - equip weapon assigned to slot 2 
+3 - equip weapon assigned to slot 3
+4 - use item assigned to item slot 1 
+5 - use item assigned to item slot 2
+6 - use item assigned to item slot 3 
+7 - use item assigned to item slot 4 
+8 - use item assigned to item slot 5 
+9 - use item assigned to item slot 6 
+0 - equip currently assigned shield
+
+World map;
+W - move indicated direction
+S - move indicated direction
+A - move indicated direction
+D - move indicated direction
+Space - enter selected level
+
+Escape - pause/unpause
+I - open/close shop
+
+T - access save game options
+
+Inventory Control.
+Main area;
+Displays items acquired by players.
+Left click and drag items to rearrange.
+Right click to view information about an item and to access item options.
+To equip an item, right click and choose "equip", then choose which slot you would like to place the item in to.
+
+Equipment slots;
+Weapon and defence items slots are on the left, and helper items are on the right.
+Items slots display currently equiped weapons and defence items.
+Click the red X to remove the current item from a slot and place it back in the main area.
+
+Game Hud.
+Levels
+Lives are displayed in the top left circle.
+Health bar is the top bar displayed (red), with health points displayed over it.
+Mana bar is the second bar displayed (blue), with mana points displayed over it.
+Points (orange) are displayed under the mana bar.
+The currently equiped weapon is displayed as an icon under the points. 
+If the weapon is a bow, the number of arrows left is displayed to the right of the icon.
+If the weapon is a magic weapon, its element is displayed indicating that magic attacks can be used.
+If the weapon is a melee weapon, the combo counter and indicator is displayed to the right of the weapon, a green box indicates a combo is available, and the red lines count the number of combo moves performed so far.
+
+The map is found in the upper right corner and gives an indication of nearby enemies and allies.
+Enemies are displayed in red, allies in blue, the centre green point is the player.
+
+At the top centre is a display for reference for the quick access keys.
+Can be hidden/shown by pressing the H key (even if hint part is hidden).
+The key numbers to press are displayed under an image of the appropriate item in the slot.
+
+Under the slots reference is a display showing the current level objective.
+At the bottom of the screen is where text relating to interaction is shown (eg key to press to talk, and what an npc says).
+
+Menus.
+Main Menu
+The main game menu, displayed when the game is started.
+New game - opens the character selection menu to begin a new game
+Load game - opens the load game menu
+Options - opens the options menu
+Credits - displays the credits of those involved 
+Quit - exits the game
+
+Options
+Menu where players can set some of the game options.
+Master volume - controls the overall volume
+Sound effects volume - controls the volume of sound effects
+Music volume - controls the volume of backgrouns music
+Aiming cursor - turn cursor on/off
+Slots quick access hint - turn whether the "H" hint to show quick access slots is shown/hidden
+Look sensitivity - controls how quickly the camera moves when looking around
+Language - chooses between languages
+Difficulty - sets the level of difficulty
+Save - saves the current settings
+Back - returns to the previous menu
+
+Pause Menu
+Menu accessed while the game is paused, can be used to pause gameplay, change options, or exit the current game.
+Resume - resumes the game
+Options - opens the options menu
+Restart - resets the player characters position
+Quit - quits the current game to the main menu
+
+Character Selection
+Menu where players choose the character for a new game. Information is displayed about each character.
+Next - move to the next character
+Prev - move to the previous character
+Select - selects the current character as the player character
+Back - returns to the main menu
+
+Save Game
+Menu for saving the current game.
+Save file 01 - save current game to save file 1
+Save file 02 - save current game to save file 2
+Save file 03 - save current game to save file 3
+Save file 04 - save current game to save file 4
+Cancel - closes the save game menu
+
+Load Game
+Menu for loading saved games, displays some information about the saved games.
+Clicking the "Load" button beneath a game file will load that game file.
+
+Equipment.
+weapons
+Armour
+Shields
+Items
+
+Ally NPCs.
+
+Enemies.
+
+Misc (eg things not implemented yet).
+
+Credits.
+
+
