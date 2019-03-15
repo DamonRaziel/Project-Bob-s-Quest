@@ -29,3 +29,8 @@ Add experience points and level ups.
 Currently only point system and equipment determines power levels.
 Add in experience points in a similar manner to points system, but at certain amounts add levels to the player.
 Allow player to increase certain attributes when they attain a new level.
+
+Create spawnable enemies.
+Enemies are currntly set at level setup. Past attempts didn't work properly.
+Create spawn script that handles where in heirarchy to place enemies so that all heirarchy dependant variables (eg "player") can be found.
+Script needs some form of delay and "if null: do this instead" function.
