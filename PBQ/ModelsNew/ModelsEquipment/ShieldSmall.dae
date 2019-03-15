@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset>
+	<contributor>
+		<author>Anonymous</author>
+		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
+	</contributor>
+	<created>2018-11-30T21:44:12Z</created>
+	<modified>2018-11-30T21:44:12Z</modified>
+	<unit meter="1.0" name="meter"/>
+	<up_axis>Z_UP</up_axis>
+</asset>
+<library_effects>
+	<effect id="id-fx-2" name="ShieldBigMat-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.17121250884551564 0.002013384022018075 0.0012264798578095412 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.08566983454253663 0.03422290147941531 0.027493102774928335 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="id-fx-4" name="ShieldTopMat-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.009515738629039205 0.0 0.33598783516865716 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.0677720122085379 0.18249319333824232 0.2586206793785095 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="id-fx-6" name="ShieldFrontMat-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.13284198939800262 0.0020235497504472733 0.08597548305988312 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.1982758641242981 0.015695206662516004 0.0815122182227519 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+</library_effects>
+<library_materials>
+	<material id="id-material-3" name="ShieldBigMat">
+		<instance_effect url="#id-fx-2"/>
+	</material>
+	<material id="id-material-5" name="ShieldTopMat">
+		<instance_effect url="#id-fx-4"/>
+	</material>
+	<material id="id-material-7" name="ShieldFrontMat">
+		<instance_effect url="#id-fx-6"/>
+	</material>
+</library_materials>
+<library_geometries>
+	<geometry id="id-mesh-8" name="Cube.013">
+		<mesh>
+			<source id="id-mesh-8-positions">
+				<float_array id="id-mesh-8-positions-array" count="150"> 0.14260631799697876 0.025158269330859184 0.09239113330841064 0.12758101522922516 0.025158261880278587 0.11858663707971573 0.12758103013038635 -0.02515813149511814 0.11858663707971573 0.14260633289813995 -0.025158124044537544 0.09239113330841064 -0.07887320220470428 -0.025158237665891647 0.12340200692415237 -0.07887320220470428 -0.025158237665891647 0.17704366147518158 -0.12758101522922516 -0.025158261880278587 0.11858663707971573 -0.14260631799697876 -0.025158269330859184 0.09239113330841064 -0.12758103013038635 0.02515813149511814 0.11858663707971573 -0.14260633289813995 0.025158124044537544 0.09239113330841064 0.07887320220470428 0.025158237665891647 0.12340200692415237 0.07887320220470428 0.025158237665891647 0.17704366147518158 -0.07887320220470428 -0.025158237665891647 -0.17704366147518158 -0.12758101522922516 -0.025158261880278587 -0.11858663707971573 -0.12758103013038635 0.02515813149511814 -0.11858663707971573 -0.07887321710586548 0.02515815570950508 -0.17704366147518158 0.07887321710586548 -0.02515815570950508 0.17704366147518158 -0.07887321710586548 0.02515815570950508 0.17704366147518158 7.450580596923828e-09 -0.025158196687698364 0.19321802258491516 -7.450580596923828e-09 0.025158196687698364 0.19321802258491516 0.12758103013038635 -0.02515813149511814 -0.11858663707971573 0.07887321710586548 -0.02515815570950508 -0.17704366147518158 0.07887320220470428 0.025158237665891647 -0.17704366147518158 0.12758101522922516 0.025158261880278587 -0.11858663707971573 7.450580596923828e-09 -0.025158196687698364 -0.19321802258491516 -7.450580596923828e-09 0.025158196687698364 -0.19321802258491516 -0.07887321710586548 0.02515815570950508 0.12340200692415237 -7.450580596923828e-09 0.025158196687698364 0.1346757560968399 0.07887321710586548 -0.02515815570950508 0.12340200692415237 7.450580596923828e-09 -0.025158196687698364 0.1346757560968399 7.450580596923828e-09 -0.025158196687698364 -0.1346757560968399 -0.07887320220470428 -0.025158237665891647 -0.12340200692415237 6.838714483592412e-09 -0.025158196687698364 0.0 -0.0887540951371193 -0.025158237665891647 0.0 0.14260633289813995 -0.025158124044537544 -0.09239113330841064 0.07887321710586548 -0.02515815570950508 -0.12340200692415237 0.16047143936157227 -0.025158124044537544 0.0 0.08875411003828049 -0.02515815570950508 0.0 -7.450580596923828e-09 0.025158196687698364 -0.1346757560968399 0.07887320220470428 0.025158237665891647 -0.12340200692415237 -6.838714483592412e-09 0.025158196687698364 0.0 0.0887540951371193 0.025158237665891647 0.0 -0.14260633289813995 0.025158124044537544 -0.09239113330841064 -0.07887321710586548 0.02515815570950508 -0.12340200692415237 -0.16047143936157227 0.025158124044537544 0.0 -0.08875411003828049 0.02515815570950508 0.0 0.14260631799697876 0.025158269330859184 -0.09239113330841064 0.16047140955924988 0.025158269330859184 0.0 -0.14260631799697876 -0.025158269330859184 -0.09239113330841064 -0.16047140955924988 -0.025158269330859184 0.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-8-positions-array" count="50" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-8-normals">
+				<float_array id="id-mesh-8-normals-array" count="150"> 0.6941739916801453 0.6719565391540527 0.25803399085998535 0.5956907868385315 0.6880702972412109 0.4143192768096924 0.5956907868385315 -0.6880702972412109 0.4143192768096924 0.6941739916801453 -0.6719565391540527 0.25803399085998535 0.0 -1.0 0.0 -0.39463484287261963 -0.6396985054016113 0.6595355272293091 -0.5956907868385315 -0.6880702972412109 0.4143192768096924 -0.6941739916801453 -0.6719565391540527 0.25803399085998535 -0.5956907868385315 0.6880702972412109 0.4143192768096924 -0.6941739916801453 0.6719565391540527 0.25803399085998535 0.0 1.0 0.0 0.39463484287261963 0.6396985054016113 0.6595355272293091 -0.39463484287261963 -0.6396985054016113 -0.6595355272293091 -0.5956907868385315 -0.6880702972412109 -0.4143192768096924 -0.5956907868385315 0.6880702972412109 -0.4143192768096924 -0.39463484287261963 0.6396985054016113 -0.6595355272293091 0.39463484287261963 -0.6396985054016113 0.6595355272293091 -0.39463484287261963 0.6396985054016113 0.6595355272293091 0.0 -0.6645405292510986 0.747215211391449 0.0 0.6645405292510986 0.747215211391449 0.5956907868385315 -0.6880702972412109 -0.4143192768096924 0.39463484287261963 -0.6396985054016113 -0.6595355272293091 0.39463484287261963 0.6396985054016113 -0.6595355272293091 0.5956907868385315 0.6880702972412109 -0.4143192768096924 0.0 -0.6645405292510986 -0.747215211391449 0.0 0.6645405292510986 -0.747215211391449 0.0 1.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.6941739916801453 -0.6719565391540527 -0.25803399085998535 0.0 -1.0 0.0 0.7452620267868042 -0.6667378544807434 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 -0.6941739916801453 0.6719565391540527 -0.25803399085998535 0.0 1.0 0.0 -0.7452620267868042 0.6667378544807434 0.0 0.0 1.0 0.0 0.6941739916801453 0.6719565391540527 -0.25803399085998535 0.7452620267868042 0.6667683720588684 0.0 -0.6941739916801453 -0.6719565391540527 -0.25803399085998535 -0.7452620267868042 -0.6667683720588684 0.0</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-8-normals-array" count="50" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<vertices id="id-mesh-8-vertices">
+				<input semantic="POSITION" source="#id-mesh-8-positions"/>
+			</vertices>
+			<polygons count="42" material="id-trimat-9">
+				<input semantic="VERTEX" source="#id-mesh-8-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-8-normals" offset="0"/>
+				<p> 0 1 2 3 </p>
+				<p> 4 5 6 7 </p>
+				<p> 7 6 8 9 </p>
+				<p> 10 11 1 0 </p>
+				<p> 12 13 14 15 </p>
+				<p> 16 2 1 11 </p>
+				<p> 6 5 17 8 </p>
+				<p> 18 16 11 19 </p>
+				<p> 20 21 22 23 </p>
+				<p> 24 12 15 25 </p>
+				<p> 9 8 17 26 </p>
+				<p> 3 2 16 28 </p>
+				<p> 29 18 5 4 </p>
+				<p> 24 30 31 12 </p>
+				<p> 32 29 4 33 </p>
+				<p> 20 34 35 21 </p>
+				<p> 36 3 28 37 </p>
+				<p> 25 38 39 22 </p>
+				<p> 14 42 43 15 </p>
+				<p> 44 9 26 45 </p>
+				<p> 22 39 46 23 </p>
+				<p> 41 10 0 47 </p>
+				<p> 13 48 42 14 </p>
+				<p> 49 7 9 44 </p>
+				<p> 12 31 48 13 </p>
+				<p> 33 4 7 49 </p>
+				<p> 23 46 34 20 </p>
+				<p> 47 0 3 36 </p>
+				<p> 15 43 38 25 </p>
+				<p> 37 28 29 32 </p>
+				<p> 21 35 30 24 </p>
+				<p> 28 16 18 29 </p>
+				<p> 21 24 25 22 </p>
+				<p> 5 18 19 17 </p>
+				<p> 35 37 32 30 </p>
+				<p> 46 47 36 34 </p>
+				<p> 31 33 49 48 </p>
+				<p> 48 49 44 42 </p>
+				<p> 39 41 47 46 </p>
+				<p> 42 44 45 43 </p>
+				<p> 34 36 37 35 </p>
+				<p> 30 32 33 31 </p>
+			</polygons>
+			<polygons count="4" material="id-trimat-10">
+				<input semantic="VERTEX" source="#id-mesh-8-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-8-normals" offset="0"/>
+				<p> 40 27 10 41 </p>
+				<p> 45 26 27 40 </p>
+				<p> 43 45 40 38 </p>
+				<p> 38 40 41 39 </p>
+			</polygons>
+			<polygons count="2" material="id-trimat-11">
+				<input semantic="VERTEX" source="#id-mesh-8-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-8-normals" offset="0"/>
+				<p> 27 19 11 10 </p>
+				<p> 26 17 19 27 </p>
+			</polygons>
+		</mesh>
+	</geometry>
+</library_geometries>
+<library_visual_scenes>
+	<visual_scene id="id-scene-1" name="scene">
+		<node id="ShieldSmall" name="ShieldSmall" type="NODE">
+			<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -2.246609687805176 0.0 0.0 1.0 0.45001086592674255 0.0 0.0 0.0 1.0  </matrix>
+			<instance_geometry url="#id-mesh-8">
+				<bind_material>
+					<technique_common>
+						<instance_material symbol="id-trimat-9" target="#id-material-3"/>
+						<instance_material symbol="id-trimat-10" target="#id-material-7"/>
+						<instance_material symbol="id-trimat-11" target="#id-material-5"/>
+					</technique_common>
+				</bind_material>
+			</instance_geometry>
+		</node>
+	</visual_scene>
+</library_visual_scenes>
+<scene>
+	<instance_visual_scene url="#id-scene-1" />
+</scene>
+</COLLADA>

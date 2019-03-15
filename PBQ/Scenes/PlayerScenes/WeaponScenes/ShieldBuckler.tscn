@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ModelsNew/ModelsEquipment/ShieldBuckler.dae" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/PlayerScripts/ShieldSelfDestruct.gd" type="Script" id=2]
+
+[node name="Buckler" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+this_shield_number = 39
+
+[node name="ShieldBuckler" parent="." index="0"]
+
+transform = Transform( -4.37114e-008, -1, 4.37114e-008, 0, -4.37114e-008, -1, 1, -4.37114e-008, 1.91069e-015, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+

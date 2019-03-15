@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/352500__joseph-larralde__hammer-earth.wav-23075e5a3ef9ae33ff0c17d48a4e6cb1.sample"
+
+[deps]
+
+source_file="res://SoundEffects/352500__joseph-larralde__hammer-earth.wav"
+dest_files=[ "res://.import/352500__joseph-larralde__hammer-earth.wav-23075e5a3ef9ae33ff0c17d48a4e6cb1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

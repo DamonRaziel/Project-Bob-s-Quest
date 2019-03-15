@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset>
+	<contributor>
+		<author>Anonymous</author>
+		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
+	</contributor>
+	<created>2018-11-30T21:44:50Z</created>
+	<modified>2018-11-30T21:44:50Z</modified>
+	<unit meter="1.0" name="meter"/>
+	<up_axis>Z_UP</up_axis>
+</asset>
+<library_effects>
+	<effect id="id-fx-2" name="ShieldBigMat-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.17121250884551564 0.002013384022018075 0.0012264798578095412 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.08566983454253663 0.03422290147941531 0.027493102774928335 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="id-fx-4" name="ShieldTopMat-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.009515738629039205 0.0 0.33598783516865716 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.0677720122085379 0.18249319333824232 0.2586206793785095 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="id-fx-6" name="ShieldFrontMat-fx">
+		<profile_COMMON>
+			<technique sid="common">
+				<blinn>
+					<emission>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</emission>
+					<ambient>
+						<color>  0.0 0.0 0.0 1.0 </color>
+					</ambient>
+					<diffuse>
+						<color>  0.13284198939800262 0.0020235497504472733 0.08597548305988312 1.0 </color>
+					</diffuse>
+					<specular>
+						<color>  0.1982758641242981 0.015695206662516004 0.0815122182227519 1.0 </color>
+					</specular>
+					<shininess>
+						<float>50</float>
+					</shininess>
+					<reflective>
+						<color>  1.0 1.0 1.0 1.0 </color>
+					</reflective>
+					<index_of_refraction>
+						<float>4.0</float>
+					</index_of_refraction>
+				</blinn>
+				<extra>
+					<technique profile="FCOLLADA">
+					</technique>
+					<technique profile="GOOGLEEARTH">
+						<double_sided>0</double_sided>
+					</technique>
+				</extra>
+			</technique>
+		</profile_COMMON>
+	</effect>
+</library_effects>
+<library_materials>
+	<material id="id-material-3" name="ShieldBigMat">
+		<instance_effect url="#id-fx-2"/>
+	</material>
+	<material id="id-material-5" name="ShieldTopMat">
+		<instance_effect url="#id-fx-4"/>
+	</material>
+	<material id="id-material-7" name="ShieldFrontMat">
+		<instance_effect url="#id-fx-6"/>
+	</material>
+</library_materials>
+<library_geometries>
+	<geometry id="id-mesh-8" name="Cube.004">
+		<mesh>
+			<source id="id-mesh-8-positions">
+				<float_array id="id-mesh-8-positions-array" count="96"> 0.2244991809129715 0.025158269330859184 0.28555214405059814 0.20084546506404877 0.025158261880278587 0.36651426553726196 0.20084549486637115 -0.02515813149511814 0.36651426553726196 0.22449921071529388 -0.025158124044537544 0.28555214405059814 -0.12416680157184601 -0.025158237665891647 0.28555214405059814 -0.12416680157184601 -0.025158237665891647 0.4096789062023163 -0.20084546506404877 -0.025158261880278587 0.36651426553726196 -0.2244991809129715 -0.025158269330859184 0.28555214405059814 -0.20084549486637115 0.02515813149511814 0.36651426553726196 -0.22449921071529388 0.025158124044537544 0.28555214405059814 0.12416680157184601 0.025158237665891647 0.28555214405059814 0.12416680157184601 0.025158237665891647 0.4096789062023163 -0.12416680157184601 -0.025158237665891647 -0.4096789062023163 -0.20084546506404877 -0.025158261880278587 -0.36651426553726196 -0.20084549486637115 0.02515813149511814 -0.36651426553726196 -0.1241668164730072 0.02515815570950508 -0.4096789062023163 0.1241668164730072 -0.02515815570950508 0.4096789062023163 -0.1241668164730072 0.02515815570950508 0.4096789062023163 0.20084549486637115 -0.02515813149511814 -0.36651426553726196 0.1241668164730072 -0.02515815570950508 -0.4096789062023163 0.12416680157184601 0.025158237665891647 -0.4096789062023163 0.20084546506404877 0.025158261880278587 -0.36651426553726196 -0.1241668164730072 0.02515815570950508 0.28555214405059814 0.1241668164730072 -0.02515815570950508 0.28555214405059814 0.1241668164730072 -0.02515815570950508 -0.28555214405059814 -0.12416680157184601 -0.025158237665891647 -0.28555214405059814 0.22449921071529388 -0.025158124044537544 -0.28555214405059814 -0.1241668164730072 0.02515815570950508 -0.28555214405059814 0.12416680157184601 0.025158237665891647 -0.28555214405059814 -0.22449921071529388 0.025158124044537544 -0.28555214405059814 0.2244991809129715 0.025158269330859184 -0.28555214405059814 -0.2244991809129715 -0.025158269330859184 -0.28555214405059814</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-8-positions-array" count="32" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<source id="id-mesh-8-normals">
+				<float_array id="id-mesh-8-normals-array" count="96"> 0.7289345860481262 0.6765648126602173 0.10428174585103989 0.6073488593101501 0.6312143206596375 0.4823450446128845 0.6073488593101501 -0.6312143206596375 0.4823450446128845 0.7289345860481262 -0.6765648126602173 0.10428174585103989 0.0 -1.0 0.0 -0.19174779951572418 -0.6542252898216248 0.7315592169761658 -0.6073488593101501 -0.6312143206596375 0.4823450446128845 -0.7289345860481262 -0.6765648126602173 0.10428174585103989 -0.6073488593101501 0.6312143206596375 0.4823450446128845 -0.7289345860481262 0.6765648126602173 0.10428174585103989 0.0 1.0 0.0 0.19174779951572418 0.6542252898216248 0.7315592169761658 -0.19174779951572418 -0.6542252898216248 -0.7315592169761658 -0.6073488593101501 -0.6312143206596375 -0.4823450446128845 -0.6073488593101501 0.6312143206596375 -0.4823450446128845 -0.19174779951572418 0.6542252898216248 -0.7315592169761658 0.19174779951572418 -0.6542252898216248 0.7315592169761658 -0.19174779951572418 0.6542252898216248 0.7315592169761658 0.6073488593101501 -0.6312143206596375 -0.4823450446128845 0.19174779951572418 -0.6542252898216248 -0.7315592169761658 0.19174779951572418 0.6542252898216248 -0.7315592169761658 0.6073488593101501 0.6312143206596375 -0.4823450446128845 0.0 1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.7289345860481262 -0.6765648126602173 -0.10428174585103989 0.0 1.0 0.0 0.0 1.0 0.0 -0.7289345860481262 0.6765648126602173 -0.10428174585103989 0.7289345860481262 0.6765648126602173 -0.10428174585103989 -0.7289345860481262 -0.6765648126602173 -0.10428174585103989</float_array>
+				<technique_common>
+				<accessor source="#id-mesh-8-normals-array" count="32" stride="3">
+					<param name="X" type="float"/>
+					<param name="Y" type="float"/>
+					<param name="Z" type="float"/>
+				</accessor>
+				</technique_common>
+			</source>
+			<vertices id="id-mesh-8-vertices">
+				<input semantic="POSITION" source="#id-mesh-8-positions"/>
+			</vertices>
+			<polygons count="28" material="id-trimat-9">
+				<input semantic="VERTEX" source="#id-mesh-8-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-8-normals" offset="0"/>
+				<p> 0 1 2 3 </p>
+				<p> 4 5 6 7 </p>
+				<p> 7 6 8 9 </p>
+				<p> 10 11 1 0 </p>
+				<p> 12 13 14 15 </p>
+				<p> 16 2 1 11 </p>
+				<p> 6 5 17 8 </p>
+				<p> 5 16 11 17 </p>
+				<p> 18 19 20 21 </p>
+				<p> 19 12 15 20 </p>
+				<p> 9 8 17 22 </p>
+				<p> 3 2 16 23 </p>
+				<p> 23 16 5 4 </p>
+				<p> 19 24 25 12 </p>
+				<p> 24 23 4 25 </p>
+				<p> 18 26 24 19 </p>
+				<p> 26 3 23 24 </p>
+				<p> 15 27 28 20 </p>
+				<p> 14 29 27 15 </p>
+				<p> 29 9 22 27 </p>
+				<p> 20 28 30 21 </p>
+				<p> 28 10 0 30 </p>
+				<p> 13 31 29 14 </p>
+				<p> 31 7 9 29 </p>
+				<p> 12 25 31 13 </p>
+				<p> 25 4 7 31 </p>
+				<p> 21 30 26 18 </p>
+				<p> 30 0 3 26 </p>
+			</polygons>
+			<polygons count="1" material="id-trimat-10">
+				<input semantic="VERTEX" source="#id-mesh-8-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-8-normals" offset="0"/>
+				<p> 27 22 10 28 </p>
+			</polygons>
+			<polygons count="1" material="id-trimat-11">
+				<input semantic="VERTEX" source="#id-mesh-8-vertices" offset="0"/>
+				<input semantic="NORMAL" source="#id-mesh-8-normals" offset="0"/>
+				<p> 22 17 11 10 </p>
+			</polygons>
+		</mesh>
+	</geometry>
+</library_geometries>
+<library_visual_scenes>
+	<visual_scene id="id-scene-1" name="scene">
+		<node id="ShieldTower" name="ShieldTower" type="NODE">
+			<matrix sid="transform"> 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5273492336273193 0.0 0.0 1.0 0.45001086592674255 0.0 0.0 0.0 1.0  </matrix>
+			<instance_geometry url="#id-mesh-8">
+				<bind_material>
+					<technique_common>
+						<instance_material symbol="id-trimat-9" target="#id-material-3"/>
+						<instance_material symbol="id-trimat-10" target="#id-material-7"/>
+						<instance_material symbol="id-trimat-11" target="#id-material-5"/>
+					</technique_common>
+				</bind_material>
+			</instance_geometry>
+		</node>
+	</visual_scene>
+</library_visual_scenes>
+<scene>
+	<instance_visual_scene url="#id-scene-1" />
+</scene>
+</COLLADA>

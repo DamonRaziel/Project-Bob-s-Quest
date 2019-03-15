@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Outfoxing the Fox.ogg-aaf2d23ddc493e1a8b06e839be31c3ee.oggstr"
+
+[deps]
+
+source_file="res://Music/Outfoxing the Fox.ogg"
+dest_files=[ "res://.import/Outfoxing the Fox.ogg-aaf2d23ddc493e1a8b06e839be31c3ee.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

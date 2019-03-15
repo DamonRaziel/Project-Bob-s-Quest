@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ModelHolder/MovingMat.material" type="Material" id=1]
+
+[sub_resource type="ArrayMesh" id=1]
+
+resource_name = "Cube.001"
+blend_shape_mode = 1
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+surfaces/0 = {
+"aabb": AABB( -1, -0.207385, -1, 2, 0.414771, 2.00001 ),
+"array_data": PoolByteArray( 0, 188, 162, 178, 0, 60, 0, 60, 130, 0, 0, 0, 0, 188, 162, 50, 0, 60, 0, 60, 130, 0, 0, 0, 0, 188, 162, 50, 0, 188, 0, 60, 130, 0, 0, 0, 0, 188, 162, 178, 0, 188, 0, 60, 130, 0, 0, 0, 0, 188, 162, 178, 0, 188, 0, 60, 0, 0, 130, 0, 0, 188, 162, 50, 0, 188, 0, 60, 0, 0, 130, 0, 0, 60, 162, 50, 0, 188, 0, 60, 0, 0, 130, 0, 0, 60, 162, 178, 0, 188, 0, 60, 0, 0, 130, 0, 0, 60, 162, 178, 0, 188, 0, 60, 126, 0, 0, 0, 0, 60, 162, 50, 0, 188, 0, 60, 126, 0, 0, 0, 0, 60, 162, 50, 0, 60, 0, 60, 126, 0, 0, 0, 0, 60, 162, 178, 0, 60, 0, 60, 126, 0, 0, 0, 0, 60, 162, 178, 0, 60, 0, 60, 0, 0, 126, 0, 0, 60, 162, 50, 0, 60, 0, 60, 0, 0, 126, 0, 0, 188, 162, 50, 0, 60, 0, 60, 0, 0, 126, 0, 0, 188, 162, 178, 0, 60, 0, 60, 0, 0, 126, 0, 0, 188, 162, 178, 0, 188, 0, 60, 0, 129, 0, 0, 0, 60, 162, 178, 0, 188, 0, 60, 0, 129, 0, 0, 0, 60, 162, 178, 0, 60, 0, 60, 0, 129, 0, 0, 0, 188, 162, 178, 0, 60, 0, 60, 0, 129, 0, 0, 0, 60, 162, 50, 0, 188, 0, 60, 0, 127, 0, 0, 0, 188, 162, 50, 0, 188, 0, 60, 0, 127, 0, 0, 0, 188, 162, 50, 0, 60, 0, 60, 0, 127, 0, 0, 0, 60, 162, 50, 0, 60, 0, 60, 0, 127, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0, 4, 0, 6, 0, 5, 0, 4, 0, 7, 0, 6, 0, 8, 0, 10, 0, 9, 0, 8, 0, 11, 0, 10, 0, 12, 0, 14, 0, 13, 0, 12, 0, 15, 0, 14, 0, 16, 0, 18, 0, 17, 0, 16, 0, 19, 0, 18, 0, 20, 0, 22, 0, 21, 0, 20, 0, 23, 0, 22, 0 ),
+"blend_shape_data": [  ],
+"format": 98051,
+"index_count": 36,
+"material": ExtResource( 1 ),
+"name": "MovingMat",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ConvexPolygonShape" id=2]
+
+points = PoolVector3Array( -1, -0.207275, 1, -1, 0.207275, 1, -1, 0.207275, -1, -1, -0.207275, -1, -1, -0.207275, -1, -1, 0.207275, -1, 1, 0.207275, -1, 1, -0.207275, -1, 1, -0.207275, -1, 1, 0.207275, -1, 1, 0.207275, 1, 1, -0.207275, 1, 1, -0.207275, 1, 1, 0.207275, 1, -1, 0.207275, 1, -1, -0.207275, 1, -1, -0.207275, -1, 1, -0.207275, -1, 1, -0.207275, 1, -1, -0.207275, 1, 1, 0.207275, -1, -1, 0.207275, -1, -1, 0.207275, 1, 1, 0.207275, 1 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 0.214308, 0.444051, 1 )
+
+[sub_resource type="Animation" id=4]
+
+length = 10.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube.001:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 5, 6, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0193403, 0, 0 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7734, 0, 0 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6494, 0, 0 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12137, 0, 0 ) ]
+}
+
+[node name="Scene Root" type="Spatial" index="0"]
+
+[node name="Cube.001" type="MeshInstance" parent="." index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody" type="StaticBody" parent="Cube.001" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube.001/StaticBody" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="Cube.001/StaticBody" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.993164, 0.237802, 0 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="CollisionShape3" type="CollisionShape" parent="Cube.001/StaticBody" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0.23835, 0 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = "MoveBlockTest"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/MoveBlockTest = SubResource( 4 )
+blend_times = [  ]
+
+

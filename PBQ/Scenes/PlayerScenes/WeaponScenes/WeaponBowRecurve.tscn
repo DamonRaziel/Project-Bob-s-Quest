@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ModelsNew/ModelsEquipment/BowRecurve.dae" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/PlayerScripts/WeaponSelfDestruct.gd" type="Script" id=2]
+
+[node name="RecurveBow" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+this_weapon_number = 10
+
+[node name="BowRecurve" parent="." index="0"]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, -0.00296886, -0.00426286 )
+
+

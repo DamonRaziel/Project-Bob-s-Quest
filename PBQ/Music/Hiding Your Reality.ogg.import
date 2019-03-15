@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Hiding Your Reality.ogg-6100e48e88efb866e07fd7540b227fa6.oggstr"
+
+[deps]
+
+source_file="res://Music/Hiding Your Reality.ogg"
+dest_files=[ "res://.import/Hiding Your Reality.ogg-6100e48e88efb866e07fd7540b227fa6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

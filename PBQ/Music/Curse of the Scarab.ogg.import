@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Curse of the Scarab.ogg-92792497f0cd83c1881a2daf929a6a55.oggstr"
+
+[deps]
+
+source_file="res://Music/Curse of the Scarab.ogg"
+dest_files=[ "res://.import/Curse of the Scarab.ogg-92792497f0cd83c1881a2daf929a6a55.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Heavy Interlude.ogg-0b3485a997a8e9dcd0057fa6efa74257.oggstr"
+
+[deps]
+
+source_file="res://Music/Heavy Interlude.ogg"
+dest_files=[ "res://.import/Heavy Interlude.ogg-0b3485a997a8e9dcd0057fa6efa74257.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,521 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelScenes/SandLevel02GridMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/PickupScenes/CoinGold01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Grid Test 01/SandFloor01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelScenes/MovingBlockTest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PickupScenes/HealthPickup01.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PickupScenes/HealthMaxIncrease01.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GridMapsNew/CastleBlocksTestMeshLibraryTake02.meshlib" type="MeshLibrary" id=8]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieMale.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieFemale.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/LevelScripts/DeathArea.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/LevelScripts/Level8502Complete.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionHealth.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionMana.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionStrength.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionSpeed.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionFortitute.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/PickupScenes/PickupTea.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldBuckler.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldSmall.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldMedium.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldTower.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/PickupScenes/ManaMaxIncrease01.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Music/MusicController.gd" type="Script" id=25]
+[ext_resource path="res://Music/Hiding Your Reality.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Music/Full On.ogg" type="AudioStream" id=27]
+[ext_resource path="res://Music/Crisis.ogg" type="AudioStream" id=28]
+[ext_resource path="res://Music/Curse of the Scarab.ogg" type="AudioStream" id=29]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 178.148, 5.51194, 113.769 )
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 7.08577, 3.2806, 1 )
+
+[node name="SandLevel2" type="Spatial"]
+
+[node name="RespawnPoint" type="Spatial" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216461, 1.68848, 0.833241 )
+
+[node name="Player" parent="." index="1" instance=ExtResource( 1 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59269, 1.47619, 1.80452 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, -0.663809, 0.747902, 0, -0.747902, -0.663809, 0, 15.9153, 4.6189 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 1
+directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Directional Shadow" ]
+
+[node name="SandLevel2Grids" parent="." index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269188, -0.807981, 0 )
+
+[node name="CoinsHolder" type="Spatial" parent="." index="4"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269188, -0.807981, 0 )
+
+[node name="CoinGold" parent="CoinsHolder" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25098, 2.41659, 2.2462 )
+
+[node name="CoinGold2" parent="CoinsHolder" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25098, 2.41659, 5.56212 )
+
+[node name="CoinGold3" parent="CoinsHolder" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25098, 2.41659, 9.21617 )
+
+[node name="CoinGold4" parent="CoinsHolder" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.196443, 2.41659, 45.5854 )
+
+[node name="CoinGold5" parent="CoinsHolder" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -6.77353, 2.41659, 45.5854 )
+
+[node name="CoinGold6" parent="CoinsHolder" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -3.11948, 2.41659, 45.5854 )
+
+[node name="CoinGold7" parent="CoinsHolder" index="6" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -1.06581e-014, 0, 1, 0, 1.06581e-014, 0, 1, -58.848, 4.70458, 45.8798 )
+
+[node name="CoinGold8" parent="CoinsHolder" index="7" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -1.06581e-014, 0, 1, 0, 1.06581e-014, 0, 1, -58.848, 4.70458, 42.2257 )
+
+[node name="CoinGold9" parent="CoinsHolder" index="8" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -1.06581e-014, 0, 1, 0, 1.06581e-014, 0, 1, -58.848, 4.70458, 38.9098 )
+
+[node name="CoinGold11" parent="CoinsHolder" index="9" instance=ExtResource( 3 )]
+
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, 34.0807, 4.39041, 32.9906 )
+
+[node name="CoinGold12" parent="CoinsHolder" index="10" instance=ExtResource( 3 )]
+
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, 34.0807, 4.39041, 36.3065 )
+
+[node name="CoinGold10" parent="CoinsHolder" index="11" instance=ExtResource( 3 )]
+
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, 34.0807, 4.39041, 29.3365 )
+
+[node name="CoinGold13" parent="CoinsHolder" index="12" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -1.06581e-014, 0, 1, 0, 1.06581e-014, 0, 1, -58.848, 4.70458, 25.0675 )
+
+[node name="CoinGold14" parent="CoinsHolder" index="13" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -1.06581e-014, 0, 1, 0, 1.06581e-014, 0, 1, -58.848, 4.70458, 21.4134 )
+
+[node name="CoinGold15" parent="CoinsHolder" index="14" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -1.06581e-014, 0, 1, 0, 1.06581e-014, 0, 1, -58.848, 4.70458, 18.0975 )
+
+[node name="ExtraEnvironment" type="Spatial" parent="." index="5"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269188, -0.807981, 0 )
+
+[node name="SandFloor" parent="ExtraEnvironment" index="0" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.41, 2.53684, 20.2149 )
+
+[node name="SandFloor2" parent="ExtraEnvironment" index="1" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0698, 2.19648, 20.2149 )
+
+[node name="SandFloor3" parent="ExtraEnvironment" index="2" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.703, 1.80441, 20.2149 )
+
+[node name="SandFloor4" parent="ExtraEnvironment" index="3" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2785, 1.43663, 20.2149 )
+
+[node name="SandFloor5" parent="ExtraEnvironment" index="4" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5947, 2.53684, 45.7836 )
+
+[node name="SandFloor6" parent="ExtraEnvironment" index="5" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25451, 2.19648, 45.7836 )
+
+[node name="SandFloor8" parent="ExtraEnvironment" index="6" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46325, 1.43663, 45.7836 )
+
+[node name="SandFloor7" parent="ExtraEnvironment" index="7" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88777, 1.80441, 45.7836 )
+
+[node name="MovingBlock" parent="." index="6" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.823, 2.25637, 45.612 )
+
+[node name="HealthHolder" type="Spatial" parent="." index="7"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269188, -0.807981, 0 )
+
+[node name="HealthPickup" parent="HealthHolder" index="0" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41116, 8.9834 )
+
+[node name="HealthPickup5" parent="HealthHolder" index="1" instance=ExtResource( 6 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -21.082, 2.41116, 41.0266 )
+
+[node name="HealthPickup7" parent="HealthHolder" index="2" instance=ExtResource( 6 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -86.3944, 4.63485, 56.847 )
+
+[node name="HealthPickup2" parent="HealthHolder" index="3" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41116, 13.0605 )
+
+[node name="HealthPickup6" parent="HealthHolder" index="4" instance=ExtResource( 6 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -17.0048, 2.41116, 41.0266 )
+
+[node name="HealthPickup8" parent="HealthHolder" index="5" instance=ExtResource( 6 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -82.3172, 4.63485, 56.847 )
+
+[node name="HealthPickup3" parent="HealthHolder" index="6" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41116, 17.5992 )
+
+[node name="HealthPickup4" parent="HealthHolder" index="7" instance=ExtResource( 6 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -12.4661, 2.41116, 41.0266 )
+
+[node name="HealthPickup9" parent="HealthHolder" index="8" instance=ExtResource( 6 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -77.7785, 4.63485, 56.847 )
+
+[node name="MaxHealthIncrease" parent="HealthHolder" index="9" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9607, 4.69675, 30.8149 )
+
+[node name="MaxHealthIncrease2" parent="HealthHolder" index="10" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3785, 4.69675, 55.7477 )
+
+[node name="GridMapHolder" type="Spatial" parent="." index="8"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6619, 0, 38.0266 )
+
+[node name="GridMap" type="GridMap" parent="GridMapHolder" index="0"]
+
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 43.9618, 0, -55.2412 )
+theme = ExtResource( 8 )
+cell_size = Vector3( 2, 2, 2 )
+cell_octant_size = 8
+cell_center_x = true
+cell_center_y = true
+cell_center_z = true
+cell_scale = 1.0
+collision_layer = 1
+collision_mask = 1
+data = {
+"cells": PoolIntArray( 131022, 0, 851977, 65483, 1, 1310729, 65496, 2, 1310729, 65494, 3, 851977, 196545, 6, 65545, 65474, 11, 1310729, 65478, 11, 65545, 65511, 11, 1048580, 65512, 11, 1048580, 65513, 11, 1048580, 65514, 11, 1048580, 65515, 11, 1048580, 65516, 11, 1048580, 65517, 11, 1048580, 65518, 11, 1048580, 65519, 11, 1048580, 65520, 11, 1048580, 65521, 11, 1048580, 65522, 11, 1441799, 131044, 11, 1048584, 131045, 11, 1048584, 131046, 11, 1048584, 65511, 12, 4, 65512, 12, 6, 65513, 12, 6, 65514, 12, 6, 65515, 12, 6, 65516, 12, 6, 65517, 12, 6, 65518, 12, 6, 65519, 12, 6, 65520, 12, 6, 65521, 12, 1048582, 65522, 12, 4, 131017, 12, 1441798, 131018, 12, 1441798, 131019, 12, 1048582, 131020, 12, 1048582, 131021, 12, 1048582, 131023, 12, 1048585, 131024, 12, 1048585, 131025, 12, 1048585, 131026, 12, 1048585, 131028, 12, 1048585, 131029, 12, 1048585, 131030, 12, 1048585, 131031, 12, 1048585, 131032, 12, 1048585, 131033, 12, 1048585, 131035, 12, 1048585, 131036, 12, 1048585, 131037, 12, 1048585, 131039, 12, 1048585, 131040, 12, 1048585, 131042, 12, 1048584, 131043, 12, 1048584, 131044, 12, 1048584, 131045, 12, 1048584, 131046, 12, 1048584, 65511, 13, 4, 65512, 13, 6, 65513, 13, 6, 65514, 13, 6, 65515, 13, 1048582, 65516, 13, 1048582, 65517, 13, 1048582, 65518, 13, 1048582, 65519, 13, 1048582, 65520, 13, 1048582, 65521, 13, 1048582, 65522, 13, 4, 131017, 13, 1441798, 131018, 13, 1441798, 131044, 13, 1048584, 131045, 13, 1048584, 131046, 13, 1048584, 65511, 14, 4, 65512, 14, 6, 65513, 14, 6, 65514, 14, 6, 65515, 14, 1048582, 65516, 14, 1048582, 65517, 14, 1048582, 65518, 14, 1048582, 65519, 14, 1048582, 65520, 14, 1048582, 65521, 14, 1048582, 65522, 14, 4, 131018, 14, 4, 131044, 14, 1048584, 131045, 14, 1048584, 131046, 14, 1048584, 65511, 15, 4, 65512, 15, 6, 65513, 15, 6, 65514, 15, 6, 65515, 15, 1048582, 65516, 15, 1048582, 65517, 15, 1048582, 65518, 15, 1048582, 65519, 15, 1048582, 65520, 15, 1048582, 65521, 15, 1048582, 65522, 15, 4, 131018, 15, 4, 131019, 15, 1441792, 131045, 15, 1048584, 131046, 15, 1048584, 65474, 16, 65545, 65511, 16, 4, 65512, 16, 6, 65513, 16, 6, 65514, 16, 6, 65515, 16, 1048582, 65516, 16, 1048582, 65517, 16, 1048582, 65518, 16, 1048582, 65519, 16, 1048582, 65520, 16, -1609564154, 65521, 16, -1609564154, 65522, 16, -1610612732, 131018, 16, 5, 131019, 16, -1609170938, 131020, 16, -1609170944, 131045, 16, 1048584, 131046, 16, 1048584, 65494, 17, 1310729, 65511, 17, 4, 65512, 17, 6, 65513, 17, 6, 65514, 17, 6, 65515, 17, 1048582, 65516, 17, 1048582, 65517, 17, 1048582, 65518, 17, 1048582, 65519, 17, 1048582, 65520, 17, 1048582, 65521, 17, 1048582, 65522, 17, 4, 131018, 17, 4, 131019, 17, 1048582, 131020, 17, 1441798, 131021, 17, 1441792, 131045, 17, 1048584, 131046, 17, -1609564152, 65511, 18, 1048586, 65512, 18, 1048588, 65513, 18, -1610612730, 65514, 18, 6, 65515, 18, 1048582, 65516, 18, 1048582, 65517, 18, 1048582, 65518, 18, 1048582, 65519, 18, 1048582, 65520, 18, 1048582, 65521, 18, 1048582, 65522, 18, 4, 131018, 18, 4, 131019, 18, 1048582, 131020, 18, 1441798, 131021, 18, 1441798, 131022, 18, 1441792, 131045, 18, 1048584, 131046, 18, 1048587, 196544, 18, 65545, 65511, 19, 4, 65512, 19, 6, 65513, 19, 6, 65514, 19, 6, 65515, 19, 1048582, 65516, 19, 1048582, 65517, 19, 1048582, 65518, 19, 1048582, 65519, 19, 1048582, 65520, 19, 1048582, 65521, 19, 1048582, 65522, 19, 4, 131018, 19, 4, 131019, 19, 1048582, 131020, 19, 1441798, 131021, 19, 1441798, 131022, 19, 1441798, 131023, 19, 1441792, 131045, 19, 1048584, 131046, 19, 1048584, 262088, 19, 65545, 65500, 20, 1310729, 65511, 20, 4, 65512, 20, 6, 65513, 20, 6, 65514, 20, 6, 65515, 20, 1048582, 65516, 20, 1048582, 65517, 20, 1048582, 65518, 20, 1048582, 65519, 20, 537919494, 65520, 20, 1048582, 65521, 20, 1048582, 65522, 20, 3, 131018, 20, 4, 131019, 20, 1048582, 131020, 20, 1048582, 131021, 20, 1441798, 131022, 20, 1441798, 131023, 20, 1441798, 131024, 20, 1441792, 131033, 20, 851977, 131034, 20, 851977, 131045, 20, 1048584, 131046, 20, 1048584, 65511, 21, 4, 65512, 21, 6, 65513, 21, 6, 65514, 21, 6, 65515, 21, 1048582, 65516, 21, -1609564154, 65517, 21, 1048582, 65518, 21, 1048582, 65519, 21, 1048582, 65520, 21, 1048582, 65521, 21, 1048582, 65522, 21, 4, 131018, 21, 4, 131019, 21, 1048582, 131020, 21, 1048582, 131021, 21, 1048582, 131022, 21, 1441798, 131023, 21, 1441798, 131024, 21, 1441798, 131025, 21, 1441792, 131045, 21, 1048584, 131046, 21, 1048584, 65495, 22, 1310729, 65511, 22, 4, 65512, 22, 6, 65513, 22, 6, 65514, 22, 6, 65515, 22, 1048582, 65516, 22, 1048582, 65517, 22, 1048582, 65518, 22, 1048582, 65519, 22, 1048582, 65520, 22, 1048582, 65521, 22, 1048582, 65522, 22, 4, 131018, 22, 4, 131019, 22, 1048582, 131020, 22, 1048582, 131021, 22, 1048582, 131022, 22, 1048582, 131023, 22, 1048582, 131024, 22, 1048582, 131025, 22, 1441798, 131026, 22, 1441792, 131045, 22, 1048584, 131046, 22, 1048584, 65511, 23, 4, 65512, 23, 6, 65513, 23, 6, 65514, 23, 6, 65515, 23, -1609564154, 65516, 23, 1048582, 65517, 23, -1609564154, 65518, 23, -1609564154, 65519, 23, -1609564154, 65520, 23, 1048582, 65521, 23, 1048582, 65522, 23, 4, 131018, 23, -1610612731, 131019, 23, 1048582, 131020, 23, 1048582, 131021, 23, 1048582, 131022, 23, 1048582, 131023, 23, -1609564154, 131024, 23, 1048582, 131025, 23, 1441798, 131026, 23, -1609170938, 131027, 23, -1609170944, 131044, 23, -1609564154, 131045, 23, 1048584, 131046, 23, -1609564152, 65475, 24, -1609302007, 65511, 24, -1610612732, 65512, 24, 1048582, 65513, 24, 1048582, 65514, 24, 1048582, 65515, 24, 1048582, 65516, 24, 1048582, 65517, 24, 1048582, 65518, 24, 1048582, 65519, 24, 1048582, 65520, 24, 1611661318, 65521, 24, 1048582, 65522, 24, 4, 131018, 24, 4, 131019, 24, 1048582, 131020, 24, 1048582, 131021, 24, 1048582, 131022, 24, 1048582, 131023, 24, 1048582, 131024, 24, 1048582, 131025, 24, 1048582, 131026, 24, 1048582, 131027, 24, 538312710, 131028, 24, 1441792, 131044, 24, 1048582, 131045, 24, 1048584, 131046, 24, 1048584, 65511, 25, 4, 65512, 25, 1048582, 65513, 25, 1048582, 65514, 25, 1048582, 65515, 25, 1048582, 65516, 25, 1048582, 65517, 25, 1048582, 65518, 25, 1048582, 65519, 25, 1048582, 65520, 25, 1048582, 65521, 25, 1048582, 65522, 25, 4, 131018, 25, 4, 131019, 25, 1048582, 131020, 25, 1048582, 131021, 25, 1048582, 131022, 25, 1048582, 131023, 25, 1048582, 131024, 25, 1048582, 131025, 25, 1048582, 131026, 25, 1048582, 131027, 25, 1048582, 131028, 25, 1048582, 131029, 25, 1441792, 131044, 25, 1048582, 131045, 25, 1048584, 131046, 25, 1048584, 262087, 25, 65545, 65511, 26, 4, 65512, 26, 1048582, 65513, 26, 1048582, 65514, 26, 1048582, 65515, 26, 1048582, 65516, 26, 1048582, 65517, 26, 1048582, 65518, 26, 1048582, 65519, 26, 1048582, 65520, 26, 1048582, 65521, 26, 1048582, 65522, 26, 4, 131018, 26, 4, 131019, 26, 1048582, 131020, 26, 1048582, 131021, 26, 1048582, 131022, 26, 1048582, 131023, 26, 1048582, 131024, 26, 1048582, 131025, 26, 1048582, 131026, 26, 1048582, 131027, 26, 1048582, 131028, 26, 1048582, 131029, 26, 1048582, 131030, 26, 1441792, 131041, 26, 1048582, 131042, 26, 1048582, 131043, 26, 1048582, 131044, 26, 1048582, 131045, 26, 1048584, 131046, 26, 1048584, 65511, 27, 4, 65512, 27, 1048582, 65513, 27, 1048582, 65514, 27, 1048582, 65515, 27, 1048582, 65516, 27, 1048582, 65517, 27, 1048582, 65518, 27, 1048582, 65519, 27, 1048582, 65520, 27, 1048582, 65521, 27, 1048582, 65522, 27, 4, 131018, 27, 4, 131019, 27, 1048582, 131020, 27, 1048582, 131021, 27, 1048582, 131022, 27, 1048582, 131023, 27, 1048582, 131024, 27, -1609564154, 131025, 27, 1048582, 131026, 27, -1609564154, 131027, 27, 537919494, 131028, 27, 1048582, 131029, 27, 1048582, 131030, 27, 1048582, 131031, 27, 538312704, 131035, 27, 1441797, 131039, 27, 1441797, 131040, 27, 1048582, 131041, 27, -1609564154, 131042, 27, 1048582, 131043, 27, 537919494, 131044, 27, 1048582, 131045, 27, 1074790408, 131046, 27, 1048584, 65511, 28, -1609170940, 65512, 28, 1441796, 65513, 28, 1441796, 65514, 28, 1441796, 65515, 28, 1441796, 65516, 28, 1441796, 65517, 28, 1441796, 65518, 28, 1441796, 65519, 28, 1441796, 65520, 28, 1441796, 65521, 28, 1441796, 65522, 28, 1441799, 131018, 28, 4, 131019, 28, 1048582, 131020, 28, -1609564154, 131021, 28, 1048582, 131022, 28, 1048582, 131023, 28, 1048582, 131024, 28, 1048582, 131025, 28, 1048582, 131026, 28, 1048582, 131027, 28, -1609564154, 131028, 28, 537919494, 131029, 28, -1609564154, 131030, 28, 1074790406, 131031, 28, 1048582, 131032, 28, 537919494, 131033, 28, 1048582, 131034, 28, 1048582, 131035, 28, 1048582, 131036, 28, -1609564154, 131037, 28, -1609564154, 131038, 28, 1048582, 131039, 28, 1048582, 131040, 28, 1048582, 131041, 28, 1048582, 131042, 28, 1074790406, 131043, 28, 1048582, 131044, 28, 1048582, 131045, 28, 1048582, 131046, 28, 1048582, 131018, 29, 1048577, 131019, 29, -1609564156, 131020, 29, 1048580, 131021, 29, -1609564155, 131022, 29, -1609564156, 131023, 29, -1609564156, 131024, 29, 1048580, 131025, 29, -1609564156, 131026, 29, 1048580, 131027, 29, 537919493, 131028, 29, 537919492, 131029, 29, -1609564156, 131030, 29, 1048580, 131031, 29, -1609957375, 131035, 29, -1609564155, 131039, 29, -1609564155, 262090, 33, -1610547191, 262090, 34, 65545, 65488, 37, -1610285047, 65499, 37, 1310729, 65484, 39, -1609302007, 65505, 39, 1310729, 65494, 43, 1310729, 65507, 48, 327689, 196552, 65534, 851977, 196563, 65535, -1609760759 )
+}
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="EnemyHolder" type="Spatial" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="ZombieMale" parent="EnemyHolder" index="0" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4732, 1.42125, 30.4863 )
+
+[node name="ZombieMale2" parent="EnemyHolder" index="1" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.2624, 1.42125, 30.4863 )
+
+[node name="ZombieMale3" parent="EnemyHolder" index="2" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8622, 3.42887, 20.8478 )
+
+[node name="ZombieMale4" parent="EnemyHolder" index="3" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.016, 3.9912, 15.1596 )
+
+[node name="ZombieMale5" parent="EnemyHolder" index="4" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -115.311, 3.9912, 50.814 )
+
+[node name="ZombieFemale" parent="EnemyHolder" index="5" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4135, 1.42125, 34.2128 )
+
+[node name="ZombieFemale2" parent="EnemyHolder" index="6" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2027, 1.42125, 34.2128 )
+
+[node name="ZombieFemale3" parent="EnemyHolder" index="7" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0078, 3.42887, 45.8426 )
+
+[node name="ZombieFemale4" parent="EnemyHolder" index="8" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -121.333, 3.9912, 55.8683 )
+
+[node name="ZombieFemale5" parent="EnemyHolder" index="9" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.679, 3.9912, 48.0656 )
+
+[node name="DeathArea" type="Spatial" parent="." index="10"]
+
+editor/display_folded = true
+script = ExtResource( 11 )
+
+[node name="Area" type="Area" parent="DeathArea" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.0302, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="DeathArea/Area" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2958, 0, 29.7022 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="EndOfLevel" type="Spatial" parent="." index="11"]
+
+editor/display_folded = true
+transform = Transform( -0.0103199, 0, -0.999947, 0, 1, 0, 0.999947, 0, -0.0103199, -133.176, 3.38267, 15.8527 )
+script = ExtResource( 12 )
+
+[node name="Area" type="Area" parent="EndOfLevel" index="0"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="EndOfLevel/Area" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80655, 0.368965 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="LevelEndParticles" parent="EndOfLevel/Area" index="1" instance=ExtResource( 13 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
+
+[node name="PickupsHolder" type="Spatial" parent="." index="12"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57023, 0 )
+
+[node name="PickupPotionHealth" parent="PickupsHolder" index="0" instance=ExtResource( 14 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.33462, 0, 20.0356 )
+
+[node name="PickupPotionHealth2" parent="PickupsHolder" index="1" instance=ExtResource( 14 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0931, 0, 19.171 )
+
+[node name="PickupPotionMana" parent="PickupsHolder" index="2" instance=ExtResource( 15 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78137, 0, 20.0356 )
+
+[node name="PickupPotionMana2" parent="PickupsHolder" index="3" instance=ExtResource( 15 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.9992, 0, 19.171 )
+
+[node name="PickupPotionStrength" parent="PickupsHolder" index="4" instance=ExtResource( 16 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2222, 0, 20.0356 )
+
+[node name="PickupPotionStrength2" parent="PickupsHolder" index="5" instance=ExtResource( 16 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.1284, 0, 19.171 )
+
+[node name="PickupPotionSpeed" parent="PickupsHolder" index="6" instance=ExtResource( 17 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38969, 0, 2.19484 )
+
+[node name="PickupPotionSpeed2" parent="PickupsHolder" index="7" instance=ExtResource( 17 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.489, 0, 50.0856 )
+
+[node name="PickupPotionFortitute" parent="PickupsHolder" index="8" instance=ExtResource( 18 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38969, 0, 5.51975 )
+
+[node name="PickupPotionFortitute2" parent="PickupsHolder" index="9" instance=ExtResource( 18 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3951, 0, 50.0856 )
+
+[node name="PickupTea" parent="PickupsHolder" index="10" instance=ExtResource( 19 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6713, 1.98222, 45.8051 )
+
+[node name="PickupTea2" parent="PickupsHolder" index="11" instance=ExtResource( 19 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.9118, 2.27301, 15.2319 )
+
+[node name="PickupEquipHolder" type="Spatial" parent="." index="13"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55522, 0 )
+
+[node name="PickupShieldBuckler" parent="PickupEquipHolder" index="0" instance=ExtResource( 20 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1124, 0, 25.802 )
+
+[node name="PickupShieldSmall" parent="PickupEquipHolder" index="1" instance=ExtResource( 21 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9594, 0, 25.802 )
+
+[node name="PickupShieldMedium" parent="PickupEquipHolder" index="2" instance=ExtResource( 22 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.167, 2.50898, 45.3369 )
+
+[node name="PickupShieldTower" parent="PickupEquipHolder" index="3" instance=ExtResource( 23 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.167, 2.50898, 41.7653 )
+
+[node name="ManaHolder" type="Spatial" parent="." index="14"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83.8931, 3.8782, 15.2377 )
+
+[node name="ManaMaxIncrease" parent="ManaHolder" index="0" instance=ExtResource( 24 )]
+
+[node name="ManaMaxIncrease2" parent="ManaHolder" index="1" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5712, 0, 0 )
+
+[node name="MusicController" type="Node" parent="." index="15"]
+
+pause_mode = 2
+editor/display_folded = true
+script = ExtResource( 25 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="AudioStreamHYR" type="AudioStreamPlayer" parent="MusicController" index="0"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamFO" type="AudioStreamPlayer" parent="MusicController" index="1"]
+
+stream = ExtResource( 27 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamC" type="AudioStreamPlayer" parent="MusicController" index="2"]
+
+stream = ExtResource( 28 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamCotS" type="AudioStreamPlayer" parent="MusicController" index="3"]
+
+stream = ExtResource( 29 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[connection signal="body_entered" from="DeathArea/Area" to="DeathArea" method="_on_Area_body_entered"]
+
+[connection signal="finished" from="MusicController/AudioStreamHYR" to="MusicController" method="_on_AudioStreamHYR_finished"]
+
+[connection signal="finished" from="MusicController/AudioStreamFO" to="MusicController" method="_on_AudioStreamFO_finished"]
+
+[connection signal="finished" from="MusicController/AudioStreamC" to="MusicController" method="_on_AudioStreamC_finished"]
+
+[connection signal="finished" from="MusicController/AudioStreamCotS" to="MusicController" method="_on_AudioStreamCotS_finished"]
+
+

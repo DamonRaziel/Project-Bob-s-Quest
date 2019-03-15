@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/341666__sharesynth__electricity00.wav-339a7a362a854b626275b5bc73ebad0d.sample"
+
+[deps]
+
+source_file="res://SoundEffects/341666__sharesynth__electricity00.wav"
+dest_files=[ "res://.import/341666__sharesynth__electricity00.wav-339a7a362a854b626275b5bc73ebad0d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

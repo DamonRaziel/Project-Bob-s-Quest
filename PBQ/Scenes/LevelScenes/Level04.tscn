@@ -1,0 +1,692 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Scripts/LevelScripts/Level04Control.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/LevelScenes/BaseScenes/CitadelTownPart01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/LevelScripts/Level04Complete.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/NPCScenes/Town02Guard.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieMale.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieFemale.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyScenes/Creature.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/PickupScenes/PickupAppleGreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionHealth.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionMana.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionStrength.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/PickupScenes/PickupTea.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/PickupScenes/PickupArmourChainmail.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/PickupScenes/PickupArmourScalemail.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldBuckler.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldTower.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/PickupScenes/PickupWeaponAxe.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/PickupScenes/PickupWeaponWarhammerEarth.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/PickupScenes/PickupTorches.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/PickupScenes/PickupWeaponAxeIce.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/PickupScenes/PickupArrowsNormal.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Plank.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/PickupScenes/PickupsNew/NewCoins.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Music/MusicController.gd" type="Script" id=27]
+[ext_resource path="res://Music/Hiding Your Reality.ogg" type="AudioStream" id=28]
+[ext_resource path="res://Music/Full On.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Music/Crisis.ogg" type="AudioStream" id=30]
+[ext_resource path="res://Music/Curse of the Scarab.ogg" type="AudioStream" id=31]
+
+[sub_resource type="Environment" id=1]
+
+background_mode = 1
+background_sky_custom_fov = 0.0
+background_color = Color( 0.110107, 0, 0.171875, 1 )
+background_energy = 0.5
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0.276418, 0.0686646, 0.351563, 1 )
+ambient_light_energy = 0.5
+ambient_light_sky_contribution = 1.0
+fog_enabled = true
+fog_color = Color( 0.578125, 0.124207, 0.571033, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 15.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Ambient Light" ]
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 7.08577, 3.2806, 1 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 1, 9.2187, 28.7213 )
+
+[sub_resource type="BoxShape" id=4]
+
+extents = Vector3( 12.1981, 9.79507, 1 )
+
+[node name="Level04" type="Spatial"]
+
+script = ExtResource( 1 )
+
+[node name="RespawnPoint" type="Spatial" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.8272, 1.37124, 73.8221 )
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6257, 1.06086, 74.3681 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+
+environment = SubResource( 1 )
+
+[node name="LevelText" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "LongTestToMakeSureItWillFitAndBeCentered"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="LevelObjective" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "LongTestToMakeSureItWillFitAndBeCentered"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="CitadelTownPart01" parent="." index="5" instance=ExtResource( 4 )]
+
+[node name="EndOfLevel" type="Spatial" parent="." index="6"]
+
+editor/display_folded = true
+transform = Transform( 0.987462, 0, -0.157855, 0, 1, 0, 0.157855, 0, 0.987462, -44.7315, 0, -15.2799 )
+script = ExtResource( 5 )
+
+[node name="Area" type="Area" parent="EndOfLevel" index="0"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="EndOfLevel/Area" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80655, 0.368965 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="LevelEndParticles" parent="EndOfLevel/Area" index="1" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
+
+[node name="EndOfLevelShow" type="Spatial" parent="." index="7"]
+
+transform = Transform( 0.981927, 0, -0.189261, 0, 1, 0, 0.189261, 0, 0.981927, -44.6988, 0, -15.2798 )
+
+[node name="EndOfLevelHide" type="Spatial" parent="." index="8"]
+
+transform = Transform( 0.981927, 0, -0.189261, 0, 1, 0, 0.189261, 0, 0.981927, -44.6988, -21.7417, -15.2798 )
+
+[node name="OtherHolder" type="Spatial" parent="." index="9"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.03106, 44 )
+
+[node name="Town02Guard" parent="OtherHolder" index="0" instance=ExtResource( 7 )]
+
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -51, 0, 6 )
+
+[node name="EnemyHolder" type="Spatial" parent="." index="10"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.02686, 50 )
+
+[node name="ZombieMale" parent="EnemyHolder" index="0" instance=ExtResource( 8 )]
+
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -16, 0, 0 )
+
+[node name="ZombieMale2" parent="EnemyHolder" index="1" instance=ExtResource( 8 )]
+
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 12, 0, 11 )
+
+[node name="ZombieMale3" parent="EnemyHolder" index="2" instance=ExtResource( 8 )]
+
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 56, 0, 77 )
+
+[node name="ZombieMale4" parent="EnemyHolder" index="3" instance=ExtResource( 8 )]
+
+transform = Transform( 0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 26, 0, 39 )
+
+[node name="ZombieFemale" parent="EnemyHolder" index="4" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8 )
+
+[node name="ZombieFemale2" parent="EnemyHolder" index="5" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -43 )
+
+[node name="ZombieFemale3" parent="EnemyHolder" index="6" instance=ExtResource( 9 )]
+
+transform = Transform( -0.996195, 0, 0.0871556, 0, 1, 0, -0.0871556, 0, -0.996195, 30, 0, 64 )
+
+[node name="ZombieFemale4" parent="EnemyHolder" index="7" instance=ExtResource( 9 )]
+
+transform = Transform( -0.0871559, 0, 0.996195, 0, 1, 0, -0.996195, 0, -0.0871559, 22, 0, 42 )
+
+[node name="Creature" parent="EnemyHolder" index="8" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.266995, -17 )
+
+[node name="Creature2" parent="EnemyHolder" index="9" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.266995, -47 )
+
+[node name="LevelLimits" type="StaticBody" parent="." index="11"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 30 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="wall1" type="CollisionShape" parent="LevelLimits" index="0"]
+
+transform = Transform( -0.351688, 0, 0.936118, 0, 1, 0, -0.936118, 0, -0.351688, 87.3777, 8.07071, 59.4308 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall2" type="CollisionShape" parent="LevelLimits" index="1"]
+
+transform = Transform( -0.731035, 0, 0.68234, 0, 1, 0, -0.68234, 0, -0.731035, 117.859, 8.07071, 38.0842 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall4" type="CollisionShape" parent="LevelLimits" index="2"]
+
+transform = Transform( -0.927359, 0, -0.374173, 0, 1, 0, 0.374173, 0, -0.927359, 109.859, 8.07071, 21.0842 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall5" type="CollisionShape" parent="LevelLimits" index="3"]
+
+transform = Transform( -0.920322, 0, 0.391161, 0, 1, 0, -0.391161, 0, -0.920322, 86.859, 8.07071, 21.0842 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall6" type="CollisionShape" parent="LevelLimits" index="4"]
+
+transform = Transform( 0.0528026, 0, 0.998605, 0, 1, 0, -0.998605, 0, 0.0528026, 86.859, 8.07071, 21.0842 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall7" type="CollisionShape" parent="LevelLimits" index="5"]
+
+transform = Transform( 0.743457, 0, 0.668783, 0, 1, 0, -0.668783, 0, 0.743457, 33.6233, 8.07071, 27.2752 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall8" type="CollisionShape" parent="LevelLimits" index="6"]
+
+transform = Transform( 0.979704, 0, 0.200447, 0, 1, 0, -0.200447, 0, 0.979704, 21.6233, 8.07071, -0.724754 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall9" type="CollisionShape" parent="LevelLimits" index="7"]
+
+transform = Transform( -0.0272778, 0, 0.999628, 0, 1, 0, -0.999628, 0, -0.0272778, 55.6233, 8.07071, 25.2752 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall10" type="CollisionShape" parent="LevelLimits" index="8"]
+
+transform = Transform( 0.852064, 0, 0.523437, 0, 1, 0, -0.523437, 0, 0.852064, -4.84122, 8.07071, -14.7248 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall11" type="CollisionShape" parent="LevelLimits" index="9"]
+
+transform = Transform( 0.852064, 0, 0.523437, 0, 1, 0, -0.523437, 0, 0.852064, -9.64357, 8.07071, -25.7248 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall12" type="CollisionShape" parent="LevelLimits" index="10"]
+
+transform = Transform( 0.0599493, 0, 0.998201, 0, 1, 0, -0.998201, 0, 0.0599493, 37.3564, 8.07071, 10.2752 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall13" type="CollisionShape" parent="LevelLimits" index="11"]
+
+transform = Transform( 0.137896, 0, 0.990447, 0, 1, 0, -0.990447, 0, 0.137896, -40.6436, 8.07071, -50.1784 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall14" type="CollisionShape" parent="LevelLimits" index="12"]
+
+transform = Transform( -0.0685377, 0, 0.997648, 0, 1, 0, -0.997648, 0, -0.0685377, -50.6436, 8.07071, -48.9491 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall15" type="CollisionShape" parent="LevelLimits" index="13"]
+
+transform = Transform( -0.900238, 0, 0.435398, 0, 1, 0, -0.435398, 0, -0.900238, -80.0914, 8.07071, -22.3082 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall16" type="CollisionShape" parent="LevelLimits" index="14"]
+
+transform = Transform( -0.973503, 0, -0.228672, 0, 1, 0, 0.228672, 0, -0.973503, -83.2152, 8.07071, 20.6918 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall17" type="CollisionShape" parent="LevelLimits" index="15"]
+
+transform = Transform( -0.801498, 0, -0.597998, 0, 1, 0, 0.597998, 0, -0.801498, -67.2152, 8.07071, 54.6918 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall18" type="CollisionShape" parent="LevelLimits" index="16"]
+
+transform = Transform( -0.130273, 0, -0.991478, 0, 1, 0, 0.991478, 0, -0.130273, -46.8966, 8.07071, 71.1428 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall19" type="CollisionShape" parent="LevelLimits" index="17"]
+
+transform = Transform( -0.970316, 0, -0.241841, 0, 1, 0, 0.241841, 0, -0.970316, -12.0211, 8.07071, 102.006 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall20" type="CollisionShape" parent="LevelLimits" index="18"]
+
+transform = Transform( -0.592149, 0, -0.805828, 0, 1, 0, 0.805828, 0, -0.592149, 1.97891, 8.07071, 110.448 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall21" type="CollisionShape" parent="LevelLimits" index="19"]
+
+transform = Transform( 0.401602, 0, -0.915814, 0, 1, 0, 0.915814, 0, 0.401602, 36.9789, 8.07071, 113.085 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall22" type="CollisionShape" parent="LevelLimits" index="20"]
+
+transform = Transform( 0.993192, 0, -0.11649, 0, 1, 0, 0.11649, 0, 0.993192, 57.1437, 8.07071, 97.1583 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="wall3" type="CollisionShape" parent="LevelLimits" index="21"]
+
+transform = Transform( -0.529523, 0, 0.848295, 0, 1, 0, -0.848295, 0, -0.529523, 102.859, 8.07071, 52.0842 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="CollisionShape" type="CollisionShape" parent="LevelLimits" index="22"]
+
+transform = Transform( 0.99869, 0, 0.051167, 0, 1, 0, -0.051167, 0, 0.99869, 64.3985, 7.48659, 47.4205 )
+shape = SubResource( 4 )
+disabled = false
+
+[node name="PickupsHolder" type="Spatial" parent="." index="12"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupAppleGreen" parent="PickupsHolder" index="0" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1461, 0, 107.949 )
+
+[node name="PickupAppleGreen5" parent="PickupsHolder" index="1" instance=ExtResource( 11 )]
+
+transform = Transform( 0.513495, 0, -0.858093, 0, 1, 0, 0.858093, 0, 0.513495, -5.75243, 0, 68.0632 )
+
+[node name="PickupAppleGreen2" parent="PickupsHolder" index="2" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2926, 0, 107.949 )
+
+[node name="PickupAppleGreen4" parent="PickupsHolder" index="3" instance=ExtResource( 11 )]
+
+transform = Transform( 0.513495, 0, -0.858093, 0, 1, 0, 0.858093, 0, 0.513495, -2.59626, 0, 73.3375 )
+
+[node name="PickupAppleGreen3" parent="PickupsHolder" index="4" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2341, 0, 107.949 )
+
+[node name="PickupAppleGreen6" parent="PickupsHolder" index="5" instance=ExtResource( 11 )]
+
+transform = Transform( 0.513495, 0, -0.858093, 0, 1, 0, 0.858093, 0, 0.513495, 0.454696, 0, 78.4359 )
+
+[node name="PickupPotionHealth" parent="PickupsHolder" index="6" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.799, 0, 93.9775 )
+
+[node name="PickupPotionHealth2" parent="PickupsHolder" index="7" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5007, 11, 73.7142 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupPotionMana" parent="PickupsHolder" index="8" instance=ExtResource( 13 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 94.3812, 0, 64.6055 )
+
+[node name="PickupPotionMana2" parent="PickupsHolder" index="9" instance=ExtResource( 13 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1522, 0, 107.011 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupPotionStrength" parent="PickupsHolder" index="10" instance=ExtResource( 14 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -85.0999, 0, 49.9502 )
+
+[node name="PickupTea" parent="PickupsHolder" index="11" instance=ExtResource( 15 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.1013, 0, 51.2824 )
+
+[node name="PickupTea2" parent="PickupsHolder" index="12" instance=ExtResource( 15 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3012, 11, 77.0722 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupEquipHolder" type="Spatial" parent="." index="13"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupArmourChainmail" parent="PickupEquipHolder" index="0" instance=ExtResource( 16 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.1786, 0, 28.2789 )
+
+[node name="PickupArmourScalemail" parent="PickupEquipHolder" index="1" instance=ExtResource( 17 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7082, 0, 10.302 )
+
+[node name="PickupShieldBuckler" parent="PickupEquipHolder" index="2" instance=ExtResource( 18 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7339, 0, 89.6443 )
+
+[node name="PickupShieldTower" parent="PickupEquipHolder" index="3" instance=ExtResource( 19 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.8955, 11, 39.5744 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupWeaponAxe" parent="PickupEquipHolder" index="4" instance=ExtResource( 20 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3899, 0, 97.0127 )
+
+[node name="PickupWeaponWarhammer" parent="PickupEquipHolder" index="5" instance=ExtResource( 21 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8705, 11, 69.0071 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickupTorches" parent="PickupEquipHolder" index="6" instance=ExtResource( 22 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1845, 0, 90.822 )
+
+[node name="PickupWeaponAxe2" parent="PickupEquipHolder" index="7" instance=ExtResource( 23 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7267, 0, 105.466 )
+
+[node name="PickupArrowsNormal" parent="PickupEquipHolder" index="8" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4241, 0, 79.2617 )
+
+[node name="PickupArrowsNormal2" parent="PickupEquipHolder" index="9" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8296, 0, 79.2617 )
+
+[node name="PickupArrowsNormal3" parent="PickupEquipHolder" index="10" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.3645, 0, 27.5903 )
+
+[node name="PickupArrowsNormal4" parent="PickupEquipHolder" index="11" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.9716, 0, 27.5903 )
+
+[node name="PickupArrowsNormal5" parent="PickupEquipHolder" index="12" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24024, 0, 123.827 )
+
+[node name="Planks" type="Spatial" parent="." index="14"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1814, 9.56336, 75.9073 )
+
+[node name="Plank" parent="Planks" index="0" instance=ExtResource( 25 )]
+
+transform = Transform( 0.911664, 0, 0.410937, 0, 1, 0, -0.410937, 0, 0.911664, -55.3142, 0, -22.9992 )
+
+[node name="Plank2" parent="Planks" index="1" instance=ExtResource( 25 )]
+
+transform = Transform( 0.990156, 0, -0.139964, 0, 1, 0, 0.139964, 0, 0.990156, -60.0956, 0, -49.1182 )
+
+[node name="CoinsHolder" type="Spatial" parent="." index="15"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5045, 1.4, 71.3031 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NewCoins" parent="CoinsHolder" index="0" instance=ExtResource( 26 )]
+
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 56.3462, 0, 21.4301 )
+
+[node name="NewCoins2" parent="CoinsHolder" index="1" instance=ExtResource( 26 )]
+
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 66.4057, 0, 17.1912 )
+
+[node name="NewCoins3" parent="CoinsHolder" index="2" instance=ExtResource( 26 )]
+
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 76.4968, 0, 13.1737 )
+
+[node name="NewCoins6" parent="CoinsHolder" index="3" instance=ExtResource( 26 )]
+
+transform = Transform( 1.92858, 0, -0.529696, 0, 2, 0, 0.529696, 0, 1.92858, 7.55775, 0, 64.7448 )
+
+[node name="NewCoins4" parent="CoinsHolder" index="4" instance=ExtResource( 26 )]
+
+transform = Transform( 1.92858, 0, -0.529696, 0, 2, 0, 0.529696, 0, 1.92858, 29.1754, 0, 62.1201 )
+
+[node name="NewCoins5" parent="CoinsHolder" index="5" instance=ExtResource( 26 )]
+
+transform = Transform( 1.92858, 0, -0.529696, 0, 2, 0, 0.529696, 0, 1.92858, 18.3807, 0, 63.3215 )
+
+[node name="NewCoins9" parent="CoinsHolder" index="6" instance=ExtResource( 26 )]
+
+transform = Transform( 1.96304, 0, -0.382729, 0, 2, 0, 0.382729, 0, 1.96304, -7.67824, 0, -18.311 )
+
+[node name="NewCoins7" parent="CoinsHolder" index="7" instance=ExtResource( 26 )]
+
+transform = Transform( 1.96304, 0, -0.382729, 0, 2, 0, 0.382729, 0, 1.96304, 3.0065, 0, -20.5466 )
+
+[node name="NewCoins8" parent="CoinsHolder" index="8" instance=ExtResource( 26 )]
+
+transform = Transform( 1.96304, 0, -0.382729, 0, 2, 0, 0.382729, 0, 1.96304, 13.6799, 0, -22.5587 )
+
+[node name="NewCoins11" parent="CoinsHolder" index="9" instance=ExtResource( 26 )]
+
+transform = Transform( 1.91216, 0, -0.586216, 0, 2, 0, 0.586216, 0, 1.91216, -70.9934, 0, -83.8112 )
+
+[node name="NewCoins12" parent="CoinsHolder" index="10" instance=ExtResource( 26 )]
+
+transform = Transform( 1.91216, 0, -0.586216, 0, 2, 0, 0.586216, 0, 1.91216, -49.3079, 0, -85.7986 )
+
+[node name="NewCoins10" parent="CoinsHolder" index="11" instance=ExtResource( 26 )]
+
+transform = Transform( 1.91216, 0, -0.586216, 0, 2, 0, 0.586216, 0, 1.91216, -60.1333, 0, -84.9154 )
+
+[node name="NewCoins15" parent="CoinsHolder" index="12" instance=ExtResource( 26 )]
+
+transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -78.2254, 0, -10.4515 )
+
+[node name="NewCoins14" parent="CoinsHolder" index="13" instance=ExtResource( 26 )]
+
+transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -73.0642, 0, -0.832611 )
+
+[node name="NewCoins13" parent="CoinsHolder" index="14" instance=ExtResource( 26 )]
+
+transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -68.1205, 0, 8.8385 )
+
+[node name="MusicController" type="Node" parent="." index="16"]
+
+pause_mode = 2
+editor/display_folded = true
+script = ExtResource( 27 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="AudioStreamHYR" type="AudioStreamPlayer" parent="MusicController" index="0"]
+
+stream = ExtResource( 28 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamFO" type="AudioStreamPlayer" parent="MusicController" index="1"]
+
+stream = ExtResource( 29 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamC" type="AudioStreamPlayer" parent="MusicController" index="2"]
+
+stream = ExtResource( 30 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamCotS" type="AudioStreamPlayer" parent="MusicController" index="3"]
+
+stream = ExtResource( 31 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[connection signal="finished" from="MusicController/AudioStreamHYR" to="MusicController" method="_on_AudioStreamHYR_finished"]
+
+[connection signal="finished" from="MusicController/AudioStreamFO" to="MusicController" method="_on_AudioStreamFO_finished"]
+
+[connection signal="finished" from="MusicController/AudioStreamC" to="MusicController" method="_on_AudioStreamC_finished"]
+
+[connection signal="finished" from="MusicController/AudioStreamCotS" to="MusicController" method="_on_AudioStreamCotS_finished"]
+
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pickup_Coin4.wav-c75af9d109e4c375b03b5967a0d65bc6.sample"
+
+[deps]
+
+source_file="res://SoundEffects/Pickup_Coin4.wav"
+dest_files=[ "res://.import/Pickup_Coin4.wav-c75af9d109e4c375b03b5967a0d65bc6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

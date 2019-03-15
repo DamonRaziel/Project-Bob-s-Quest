@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ModelsNew/ModelsEquipment/Torch.dae" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/PlayerScripts/ItemSelfDestruct.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/FireParticles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Flame01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Flame01.gd" type="Script" id=5]
+
+[node name="Torch" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+this_item_number = 38
+
+[node name="Torch" parent="." index="0"]
+
+transform = Transform( 1.31134e-007, 0, -1, 0, 1, 0, 1, 0, 1.31134e-007, 0.0562435, -0.0155439, -0.0141277 )
+
+[node name="OmniLight" type="OmniLight" parent="Torch" index="0"]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.00145076, -0.00143987, 0.735599 )
+layers = 1
+light_color = Color( 1, 0.632813, 0, 1 )
+light_energy = 0.5
+light_indirect_energy = 0.5
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0.375, 0.219727, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 10.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Omni" ]
+
+[node name="FireParticles" parent="Torch" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -8.28877e-008, 0, 0.606712 )
+
+[node name="FlameAttachment" type="Spatial" parent="Torch" index="2"]
+
+transform = Transform( -1.31134e-007, 1, 4.37114e-008, -8.74226e-008, -4.37114e-008, 1, 1, 1.31134e-007, 8.74226e-008, -4.56348e-008, 9.31323e-010, 0.561708 )
+
+[node name="Flame01" parent="Torch" index="3" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -4.56348e-008, 0, 0.561708 )
+script = ExtResource( 5 )
+
+

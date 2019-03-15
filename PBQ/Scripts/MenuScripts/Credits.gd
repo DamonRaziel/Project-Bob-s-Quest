@@ -1,0 +1,85 @@
+extends Node
+
+onready var credits_text = get_node("CreditsText")
+var credit_text_content = ""
+
+func _ready():
+	# purple = #9400BF, orange = #FFB100, blue = #0002BF, light blue = #00FDFF, green = #0DBF00, red = #E40000
+	
+	credit_text_content = "[color=#ffb100]Jenny, aka hunny bun, aka Neng.  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#ffb100]Credit and thanks for putting up with me having this as a hobby and spending time on my laptop. Love her lots. X  [/color]\n"
+
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#9400bf]Damon R. [/color]\n"
+	credit_text_content = credit_text_content + "[color=#9400bf]Brought together various tutorials as well as figuring out how things work to produce an example 3d prject to show what is possible and to get familiar with a new game engine. Project Bob's Quest can be used as a base for future projects.  [/color]\n"
+	
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#0002bf]Sound effects. [/color]\n"
+	credit_text_content = credit_text_content + "[color=#0002bf]Sourced from various websites, all royalty free.  [/color]\n"
+	
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#0dbf00]Godot Game engine. [/color]\n"
+	credit_text_content = credit_text_content + "[color=#0dbf00]The makers and community for providing the game engine, and documentation and answers from the forums.  [/color]\n"
+	
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Music. [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Unholy Knight  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Mighty and meek  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Man down [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Hiding your reality  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Full on [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Crisis  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Curse of the scarab  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Heavy interlude  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Burnt spirit  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Aggressor  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + "\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Outfoxing the fox  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Kevin MacLeod (incompetech.com) [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]Licensed under Creative Commons: By Attribution 3.0 License  [/color]\n"
+	credit_text_content = credit_text_content + "[color=#00fdff]http://creativecommons.org/licenses/by/3.0/  [/color]\n"
+	credit_text_content = credit_text_content + ""
+	
+	credits_text.set_bbcode(credit_text_content)
+
+func _on_CreditsBackButton_pressed():
+	get_parent().get_parent().move_menu_other_left = true

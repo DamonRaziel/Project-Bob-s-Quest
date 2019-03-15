@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Unholy Knight.ogg-954d54c37d3b5dfac1a9574289c04d6c.oggstr"
+
+[deps]
+
+source_file="res://Music/Unholy Knight.ogg"
+dest_files=[ "res://.import/Unholy Knight.ogg-954d54c37d3b5dfac1a9574289c04d6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

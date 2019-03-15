@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mighty and Meek.ogg-cbfd01d639bcb68416233923df23c253.oggstr"
+
+[deps]
+
+source_file="res://Music/Mighty and Meek.ogg"
+dest_files=[ "res://.import/Mighty and Meek.ogg-cbfd01d639bcb68416233923df23c253.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

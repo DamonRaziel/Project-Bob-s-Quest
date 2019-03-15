@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ModelsNew/ModelsCharactersForMenus/Player03Menus.dae" type="PackedScene" id=1]
+
+[node name="Player03ForMenus" index="0" instance=ExtResource( 1 )]
+
+

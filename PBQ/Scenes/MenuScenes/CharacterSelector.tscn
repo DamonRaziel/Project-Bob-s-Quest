@@ -1,0 +1,463 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/PlayerScenes/ForMenusBackground/Player01ForMenus.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/PlayerScenes/ForMenusBackground/Player02ForMenus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/PlayerScenes/ForMenusBackground/Player03ForMenus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlayerScenes/ForMenusBackground/Player04ForMenus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PlayerScenes/ForMenusBackground/Player05ForMenus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PlayerScenes/ForMenusBackground/Player06ForMenus.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/LevelScenes/BaseScenes/Castle01ForMenus.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/MenuScripts/CharacterSelect.gd" type="Script" id=8]
+[ext_resource path="res://OtherHolder/MenuBG01.01.png" type="Texture" id=9]
+[ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=10]
+[ext_resource path="res://OtherHolder/rm-albion/RM Albion font medium.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Music/Unholy Knight.ogg" type="AudioStream" id=12]
+
+[sub_resource type="CylinderMesh" id=1]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+top_radius = 1.0
+bottom_radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 4
+
+[sub_resource type="Environment" id=2]
+
+background_mode = 1
+background_sky_custom_fov = 0.0
+background_color = Color( 0.110107, 0, 0.171875, 1 )
+background_energy = 0.5
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0.276418, 0.0686646, 0.351563, 1 )
+ambient_light_energy = 0.5
+ambient_light_sky_contribution = 1.0
+fog_enabled = true
+fog_color = Color( 0.578125, 0.124207, 0.571033, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 15.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Ambient Light" ]
+
+[node name="CharacterSelector" type="Spatial"]
+
+_sections_unfolded = [ "Rect" ]
+
+[node name="CharacterModelHolder" type="Spatial" parent="." index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37782, 14.7051 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="CharacterModelHolder" index="0"]
+
+transform = Transform( 3, 0, 0, 0, 0.01, 0, 0, 0, 3, 0, 0, 0 )
+visible = false
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player01ForMenus" parent="CharacterModelHolder" index="1" instance=ExtResource( 1 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.13243 )
+
+[node name="Player02ForMenus" parent="CharacterModelHolder" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.23192, 0, 2.22047 )
+
+[node name="Player03ForMenus" parent="CharacterModelHolder" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 3.14334, 0, -0.0620518 )
+
+[node name="Player04ForMenus" parent="CharacterModelHolder" index="4" instance=ExtResource( 4 )]
+
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 2.16113, 0, -2.26684 )
+
+[node name="Player05ForMenus" parent="CharacterModelHolder" index="5" instance=ExtResource( 5 )]
+
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, -3.14838 )
+
+[node name="Player06ForMenus" parent="CharacterModelHolder" index="6" instance=ExtResource( 6 )]
+
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -2.27133, 0, -2.18303 )
+
+[node name="Castle01ForMenus" parent="." index="1" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.345756, 0 )
+
+[node name="CharacterSelect" type="Spatial" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37782, 14.7051 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Transform", "custom_fonts" ]
+speed = 3.0
+
+[node name="BackgrounHolder" type="Control" parent="CharacterSelect" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1560.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Background1" type="NinePatchRect" parent="CharacterSelect/BackgrounHolder" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+
+[node name="Background2" type="NinePatchRect" parent="CharacterSelect/BackgrounHolder" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 360.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+patch_margin_top = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Patch Margin", "Rect" ]
+
+[node name="CharacterSelectTitle" type="Control" parent="CharacterSelect" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_right = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="TitleText" type="Label" parent="CharacterSelect/CharacterSelectTitle" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 8.0
+margin_right = 344.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+text = "Character Selection"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="CharName" type="Label" parent="CharacterSelect/CharacterSelectTitle" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -150.5
+margin_top = 94.0
+margin_right = 149.5
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+text = "Bob"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Info" type="RichTextLabel" parent="CharacterSelect/CharacterSelectTitle" index="2"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -350.0
+margin_right = 150.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Test"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="LeftButton" type="Button" parent="CharacterSelect/CharacterSelectTitle" index="3"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -139.5
+margin_top = -145.0
+margin_right = -56.5
+margin_bottom = -102.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Prev."
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="RightButton" type="Button" parent="CharacterSelect/CharacterSelectTitle" index="4"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 55.5
+margin_top = -145.0
+margin_right = 138.5
+margin_bottom = -102.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Next."
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="SelectButton" type="Button" parent="CharacterSelect/CharacterSelectTitle" index="5"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -46.5
+margin_top = -145.0
+margin_right = 45.5
+margin_bottom = -102.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Select"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BackButton" type="Button" parent="CharacterSelect/CharacterSelectTitle" index="6"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -92.0
+margin_right = 36.5
+margin_bottom = -49.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="CamHolder" type="Spatial" parent="CharacterSelect" index="2"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.57628e-007, 0 )
+
+[node name="CharacterSelectCam" type="Camera" parent="CharacterSelect/CamHolder" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.989922, 5.29801 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterSelect" index="3"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "MusicBus"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
+
+environment = SubResource( 2 )
+
+[connection signal="pressed" from="CharacterSelect/CharacterSelectTitle/LeftButton" to="CharacterSelect" method="_on_LeftButton_pressed"]
+
+[connection signal="pressed" from="CharacterSelect/CharacterSelectTitle/RightButton" to="CharacterSelect" method="_on_RightButton_pressed"]
+
+[connection signal="pressed" from="CharacterSelect/CharacterSelectTitle/SelectButton" to="CharacterSelect" method="_on_SelectButton_pressed"]
+
+[connection signal="pressed" from="CharacterSelect/CharacterSelectTitle/BackButton" to="CharacterSelect" method="_on_BackButton_pressed"]
+
+

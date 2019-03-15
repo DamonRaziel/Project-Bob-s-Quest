@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Man Down.ogg-e26c691d905468055dc13b79dfeac423.oggstr"
+
+[deps]
+
+source_file="res://Music/Man Down.ogg"
+dest_files=[ "res://.import/Man Down.ogg-e26c691d905468055dc13b79dfeac423.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
