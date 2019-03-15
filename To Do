@@ -34,3 +34,7 @@ Create spawnable enemies.
 Enemies are currntly set at level setup. Past attempts didn't work properly.
 Create spawn script that handles where in heirarchy to place enemies so that all heirarchy dependant variables (eg "player") can be found.
 Script needs some form of delay and "if null: do this instead" function.
+
+Setup camera position reset.
+Allow players to press a button to reposition the camera behind the player.
+Past attempts unsuccessful.
