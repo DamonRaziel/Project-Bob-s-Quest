@@ -38,3 +38,7 @@ Script needs some form of delay and "if null: do this instead" function.
 Setup camera position reset.
 Allow players to press a button to reposition the camera behind the player.
 Past attempts unsuccessful.
+
+Textures for map area.
+Make and apply in Godot.
+Need to work out scales for maps.
