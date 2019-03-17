@@ -10,10 +10,15 @@ If you build the project for execution from desktop, you still need to copy acro
 
 Folder structure diagram:
 
-PBQ (Main Folder).
-Database (Sub Folder).
-   Database_Items.json (Json File).
-PBQ.exe (Application).
-PBQ.pck (PCK File).
+PBQ (Main Folder)-
+
+-Database (Sub Folder)--
+
+   --Database_Items.json (Json File)
+
+-PBQ.exe (Application)
+
+-PBQ.pck (PCK File)
+
 
 Released under same MIT licence as Godot Game Engine.
