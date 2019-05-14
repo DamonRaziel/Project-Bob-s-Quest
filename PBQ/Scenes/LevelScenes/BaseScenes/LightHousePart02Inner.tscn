@@ -23,7 +23,8 @@ data = PoolVector3Array( 0.0197, -0.0872, 0.4172, 0.0429, -0.0429, 0.4453, 0.025
 [node name="LightHouseInner" parent="." index="0"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193922, 0.0493949, -0.284317 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody" type="StaticBody" parent="LightHouseInner" index="0"]
 
@@ -44,7 +45,8 @@ disabled = false
 [node name="LightHouseInnerDoor01" parent="." index="1"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.946861, 1.49613, 19.662 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.697173, 1.49613, 19.9537 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody" type="StaticBody" parent="LightHouseInnerDoor01" index="0"]
 
@@ -65,7 +67,7 @@ disabled = false
 [node name="LightHouseInnerDoor02" parent="." index="2"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.472137, 1.49613, 19.662 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.721825, 1.49613, 19.9537 )
 
 [node name="StaticBody" type="StaticBody" parent="LightHouseInnerDoor02" index="0"]
 
@@ -86,7 +88,7 @@ disabled = false
 [node name="LightHouseInnerDoor03" parent="." index="3"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8715, 1.49613, 6.09811 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0883, 1.49613, 6.35798 )
 
 [node name="StaticBody" type="StaticBody" parent="LightHouseInnerDoor03" index="0"]
 
@@ -106,32 +108,32 @@ disabled = false
 
 [node name="LightHouseInnerLight01" parent="." index="4"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -0.163013, 27.9647, -0.523926 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 27.9647, 0 )
 light_color = Color( 1, 0, 0.960938, 1 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 30.0
 omni_shadow_mode = 0
-_sections_unfolded = [ "Omni", "Shadow" ]
+_sections_unfolded = [ "Omni", "Shadow", "Transform" ]
 
 [node name="LightHouseInnerLight02" parent="." index="5"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -0.163013, 17.8241, -0.523926 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 17.8241, 0 )
 light_color = Color( 1, 0, 0.960938, 1 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 30.0
 omni_shadow_mode = 0
-_sections_unfolded = [ "Omni" ]
+_sections_unfolded = [ "Omni", "Transform" ]
 
 [node name="LightHouseInnerLight03" parent="." index="6"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -0.163013, 6.51173, -0.523926 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 6.51173, 0 )
 light_color = Color( 1, 0, 0.960938, 1 )
 light_energy = 0.5
 shadow_enabled = true
 omni_range = 30.0
 omni_shadow_mode = 0
-_sections_unfolded = [ "Omni" ]
+_sections_unfolded = [ "Omni", "Transform" ]
 
 

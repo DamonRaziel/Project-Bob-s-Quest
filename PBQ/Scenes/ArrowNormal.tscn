@@ -54,7 +54,7 @@ surfaces/2 = {
 
 extents = Vector3( 0.0361871, 0.0818142, 0.0862819 )
 
-[node name="ArrowNormal" type="Spatial" index="0"]
+[node name="ArrowNormal" type="Spatial"]
 
 script = ExtResource( 1 )
 

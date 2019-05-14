@@ -24,12 +24,20 @@ var url_savefile_status = "user://SaveFiles.bin"
 
 var url_options_data = "user://OptionsFile.bin"
 
+var url_game_data = "user://GameData.bin"
+
+var url_arena_scoreboard = "user://ArenaScoreboard.bin"
+
+onready var gameData = Global_DataParser.load_data(url_game_data)
+
+onready var arena_scoreboard_data = Global_DataParser.load_data(url_arena_scoreboard)
+
 var inventory = {}
-var inventory_maxSlots = 40
+var inventory_maxSlots = 45 #40
 
 #shop inventory vars. Reset at certain scenes, eg charcater selection
 var shop_inventory = {}
-var shop_inventory_maxSlots = 40
+var shop_inventory_maxSlots = 54 #40
 
 #original from inventory
 onready var playerData = Global_DataParser.load_data(url_PlayerData)
@@ -135,6 +143,19 @@ func _ready():
 
 #initial setup of files
 func load_data():
+	if (gameData == null):
+		gameData = PlayerData.Game_Data
+		Global_DataParser.write_data(url_game_data, gameData)
+	else:
+		PlayerData.Game_Data = gameData
+		print (gameData)
+	
+	if (arena_scoreboard_data == null):
+		arena_scoreboard_data = PlayerData.arena_scores
+		Global_DataParser.write_data(url_arena_scoreboard, arena_scoreboard_data)
+	else:
+		PlayerData.arena_scores = arena_scoreboard_data
+	
 	if (options_file == null):
 		options_file = PlayerData.Options_Data
 		Global_DataParser.write_data(url_options_data, options_file)
@@ -557,3 +578,12 @@ func shop_moveItem(fromSlot, toSlot):
 	var temp_ToSlotItem = shop_inventory[String(toSlot)]
 	shop_inventory[String(toSlot)] = shop_inventory[String(fromSlot)]
 	shop_inventory[String(fromSlot)] = temp_ToSlotItem
+
+#general game data that should be kept between games regardless of player
+func save_game_data():
+	Global_DataParser.write_data(url_options_data, PlayerData.Game_Data)
+
+func save_arena_scores():
+	Global_DataParser.write_data(url_arena_scoreboard, PlayerData.arena_scores)
+
+

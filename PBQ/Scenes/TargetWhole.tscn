@@ -68,7 +68,7 @@ surfaces/3 = {
 "vertex_count": 32
 }
 
-[node name="TargetWhole" type="Spatial" index="0"]
+[node name="TargetWhole" type="Spatial"]
 
 [node name="Target" type="StaticBody" parent="." index="0"]
 

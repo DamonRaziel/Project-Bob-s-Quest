@@ -1,0 +1,712 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Barrel01Broken.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/RigidBodyHitTest.gd" type="Script" id=2]
+[ext_resource path="res://ModelHolder/LevelModels/ExtrasModels/CrateMat01.material" type="Material" id=3]
+
+[sub_resource type="ArrayMesh" id=1]
+
+resource_name = "Cube.004"
+blend_shape_mode = 1
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+surfaces/0 = {
+"aabb": AABB( -0.169538, -0.251861, -0.170866, 0.354858, 0.5, 0.354858 ),
+"array_data": PoolByteArray( 136, 47, 90, 50, 119, 177, 0, 60, 100, 25, 183, 0, 226, 123, 0, 129, 174, 59, 46, 56, 74, 40, 240, 51, 30, 40, 0, 60, 62, 90, 62, 0, 171, 85, 218, 129, 23, 60, 29, 53, 188, 46, 240, 51, 119, 177, 0, 60, 75, 80, 193, 0, 182, 97, 33, 129, 23, 60, 46, 56, 120, 41, 90, 50, 76, 41, 0, 60, 86, 32, 86, 0, 215, 120, 253, 129, 174, 59, 237, 52, 120, 41, 90, 50, 76, 41, 0, 60, 86, 32, 86, 0, 253, 120, 215, 129, 174, 59, 230, 57, 108, 177, 240, 51, 166, 46, 0, 60, 193, 80, 75, 0, 36, 97, 184, 129, 23, 60, 46, 56, 74, 40, 240, 51, 30, 40, 0, 60, 62, 90, 62, 0, 218, 85, 171, 129, 23, 60, 206, 57, 108, 177, 90, 50, 114, 47, 0, 60, 183, 25, 100, 0, 0, 123, 226, 129, 174, 59, 46, 56, 238, 45, 7, 180, 217, 45, 0, 60, 72, 181, 72, 0, 58, 101, 47, 129, 46, 56, 71, 58, 108, 177, 159, 151, 85, 49, 0, 60, 186, 16, 104, 0, 0, 125, 237, 129, 46, 58, 46, 56, 29, 45, 159, 151, 7, 45, 0, 60, 88, 20, 88, 0, 251, 124, 233, 129, 46, 58, 45, 58, 108, 177, 7, 180, 227, 49, 0, 60, 197, 188, 88, 0, 213, 106, 53, 129, 46, 56, 46, 56, 238, 49, 7, 180, 119, 177, 0, 60, 88, 188, 197, 0, 53, 106, 213, 129, 46, 56, 46, 56, 29, 45, 159, 151, 7, 45, 0, 60, 88, 20, 88, 0, 234, 124, 251, 129, 46, 58, 95, 52, 96, 49, 159, 151, 119, 177, 0, 60, 104, 16, 186, 0, 237, 125, 0, 129, 46, 58, 46, 56, 238, 45, 7, 180, 217, 45, 0, 60, 72, 181, 72, 0, 47, 101, 58, 129, 46, 56, 42, 52, 52, 166, 240, 51, 139, 166, 0, 60, 205, 103, 205, 0, 73, 73, 73, 127, 204, 37, 9, 54, 237, 38, 125, 50, 119, 177, 0, 60, 223, 28, 137, 0, 7, 123, 26, 127, 204, 165, 46, 56, 237, 38, 240, 51, 119, 177, 0, 60, 198, 75, 173, 0, 43, 101, 61, 127, 204, 37, 46, 56, 52, 166, 125, 50, 139, 166, 0, 60, 186, 78, 186, 0, 55, 99, 55, 127, 204, 165, 9, 54, 108, 177, 240, 51, 166, 46, 0, 60, 193, 80, 75, 0, 210, 58, 154, 129, 238, 51, 46, 56, 52, 166, 240, 51, 139, 166, 0, 60, 205, 103, 205, 0, 22, 210, 140, 129, 9, 54, 87, 57, 74, 40, 240, 51, 30, 40, 0, 60, 62, 90, 62, 0, 35, 51, 146, 129, 29, 53, 206, 57, 108, 177, 240, 51, 150, 38, 0, 60, 173, 75, 198, 0, 43, 217, 144, 129, 55, 53, 46, 56, 237, 38, 240, 51, 119, 177, 0, 60, 198, 75, 173, 0, 50, 191, 161, 129, 46, 56, 193, 57, 188, 46, 240, 51, 119, 177, 0, 60, 75, 80, 193, 0, 213, 210, 147, 129, 46, 56, 97, 58, 237, 38, 125, 50, 119, 177, 0, 60, 223, 28, 137, 0, 91, 180, 213, 129, 46, 56, 193, 57, 108, 177, 125, 50, 150, 38, 0, 60, 137, 28, 223, 0, 32, 249, 134, 129, 55, 53, 46, 56, 108, 177, 125, 50, 119, 177, 0, 60, 183, 73, 183, 0, 51, 205, 153, 129, 46, 56, 46, 56, 52, 166, 125, 50, 139, 166, 0, 60, 186, 78, 186, 0, 46, 204, 151, 129, 9, 54, 87, 57, 108, 177, 195, 48, 31, 48, 0, 60, 183, 25, 100, 0, 0, 123, 225, 129, 46, 59, 46, 56, 165, 42, 195, 48, 122, 42, 0, 60, 86, 32, 86, 0, 249, 121, 219, 129, 46, 59, 253, 57, 165, 42, 195, 48, 122, 42, 0, 60, 86, 32, 86, 0, 218, 120, 250, 129, 46, 59, 190, 52, 42, 48, 195, 48, 119, 177, 0, 60, 100, 25, 183, 0, 233, 124, 10, 129, 46, 59, 46, 56, 108, 177, 240, 51, 150, 38, 0, 60, 173, 75, 198, 0, 61, 101, 43, 127, 204, 37, 46, 56, 52, 166, 125, 50, 139, 166, 0, 60, 186, 78, 186, 0, 55, 99, 55, 127, 204, 165, 87, 57, 52, 166, 240, 51, 139, 166, 0, 60, 205, 103, 205, 0, 73, 73, 73, 127, 204, 37, 87, 57, 108, 177, 125, 50, 150, 38, 0, 60, 137, 28, 223, 0, 26, 123, 7, 127, 204, 165, 46, 56, 108, 177, 203, 48, 119, 177, 0, 60, 183, 183, 183, 0, 127, 0, 0, 129, 46, 56, 46, 56, 108, 177, 203, 48, 1, 42, 0, 60, 140, 221, 222, 0, 127, 0, 0, 129, 55, 53, 46, 56, 108, 177, 125, 50, 150, 38, 0, 60, 137, 28, 223, 0, 29, 123, 253, 129, 204, 165, 46, 56, 108, 177, 240, 51, 150, 38, 0, 60, 173, 75, 198, 0, 61, 101, 43, 129, 204, 37, 46, 56, 108, 177, 90, 50, 114, 47, 0, 60, 183, 25, 100, 0, 8, 135, 36, 127, 174, 59, 46, 56, 108, 177, 203, 48, 1, 42, 0, 60, 140, 221, 222, 0, 18, 143, 53, 127, 55, 53, 46, 56, 108, 177, 125, 50, 150, 38, 0, 60, 137, 28, 223, 0, 219, 142, 38, 127, 204, 165, 46, 56, 108, 177, 203, 48, 1, 42, 0, 60, 140, 221, 222, 0, 232, 118, 218, 129, 55, 53, 46, 56, 108, 177, 159, 151, 226, 44, 0, 60, 152, 247, 185, 0, 127, 0, 0, 129, 46, 58, 46, 56, 108, 177, 7, 180, 254, 45, 0, 60, 173, 179, 200, 0, 127, 0, 0, 129, 46, 56, 46, 56, 108, 177, 159, 151, 85, 49, 0, 60, 186, 16, 104, 0, 31, 140, 39, 127, 46, 58, 46, 56, 108, 177, 203, 48, 1, 42, 0, 60, 140, 221, 222, 0, 5, 158, 80, 127, 55, 53, 46, 56, 108, 177, 195, 48, 31, 48, 0, 60, 183, 25, 100, 0, 26, 142, 48, 127, 46, 59, 46, 56, 108, 177, 203, 48, 1, 42, 0, 60, 140, 221, 222, 0, 45, 145, 216, 129, 55, 53, 46, 56, 93, 46, 7, 180, 119, 177, 0, 60, 201, 179, 173, 0, 127, 0, 0, 129, 46, 56, 46, 56, 65, 45, 159, 151, 119, 177, 0, 60, 186, 247, 151, 0, 22, 122, 231, 129, 46, 58, 46, 56, 237, 38, 125, 50, 119, 177, 0, 60, 223, 28, 137, 0, 121, 25, 228, 127, 46, 56, 193, 57, 108, 177, 203, 48, 119, 177, 0, 60, 183, 183, 183, 0, 60, 42, 153, 127, 46, 56, 46, 56, 141, 42, 194, 48, 119, 177, 0, 60, 221, 221, 140, 0, 117, 216, 233, 127, 0, 0, 0, 60, 237, 38, 125, 50, 119, 177, 0, 60, 223, 28, 137, 0, 106, 67, 242, 129, 204, 165, 46, 56, 188, 46, 240, 51, 119, 177, 0, 60, 75, 80, 193, 0, 84, 252, 94, 129, 23, 60, 46, 56, 237, 38, 240, 51, 119, 177, 0, 60, 198, 75, 173, 0, 104, 71, 248, 129, 46, 56, 193, 57, 237, 38, 125, 50, 119, 177, 0, 60, 223, 28, 137, 0, 234, 120, 34, 127, 204, 165, 46, 56, 136, 47, 90, 50, 119, 177, 0, 60, 100, 25, 183, 0, 226, 123, 0, 127, 174, 59, 46, 56, 188, 46, 240, 51, 119, 177, 0, 60, 75, 80, 193, 0, 182, 97, 33, 127, 23, 60, 46, 56, 42, 48, 195, 48, 119, 177, 0, 60, 100, 25, 183, 0, 58, 152, 43, 127, 46, 59, 46, 56, 237, 38, 125, 50, 119, 177, 0, 60, 223, 28, 137, 0, 234, 120, 34, 129, 46, 56, 193, 57, 141, 42, 194, 48, 119, 177, 0, 60, 221, 221, 140, 0, 28, 115, 213, 129, 0, 0, 0, 60, 119, 35, 159, 151, 62, 34, 0, 60, 168, 239, 167, 0, 127, 0, 0, 129, 46, 58, 46, 56, 65, 45, 159, 151, 119, 177, 0, 60, 186, 247, 151, 0, 127, 0, 0, 129, 46, 58, 46, 56, 59, 160, 194, 48, 111, 160, 0, 60, 193, 168, 191, 0, 38, 52, 148, 127, 0, 0, 0, 60, 1, 39, 7, 180, 28, 38, 0, 60, 207, 151, 207, 0, 127, 0, 0, 129, 46, 56, 46, 56, 119, 35, 159, 151, 62, 34, 0, 60, 168, 239, 167, 0, 70, 165, 204, 129, 46, 58, 46, 56, 59, 160, 194, 48, 111, 160, 0, 60, 193, 168, 191, 0, 105, 187, 246, 129, 0, 0, 0, 60, 108, 177, 203, 48, 1, 42, 0, 60, 140, 221, 222, 0, 33, 10, 134, 127, 55, 53, 46, 56 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0, 22, 0, 24, 0, 25, 0, 22, 0, 21, 0, 24, 0, 26, 0, 27, 0, 28, 0, 26, 0, 29, 0, 27, 0, 10, 0, 30, 0, 31, 0, 10, 0, 9, 0, 30, 0, 14, 0, 32, 0, 33, 0, 14, 0, 13, 0, 32, 0, 34, 0, 35, 0, 36, 0, 34, 0, 37, 0, 35, 0, 27, 0, 38, 0, 28, 0, 27, 0, 39, 0, 38, 0, 31, 0, 7, 0, 4, 0, 31, 0, 30, 0, 7, 0, 33, 0, 3, 0, 0, 0, 33, 0, 32, 0, 3, 0, 5, 0, 40, 0, 41, 0, 5, 0, 7, 0, 40, 0, 42, 0, 43, 0, 44, 0, 7, 0, 30, 0, 45, 0, 11, 0, 46, 0, 9, 0, 11, 0, 47, 0, 46, 0, 48, 0, 49, 0, 50, 0, 9, 0, 46, 0, 51, 0, 14, 0, 52, 0, 12, 0, 14, 0, 53, 0, 52, 0, 54, 0, 55, 0, 56, 0, 26, 0, 28, 0, 38, 0, 57, 0, 58, 0, 59, 0, 60, 0, 61, 0, 62, 0, 63, 0, 54, 0, 56, 0, 33, 0, 0, 0, 64, 0, 33, 0, 53, 0, 14, 0, 33, 0, 65, 0, 53, 0, 56, 0, 66, 0, 67, 0, 56, 0, 68, 0, 66, 0, 53, 0, 69, 0, 52, 0, 53, 0, 70, 0, 69, 0, 51, 0, 70, 0, 71, 0, 51, 0, 46, 0, 70, 0, 47, 0, 70, 0, 46, 0, 47, 0, 69, 0, 70, 0, 55, 0, 68, 0, 56, 0, 55, 0, 72, 0, 68, 0, 8, 0, 47, 0, 11, 0, 8, 0, 69, 0, 47, 0, 8, 0, 52, 0, 69, 0, 8, 0, 12, 0, 52, 0 ),
+"blend_shape_data": [  ],
+"format": 98071,
+"index_count": 180,
+"material": ExtResource( 3 ),
+"name": "CrateMat01",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 73
+}
+
+[sub_resource type="ConvexPolygonShape" id=2]
+
+points = PoolVector3Array( 0.117676, 0.198486, -0.170776, 0.0335083, 0.248047, 0.0321655, 0.105225, 0.248047, -0.170776, 0.0427246, 0.198486, 0.0413818, 0.0427246, 0.198486, 0.0413818, -0.169434, 0.248047, 0.103882, 0.0335083, 0.248047, 0.0321655, -0.169434, 0.198486, 0.116333, 0.0926514, -0.251709, 0.0913696, -0.169434, -0.00186062, 0.166626, 0.079895, -0.00186062, 0.0785522, -0.169434, -0.251709, 0.18396, 0.185303, -0.251709, -0.170776, 0.079895, -0.00186062, 0.0785522, 0.167969, -0.00186062, -0.170776, 0.0926514, -0.251709, 0.0913696, -0.024231, 0.248047, -0.0255585, 0.0270538, 0.202759, -0.170776, 0.0270538, 0.248047, -0.170776, -0.024231, 0.202759, -0.0255585, -0.169434, 0.248047, 0.103882, -0.024231, 0.248047, -0.0255585, 0.0335083, 0.248047, 0.0321655, -0.169434, 0.248047, 0.0257263, 0.0270538, 0.248047, -0.170776, 0.105225, 0.248047, -0.170776, 0.0270538, 0.202759, -0.170776, -0.169434, 0.202759, 0.0257263, -0.169434, 0.202759, -0.170776, -0.024231, 0.202759, -0.0255585, -0.169434, 0.148804, 0.128784, 0.0519104, 0.148804, 0.0505981, 0.0519104, 0.148804, 0.0505981, 0.130127, 0.148804, -0.170776, -0.169434, 0.248047, 0.0257263, -0.024231, 0.202759, -0.0255585, -0.024231, 0.248047, -0.0255585, -0.169434, 0.202759, 0.0257263, -0.169434, 0.14978, -0.170776, -0.169434, 0.14978, 0.0469055, -0.169434, 0.202759, 0.0257263, -0.169434, 0.248047, 0.0257263, -0.169434, 0.198486, 0.116333, -0.169434, 0.14978, 0.0469055, -0.169434, 0.202759, 0.0257263, -0.169434, 0.14978, 0.0469055, -0.169434, -0.00186062, 0.0762939, -0.169434, -0.251709, 0.0936279, -0.169434, -0.00186062, 0.166626, -0.169434, 0.14978, 0.0469055, -0.169434, 0.148804, 0.128784, -0.169434, 0.14978, 0.0469055, 0.0994263, -0.251709, -0.170776, 0.0820923, -0.00186062, -0.170776, 0.0270538, 0.202759, -0.170776, -0.169434, 0.14978, -0.170776, 0.051178, 0.148682, -0.170776, 0.0270538, 0.202759, -0.170776, 0.105225, 0.248047, -0.170776, 0.0270538, 0.248047, -0.170776, 0.0270538, 0.202759, -0.170776, 0.117676, 0.198486, -0.170776, 0.105225, 0.248047, -0.170776, 0.130127, 0.148804, -0.170776, 0.0270538, 0.202759, -0.170776, 0.051178, 0.148682, -0.170776, 0.0145798, -0.00186062, 0.0121918, 0.0820923, -0.00186062, -0.170776, -0.00826263, 0.148682, -0.00865936, 0.027359, -0.251709, 0.0238647, 0.0145798, -0.00186062, 0.0121918, -0.00826263, 0.148682, -0.00865936, -0.169434, 0.14978, 0.0469055 )
+
+[sub_resource type="SphereShape" id=3]
+
+radius = 0.376679
+
+[node name="Barrel01Part" type="Spatial"]
+
+script = ExtResource( 1 )
+
+[node name="BarrelRigidBodyPart1" type="RigidBody" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169538, 0.251861, 0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart1" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart1" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart1" index="2"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart1/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart2" type="RigidBody" parent="." index="1"]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0.169538, 0.251861, -0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart2" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart2" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart2" index="2"]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart2/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart3" type="RigidBody" parent="." index="2"]
+
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -0.169538, 0.251861, -0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart3" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart3" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart3" index="2"]
+
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart3/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart4" type="RigidBody" parent="." index="3"]
+
+transform = Transform( 1.31134e-007, 0, -1, 0, 1, 0, 1, 0, 1.31134e-007, -0.169538, 0.251861, 0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart4" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart4" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart4" index="2"]
+
+transform = Transform( 1.31134e-007, 0, 1, 0, 1, 0, -1, 0, 1.31134e-007, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart4/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart5" type="RigidBody" parent="." index="4"]
+
+transform = Transform( -1.31134e-007, 8.74228e-008, 1, -1.14641e-014, -1, 8.74228e-008, 1, 0, 1.31134e-007, 0.169538, -0.251861, 0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart5" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart5" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart5" index="2"]
+
+transform = Transform( -1.31134e-007, -1.14641e-014, 1, 8.74228e-008, -1, 1.69407e-021, 1, 8.74228e-008, 1.31134e-007, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart5/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart6" type="RigidBody" parent="." index="5"]
+
+transform = Transform( -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 0, 0, 1, -0.169538, -0.251861, 0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart6" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart6" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart6" index="2"]
+
+transform = Transform( -1, -8.74228e-008, 0, 8.74228e-008, -1, 0, 0, 0, 1, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart6/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart7" type="RigidBody" parent="." index="6"]
+
+transform = Transform( 4.37114e-008, 8.74228e-008, -1, 3.82137e-015, -1, -8.74228e-008, -1, 0, -4.37114e-008, -0.169538, -0.251861, -0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart7" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart7" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart7" index="2"]
+
+transform = Transform( 4.37114e-008, 3.82137e-015, -1, 8.74228e-008, -1, 2.5411e-021, -1, -8.74228e-008, -4.37114e-008, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart7/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="BarrelRigidBodyPart8" type="RigidBody" parent="." index="7"]
+
+transform = Transform( 1, 8.74228e-008, 8.74228e-008, 8.74228e-008, -1, 7.64274e-015, 8.74228e-008, 0, -1, 0.169538, -0.251861, -0.170866 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+impulse_amount = 0.25
+thrown_impulse_amount = 0.25
+
+[node name="Barrel01BrokenPart" type="MeshInstance" parent="BarrelRigidBodyPart8" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart8" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="BumpArea" type="Area" parent="BarrelRigidBodyPart8" index="2"]
+
+transform = Transform( 1, 8.74228e-008, 8.74228e-008, 8.74228e-008, -1, 5.0822e-021, 8.74228e-008, 7.64275e-015, -1, 0, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelRigidBodyPart8/BumpArea" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+
+[node name="DropPoint" type="Spatial" parent="." index="8"]
+
+[node name="DropTimer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DropTimer" to="." method="_on_DropTimer_timeout"]
+
+

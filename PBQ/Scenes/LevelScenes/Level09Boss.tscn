@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/LevelScripts/Level09BossControl.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://Scripts/LevelScripts/Level09BossComplete.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/LevelScenes/BaseScenes/LightHousePart04Sanctum.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/EnemyScenes/CreatureBoss.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/EnemyScenes/Sorceror.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Music/MusicControllerBoss.gd" type="Script" id=9]
-[ext_resource path="res://Music/Aggressor.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Music/Burnt Spirit.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Music/Outfoxing the Fox.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/LevelScenes/NavMeshScenes/NavMeshSanctum.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/EnemyScenes/CreatureBossNav.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyScenes/SorcerorNav.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Music/MusicControllerBoss.gd" type="Script" id=11]
+[ext_resource path="res://Music/Aggressor.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Music/Burnt Spirit.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Music/Outfoxing the Fox.ogg" type="AudioStream" id=14]
 
 [sub_resource type="Environment" id=1]
 
@@ -96,7 +98,67 @@ _sections_unfolded = [ "Ambient Light" ]
 
 extents = Vector3( 7.08577, 3.2806, 1 )
 
-[node name="Level09Boss" type="Spatial"]
+[sub_resource type="SphereMesh" id=3]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 0.1
+height = 0.2
+radial_segments = 16
+rings = 8
+is_hemisphere = false
+
+[sub_resource type="SpatialMaterial" id=4]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 0, 0.914063, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+
+[node name="Level09Boss" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -184,26 +246,209 @@ transform = Transform( 0.999213, 0, -0.0396748, 0, 1, 0, 0.0396748, 0, 0.999213,
 
 [node name="LightHousePart04Sanctum" parent="." index="7" instance=ExtResource( 6 )]
 
-[node name="EnemyHolder" type="Spatial" parent="." index="8"]
+[node name="NavMeshSanctum" parent="." index="8" instance=ExtResource( 7 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.781893, 11 )
+[node name="WaypointsHolder" type="Spatial" parent="NavMeshSanctum" index="2"]
 
-[node name="CreatureBoss" parent="EnemyHolder" index="0" instance=ExtResource( 7 )]
+editor/display_folded = true
+script = ExtResource( 8 )
 
-transform = Transform( -0.0439426, 0, -0.999034, 0, 1, 0, 0.999034, 0, -0.0439426, 14, 0.274801, -5 )
+[node name="Waypoint1" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="0"]
 
-[node name="Sorceror" parent="EnemyHolder" index="1" instance=ExtResource( 8 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9897, 0.75, 0.359596 )
+_sections_unfolded = [ "Transform" ]
 
-transform = Transform( -0.0882771, 0, -0.996096, 0, 1, 0, 0.996096, 0, -0.0882771, 8, 0, 0 )
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint1" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint8" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="1"]
+
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.405027, 0.75, 14.9443 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint8" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint4" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="2"]
+
+editor/display_folded = true
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 10.7179, 0.75, 10.6725 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint4" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint5" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="3"]
+
+editor/display_folded = true
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -9.90788, 0.75, 10.6725 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint5" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint2" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="4"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1796, 0.75, 0.359596 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint2" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint7" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="5"]
+
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0.405028, 0.75, -14.2251 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint7" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint3" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="6"]
+
+editor/display_folded = true
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -9.90788, 0.75, -9.95331 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint3" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint6" type="Spatial" parent="NavMeshSanctum/WaypointsHolder" index="7"]
+
+editor/display_folded = true
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 10.7179, 0.75, -9.95331 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshSanctum/WaypointsHolder/Waypoint6" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="EnemyHolder" type="Spatial" parent="NavMeshSanctum" index="3"]
+
+editor/display_folded = true
+
+[node name="CreatureBossNav" parent="NavMeshSanctum/EnemyHolder" index="0" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7161, 0, 4.86892 )
+
+[node name="SorcerorNav" parent="NavMeshSanctum/EnemyHolder" index="1" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.14407, 0, 12.4692 )
 
 [node name="MusicControllerBoss" type="Node" parent="." index="9"]
 
 editor/display_folded = true
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 
 [node name="AudioStreamA" type="AudioStreamPlayer" parent="MusicControllerBoss" index="0"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -212,7 +457,7 @@ bus = "MusicBus"
 
 [node name="AudioStreamBS" type="AudioStreamPlayer" parent="MusicControllerBoss" index="1"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -221,7 +466,7 @@ bus = "MusicBus"
 
 [node name="AudioStreamOtF" type="AudioStreamPlayer" parent="MusicControllerBoss" index="2"]
 
-stream = ExtResource( 12 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

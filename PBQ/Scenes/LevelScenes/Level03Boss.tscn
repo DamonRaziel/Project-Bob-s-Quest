@@ -1,17 +1,19 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/LevelScripts/Level03BossControl.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/LevelScenes/BaseScenes/Castle01TownPart03Cemetery.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/EnemyScenes/ZombieBoss.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/LevelScripts/Level03BossComplete.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/LevelScripts/Level03BossCompleteAlt.gd" type="Script" id=7]
-[ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=8]
-[ext_resource path="res://Music/MusicControllerBoss.gd" type="Script" id=9]
-[ext_resource path="res://Music/Aggressor.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Music/Burnt Spirit.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Music/Outfoxing the Fox.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/LevelScenes/NavMeshScenes/NavMeshBossCemetery.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieBossNav.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/LevelScripts/Level03BossComplete.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/LevelScripts/Level03BossCompleteAlt.gd" type="Script" id=9]
+[ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Music/MusicControllerBoss.gd" type="Script" id=11]
+[ext_resource path="res://Music/Aggressor.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Music/Burnt Spirit.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Music/Outfoxing the Fox.ogg" type="AudioStream" id=14]
 
 [sub_resource type="Environment" id=1]
 
@@ -92,15 +94,75 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Ambient Light" ]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="SphereMesh" id=2]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 0.1
+height = 0.2
+radial_segments = 16
+rings = 8
+is_hemisphere = false
+
+[sub_resource type="SpatialMaterial" id=3]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 0, 0.914063, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+
+[sub_resource type="BoxShape" id=4]
 
 extents = Vector3( 7.08577, 3.2806, 1 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=5]
 
 extents = Vector3( 1, 9.2187, 28.7213 )
 
-[node name="Level03Boss" type="Spatial"]
+[node name="Level03Boss" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -118,12 +180,238 @@ environment = SubResource( 1 )
 
 [node name="Castle01TownCemetery" parent="." index="3" instance=ExtResource( 3 )]
 
-[node name="EnemyHolder" type="Spatial" parent="." index="4"]
+[node name="NavMeshBossCemetery" parent="." index="4" instance=ExtResource( 4 )]
+
+[node name="WaypointsHolder" type="Spatial" parent="NavMeshBossCemetery" index="2"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 97.4845, 1.07095, -2.19903 )
+script = ExtResource( 5 )
 
-[node name="ZombieBoss" parent="EnemyHolder" index="0" instance=ExtResource( 4 )]
+[node name="Waypoint1" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 92.8795, 0.75, -3.51195 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint1" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint2" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111.302, 0.75, -3.51195 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint2" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint3" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="2"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 114.358, 0.75, 6.58527 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint3" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint4" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 119.54, 0.75, 17.3911 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint4" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint5" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="4"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.408, 0.75, 16.1068 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint5" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint6" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="5"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.408, 0.75, 6.23098 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint6" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint7" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="6"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 86.8566, 0.75, 16.1953 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint7" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint8" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="7"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 85.3508, 0.75, 2.28952 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint8" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint9" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="8"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 82.3394, 0.75, -9.3577 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint9" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint10" type="Spatial" parent="NavMeshBossCemetery/WaypointsHolder" index="9"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.63, 0.75, -3.99909 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossCemetery/WaypointsHolder/Waypoint10" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="EnemyHolder" type="Spatial" parent="NavMeshBossCemetery" index="3"]
+
+[node name="ZombieBossNav" parent="NavMeshBossCemetery/EnemyHolder" index="0" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 91.2238, 0.0796509, -3.40724 )
 
 [node name="EndOfLevelShow" type="Spatial" parent="." index="5"]
 
@@ -137,7 +425,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 98.4979, -21.7417, 20.6434 )
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 98.4979, 0, 20.666 )
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="Area" type="Area" parent="EndOfLevel" index="0"]
 
@@ -166,10 +454,10 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape" type="CollisionShape" parent="EndOfLevel/Area" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80655, 0.368965 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 disabled = false
 
-[node name="LevelEndParticles" parent="EndOfLevel/Area" index="1" instance=ExtResource( 6 )]
+[node name="LevelEndParticles" parent="EndOfLevel/Area" index="1" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
 
@@ -185,7 +473,7 @@ transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 45.56
 
 editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 45.8295, 0, 37.2806 )
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="AreaAlt" type="Area" parent="EndOfLevelAlt" index="0"]
 
@@ -214,10 +502,10 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShapeAlt" type="CollisionShape" parent="EndOfLevelAlt/AreaAlt" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80655, 0.368965 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 disabled = false
 
-[node name="LevelEndParticles" parent="EndOfLevelAlt/AreaAlt" index="1" instance=ExtResource( 6 )]
+[node name="LevelEndParticles" parent="EndOfLevelAlt/AreaAlt" index="1" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
 
@@ -234,7 +522,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 10 )
 text = "LongTestToMakeSureItWillFitAndBeCentered"
 align = 1
 valign = 1
@@ -258,65 +546,65 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 [node name="wall4" type="CollisionShape" parent="LevelLimits" index="0"]
 
 transform = Transform( 0.764187, 0, 0.644995, 0, 1, 0, -0.644995, 0, 0.764187, 57.8432, 8.07071, 67.8172 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall5" type="CollisionShape" parent="LevelLimits" index="1"]
 
 transform = Transform( -0.300313, 0, 0.953841, 0, 1, 0, -0.953841, 0, -0.300313, 88.3777, 8.07071, 64.4308 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall6" type="CollisionShape" parent="LevelLimits" index="2"]
 
 transform = Transform( -0.810004, 0, 0.586424, 0, 1, 0, -0.586424, 0, -0.810004, 119.859, 8.07071, 44.0842 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall7" type="CollisionShape" parent="LevelLimits" index="3"]
 
 transform = Transform( -0.914401, 0, -0.40481, 0, 1, 0, 0.40481, 0, -0.914401, 123.122, 8.07071, 8.57989 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall8" type="CollisionShape" parent="LevelLimits" index="4"]
 
 transform = Transform( -0.00366029, 0, -0.999993, 0, 1, 0, 0.999993, 0, -0.00366029, 93.4597, 8.07071, 22.4487 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall10" type="CollisionShape" parent="LevelLimits" index="5"]
 
 transform = Transform( -0.99749, 0, -0.0708095, 0, 1, 0, 0.0708095, 0, -0.99749, 77.6567, 8.07071, -4.06537 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall11" type="CollisionShape" parent="LevelLimits" index="6"]
 
 transform = Transform( -0.141486, 0, -0.98994, 0, 1, 0, 0.98994, 0, -0.141486, 98.337, 8.07071, -12.6714 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall12" type="CollisionShape" parent="LevelLimits" index="7"]
 
 transform = Transform( 0.0740356, 0, -0.997255, 0, 1, 0, 0.997255, 0, 0.0740356, 51.1774, 8.07071, 25.5416 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="wall13" type="CollisionShape" parent="LevelLimits" index="8"]
 
 transform = Transform( 1, 0, -0.000216335, 0, 1, 0, 0.000216335, 0, 1, 43.5262, 8.07071, 41.3981 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = false
 
 [node name="MusicControllerBoss" type="Node" parent="." index="13"]
 
 editor/display_folded = true
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 
 [node name="AudioStreamA" type="AudioStreamPlayer" parent="MusicControllerBoss" index="0"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -325,7 +613,7 @@ bus = "MusicBus"
 
 [node name="AudioStreamBS" type="AudioStreamPlayer" parent="MusicControllerBoss" index="1"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -334,7 +622,7 @@ bus = "MusicBus"
 
 [node name="AudioStreamOtF" type="AudioStreamPlayer" parent="MusicControllerBoss" index="2"]
 
-stream = ExtResource( 12 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

@@ -149,12 +149,12 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Ambient Light" ]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" index="0"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -166,15 +166,14 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="MainMenuTitle" type="Control" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -128.0
-margin_top = -200.0
+margin_top = -300.0
 margin_right = 127.0
-margin_bottom = -133.0
+margin_bottom = -233.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -189,10 +188,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -84.5
+margin_left = -139.5
 margin_top = 6.5
-margin_right = 83.5
-margin_bottom = 344.5
+margin_right = 139.5
+margin_bottom = 529.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -200,6 +199,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="MainMenuTitle" index="1"]
 
@@ -207,9 +207,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -149.5
+margin_left = -215.5
 margin_top = -51.5
-margin_right = 149.5
+margin_right = 215.5
 margin_bottom = 26.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -226,9 +226,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -127.5
+margin_left = -193.5
 margin_top = -33.5
-margin_right = 127.5
+margin_right = 193.5
 margin_bottom = 33.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -251,9 +251,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -17.0
+margin_left = -66.0
 margin_top = -20.0
-margin_right = 76.0
+margin_right = 134.0
 margin_bottom = 17.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -263,6 +263,8 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Project"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -274,9 +276,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -75.5
+margin_left = -127.5
 margin_top = 54.5
-margin_right = 74.5
+margin_right = 126.5
 margin_bottom = 97.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -301,9 +303,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -75.5
+margin_left = -127.5
 margin_top = 112.5
-margin_right = 74.5
+margin_right = 126.5
 margin_bottom = 155.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -322,16 +324,97 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="OptionsButton" type="Button" parent="MainMenuTitle" index="6"]
+[node name="ArenaButton" type="Button" parent="MainMenuTitle" index="6"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -75.5
+margin_left = -127.5
 margin_top = 170.5
-margin_right = 74.5
+margin_right = 126.5
 margin_bottom = 213.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Arena"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="ScoreBoard" type="Button" parent="MainMenuTitle" index="7"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.5
+margin_top = 228.5
+margin_right = 126.5
+margin_bottom = 271.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Arena Score Board"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Tutorial" type="Button" parent="MainMenuTitle" index="8"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.5
+margin_top = 286.5
+margin_right = 126.5
+margin_bottom = 329.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Tutorial"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="OptionsButton" type="Button" parent="MainMenuTitle" index="9"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.5
+margin_top = 344.5
+margin_right = 126.5
+margin_bottom = 387.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -349,44 +432,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="OptionsBackButton" type="Button" parent="MainMenuTitle" index="7"]
-
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 959.5
-margin_top = 170.5
-margin_right = 1109.5
-margin_bottom = 213.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Back"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="CreditsButton" type="Button" parent="MainMenuTitle" index="8"]
+[node name="CreditsButton" type="Button" parent="MainMenuTitle" index="10"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -75.5
-margin_top = 228.5
-margin_right = 74.5
-margin_bottom = 271.5
+margin_left = -127.5
+margin_top = 402.5
+margin_right = 126.5
+margin_bottom = 445.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -404,16 +459,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="QuitButton" type="Button" parent="MainMenuTitle" index="9"]
+[node name="QuitButton" type="Button" parent="MainMenuTitle" index="11"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -75.5
-margin_top = 286.5
-margin_right = 74.5
-margin_bottom = 329.5
+margin_left = -127.5
+margin_top = 460.5
+margin_right = 126.5
+margin_bottom = 503.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -431,22 +486,83 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Options" parent="MainMenuTitle" index="10" instance=ExtResource( 5 )]
+[node name="Options" parent="MainMenuTitle" index="12" instance=ExtResource( 5 )]
 
 margin_left = 1920.0
-margin_top = 200.0
+margin_top = 340.0
 margin_right = 1920.0
-margin_bottom = 200.0
+margin_bottom = 340.0
 
-[node name="Credits" parent="MainMenuTitle" index="11" instance=ExtResource( 6 )]
+[node name="Credits" parent="MainMenuTitle" index="13" instance=ExtResource( 6 )]
 
 margin_left = -1923.5
-margin_top = -373.5
+margin_top = -273.5
 margin_right = -1923.5
-margin_bottom = 706.5
+margin_bottom = 806.5
 _sections_unfolded = [ "Rect" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="1"]
+[node name="GameDataDisplay" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 90.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="TimesCompletedLabel" type="Label" parent="GameDataDisplay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 375.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Times Completed: 1000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="ArenaOpenLabel" type="Label" parent="GameDataDisplay" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 375.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Times Completed: 1000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="2"]
 
 transform = Transform( 1, 0, 0, 0, 0.545698, 0.837982, 0, -0.837982, 0.545698, 0, 20.6989, 0 )
 visible = false
@@ -475,9 +591,9 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Shadow" ]
 
-[node name="Castle01ForMenus" parent="." index="2" instance=ExtResource( 7 )]
+[node name="Castle01ForMenus" parent="." index="3" instance=ExtResource( 7 )]
 
-[node name="CharacterModelHolder" type="Spatial" parent="." index="3"]
+[node name="CharacterModelHolder" type="Spatial" parent="." index="4"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04018, 14.7051 )
@@ -525,7 +641,7 @@ transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0,
 
 transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -2.27133, 0, -2.18303 )
 
-[node name="ModelsOtherHolder" type="Spatial" parent="." index="4"]
+[node name="ModelsOtherHolder" type="Spatial" parent="." index="5"]
 
 editor/display_folded = true
 
@@ -557,7 +673,7 @@ transform = Transform( -0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808,
 
 transform = Transform( -0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, -2.49279, 1, 25.7947 )
 
-[node name="CamRotater" type="Spatial" parent="." index="5"]
+[node name="CamRotater" type="Spatial" parent="." index="6"]
 
 editor/display_folded = true
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 14.6385 )
@@ -594,7 +710,7 @@ blend_times = [  ]
 
 environment = SubResource( 3 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
 
 stream = ExtResource( 17 )
 volume_db = 0.0
@@ -607,9 +723,13 @@ bus = "MusicBus"
 
 [connection signal="pressed" from="MainMenuTitle/LoadGameButton" to="." method="_on_LoadGameButton_pressed"]
 
-[connection signal="pressed" from="MainMenuTitle/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MainMenuTitle/ArenaButton" to="." method="_on_ArenaButton_pressed"]
 
-[connection signal="pressed" from="MainMenuTitle/OptionsBackButton" to="." method="_on_OptionsBackButton_pressed"]
+[connection signal="pressed" from="MainMenuTitle/ScoreBoard" to="." method="_on_ScoreBoard_pressed"]
+
+[connection signal="pressed" from="MainMenuTitle/Tutorial" to="." method="_on_Tutorial_pressed"]
+
+[connection signal="pressed" from="MainMenuTitle/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 
 [connection signal="pressed" from="MainMenuTitle/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 

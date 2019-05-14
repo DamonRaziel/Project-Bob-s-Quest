@@ -34,6 +34,10 @@ func _ready():
 	elif PlayerData.Player_Information.current_level == 9:
 		level_text.text = "Level 09: Castle 02"
 		get_node("/root/PlayerData").goto_scene_bg("res://Scenes/LevelScenes/Level09.tscn")
+	
+	elif PlayerData.Player_Information.current_level == 8500:
+		level_text.text = "Arena"
+		get_node("/root/PlayerData").goto_scene("res://Scenes/ArenaScenes/Arena01Scene.tscn")
 
 func _process(delta):
 	progress_text.text = "Loading: " + str(PlayerData.progress)

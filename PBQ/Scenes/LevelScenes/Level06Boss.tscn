@@ -1,16 +1,18 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/LevelScripts/Level06BossControl.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/LevelScripts/Level06BossComplete.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/LevelScenes/BaseScenes/CitadelTownPart04Ship.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/EnemyScenes/DaveyJonesBoss.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Music/MusicControllerBoss.gd" type="Script" id=8]
-[ext_resource path="res://Music/Aggressor.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Music/Burnt Spirit.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Music/Outfoxing the Fox.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Music/MusicControllerBoss.gd" type="Script" id=6]
+[ext_resource path="res://Music/Aggressor.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Music/Burnt Spirit.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Music/Outfoxing the Fox.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/LevelScenes/BaseScenes/BossShipResized.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/LevelScenes/NavMeshScenes/NavMeshBossShipResized.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/EnemyScenes/DaveyJonesBossNav.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 
@@ -97,19 +99,79 @@ extents = Vector3( 7.08577, 3.2806, 1 )
 
 [sub_resource type="BoxShape" id=3]
 
-extents = Vector3( 1, 9.2187, 28.7213 )
+extents = Vector3( 1, 6.48122, 9.92675 )
 
-[node name="Level06Boss" type="Spatial"]
+[sub_resource type="SphereMesh" id=4]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 0.1
+height = 0.2
+radial_segments = 16
+rings = 8
+is_hemisphere = false
+
+[sub_resource type="SpatialMaterial" id=5]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 0, 0.914063, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+
+[node name="Level06Boss" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="RespawnPoint" type="Spatial" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1728, 1.37124, 10.8221 )
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 74.119, -5.26786, -203.04 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87971, 1.06086, 11.2199 )
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 75.8707, -5.57824, -202.983 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
 
@@ -162,7 +224,7 @@ _sections_unfolded = [ "Rect" ]
 [node name="EndOfLevel" type="Spatial" parent="." index="5"]
 
 editor/display_folded = true
-transform = Transform( -0.0650958, 0, -0.997879, 0, 1, 0, 0.997879, 0, -0.0650958, -7.71639, 0.483216, 26.7036 )
+transform = Transform( 0.386808, 0, 0.92216, 0, 1, 0, -0.92216, 0, 0.386808, 79.3938, -7.44183, -206.872 )
 script = ExtResource( 4 )
 
 [node name="Area" type="Area" parent="EndOfLevel" index="0"]
@@ -201,30 +263,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
 
 [node name="EndOfLevelShow" type="Spatial" parent="." index="6"]
 
-transform = Transform( -0.0968809, 0, -0.995296, 0, 1, 0, 0.995296, 0, -0.0968809, -7.71391, 0.483216, 26.7364 )
+transform = Transform( 0.416015, 0, 0.909358, 0, 1, 0, -0.909358, 0, 0.416015, 79.4021, -7.44183, -206.904 )
 
 [node name="EndOfLevelHide" type="Spatial" parent="." index="7"]
 
-transform = Transform( -0.0968809, 0, -0.995296, 0, 1, 0, 0.995296, 0, -0.0968809, -7.71391, -21.2585, 26.7364 )
+transform = Transform( 0.416015, 0, 0.909358, 0, 1, 0, -0.909358, 0, 0.416015, 79.4021, -29.1835, -206.904 )
 
-[node name="CitadelTownPart04Ship" parent="." index="8" instance=ExtResource( 6 )]
-
-transform = Transform( -0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 1, 2.85425, 24 )
-
-[node name="EnemyHolder" type="Spatial" parent="." index="9"]
+[node name="LevelLimits" type="StaticBody" parent="." index="8"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07702, 48 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="DaveyJones" parent="EnemyHolder" index="0" instance=ExtResource( 7 )]
-
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="LevelLimits" type="StaticBody" parent="." index="10"]
-
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 30 )
+transform = Transform( -0.945931, 0, 0.324366, 0, 1, 0, -0.324366, 0, -0.945931, 72.3589, -7.92505, -213.791 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -236,66 +284,66 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="wall1" type="CollisionShape" parent="LevelLimits" index="0"]
 
-transform = Transform( 0.997958, 0, -0.063879, 0, 1, 0, 0.063879, 0, 0.997958, -19.4714, 8.07071, 7.22504 )
+transform = Transform( 0.997958, 0, -0.063879, 0, 1, 0, 0.063879, 0, 0.997958, -10.7328, 8.07071, -1.96214 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall2" type="CollisionShape" parent="LevelLimits" index="1"]
 
-transform = Transform( 0.999758, 0, -0.0220421, 0, 1, 0, 0.0220421, 0, 0.999758, 15.4717, 8.07071, 9.14175 )
+transform = Transform( 0.999758, 0, -0.022042, 0, 1, 0, 0.022042, 0, 0.999758, 2.2356, 8.07071, -1.16867 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall3" type="CollisionShape" parent="LevelLimits" index="2"]
 
-transform = Transform( -0.0563393, 0, -0.998412, 0, 1, 0, 0.998412, 0, -0.0563393, -0.156853, 22.0707, 54.1107 )
+transform = Transform( -0.0748323, 0, -0.997196, 0, 1, 0, 0.997196, 0, -0.0748323, -5.7555, 12.0066, 14.979 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall4" type="CollisionShape" parent="LevelLimits" index="3"]
 
-transform = Transform( 0.994666, 0, -0.10316, 0, 1, 0, 0.10316, 0, 0.994666, 13.555, 22.0707, 54.1107 )
+transform = Transform( 0.994666, 0, -0.10316, 0, 1, 0, 0.10316, 0, 0.994666, 2.01257, 12.0066, 7.8369 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall5" type="CollisionShape" parent="LevelLimits" index="4"]
 
-transform = Transform( 0.994666, 0, -0.10316, 0, 1, 0, 0.10316, 0, 0.994666, -23.4522, 22.0707, 54.1107 )
+transform = Transform( 0.994666, 0, -0.10316, 0, 1, 0, 0.10316, 0, 0.994666, -11.8098, 12.0066, 8.39972 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall6" type="CollisionShape" parent="LevelLimits" index="5"]
 
-transform = Transform( 0.945473, 0, -0.325702, 0, 1, 0, 0.325702, 0, 0.945473, -9.69172, 15.0707, -44.8893 )
+transform = Transform( 0.945473, 0, -0.325702, 0, 1, 0, 0.325702, 0, 0.945473, -9.01256, 10.1893, -15.2411 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall7" type="CollisionShape" parent="LevelLimits" index="6"]
 
-transform = Transform( 0.710345, 0, -0.703854, 0, 1, 0, 0.703854, 0, 0.710345, -7.64766, 15.0707, -44.8893 )
+transform = Transform( 0.710345, 0, -0.703854, 0, 1, 0, 0.703854, 0, 0.710345, -6.34711, 10.1893, -20.9933 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall8" type="CollisionShape" parent="LevelLimits" index="7"]
 
-transform = Transform( -0.814722, 0, -0.579853, 0, 1, 0, 0.579853, 0, -0.814722, 6.84657, 15.0707, -44.8893 )
+transform = Transform( -0.814722, 0, -0.579853, 0, 1, 0, 0.579853, 0, -0.814722, 0.699986, 10.1893, -19.5685 )
 shape = SubResource( 3 )
 disabled = false
 
 [node name="wall9" type="CollisionShape" parent="LevelLimits" index="8"]
 
-transform = Transform( -0.987302, 0, -0.158859, 0, 1, 0, 0.158859, 0, -0.987302, 13.5362, 15.0707, -34.8548 )
+transform = Transform( -0.987302, 0, -0.158859, 0, 1, 0, 0.158859, 0, -0.987302, 2.16286, 10.1893, -13.5246 )
 shape = SubResource( 3 )
 disabled = false
 
-[node name="MusicControllerBoss" type="Node" parent="." index="11"]
+[node name="MusicControllerBoss" type="Node" parent="." index="9"]
 
 editor/display_folded = true
-script = ExtResource( 8 )
+script = ExtResource( 6 )
 
 [node name="AudioStreamA" type="AudioStreamPlayer" parent="MusicControllerBoss" index="0"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -304,7 +352,7 @@ bus = "MusicBus"
 
 [node name="AudioStreamBS" type="AudioStreamPlayer" parent="MusicControllerBoss" index="1"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 8 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -313,12 +361,227 @@ bus = "MusicBus"
 
 [node name="AudioStreamOtF" type="AudioStreamPlayer" parent="MusicControllerBoss" index="2"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "MusicBus"
+
+[node name="BossShipNew" parent="." index="10" instance=ExtResource( 10 )]
+
+[node name="NavMeshBossShip" parent="." index="11" instance=ExtResource( 11 )]
+
+[node name="WaypointsHolder" type="Spatial" parent="NavMeshBossShip" index="2"]
+
+editor/display_folded = true
+script = ExtResource( 12 )
+
+[node name="Waypoint1" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.8126, -5.30725, -215.634 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint1" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint2" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1258, -5.30725, -214.368 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint2" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint3" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="2"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.2812, -5.30725, -216.55 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint3" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint4" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.099, -5.30725, -211.357 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint4" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint5" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="4"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.4236, -5.30725, -209.044 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint5" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint6" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="5"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9834, -5.30725, -212.317 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint6" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint7" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="6"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74.5829, -5.30725, -206.949 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint7" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint8" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="7"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74.5829, -5.30725, -202.061 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint8" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint9" type="Spatial" parent="NavMeshBossShip/WaypointsHolder" index="8"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.524, -5.30725, -203.632 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshBossShip/WaypointsHolder/Waypoint9" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="EnemyHolder" type="Spatial" parent="NavMeshBossShip" index="3"]
+
+editor/display_folded = true
+
+[node name="DaveyJonesNav" parent="NavMeshBossShip/EnemyHolder" index="0" instance=ExtResource( 13 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.037, -6.56567, -215.715 )
 
 [connection signal="finished" from="MusicControllerBoss/AudioStreamA" to="MusicControllerBoss" method="_on_AudioStreamA_finished"]
 

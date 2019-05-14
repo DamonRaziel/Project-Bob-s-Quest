@@ -65,10 +65,10 @@ func _on_FilipinoButton_pressed():
 	PlayerData.Options_Data.language = "Filipino"
 
 func _on_NormalButton_pressed():
-	PlayerData.Options_Data.difficulty = "Normal"
+	PlayerData.Options_Data.difficulty = 0
 
 func _on_HardButton_pressed():
-	PlayerData.Options_Data.difficulty = "Hard"
+	PlayerData.Options_Data.difficulty = 1
 
 func _on_VHardButton_pressed():
-	PlayerData.Options_Data.difficulty = "VHard"
+	PlayerData.Options_Data.difficulty = 2

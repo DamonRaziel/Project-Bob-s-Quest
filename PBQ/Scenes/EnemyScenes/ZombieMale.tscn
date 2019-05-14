@@ -23116,13 +23116,13 @@ radius = 9.10113
 
 [sub_resource type="SphereShape" id=60]
 
-radius = 0.787134
+radius = 0.8
 
 [sub_resource type="SphereShape" id=61]
 
 radius = 35.0226
 
-[node name="ZombieMale" type="KinematicBody"]
+[node name="ZombieMale" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -23547,10 +23547,22 @@ data = {
 "position": Vector2( 745, 104 ),
 "type": "output"
 }, {
+"filter": [  ],
+"from": "ZombieIdle.Loop",
+"id": "ZIdle",
+"position": Vector2( 43, 49 ),
+"type": "animation"
+}, {
 "id": "ZMoveTimeScale",
 "position": Vector2( 394, 81 ),
 "scale": 1.0,
 "type": "timescale"
+}, {
+"filter": [  ],
+"from": "ZombieWalk.Loop",
+"id": "ZWalk",
+"position": Vector2( 42, 152 ),
+"type": "animation"
 }, {
 "blend": 0.0,
 "filter": [  ],
@@ -23568,18 +23580,6 @@ data = {
 "mix": false,
 "position": Vector2( 594, 102 ),
 "type": "oneshot"
-}, {
-"filter": [  ],
-"from": "ZombieIdle.Loop",
-"id": "ZIdle",
-"position": Vector2( 43, 49 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "ZombieWalk.Loop",
-"id": "ZWalk",
-"position": Vector2( 42, 152 ),
-"type": "animation"
 }, {
 "filter": [  ],
 "from": "ZombieAttack01",
@@ -23657,7 +23657,6 @@ disabled = false
 
 [node name="Attack_Area" type="Area" parent="." index="6"]
 
-editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0

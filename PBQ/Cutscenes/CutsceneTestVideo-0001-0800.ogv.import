@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/CutsceneTestVideo-0001-0800.ogv-c6a080d7f04c732cccc1f68e2ca5a146.ogvstr"
+
+[deps]
+
+source_file="res://Cutscenes/CutsceneTestVideo-0001-0800.ogv"
+dest_files=[ "res://.import/CutsceneTestVideo-0001-0800.ogv-c6a080d7f04c732cccc1f68e2ca5a146.ogvstr" ]
+
+[params]
+
+loop=false

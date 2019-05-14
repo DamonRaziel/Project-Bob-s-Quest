@@ -6,7 +6,7 @@
 [ext_resource path="res://OtherHolder/rm-albion/RM Albion font medium.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Music/Mighty and Meek.ogg" type="AudioStream" id=5]
 
-[node name="EndForNow" type="Control"]
+[node name="EndForNow" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -43,9 +43,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -426.0
-margin_top = -32.5
+margin_top = -33.0
 margin_right = 426.0
-margin_bottom = 32.5
+margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -93,7 +93,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "MusicBus"
 
 [connection signal="pressed" from="Congrats/ReturnToMain" to="." method="_on_ReturnToMain_pressed"]
 

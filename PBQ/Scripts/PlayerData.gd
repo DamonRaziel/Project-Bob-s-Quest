@@ -15,6 +15,9 @@ var current_player_aiming_style = 0
 
 var total_points
 
+#var difficulty = 1
+# 0 = easy, 1 = medium, 2 = hard
+
 var Options_Data = {
 	master_volume = 0,
 	music_volume = 0,
@@ -23,7 +26,37 @@ var Options_Data = {
 	slots_hint_show = 0,
 	look_sensitivity = 0.5,
 	language = "English",
-	difficuly = "Normal"
+	difficulty = 0 # change to be set on new game setup instead of in options here??
+}
+
+var Game_Data = {
+	player01_unlocked = true,
+	player02_unlocked = false,
+	player03_unlocked = false,
+	player04_unlocked = true,
+	player05_unlocked = false,
+	player06_unlocked = false,
+	number_of_times_game_completed = 0,
+	arena_open = false
+}
+
+var arena_setup = {
+	difficulty = 1, #1 = easy, 2 = normal, 3 = hard
+	character_selected = 1, # 1 = bob, 2 = frank, 3 = dave, 4 = bobbi, 5 = frankie, 6 = neng
+	drop_rate = 1 # 1 = low, 2 = medium, 3 = hard
+}
+
+var arena_scores = {
+	score1 = 0,
+	score1char = "",
+	score2 = 0,
+	score2char = "",
+	score3 = 0,
+	score3char = "",
+	score4 = 0,
+	score4char = "",
+	score5 = 0,
+	score5char = "",
 }
 
 #variables stored as dictionary for ease when saving
@@ -38,6 +71,28 @@ var Player_Information = {
 	player_speed_attack_max = 3.0,
 	player_speed_attack_accel = 1.0,
 	player_jump = 5.0,
+	
+	player_defence = 1.0,
+	player_fire_affinity = 0.0,
+	player_ice_affinity = 0.0,
+	player_lightning_affinity = 0.0,
+	player_earth_affinity = 0.0,
+	
+	player_level = 1,
+	player_max_level = 81,
+	player_xp = 0,
+	player_xp_next_level = 0,
+	player_xp_to_upgrades = 0,
+	player_upgrade_points = 0,
+	player_max_upgrade_points = 80,
+	player_strength_upgrades = 0,
+	player_speed_upgrades = 0,
+	player_jump_upgrades = 0,
+	player_defence_upgrades = 0,
+	player_fire_affinity_upgrades = 0,
+	player_ice_affinity_upgrades = 0,
+	player_lightning_affinity_upgrades = 0,
+	player_earth_affinity_upgrades = 0,
 	
 	player_current_weapon_number = 0,
 	player_current_armour_number = 0,
@@ -112,6 +167,19 @@ func points_add(points):
 	if Player_Information.player_points_bonus >= 200:
 		Player_Information.player_points_bonus -= 200
 		Player_Information.player_coins += 5
+
+func xp_add(xp_points):
+	Player_Information.player_xp_next_level = Player_Information.player_level * 1000
+	Player_Information.player_xp += xp_points
+	if Player_Information.player_xp >= Player_Information.player_xp_next_level:
+		if Player_Information.player_level < Player_Information.player_max_level:
+			Player_Information.player_level += 1
+			Player_Information.player_upgrade_points += 1
+	
+#	Player_Information.player_xp_to_upgrades += xp_points
+#	if Player_Information.player_xp_to_upgrades >= 200:
+#		Player_Information.player_xp_to_upgrades -= 200
+#		Player_Information.player_upgrade_points += 1
 
 #taken from scene change demos, for loading small scenes
 func goto_scene(path):

@@ -349,6 +349,18 @@ tracks/39/loop_wrap = true
 tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 3.72529e-008, 1.49012e-008, 2.6077e-008, -5.58794e-009, 0, 4.47035e-008, 1, 1, 1, 1 )
+tracks/40/type = "value"
+tracks/40/path = NodePath("CreatureBossArmature:translation")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -636,6 +648,18 @@ tracks/39/loop_wrap = true
 tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 4.09782e-008, 1.49012e-008, 2.6077e-008, 2.23517e-008, -2.23517e-008, 2.98023e-008, 1, 1, 1, 1 )
+tracks/40/type = "value"
+tracks/40/path = NodePath("CreatureBossArmature:translation")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -1077,6 +1101,18 @@ tracks/61/loop_wrap = true
 tracks/61/imported = true
 tracks/61/enabled = true
 tracks/61/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/62/type = "value"
+tracks/62/path = NodePath("CreatureBossArmature:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -1518,6 +1554,18 @@ tracks/61/loop_wrap = true
 tracks/61/imported = true
 tracks/61/enabled = true
 tracks/61/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/62/type = "value"
+tracks/62/path = NodePath("CreatureBossArmature:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -1959,6 +2007,18 @@ tracks/61/loop_wrap = true
 tracks/61/imported = true
 tracks/61/enabled = true
 tracks/61/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/62/type = "value"
+tracks/62/path = NodePath("CreatureBossArmature:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -2400,6 +2460,18 @@ tracks/61/loop_wrap = true
 tracks/61/imported = true
 tracks/61/enabled = true
 tracks/61/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.416667, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/62/type = "value"
+tracks/62/path = NodePath("CreatureBossArmature:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 
@@ -2687,6 +2759,18 @@ tracks/39/loop_wrap = true
 tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/40/type = "value"
+tracks/40/path = NodePath("CreatureBossArmature:translation")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 
@@ -2974,6 +3058,18 @@ tracks/39/loop_wrap = true
 tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/40/type = "value"
+tracks/40/path = NodePath("CreatureBossArmature:translation")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
 [sub_resource type="Animation" id=11]
 
@@ -3261,8 +3357,20 @@ tracks/39/loop_wrap = true
 tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1, 1, 1, 1.11759e-008, 1.49012e-008, 7.45058e-009, 5.58794e-009, -1.86265e-009, 2.23517e-008, 1, 1, 1, 1 )
+tracks/40/type = "value"
+tracks/40/path = NodePath("CreatureBossArmature:translation")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.24575, 0 ) ]
+}
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=12]
 
 resource_name = "QCreatureAttack01"
 length = 0.625
@@ -3423,7 +3531,7 @@ tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/keys = PoolRealArray( 0, 1, -8.9407e-008, -4.84288e-008, 0, 9.3691e-009, -1.49012e-008, 2.12748e-008, 1, 1, 1, 1, 0.625, 1, -8.9407e-008, -4.84288e-008, 0, 9.3691e-009, -1.49012e-008, 2.12748e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=13]
 
 resource_name = "QCreatureHit"
 length = 0.416667
@@ -3584,7 +3692,7 @@ tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/keys = PoolRealArray( 0, 1, -1.04308e-007, -1.09972e-007, -1.49012e-008, -9.67537e-009, 0, 1.15026e-008, 1, 1, 1, 1, 0.416667, 1, -1.04308e-007, -1.09972e-007, -1.49012e-008, -9.67537e-009, 0, 1.15026e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=14]
 
 resource_name = "QCreatureIdle"
 length = 1.0
@@ -3745,7 +3853,7 @@ tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/keys = PoolRealArray( 0, 1, -1.04308e-007, -1.09972e-007, -1.49012e-008, -9.67537e-009, 0, 1.15026e-008, 1, 1, 1, 1, 1, 1, -8.9407e-008, -4.00469e-008, -2.98023e-008, -6.86264e-009, 0, -1.86445e-010, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=15]
 
 resource_name = "QCreatureWalk"
 length = 0.666667
@@ -3906,24 +4014,24 @@ tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/keys = PoolRealArray( 0, 1, -1.04308e-007, -1.09972e-007, -1.49012e-008, -9.67537e-009, 0, 1.15026e-008, 1, 1, 1, 1, 0.666667, 1, -1.04308e-007, -1.09972e-007, -1.49012e-008, -9.67537e-009, 0, 1.15026e-008, 1, 1, 1, 1 )
 
-[sub_resource type="CapsuleShape" id=23]
+[sub_resource type="CapsuleShape" id=16]
 
 radius = 0.25222
 height = 1.64653
 
-[sub_resource type="BoxShape" id=24]
+[sub_resource type="BoxShape" id=17]
 
 extents = Vector3( 0.323417, 0.306595, 0.327993 )
 
-[sub_resource type="SphereShape" id=25]
+[sub_resource type="SphereShape" id=18]
 
 radius = 9.10113
 
-[sub_resource type="SphereShape" id=26]
+[sub_resource type="SphereShape" id=19]
 
 radius = 0.787134
 
-[sub_resource type="SphereShape" id=27]
+[sub_resource type="SphereShape" id=20]
 
 radius = 35.0226
 
@@ -3943,6 +4051,9 @@ collision/safe_margin = 0.001
 script = ExtResource( 1 )
 
 [node name="CreatureBossArmature" type="Spatial" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Skeleton" type="Skeleton" parent="CreatureBossArmature" index="0"]
 
@@ -4308,10 +4419,10 @@ anims/CreatureBossWingsGBAtt = ExtResource( 7 )
 anims/CreatureBossWingsGLAtt = ExtResource( 8 )
 anims/CreatureBossWingsGRAtt = ExtResource( 9 )
 anims/FCreatureFlightAttack01 = ExtResource( 10 )
-anims/QCreatureAttack01 = SubResource( 19 )
-anims/QCreatureHit = SubResource( 20 )
-anims/QCreatureIdle = SubResource( 21 )
-anims/QCreatureWalk = SubResource( 22 )
+anims/QCreatureAttack01 = SubResource( 12 )
+anims/QCreatureHit = SubResource( 13 )
+anims/QCreatureIdle = SubResource( 14 )
+anims/QCreatureWalk = SubResource( 15 )
 blend_times = [  ]
 
 [node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="3"]
@@ -4322,12 +4433,35 @@ base_path = NodePath("..")
 active = false
 data = {
 "active": false,
-"connections": [ "AttackOneShot", "out", 0, "ZMoveTimeScale", "AttackOneShot", 0, "HandAttackBlend", "AttackOneShot", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "WingsAttackBlend", "AttackBlend", 1, "WingsAttack1", "WingsAttackBlend", 0, "WingsAttack2", "WingsAttackBlend", 1, "WingsAttack3", "WingsAttackBlend", 2, "Attack1", "HandAttackBlend", 0, "Attack2", "HandAttackBlend", 1, "Attack3", "HandAttackBlend", 2 ],
+"connections": [ "AttackOneShot", "out", 0, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZMoveTimeScale", "AttackOneShot", 0, "HandAttackBlend", "AttackOneShot", 1, "WingsAttackBlend", "AttackBlend", 1, "WingsAttack1", "WingsAttackBlend", 0, "WingsAttack2", "WingsAttackBlend", 1, "WingsAttack3", "WingsAttackBlend", 2, "Attack1", "HandAttackBlend", 0, "Attack2", "HandAttackBlend", 1, "Attack3", "HandAttackBlend", 2 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
 "position": Vector2( 1222, 132 ),
 "type": "output"
+}, {
+"filter": [  ],
+"from": "CreatureBossIdleGround.Loop",
+"id": "ZIdle",
+"position": Vector2( 38, 209 ),
+"type": "animation"
+}, {
+"id": "ZMoveTimeScale",
+"position": Vector2( 543, 243 ),
+"scale": 1.0,
+"type": "timescale"
+}, {
+"filter": [  ],
+"from": "CreatureBossWalk.Loop",
+"id": "ZWalk",
+"position": Vector2( 35, 319 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "ZIdleOrMove",
+"position": Vector2( 226, 193 ),
+"type": "blend2"
 }, {
 "autorestart": false,
 "autorestart_delay": 1.0,
@@ -4340,27 +4474,16 @@ data = {
 "position": Vector2( 938, 256 ),
 "type": "oneshot"
 }, {
-"id": "ZMoveTimeScale",
-"position": Vector2( 543, 243 ),
-"scale": 1.0,
-"type": "timescale"
-}, {
 "blend": 0.0,
 "filter": [  ],
-"id": "ZIdleOrMove",
-"position": Vector2( 226, 193 ),
+"id": "AttackBlend",
+"position": Vector2( 812, 492 ),
 "type": "blend2"
 }, {
 "filter": [  ],
-"from": "CreatureBossIdleGround.Loop",
-"id": "ZIdle",
-"position": Vector2( 38, 209 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "CreatureBossWalk.Loop",
-"id": "ZWalk",
-"position": Vector2( 35, 319 ),
+"from": "CreatureBossWingsGRAtt",
+"id": "WingsAttack2",
+"position": Vector2( 225, 731 ),
 "type": "animation"
 }, {
 "filter": [  ],
@@ -4369,28 +4492,10 @@ data = {
 "position": Vector2( 224, 833 ),
 "type": "animation"
 }, {
-"filter": [  ],
-"from": "CreatureBossWingsGRAtt",
-"id": "WingsAttack2",
-"position": Vector2( 225, 731 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "AttackBlend",
-"position": Vector2( 812, 492 ),
-"type": "blend2"
-}, {
 "blend": 0.0,
 "id": "WingsAttackBlend",
 "position": Vector2( 473, 685 ),
 "type": "blend3"
-}, {
-"filter": [  ],
-"from": "CreatureBossWingsGLAtt",
-"id": "WingsAttack1",
-"position": Vector2( 227, 630 ),
-"type": "animation"
 }, {
 "blend": 0.0,
 "id": "HandAttackBlend",
@@ -4398,9 +4503,9 @@ data = {
 "type": "blend3"
 }, {
 "filter": [  ],
-"from": "CreatureBossAttack02",
-"id": "Attack2",
-"position": Vector2( 236, 425 ),
+"from": "CreatureBossWingsGLAtt",
+"id": "WingsAttack1",
+"position": Vector2( 227, 630 ),
 "type": "animation"
 }, {
 "filter": [  ],
@@ -4414,19 +4519,25 @@ data = {
 "id": "Attack3",
 "position": Vector2( 235, 526 ),
 "type": "animation"
+}, {
+"filter": [  ],
+"from": "CreatureBossAttack02",
+"id": "Attack2",
+"position": Vector2( 236, 425 ),
+"type": "animation"
 } ]
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="4"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.184573, 0 )
-shape = SubResource( 23 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.06118, 0 )
+shape = SubResource( 16 )
 disabled = false
 
 [node name="Area" type="Area" parent="." index="5"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 1.24575, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -4451,12 +4562,13 @@ reverb_bus_uniformity = 0.0
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.285048, 0.461506 )
-shape = SubResource( 24 )
+shape = SubResource( 17 )
 disabled = false
 
 [node name="Detect_Area" type="Area" parent="." index="6"]
 
 editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -4480,12 +4592,13 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Detect_Area" index="0"]
 
-shape = SubResource( 25 )
+shape = SubResource( 18 )
 disabled = false
 
 [node name="Attack_Area" type="Area" parent="." index="7"]
 
 editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -4509,11 +4622,12 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Attack_Area" index="0"]
 
-shape = SubResource( 26 )
+shape = SubResource( 19 )
 disabled = false
 
 [node name="CreatureHit" type="AudioStreamPlayer3D" parent="." index="8"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
 stream = ExtResource( 11 )
 attenuation_model = 0
 unit_db = 0.0
@@ -4535,6 +4649,7 @@ doppler_tracking = 0
 [node name="Map_Area" type="Area" parent="." index="9"]
 
 editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -4558,7 +4673,7 @@ reverb_bus_uniformity = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Map_Area" index="0"]
 
-shape = SubResource( 27 )
+shape = SubResource( 20 )
 disabled = false
 
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]

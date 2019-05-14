@@ -215,7 +215,6 @@ _sections_unfolded = [ "Patch Margin", "Rect" ]
 
 [node name="CharacterSelectTitle" type="Control" parent="CharacterSelect" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -416,6 +415,30 @@ text = "Back"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="LockedLabel" type="Label" parent="CharacterSelect/CharacterSelectTitle" index="7"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -59.0
+margin_top = 345.0
+margin_right = 56.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Locked"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="CamHolder" type="Spatial" parent="CharacterSelect" index="2"]
 

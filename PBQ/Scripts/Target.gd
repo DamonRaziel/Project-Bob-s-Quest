@@ -28,7 +28,7 @@ func _physics_process(delta):
 			target_mesh.visible = true
 			current_health = TARGET_HEALTH
 
-func _hit(damage, _hit_pos):
+func _hit(damage, type, _hit_pos):
 	current_health -= damage
 	PlayerData.Player_Information.player_points += 10
 	if current_health <= 0:

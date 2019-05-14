@@ -10,7 +10,7 @@ func _ready():
 	credit_text_content = credit_text_content + "[color=#ffb100]Credit and thanks for putting up with me having this as a hobby and spending time on my laptop. Love her lots. X  [/color]\n"
 
 	credit_text_content = credit_text_content + "\n"
-	credit_text_content = credit_text_content + "[color=#9400bf]Damon R. [/color]\n"
+	credit_text_content = credit_text_content + "[color=#9400bf]Damon R. aka me. [/color]\n"
 	credit_text_content = credit_text_content + "[color=#9400bf]Brought together various tutorials as well as figuring out how things work to produce an example 3d prject to show what is possible and to get familiar with a new game engine. Project Bob's Quest can be used as a base for future projects.  [/color]\n"
 	
 	credit_text_content = credit_text_content + "\n"

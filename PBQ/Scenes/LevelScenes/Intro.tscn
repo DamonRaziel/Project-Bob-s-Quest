@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 768 ), Vector2( 0, -1200 ) ]
 }
 
-[node name="Intro" type="Control" index="0"]
+[node name="Intro" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -240,7 +240,7 @@ group = null
 text = "Skip"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

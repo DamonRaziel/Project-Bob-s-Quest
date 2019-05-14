@@ -1,11 +1,17 @@
 extends KinematicBody
 #adapted from older player control script
+# replace player finding script
+#something similar to script for when body entered, eg if body has method "is player" , player = body,
+#and on player exit area, if has method "is player", player = null
+#make it not rely upon absolute path of player nodes
+
+#add in way point system
+#change movement script to use navmesh
 
 var player_global_position
 
 var accel 
 var DEACCEL = 1.0
-var character
 const ACCEL = 1.0
 
 var MAX_ATTACK_SPEED = 0.0
@@ -24,6 +30,9 @@ var velocity = Vector3()
 
 var is_chasing_player = false
 var is_attacking_player = false
+var is_retreating = false
+var is_wandering = false
+var is_idle = true
 
 var zombie_damage = 20
 
@@ -56,7 +65,6 @@ func _ready():
 	set_physics_process(true)
 	enemy_origin = enemy.get_global_transform().origin
 	get_node("AnimationTreePlayer").set_active(true)
-	character = get_node(".")
 	hit_sound = $AudioHit
 
 func _physics_process(delta):
@@ -105,9 +113,9 @@ func _physics_process(delta):
 		if is_attacking_player == false:
 			velocity = move_and_slide(velocity, Vector3(0,1,0))
 			var angle = atan2(hv.x, hv.z)
-			var char_rot = character.get_rotation()
+			var char_rot = enemy.get_rotation()
 			char_rot.y = angle
-			character.set_rotation(char_rot)
+			enemy.set_rotation(char_rot)
 	#----End of Movement Section----#
 	
 	#----Attack Section----#
@@ -122,9 +130,9 @@ func _physics_process(delta):
 			if attack_timer>=attack_time:
 				velocity = move_and_slide(Vector3(0,0,0), Vector3(0,1,0))
 				var angle = atan2(hv.x, hv.z)
-				var char_rot = character.get_rotation()
+				var char_rot = enemy.get_rotation()
 				char_rot.y = angle
-				character.set_rotation(char_rot)
+				enemy.set_rotation(char_rot)
 				attacking = true
 				zombie_attack()
 	else:

@@ -150,6 +150,11 @@ onready var chainmail_female = get_node("ArmaturePlayer01/Skeleton/PlayerChainma
 onready var scalemail_female = get_node("ArmaturePlayer01/Skeleton/PlayerScalemailFemale")
 onready var fullplate_female = get_node("ArmaturePlayer01/Skeleton/PlayerFullPlateFemale")
 
+var carrying_object = false
+var object_being_carried = null
+var grabbed_object_pos
+var grabbed_object_pos2
+
 func _ready():
 	#first check which player we are meant to be, and setup meshes and materials for character
 	if PlayerData.Player_Information.player_name == "Bob":
@@ -323,6 +328,8 @@ func _ready():
 	
 	combo_indicator.hide()
 	combo_counter.hide()
+	grabbed_object_pos = $ArmaturePlayer01/Skeleton/UpperSpineBone/GrabArea/GrabbedHoldPos
+	grabbed_object_pos2 = $ArmaturePlayer01/Skeleton/UpperSpineBone/GrabArea/GrabbedHoldPos2
 
 func set_bone_rot(bone, ang):
 	#used for aiming, adapted from skeleton demo
@@ -344,7 +351,7 @@ func process_UI(delta):
 		arrows_display.text = str(Global_Player.normal_arrow_counter)
 	else:
 		arrows_display.text = ""
-	UI_Status_Label_05.text = "Lives: " + str(PlayerData.Player_Information.player_lives)
+	UI_Status_Label_05.text = str(PlayerData.Player_Information.player_lives) #"Lives: " + str(PlayerData.Player_Information.player_lives)
 	UI_Status_label_07.text = "FPS: " + str(Engine.get_frames_per_second())
 	UI_Status_Label_08.text = "Points: " + str(PlayerData.Player_Information.player_points)
 	UI_Status_Label_09.text = "Pitch:" + str(cam_pitch) + " /Yaw:" + str(cam_yaw)
@@ -400,6 +407,8 @@ func _process(delta):
 			PlayerData.Player_Information.player_current_shield_number = 0
 	#---- Weapon Quick Change ----#
 	if Input.is_action_just_pressed("one"):
+		if carrying_object == true:
+			throw_object()
 		if Global_Player.inventory_equiped_items.inventory_weapons1 != -1:
 			PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1
 			if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
@@ -436,6 +445,8 @@ func _process(delta):
 			PlayerData.Player_Information.player_current_weapon_number = 0
 			PlayerData.Player_Information.player_weapon_in_scene = 0
 	if Input.is_action_just_pressed("two"):
+		if carrying_object == true:
+			throw_object()
 		if Global_Player.inventory_equiped_items.inventory_weapons2 != -1:
 			PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons2
 			if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
@@ -472,6 +483,8 @@ func _process(delta):
 			PlayerData.Player_Information.player_current_weapon_number = 0
 			PlayerData.Player_Information.player_weapon_in_scene = 0
 	if Input.is_action_just_pressed("three"):
+		if carrying_object == true:
+			throw_object()
 		if Global_Player.inventory_equiped_items.inventory_weapons3 != -1:
 			PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons3
 			if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
@@ -930,6 +943,8 @@ func _physics_process(delta):
 	if is_on_floor():
 		#if not defending, defend
 		if (Input.is_action_pressed("defend")):
+			if carrying_object == true:
+				throw_object()
 			is_defending = true
 		else:
 			is_defending = false
@@ -1034,6 +1049,8 @@ func _physics_process(delta):
 	#attack attempt input
 	var shoot_attempt = Input.is_action_pressed("left_mouse")
 	if (shoot_attempt and not prev_shoot):
+		if carrying_object == true:
+			throw_object()
 		#set to 0 or -1 to make sure unarmed, as slots can be set to -1
 		if PlayerData.Player_Information.player_current_weapon_number == 0 or PlayerData.Player_Information.player_current_weapon_number == -1: #unarmed
 			if attack_timer >=attack_time:
@@ -1141,6 +1158,21 @@ func _physics_process(delta):
 		jumponehandedanimplay = false
 		jumptwohandedanimplay = false
 	prev_shoot = shoot_attempt
+	
+	#grab objects section###################
+	if PlayerData.Player_Information.player_current_weapon_number == 0 or PlayerData.Player_Information.player_current_weapon_number == -1: #unarmed
+		if Input.is_action_just_pressed("axe_get"):
+			if carrying_object == false:
+				check_if_can_grab()
+			elif carrying_object == true:
+				throw_object()
+	
+	if carrying_object == true:
+		if object_being_carried.object_type == 1:
+			object_being_carried.global_transform.origin = grabbed_object_pos.global_transform.origin
+		elif object_being_carried.object_type == 2:
+			object_being_carried.global_transform.origin = grabbed_object_pos2.global_transform.origin
+	
 	#---- Character Animation Section ----#
 	#could have used more transition nodes instead of blend nodes, as whole values used, rather than blends
 	var speed 
@@ -1225,7 +1257,7 @@ func _physics_process(delta):
 
 #---- Character Attack Functions ----#
 func _attack_01():
-	var area = $Area
+	var area = $ArmaturePlayer01/Skeleton/UpperSpineBone/Area#$Area
 	var bodies = area.get_overlapping_bodies()
 	var damage
 	var magic_damage
@@ -1301,7 +1333,7 @@ func _attack_01():
 				body._hit(magic_damage, second_attack_type, area.global_transform.origin)
 
 func _attack_02():
-	var area = $Area
+	var area = $ArmaturePlayer01/Skeleton/UpperSpineBone/Area#$Area
 	var bodies = area.get_overlapping_bodies()
 	var damage
 	var magic_damage
@@ -1377,7 +1409,7 @@ func _attack_02():
 				body._hit(magic_damage, second_attack_type, area.global_transform.origin)
 
 func _attack_03():
-	var area = $Area
+	var area = $ArmaturePlayer01/Skeleton/UpperSpineBone/Area#$Area
 	var bodies = area.get_overlapping_bodies()
 	var damage
 	var magic_damage
@@ -1538,7 +1570,17 @@ func _hit(damage_received, type, hit_position):
 	else:
 		shield_value = 0
 	var damage_to_player
-	damage_to_player = (damage_received - armour_value - shield_value - fort_mod)
+	if type == 0: # normal
+		damage_to_player = (damage_received - armour_value - shield_value - fort_mod - PlayerData.Player_Information.player_defence)
+	elif type == 1: # lightning
+		damage_to_player = (damage_received - armour_value - shield_value - fort_mod - PlayerData.Player_Information.player_lightning_affinity)
+	elif type == 2: # ice
+		damage_to_player = (damage_received - armour_value - shield_value - fort_mod - PlayerData.Player_Information.player_ice_affinity)
+	elif type == 3: # fire
+		damage_to_player = (damage_received - armour_value - shield_value - fort_mod - PlayerData.Player_Information.player_fire_affinity)
+	elif type == 4: # earth
+		damage_to_player = (damage_received - armour_value - shield_value - fort_mod - PlayerData.Player_Information.player_earth_affinity)
+	#damage_to_player = (damage_received - armour_value - shield_value - fort_mod)
 	damage_to_player = clamp(damage_to_player, 0, 500)
 	PlayerData.Player_Information.player_health -= damage_to_player
 	p_hit.play()
@@ -1550,7 +1592,10 @@ func _player_death():
 		PlayerData.Player_Information.player_lives -= 1
 		_respawn_player()
 	elif PlayerData.Player_Information.player_lives <= 0:
-		get_node("/root/PlayerData").goto_scene("res://Scenes/MenuScenes/GameOver.tscn")
+		if PlayerData.Player_Information.current_level == 8500:
+			get_node("/root/PlayerData").goto_scene("res://Scenes/ArenaScenes/ArenaScoreBoard.tscn")
+		else:
+			get_node("/root/PlayerData").goto_scene("res://Scenes/MenuScenes/GameOver.tscn")
 
 func _respawn_player():
 	PlayerData.Player_Information.player_health = PlayerData.Player_Information.player_max_health
@@ -1618,3 +1663,30 @@ func track_zombies(posi_x, posi_y):
 func track_allies(posi_x, posi_y):
 	map.add_ally_sprite(posi_x, posi_y)
 	pass
+
+func check_if_can_grab():
+	var grab_area = $ArmaturePlayer01/Skeleton/UpperSpineBone/GrabArea
+	var grab_bodies = grab_area.get_overlapping_bodies()
+	for grab_body in grab_bodies:
+		if grab_body == self:
+			continue
+		if grab_body is RigidBody:
+			if grab_body.has_method("_bump"):
+				object_being_carried = grab_body
+				object_being_carried.mode = RigidBody.MODE_STATIC
+				object_being_carried.grabbed = true
+				carrying_object = true
+
+func throw_object():
+	var hit_here
+	hit_here = grabbed_object_pos.global_transform.origin
+	object_being_carried.mode = RigidBody.MODE_RIGID
+	object_being_carried.grabbed = false
+	object_being_carried._bump(hit_here)
+	object_being_carried = null
+	carrying_object = false
+
+
+
+
+

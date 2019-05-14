@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/LevelScripts/Level04Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=2]
@@ -7,30 +7,32 @@
 [ext_resource path="res://Scripts/LevelScripts/Level04Complete.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/NPCScenes/Town02Guard.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/EnemyScenes/ZombieMale.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/EnemyScenes/ZombieFemale.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/EnemyScenes/Creature.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/PickupScenes/PickupAppleGreen.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/PickupScenes/PickupPotionHealth.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/PickupScenes/PickupPotionMana.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/PickupScenes/PickupPotionStrength.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/PickupScenes/PickupTea.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/PickupScenes/PickupArmourChainmail.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/PickupScenes/PickupArmourScalemail.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/PickupScenes/PickupShieldBuckler.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/PickupScenes/PickupShieldTower.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/PickupScenes/PickupWeaponAxe.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/PickupScenes/PickupWeaponWarhammerEarth.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/PickupScenes/PickupTorches.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/PickupScenes/PickupWeaponAxeIce.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/PickupScenes/PickupArrowsNormal.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Plank.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/PickupScenes/PickupsNew/NewCoins.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Music/MusicController.gd" type="Script" id=27]
-[ext_resource path="res://Music/Hiding Your Reality.ogg" type="AudioStream" id=28]
-[ext_resource path="res://Music/Full On.ogg" type="AudioStream" id=29]
-[ext_resource path="res://Music/Crisis.ogg" type="AudioStream" id=30]
-[ext_resource path="res://Music/Curse of the Scarab.ogg" type="AudioStream" id=31]
+[ext_resource path="res://Scenes/LevelScenes/NavMeshScenes/NavMeshTown02Part01.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieMaleNavTest.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieFemaleNav.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/EnemyScenes/CreatureNav.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/PickupScenes/PickupAppleGreen.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionHealth.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionMana.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/PickupScenes/PickupPotionStrength.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/PickupScenes/PickupTea.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/PickupScenes/PickupArmourChainmail.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/PickupScenes/PickupArmourScalemail.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldBuckler.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/PickupScenes/PickupShieldTower.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/PickupScenes/PickupWeaponAxe.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/PickupScenes/PickupWeaponWarhammerEarth.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/PickupScenes/PickupTorches.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/PickupScenes/PickupWeaponAxeIce.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/PickupScenes/PickupArrowsNormal.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Plank.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/PickupScenes/PickupsNew/NewCoins.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Music/MusicController.gd" type="Script" id=29]
+[ext_resource path="res://Music/Hiding Your Reality.ogg" type="AudioStream" id=30]
+[ext_resource path="res://Music/Full On.ogg" type="AudioStream" id=31]
+[ext_resource path="res://Music/Crisis.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Music/Curse of the Scarab.ogg" type="AudioStream" id=33]
 
 [sub_resource type="Environment" id=1]
 
@@ -115,6 +117,66 @@ _sections_unfolded = [ "Ambient Light" ]
 
 extents = Vector3( 7.08577, 3.2806, 1 )
 
+[sub_resource type="SphereMesh" id=5]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 0.1
+height = 0.2
+radial_segments = 16
+rings = 8
+is_hemisphere = false
+
+[sub_resource type="SpatialMaterial" id=6]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 0, 0.914063, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+
 [sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 1, 9.2187, 28.7213 )
@@ -123,7 +185,7 @@ extents = Vector3( 1, 9.2187, 28.7213 )
 
 extents = Vector3( 12.1981, 9.79507, 1 )
 
-[node name="Level04" type="Spatial"]
+[node name="Level04" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -185,6 +247,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="CitadelTownPart01" parent="." index="5" instance=ExtResource( 4 )]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0509033, 0, 0 )
+
 [node name="EndOfLevel" type="Spatial" parent="." index="6"]
 
 editor/display_folded = true
@@ -242,50 +306,406 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.03106, 44 )
 
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -51, 0, 6 )
 
-[node name="EnemyHolder" type="Spatial" parent="." index="10"]
+[node name="NavMeshTown02Part01" parent="." index="10" instance=ExtResource( 8 )]
+
+[node name="WaypointsHolder" type="Spatial" parent="NavMeshTown02Part01" index="2"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.02686, 50 )
+script = ExtResource( 9 )
 
-[node name="ZombieMale" parent="EnemyHolder" index="0" instance=ExtResource( 8 )]
+[node name="Waypoint1" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="0"]
 
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -16, 0, 0 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.6, 0.75, 74.2911 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="ZombieMale2" parent="EnemyHolder" index="1" instance=ExtResource( 8 )]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint1" index="0"]
 
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 12, 0, 11 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="ZombieMale3" parent="EnemyHolder" index="2" instance=ExtResource( 8 )]
+[node name="Waypoint2" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="1"]
 
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 56, 0, 77 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2215, 0.75, 86.8481 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="ZombieMale4" parent="EnemyHolder" index="3" instance=ExtResource( 8 )]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint2" index="0"]
 
-transform = Transform( 0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 26, 0, 39 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="ZombieFemale" parent="EnemyHolder" index="4" instance=ExtResource( 9 )]
+[node name="Waypoint3" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9839, 0.75, 91.9058 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="ZombieFemale2" parent="EnemyHolder" index="5" instance=ExtResource( 9 )]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint3" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -43 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="ZombieFemale3" parent="EnemyHolder" index="6" instance=ExtResource( 9 )]
+[node name="Waypoint4" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="3"]
 
-transform = Transform( -0.996195, 0, 0.0871556, 0, 1, 0, -0.0871556, 0, -0.996195, 30, 0, 64 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.7351, 0.75, 86.3249 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="ZombieFemale4" parent="EnemyHolder" index="7" instance=ExtResource( 9 )]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint4" index="0"]
 
-transform = Transform( -0.0871559, 0, 0.996195, 0, 1, 0, -0.996195, 0, -0.0871559, 22, 0, 42 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="Creature" parent="EnemyHolder" index="8" instance=ExtResource( 10 )]
+[node name="Waypoint5" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="4"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.266995, -17 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87.9897, 0.75, 62.0829 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Creature2" parent="EnemyHolder" index="9" instance=ExtResource( 10 )]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint5" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.266995, -47 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint6" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="5"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7233, 0.75, 58.7611 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint6" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint7" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="6"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0942, 0.75, 43.3384 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint7" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint8" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="7"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7214, 0.75, 9.64563 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint8" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint9" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="8"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2287, 0.75, -0.0825653 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint9" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint10" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="9"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.8369, 0.75, 6.3238 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint10" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint11" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="10"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09687, 0.75, 107.199 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint11" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint12" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="11"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9607, 0.75, 107.199 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint12" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint13" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="12"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1888, 0.75, 123.783 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint13" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint14" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="13"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7381, 0.75, 127.363 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint14" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Waypoint15" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder" index="14"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3186, 0.75, 108.801 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown02Part01/WaypointsHolder/Waypoint15" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = SubResource( 6 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="EnemyHolder" type="Spatial" parent="NavMeshTown02Part01" index="3"]
+
+editor/display_folded = true
+
+[node name="ZombieMaleNavTest" parent="NavMeshTown02Part01/EnemyHolder" index="0" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96818, 0.0502197, 88.9812 )
+
+[node name="ZombieMaleNavTest2" parent="NavMeshTown02Part01/EnemyHolder" index="1" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40597, 0.0502197, 113.85 )
+
+[node name="ZombieMaleNavTest3" parent="NavMeshTown02Part01/EnemyHolder" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0255, 0.0502197, 60.914 )
+
+[node name="ZombieMaleNavTest4" parent="NavMeshTown02Part01/EnemyHolder" index="3" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9307, 0.0502197, 3.16444 )
+
+[node name="ZombieMaleNavTest5" parent="NavMeshTown02Part01/EnemyHolder" index="4" instance=ExtResource( 10 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14419, 0.0502197, 121.326 )
+
+[node name="ZombieFemaleNav" parent="NavMeshTown02Part01/EnemyHolder" index="5" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86488, 0.0502197, 92.1166 )
+
+[node name="ZombieFemaleNav2" parent="NavMeshTown02Part01/EnemyHolder" index="6" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0781, 0.0502197, 126.772 )
+
+[node name="ZombieFemaleNav3" parent="NavMeshTown02Part01/EnemyHolder" index="7" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9554, 0.0502197, 49.9105 )
+
+[node name="ZombieFemaleNav4" parent="NavMeshTown02Part01/EnemyHolder" index="8" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9699, 0.0502197, 6.48957 )
+
+[node name="ZombieFemaleNav5" parent="NavMeshTown02Part01/EnemyHolder" index="9" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.217, 0.0502197, 116.516 )
+
+[node name="CreatureNav" parent="NavMeshTown02Part01/EnemyHolder" index="10" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9627, 0.0607472, 88.5962 )
+
+[node name="CreatureNav2" parent="NavMeshTown02Part01/EnemyHolder" index="11" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94912, 0.0607472, 116.169 )
+
+[node name="CreatureNav3" parent="NavMeshTown02Part01/EnemyHolder" index="12" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8014, 0.0607472, 42.1804 )
+
+[node name="CreatureNav4" parent="NavMeshTown02Part01/EnemyHolder" index="13" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.8357, 0.0607472, 27.9841 )
+
+[node name="CreatureNav5" parent="NavMeshTown02Part01/EnemyHolder" index="14" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1083, 0.0607472, 29.9171 )
 
 [node name="LevelLimits" type="StaticBody" parent="." index="11"]
 
@@ -444,57 +864,57 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PickupAppleGreen" parent="PickupsHolder" index="0" instance=ExtResource( 11 )]
+[node name="PickupAppleGreen" parent="PickupsHolder" index="0" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1461, 0, 107.949 )
 
-[node name="PickupAppleGreen5" parent="PickupsHolder" index="1" instance=ExtResource( 11 )]
+[node name="PickupAppleGreen5" parent="PickupsHolder" index="1" instance=ExtResource( 13 )]
 
 transform = Transform( 0.513495, 0, -0.858093, 0, 1, 0, 0.858093, 0, 0.513495, -5.75243, 0, 68.0632 )
 
-[node name="PickupAppleGreen2" parent="PickupsHolder" index="2" instance=ExtResource( 11 )]
+[node name="PickupAppleGreen2" parent="PickupsHolder" index="2" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2926, 0, 107.949 )
 
-[node name="PickupAppleGreen4" parent="PickupsHolder" index="3" instance=ExtResource( 11 )]
+[node name="PickupAppleGreen4" parent="PickupsHolder" index="3" instance=ExtResource( 13 )]
 
 transform = Transform( 0.513495, 0, -0.858093, 0, 1, 0, 0.858093, 0, 0.513495, -2.59626, 0, 73.3375 )
 
-[node name="PickupAppleGreen3" parent="PickupsHolder" index="4" instance=ExtResource( 11 )]
+[node name="PickupAppleGreen3" parent="PickupsHolder" index="4" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2341, 0, 107.949 )
 
-[node name="PickupAppleGreen6" parent="PickupsHolder" index="5" instance=ExtResource( 11 )]
+[node name="PickupAppleGreen6" parent="PickupsHolder" index="5" instance=ExtResource( 13 )]
 
 transform = Transform( 0.513495, 0, -0.858093, 0, 1, 0, 0.858093, 0, 0.513495, 0.454696, 0, 78.4359 )
 
-[node name="PickupPotionHealth" parent="PickupsHolder" index="6" instance=ExtResource( 12 )]
+[node name="PickupPotionHealth" parent="PickupsHolder" index="6" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.799, 0, 93.9775 )
 
-[node name="PickupPotionHealth2" parent="PickupsHolder" index="7" instance=ExtResource( 12 )]
+[node name="PickupPotionHealth2" parent="PickupsHolder" index="7" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5007, 11, 73.7142 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PickupPotionMana" parent="PickupsHolder" index="8" instance=ExtResource( 13 )]
+[node name="PickupPotionMana" parent="PickupsHolder" index="8" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 94.3812, 0, 64.6055 )
 
-[node name="PickupPotionMana2" parent="PickupsHolder" index="9" instance=ExtResource( 13 )]
+[node name="PickupPotionMana2" parent="PickupsHolder" index="9" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1522, 0, 107.011 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PickupPotionStrength" parent="PickupsHolder" index="10" instance=ExtResource( 14 )]
+[node name="PickupPotionStrength" parent="PickupsHolder" index="10" instance=ExtResource( 16 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -85.0999, 0, 49.9502 )
 
-[node name="PickupTea" parent="PickupsHolder" index="11" instance=ExtResource( 15 )]
+[node name="PickupTea" parent="PickupsHolder" index="11" instance=ExtResource( 17 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.1013, 0, 51.2824 )
 
-[node name="PickupTea2" parent="PickupsHolder" index="12" instance=ExtResource( 15 )]
+[node name="PickupTea2" parent="PickupsHolder" index="12" instance=ExtResource( 17 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3012, 11, 77.0722 )
 _sections_unfolded = [ "Transform" ]
@@ -505,57 +925,57 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PickupArmourChainmail" parent="PickupEquipHolder" index="0" instance=ExtResource( 16 )]
+[node name="PickupArmourChainmail" parent="PickupEquipHolder" index="0" instance=ExtResource( 18 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.1786, 0, 28.2789 )
 
-[node name="PickupArmourScalemail" parent="PickupEquipHolder" index="1" instance=ExtResource( 17 )]
+[node name="PickupArmourScalemail" parent="PickupEquipHolder" index="1" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7082, 0, 10.302 )
 
-[node name="PickupShieldBuckler" parent="PickupEquipHolder" index="2" instance=ExtResource( 18 )]
+[node name="PickupShieldBuckler" parent="PickupEquipHolder" index="2" instance=ExtResource( 20 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7339, 0, 89.6443 )
 
-[node name="PickupShieldTower" parent="PickupEquipHolder" index="3" instance=ExtResource( 19 )]
+[node name="PickupShieldTower" parent="PickupEquipHolder" index="3" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.8955, 11, 39.5744 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PickupWeaponAxe" parent="PickupEquipHolder" index="4" instance=ExtResource( 20 )]
+[node name="PickupWeaponAxe" parent="PickupEquipHolder" index="4" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3899, 0, 97.0127 )
 
-[node name="PickupWeaponWarhammer" parent="PickupEquipHolder" index="5" instance=ExtResource( 21 )]
+[node name="PickupWeaponWarhammer" parent="PickupEquipHolder" index="5" instance=ExtResource( 23 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8705, 11, 69.0071 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PickupTorches" parent="PickupEquipHolder" index="6" instance=ExtResource( 22 )]
+[node name="PickupTorches" parent="PickupEquipHolder" index="6" instance=ExtResource( 24 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1845, 0, 90.822 )
 
-[node name="PickupWeaponAxe2" parent="PickupEquipHolder" index="7" instance=ExtResource( 23 )]
+[node name="PickupWeaponAxe2" parent="PickupEquipHolder" index="7" instance=ExtResource( 25 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7267, 0, 105.466 )
 
-[node name="PickupArrowsNormal" parent="PickupEquipHolder" index="8" instance=ExtResource( 24 )]
+[node name="PickupArrowsNormal" parent="PickupEquipHolder" index="8" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4241, 0, 79.2617 )
 
-[node name="PickupArrowsNormal2" parent="PickupEquipHolder" index="9" instance=ExtResource( 24 )]
+[node name="PickupArrowsNormal2" parent="PickupEquipHolder" index="9" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8296, 0, 79.2617 )
 
-[node name="PickupArrowsNormal3" parent="PickupEquipHolder" index="10" instance=ExtResource( 24 )]
+[node name="PickupArrowsNormal3" parent="PickupEquipHolder" index="10" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.3645, 0, 27.5903 )
 
-[node name="PickupArrowsNormal4" parent="PickupEquipHolder" index="11" instance=ExtResource( 24 )]
+[node name="PickupArrowsNormal4" parent="PickupEquipHolder" index="11" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.9716, 0, 27.5903 )
 
-[node name="PickupArrowsNormal5" parent="PickupEquipHolder" index="12" instance=ExtResource( 24 )]
+[node name="PickupArrowsNormal5" parent="PickupEquipHolder" index="12" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24024, 0, 123.827 )
 
@@ -564,11 +984,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24024, 0, 123.827 )
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1814, 9.56336, 75.9073 )
 
-[node name="Plank" parent="Planks" index="0" instance=ExtResource( 25 )]
+[node name="Plank" parent="Planks" index="0" instance=ExtResource( 27 )]
 
 transform = Transform( 0.911664, 0, 0.410937, 0, 1, 0, -0.410937, 0, 0.911664, -55.3142, 0, -22.9992 )
 
-[node name="Plank2" parent="Planks" index="1" instance=ExtResource( 25 )]
+[node name="Plank2" parent="Planks" index="1" instance=ExtResource( 27 )]
 
 transform = Transform( 0.990156, 0, -0.139964, 0, 1, 0, 0.139964, 0, 0.990156, -60.0956, 0, -49.1182 )
 
@@ -578,63 +998,63 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5045, 1.4, 71.3031 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NewCoins" parent="CoinsHolder" index="0" instance=ExtResource( 26 )]
+[node name="NewCoins" parent="CoinsHolder" index="0" instance=ExtResource( 28 )]
 
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 56.3462, 0, 21.4301 )
 
-[node name="NewCoins2" parent="CoinsHolder" index="1" instance=ExtResource( 26 )]
+[node name="NewCoins2" parent="CoinsHolder" index="1" instance=ExtResource( 28 )]
 
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 66.4057, 0, 17.1912 )
 
-[node name="NewCoins3" parent="CoinsHolder" index="2" instance=ExtResource( 26 )]
+[node name="NewCoins3" parent="CoinsHolder" index="2" instance=ExtResource( 28 )]
 
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 76.4968, 0, 13.1737 )
 
-[node name="NewCoins6" parent="CoinsHolder" index="3" instance=ExtResource( 26 )]
+[node name="NewCoins6" parent="CoinsHolder" index="3" instance=ExtResource( 28 )]
 
 transform = Transform( 1.92858, 0, -0.529696, 0, 2, 0, 0.529696, 0, 1.92858, 7.55775, 0, 64.7448 )
 
-[node name="NewCoins4" parent="CoinsHolder" index="4" instance=ExtResource( 26 )]
+[node name="NewCoins4" parent="CoinsHolder" index="4" instance=ExtResource( 28 )]
 
 transform = Transform( 1.92858, 0, -0.529696, 0, 2, 0, 0.529696, 0, 1.92858, 29.1754, 0, 62.1201 )
 
-[node name="NewCoins5" parent="CoinsHolder" index="5" instance=ExtResource( 26 )]
+[node name="NewCoins5" parent="CoinsHolder" index="5" instance=ExtResource( 28 )]
 
 transform = Transform( 1.92858, 0, -0.529696, 0, 2, 0, 0.529696, 0, 1.92858, 18.3807, 0, 63.3215 )
 
-[node name="NewCoins9" parent="CoinsHolder" index="6" instance=ExtResource( 26 )]
+[node name="NewCoins9" parent="CoinsHolder" index="6" instance=ExtResource( 28 )]
 
 transform = Transform( 1.96304, 0, -0.382729, 0, 2, 0, 0.382729, 0, 1.96304, -7.67824, 0, -18.311 )
 
-[node name="NewCoins7" parent="CoinsHolder" index="7" instance=ExtResource( 26 )]
+[node name="NewCoins7" parent="CoinsHolder" index="7" instance=ExtResource( 28 )]
 
 transform = Transform( 1.96304, 0, -0.382729, 0, 2, 0, 0.382729, 0, 1.96304, 3.0065, 0, -20.5466 )
 
-[node name="NewCoins8" parent="CoinsHolder" index="8" instance=ExtResource( 26 )]
+[node name="NewCoins8" parent="CoinsHolder" index="8" instance=ExtResource( 28 )]
 
 transform = Transform( 1.96304, 0, -0.382729, 0, 2, 0, 0.382729, 0, 1.96304, 13.6799, 0, -22.5587 )
 
-[node name="NewCoins11" parent="CoinsHolder" index="9" instance=ExtResource( 26 )]
+[node name="NewCoins11" parent="CoinsHolder" index="9" instance=ExtResource( 28 )]
 
 transform = Transform( 1.91216, 0, -0.586216, 0, 2, 0, 0.586216, 0, 1.91216, -70.9934, 0, -83.8112 )
 
-[node name="NewCoins12" parent="CoinsHolder" index="10" instance=ExtResource( 26 )]
+[node name="NewCoins12" parent="CoinsHolder" index="10" instance=ExtResource( 28 )]
 
 transform = Transform( 1.91216, 0, -0.586216, 0, 2, 0, 0.586216, 0, 1.91216, -49.3079, 0, -85.7986 )
 
-[node name="NewCoins10" parent="CoinsHolder" index="11" instance=ExtResource( 26 )]
+[node name="NewCoins10" parent="CoinsHolder" index="11" instance=ExtResource( 28 )]
 
 transform = Transform( 1.91216, 0, -0.586216, 0, 2, 0, 0.586216, 0, 1.91216, -60.1333, 0, -84.9154 )
 
-[node name="NewCoins15" parent="CoinsHolder" index="12" instance=ExtResource( 26 )]
+[node name="NewCoins15" parent="CoinsHolder" index="12" instance=ExtResource( 28 )]
 
 transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -78.2254, 0, -10.4515 )
 
-[node name="NewCoins14" parent="CoinsHolder" index="13" instance=ExtResource( 26 )]
+[node name="NewCoins14" parent="CoinsHolder" index="13" instance=ExtResource( 28 )]
 
 transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -73.0642, 0, -0.832611 )
 
-[node name="NewCoins13" parent="CoinsHolder" index="14" instance=ExtResource( 26 )]
+[node name="NewCoins13" parent="CoinsHolder" index="14" instance=ExtResource( 28 )]
 
 transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -68.1205, 0, 8.8385 )
 
@@ -642,28 +1062,10 @@ transform = Transform( 0.187066, 0, -1.99123, 0, 2, 0, 1.99123, 0, 0.187066, -68
 
 pause_mode = 2
 editor/display_folded = true
-script = ExtResource( 27 )
+script = ExtResource( 29 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="AudioStreamHYR" type="AudioStreamPlayer" parent="MusicController" index="0"]
-
-stream = ExtResource( 28 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "MusicBus"
-
-[node name="AudioStreamFO" type="AudioStreamPlayer" parent="MusicController" index="1"]
-
-stream = ExtResource( 29 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "MusicBus"
-
-[node name="AudioStreamC" type="AudioStreamPlayer" parent="MusicController" index="2"]
 
 stream = ExtResource( 30 )
 volume_db = 0.0
@@ -672,9 +1074,27 @@ autoplay = false
 mix_target = 0
 bus = "MusicBus"
 
-[node name="AudioStreamCotS" type="AudioStreamPlayer" parent="MusicController" index="3"]
+[node name="AudioStreamFO" type="AudioStreamPlayer" parent="MusicController" index="1"]
 
 stream = ExtResource( 31 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamC" type="AudioStreamPlayer" parent="MusicController" index="2"]
+
+stream = ExtResource( 32 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "MusicBus"
+
+[node name="AudioStreamCotS" type="AudioStreamPlayer" parent="MusicController" index="3"]
+
+stream = ExtResource( 33 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

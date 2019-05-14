@@ -1727,7 +1727,7 @@ size_flags_vertical = 1
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="ItemMenu_TextureFrame_Icon" type="TextureRect" parent="Panel/WindowDialog_ItemMenu" index="1"]
+[node name="ItemMenu_TextureFrame_Icon" type="TextureRect" parent="Panel/WindowDialog_ItemMenu" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1748,7 +1748,7 @@ expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Rect" ]
 
-[node name="ItemMenu_RichTextLabel_ItemInfo" type="RichTextLabel" parent="Panel/WindowDialog_ItemMenu" index="2"]
+[node name="ItemMenu_RichTextLabel_ItemInfo" type="RichTextLabel" parent="Panel/WindowDialog_ItemMenu" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1778,7 +1778,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
 
-[node name="ItemMenu_Button_DropItem" type="Button" parent="Panel/WindowDialog_ItemMenu" index="3"]
+[node name="ItemMenu_Button_DropItem" type="Button" parent="Panel/WindowDialog_ItemMenu" index="2"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1805,7 +1805,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="ItemMenu_Button_EquipItem" type="Button" parent="Panel/WindowDialog_ItemMenu" index="4"]
+[node name="ItemMenu_Button_EquipItem" type="Button" parent="Panel/WindowDialog_ItemMenu" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -2124,7 +2124,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Close_Button" type="Button" parent="Panel/WindowDialog_ItemMenu" index="5"]
+[node name="Close_Button" type="Button" parent="Panel/WindowDialog_ItemMenu" index="4"]
 
 anchor_left = 1.0
 anchor_top = 0.0
@@ -2637,7 +2637,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 [node name="DropperRotator" type="Spatial" parent="." index="2"]
 
 pause_mode = 2
-editor/display_folded = true
 transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0.423892, 0 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
