@@ -40,9 +40,12 @@ Middle mouse click/Z - defend
 
 N - magic attack 01
 
+G - grab object (if unarmed)
+
 Escape - pause/unpause
 I - open/close inventory
 H - open/close slot quick access display
+U - open/close character upgrade menu
 
 T - interact (eg talk to npcs)
 
@@ -105,8 +108,13 @@ At the bottom of the screen is where text relating to interaction is shown (eg k
 Menus.
 Main Menu
 The main game menu, displayed when the game is started.
+In the upper left corner is a counter that keeps track of the number of times the game has been completed.
+In the upper left corner, below the game counter, is an indicator that displays whether or not the arena is open.
 New game - opens the character selection menu to begin a new game
 Load game - opens the load game menu
+Arena - opens the arena setup menu
+Arena Score Board - opens the score board for the arena
+Tutorial - not yet implemented
 Options - opens the options menu
 Credits - displays the credits of those involved 
 Quit - exits the game
@@ -129,14 +137,39 @@ Menu accessed while the game is paused, can be used to pause gameplay, change op
 Resume - resumes the game
 Options - opens the options menu
 Restart - resets the player characters position
+World - takes the player back to the world map
 Quit - quits the current game to the main menu
+
+Character Upgrade Menu
+Menu accessed during levels to upgrade the character's abilities.
+Displayed along the top are:
+Character level - the current level of the character
+Experience points - the number of experience points the character currently has followed by the number needed for the next level
+Upgrade points - the current number of points available for character upgrades
+The main area displays the different character attributes followed by that attributes current value. After each attribute is the "Upgrade" button, which allows the spending of an upgrade point to improve that attribute. Each attribute can be upgraded a limited amount of times, indicated to the right of the "Upgrade" button.
+Strength - increases the amount of damage a character can inflict with melee weapons
+Speed - increases the movement speed of a character
+Jump - increases the height a character can jump
+Defence - reduces the amount of damage a character takes from physical damage
+Fire Affinity - reduces the amount of damage a character takes from fire damage, and increases the amount of damage inflicted by fire magic attacks
+Ice Affinity - reduces the amount of damage a character takes from ice damage, and increases the amount of damage inflicted by ice magic attacks
+Lightning Affinity - reduces the amount of damage a character takes from lightning damage, and increases the amount of damage inflicted by lightning magic attacks
+Earth Affinity - reduces the amount of damage a character takes from earth damage, and increases the amount of damage inflicted by earth magic attacks
 
 Character Selection
 Menu where players choose the character for a new game. Information is displayed about each character.
+Characters which haven't been unlocked cannot be selected yet.
 Next - move to the next character
 Prev - move to the previous character
 Select - selects the current character as the player character
 Back - returns to the main menu
+
+Arena Setup
+Difficulty - controls the difficulty of the arena
+Character - choose the character you wish to enter the arena as
+Drop Rate - controls the number of items added evry 30 seconds (low = 1, med = 3, high = 5)
+Back Button - returns to the main menu
+Start Button - starts the arena with the chosen settings
 
 Save Game
 Menu for saving the current game.
@@ -149,19 +182,77 @@ Cancel - closes the save game menu
 Load Game
 Menu for loading saved games, displays some information about the saved games.
 Clicking the "Load" button beneath a game file will load that game file.
+Clicking the "Delete" button beneath a game file will erase that game file.
 
 Equipment.
-weapons
-Armour
-Shields
-Items
+Weapons..
+Sword
+Sword, Lightning
+Axe
+Axe, Ice
+Claymore
+Claymore, Fire
+Warhammer
+Warhammer, Earth
+Bow, Straight
+Bow, Recurve
+Arrows
+Armour..
+Chainmail
+Scalemail
+Fullplate
+Shields..
+Buckler
+Shield, Small
+Shield, Medium
+Shield, Tower
+Items..
+Coins
+Apple, Green
+Apple, Red
+Health Potion
+Mana Potion
+Strength Potion
+Speed Potion
+Fortitude Potion
+Tea
+Torches
+
+PCs.
+Bob
+Frank
+Dave
+Bobbi
+Frankie
+Neng
 
 Ally NPCs.
+Castle Guards
+Castle Mage
+Town Guards
+Citadel Mages
+Boatman
+Lighthouse Mage
 
 Enemies.
+Zombies
+Zombie Knight
+Davey Jones
+Shadow Creature
+Shadow Creature, Quadraped
+Shadow Creature, Flying
+Shadow Creature, Boss
+Sorceror
 
 Misc (eg things not implemented yet).
+davey jones canons
+sorceror spells
+npcs that attack enemies
+fix camera collisions still
+tutorials
+fix crash issue (need to figure out first, thought was related to bow use, but apparently not)
+implement diffirent difficulties and languages
+fix gear loading on level load (broke when fixed code to control weapon shown etc)
 
 Credits.
-
-
+See game.
