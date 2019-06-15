@@ -11,8 +11,7 @@ for the camera raycast.
 Requires reworking all layers (as currently all on one).
 
 Sort out enemy movement.
-Currently based on an older version of the player script. May be using more processing than needed.
-Rewrite code to be more basic.
+Fixed to work with Navmesh when moving, and still using adapted player movement for attacks.
 Requires more knowledge of A.I. movement scripting.
 
 Remake models (General).
@@ -21,19 +20,14 @@ Make new models.
 Not a technical problem, ony to do with game feel and asset quality.
 
 Make cutscenes.
-Currently only rolling and fixed texts to explain things.
-Create cutscenes with animations in Blender, add camera and camera animation paths in Godot.
-Or create cutscenes entirely inBlender and edit together as video for import in Godot.
+Created opening cutscene and edited in Blender. Made and edited videos for tutorials.
 
 Add experience points and level ups.
-Currently only point system and equipment determines power levels.
-Add in experience points in a similar manner to points system, but at certain amounts add levels to the player.
-Allow player to increase certain attributes when they attain a new level.
+Player now gains experience points and levels up. 
+Experience points generate upgrade points which can be used to upgrade character attributes.
 
 Create spawnable enemies.
-Enemies are currntly set at level setup. Past attempts didn't work properly.
-Create spawn script that handles where in heirarchy to place enemies so that all heirarchy dependant variables (eg "player") can be found.
-Script needs some form of delay and "if null: do this instead" function.
+Newer enemy codes can be used for spawnable enemies. Tested in the arena.
 
 Setup camera position reset.
 Allow players to press a button to reposition the camera behind the player.
@@ -43,6 +37,5 @@ Textures for map area.
 Make and apply in Godot.
 Need to work out scales for maps.
 
-Add tutorial level.
-Currently learn as go/read the manual.
-Create level that guides the player in what to do.
+Add tutorials.
+Videos made to demonstrate some aspects of gameplay.
