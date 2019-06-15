@@ -41,39 +41,14 @@ var drop_choice
 var drop_clone
 
 func _ready():
-#	is_chasing_player = false
-#	is_attacking_player = false
-	#enemy_state = 0
-#	if player == null:
-#		player = get_parent().get_parent().get_node("Player")
-	#enemy = get_node(".")
-	set_physics_process(true)
-	#enemy_origin = enemy.get_global_transform().origin
-	#get_node("AnimationTreePlayer").set_active(true)
-	#hit_sound = $CreatureHit
-	drop_navmesh = get_parent()#.get_parent()
+	drop_navmesh = get_parent()
 	drop_enemy_waypoints = drop_navmesh.get_node("WaypointsHolder").waypoints
-	
-	drop_waypoint_numbers_to_choose_from = drop_navmesh.get_node("WaypointsHolder").waypoints_number# - 1
-	#dtimer = get_node("DecisionTimer")
-	#dtimer.start()
-	
-	#rtimer = get_node("RegenTimer")
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	drop_waypoint_numbers_to_choose_from = drop_navmesh.get_node("WaypointsHolder").waypoints_number
 
 func spawn_drop():
 	randomize()
 	drop_waypoint_number_chosen = randi()%drop_waypoint_numbers_to_choose_from
 	drop_target = drop_enemy_waypoints[drop_waypoint_number_chosen]
-	#print ("drop point chosen = ", drop_waypoint_number_chosen)
-#	enemy_state = 1
-#	calculate_path()
-	#ptimer.start()
-	#randomize()
 	drop_choice_number = randi()%52
 	#print ("drop number chosen = ", drop_choice_number)
 	#weapons, armours, shields (17, 1 each)
@@ -184,16 +159,7 @@ func spawn_drop():
 		drop_clone = tea_drop.instance()
 	elif drop_choice_number == 52:
 		drop_clone = tea_drop.instance()
-	#drop_clone = sword_scene.instance()
 	self.add_child(drop_clone) 
-#	spawned_clone.global_transform = self.global_transform
 	drop_clone.global_transform.origin.x = drop_target.global_transform.origin.x
 	drop_clone.global_transform.origin.z = drop_target.global_transform.origin.z
 	drop_clone.global_transform.origin.y = drop_target.global_transform.origin.y
-
-
-
-
-
-
-

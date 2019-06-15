@@ -1,10 +1,6 @@
 extends Spatial
 
 var bullet_scene = preload("res://Scenes/ArrowNormal.tscn")
-var player_node = null
-
-func _ready():
-	pass
 
 func fire_weapon():
 	var clone = bullet_scene.instance()
@@ -13,3 +9,4 @@ func fire_weapon():
 	clone.global_transform = self.global_transform
 	clone.BULLET_DAMAGE = PlayerDataWeapons.bow.damage
 	clone.BULLET_SPEED = PlayerDataWeapons.bow.arrowspeed
+

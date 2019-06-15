@@ -23,12 +23,8 @@ func collided(body):
 		var scene_root = get_tree().root.get_children()[0]
 		scene_root.add_child(clone)
 		clone.global_transform = self.global_transform
-		print("hit something")
+		#print("hit something")
 		if body.has_method("_hit"):
 			body._hit(CF_DAMAGE, 3, self.global_transform.origin)
-#		var clone = fireball_engulf.instance()
-#		var scene_root = get_tree().root.get_children()[0]
-#		scene_root.add_child(clone)
-#		clone.global_transform = self.global_transform
 	hit_something = true
 	queue_free()

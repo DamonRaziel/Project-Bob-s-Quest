@@ -34,14 +34,6 @@ var torch_drop = preload("res://Scenes/PickupScenes/PickupTorches.tscn")
 # also need an individual torch pickup for when dropped, same for arrows
 var drop_clone
 
-func _ready():
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
 func add_item_drop(itemID):
 	#weapons
 	if itemID == 1:

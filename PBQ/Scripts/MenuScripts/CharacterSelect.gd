@@ -14,8 +14,6 @@ var select_timer = 3.0
 
 #Max characters
 var number_of_characters = 6
-#current character
-#var current_character;
 # The current angle
 var current_angle = Vector3();
 #Which angle to rotate
@@ -31,11 +29,9 @@ func _ready():
 	left_button = $CharacterSelectTitle/LeftButton
 	right_button = $CharacterSelectTitle/RightButton
 	locked_label = $CharacterSelectTitle/LockedLabel
-	#set the vars to their nodes
 	character_name_display = $CharacterSelectTitle/CharName
 	character_info = $CharacterSelectTitle/Info
 	character_name_number = 1
-	#current_character = 2;
 	cam_angle = 0.0
 	#reset inventory and character data here, ready for new inventory and data on selection
 	Global_Player.reset_data()
@@ -44,7 +40,6 @@ func _ready():
 
 func _process(delta):
 	rotation_degrees = Vector3(0,lerp(rotation_degrees.y,target_rotation.y,speed*delta),0);
-	
 	if character_name_number == 1:
 		left_button.hide()
 		right_button.show()
@@ -158,10 +153,10 @@ func _process(delta):
 	elif character_name_number == 6:
 		left_button.show()
 		right_button.hide()
-		if PlayerData.Game_Data.player02_unlocked == true:
+		if PlayerData.Game_Data.player06_unlocked == true:
 			select_button.show()
 			locked_label.hide()
-		elif PlayerData.Game_Data.player02_unlocked == false:
+		elif PlayerData.Game_Data.player06_unlocked == false:
 			select_button.hide()
 			locked_label.show()
 		character_name_display.text = "Neng"
@@ -227,6 +222,7 @@ func _on_SelectButton_pressed():
 			
 			#weapons and equipment, allows assigning to slots
 			player_current_weapon_number = 1,
+			player_current_weapon_slot_number = 1,
 			#0=unarmed, 1=sword, 2=lightning sword, 3=axe, 4=ice axe, 
 			#5=claymore, 6=fire claymore, 7=warhammer, 8=earth warhammer
 			#9=straightbow, 10=recurvebow
@@ -348,6 +344,7 @@ func _on_SelectButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 3,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -461,6 +458,7 @@ func _on_SelectButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 9,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -577,6 +575,7 @@ func _on_SelectButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 1,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -602,6 +601,7 @@ func _on_SelectButton_pressed():
 			player_max_mana = 150,
 			player_lives = 5,
 			player_points = 0,
+			player_points_bonus = 0,
 			player_coins = 0,
 			
 			shards_collected = 0,
@@ -690,6 +690,7 @@ func _on_SelectButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 3,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -804,6 +805,7 @@ func _on_SelectButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 9,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,

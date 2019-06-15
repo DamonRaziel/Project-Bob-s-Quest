@@ -15,9 +15,6 @@ var current_player_aiming_style = 0
 
 var total_points
 
-#var difficulty = 1
-# 0 = easy, 1 = medium, 2 = hard
-
 var Options_Data = {
 	master_volume = 0,
 	music_volume = 0,
@@ -95,6 +92,7 @@ var Player_Information = {
 	player_earth_affinity_upgrades = 0,
 	
 	player_current_weapon_number = 0,
+	player_current_weapon_slot_number = 1,
 	player_current_armour_number = 0,
 	player_current_shield_number = 0,
 	player_current_helmet_number = 0,
@@ -175,11 +173,6 @@ func xp_add(xp_points):
 		if Player_Information.player_level < Player_Information.player_max_level:
 			Player_Information.player_level += 1
 			Player_Information.player_upgrade_points += 1
-	
-#	Player_Information.player_xp_to_upgrades += xp_points
-#	if Player_Information.player_xp_to_upgrades >= 200:
-#		Player_Information.player_xp_to_upgrades -= 200
-#		Player_Information.player_upgrade_points += 1
 
 #taken from scene change demos, for loading small scenes
 func goto_scene(path):
@@ -208,7 +201,7 @@ func _deferred_goto_scene(path):
 func goto_scene_bg(path): # game requests to switch to this scene
 	loader = ResourceLoader.load_interactive(path)
 	if loader == null: # check for errors
-		show_error()
+		#show_error()
 		return
 	set_process(true)
 	#change to remove scene when new scene is ready, done below
@@ -245,7 +238,7 @@ func _process(time):
 #		elif err == OK:
 #			update_progress()
 		else: # error during loading
-			show_error()
+			#show_error()
 			loader = null
 			break
 

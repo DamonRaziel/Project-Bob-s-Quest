@@ -51,6 +51,7 @@ enabled = true
 [node name="NavMeshBossShip" type="MeshInstance" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5347, -8.59276, -204.917 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1

@@ -31,16 +31,6 @@ func _ready():
 	drop_rect.rect_position.x = l_button.rect_position.x
 	drop_rect.rect_position.y = l_button.rect_position.y
 
-#func _process(delta):
-#	pass
-
-#from layerdata script
-#var arena_setup = {
-#	difficulty = 1, #1 = easy, 2 = normal, 3 = hard
-#	character_selected = 1, # 1 = bob, 2 = frank, 3 = dave, 4 = bobbi, 5 = frankie, 6 = neng
-#	drop_rate = 1 # 1 = low, 2 = medium, 3 = hard
-#}
-
 func _on_EasyButton_pressed():
 	PlayerData.arena_setup.difficulty = 1
 	dif_rect.rect_position.x = e_button.rect_position.x
@@ -111,7 +101,7 @@ func _on_StartButton_pressed():
 		PlayerData.Options_Data.difficulty = 2
 	
 	# setup player arena variables
-	#load appropriate info for each player
+	#load appropriate info for each player, as character select
 	if PlayerData.arena_setup.character_selected == 1:
 		PlayerData.Player_Information = {
 			player_name = "Bob",
@@ -149,6 +139,7 @@ func _on_StartButton_pressed():
 			
 			#weapons and equipment, allows assigning to slots
 			player_current_weapon_number = 1,
+			player_current_weapon_slot_number = 1,
 			#0=unarmed, 1=sword, 2=lightning sword, 3=axe, 4=ice axe, 
 			#5=claymore, 6=fire claymore, 7=warhammer, 8=earth warhammer
 			#9=straightbow, 10=recurvebow
@@ -270,6 +261,7 @@ func _on_StartButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 3,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -383,6 +375,7 @@ func _on_StartButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 9,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -499,6 +492,7 @@ func _on_StartButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 1,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -612,6 +606,7 @@ func _on_StartButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 3,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -726,6 +721,7 @@ func _on_StartButton_pressed():
 			player_earth_affinity_upgrades = 0,
 			
 			player_current_weapon_number = 9,
+			player_current_weapon_slot_number = 1,
 			player_current_armour_number = 0,
 			player_current_shield_number = 0,
 			player_current_helmet_number = 0,
@@ -806,12 +802,8 @@ func _on_StartButton_pressed():
 		Global_Player.inventory_addItem(35, 3) # tea
 		#Global_Player.inventory_addItem(38, 2) # torches
 		
-	
-	
-	# setup scene variables
-	# goto the loading scene res://Scenes/LevelScenes/LevelsMainLoading.tscn
+	# goto the loading scene 
 	get_node("/root/PlayerData").goto_scene("res://Scenes/LevelScenes/LevelsMainLoading.tscn")
-	#get_node("/root/PlayerData").goto_scene("res://Scenes/ArenaScenes/Arena01Scene.tscn")
 
 func _on_BackButton_pressed():
 	get_node("/root/PlayerData").goto_scene("res://Scenes/MenuScenes/MainMenu.tscn")

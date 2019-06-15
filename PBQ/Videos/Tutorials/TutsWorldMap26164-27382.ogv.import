@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/TutsWorldMap26164-27382.ogv-eeb7a4a3e25d3a82900dd2445a2771a6.ogvstr"
+
+[deps]
+
+source_file="res://Videos/Tutorials/TutsWorldMap26164-27382.ogv"
+dest_files=[ "res://.import/TutsWorldMap26164-27382.ogv-eeb7a4a3e25d3a82900dd2445a2771a6.ogvstr" ]
+
+[params]
+
+loop=true

@@ -51,7 +51,7 @@ func set_collisions(value):
 	collisions = value
 
 func _update_mouselook():
-	_mouse_position *= PlayerData.Options_Data.look_sensitivity #sensitivity
+	_mouse_position *= PlayerData.Options_Data.look_sensitivity 
 	_yaw = _yaw * smoothness + _mouse_position.x * (1.0 - smoothness)
 	_pitch = _pitch * smoothness + _mouse_position.y * (1.0 - smoothness)
 	_mouse_position = Vector2(0, 0)

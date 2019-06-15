@@ -8,10 +8,6 @@ var fire_ball = preload("res://Scenes/MagicScenes/FireBall.tscn")
 var fire_orbs
 var earth_strike = preload("res://Scenes/MagicScenes/EarthStrike.tscn")
 var earth_orbs
-var player_node = null
-
-func _ready():
-	pass
 
 func lightning_attack_01():
 	var clone = lightning_strike.instance()

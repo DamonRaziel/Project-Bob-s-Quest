@@ -40,16 +40,6 @@ var drop_something
 
 func _ready():
 	drop_point = get_node("DropPoint")
-	#drop_timer = get_node("DropTimer")
-	
-#	randomize()
-#	chance_of_drop = randi()%50+1
-#	add_item_drop(chance_of_drop)
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 
 func add_item_drop(itemID):
 	#weapons
@@ -192,13 +182,11 @@ func add_item_drop(itemID):
 	if drop_something == true:
 		var scene_root = get_tree().root.get_children()[0]
 		scene_root.add_child(drop_clone)
-		drop_clone.global_transform = drop_point.global_transform #self.global_transform
+		drop_clone.global_transform = drop_point.global_transform
 	elif drop_something == false:
 		pass
 
-
 func _on_DropTimer_timeout():
-	#drop_point = get_node("DropPoint")
 	randomize()
 	chance_of_drop = randi()%50+1
 	add_item_drop(chance_of_drop)

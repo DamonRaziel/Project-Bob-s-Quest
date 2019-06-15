@@ -19,14 +19,16 @@ func _ready():
 	pause_menu_background = $PauseBackground
 	pause_menu.hide()
 	pause_menu_background.hide()
+	set_process(false)
 
-func _process(delta):
+func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if paused == false:
 			pause_game()
 		elif paused == true:
 			unpause_game()
-	
+
+func _process(delta):
 	if move_menu_left == true:
 		pause_menu.rect_position.x -= menu_move_speed
 	if pause_menu.rect_position.x <= -1053:
@@ -44,6 +46,7 @@ func pause_game():
 	get_tree().paused = true
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	set_process(true)
 
 func unpause_game():
 	pause_menu_background.hide()
@@ -52,6 +55,7 @@ func unpause_game():
 	get_tree().paused = false
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	set_process(false)
 
 func quit_to_main_menu():
 	get_tree().paused = false
@@ -77,6 +81,10 @@ func _on_RestartButton_pressed():
 
 func _on_OptionsButton_pressed():
 	move_menu_left = true
+
+func _on_WorldButton_pressed():
+	get_node("/root/PlayerData").goto_scene("res://Scenes/LevelScenes/Level00.tscn")
+#	get_node("/root/PlayerData").goto_scene("res://Scenes/LevelScenes/Level00Loading.tscn")
 
 func _on_QuitButton_pressed():
 	quit_to_main_menu()

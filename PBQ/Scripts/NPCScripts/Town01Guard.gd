@@ -1,27 +1,20 @@
 extends KinematicBody
 
-var interaction_zone
-var level_text
+onready var interaction_zone = $InteractionArea
+onready var level_text = get_parent().get_parent().get_node("LevelText")
 var player_is_near = false
 var talking_to_player = false
-
-func _ready():
-	interaction_zone = $InteractionArea
-	level_text = get_parent().get_parent().get_node("LevelText")
+onready var track_timer = $AllyTrackerTimer
 
 func _process(delta):
-	ally_tracker()
 	if player_is_near == true:
 		if(Input.is_action_just_pressed("interaction_button")):
 			talking_to_player = true
 			PlayerData.Player_Information.spoken_to_guard01 = true
-	if player_is_near == true:
 		if talking_to_player == false:
 			level_text.text = "T - Talk to Town Guard"
 		elif talking_to_player == true:
 			level_text.text = "Someone needs to beat the big zombie. /T-cont."
-	else:
-		level_text.text = ""
 
 func _on_InteractionArea_body_entered(body):
 	if body.has_method("process_UI"):
@@ -30,6 +23,7 @@ func _on_InteractionArea_body_entered(body):
 func _on_InteractionArea_body_exited(body):
 	if body.has_method("process_UI"):
 		player_is_near = false
+		level_text.text = ""
 
 func ally_tracker():
 	var map_area = $Map_Area
@@ -41,3 +35,7 @@ func ally_tracker():
 			continue
 		if body.has_method("track_allies"):
 			body.track_allies(pos_x, pos_y)
+
+func _on_AllyTrackerTimer_timeout():
+	ally_tracker()
+	track_timer.start()

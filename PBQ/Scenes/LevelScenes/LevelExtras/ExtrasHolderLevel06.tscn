@@ -1,0 +1,251 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Crate01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Barrel01.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Crate01Part.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Barrel01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Barrel01Part.tscn" type="PackedScene" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=4]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=5]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=6]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=7]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=8]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=9]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=10]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=11]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=12]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=13]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=14]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=15]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=16]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=17]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=18]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=19]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id=20]
+friction = 0.5
+
+[node name="ExtrasHolder" type="Spatial"]
+editor/display_folded = true
+
+[node name="CrateDesign01" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 102.914, 0.542941, -74.9307 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign06" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 98.7283, 0.542941, -83.2735 )
+physics_material_override = SubResource( 2 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign02" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 103.789, 0.542941, -74.2814 )
+physics_material_override = SubResource( 3 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign09" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 99.6038, 0.542941, -82.6243 )
+physics_material_override = SubResource( 4 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign03" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 104.643, 0.542941, -73.6482 )
+physics_material_override = SubResource( 5 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign08" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 100.458, 0.542941, -81.991 )
+physics_material_override = SubResource( 6 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign04" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 104.328, 1.55502, -73.8816 )
+physics_material_override = SubResource( 7 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign10" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 100.143, 1.55502, -82.2245 )
+physics_material_override = SubResource( 8 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign05" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 103.405, 1.55502, -74.566 )
+physics_material_override = SubResource( 9 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign07" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.803245, 0, -0.595648, 0, 1, 0, 0.595648, 0, 0.803245, 99.22, 1.55502, -82.9089 )
+physics_material_override = SubResource( 10 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign15" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 98.5961, -6.52636, -110.6 )
+physics_material_override = SubResource( 11 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign16" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 83.7921, -6.52636, -116.952 )
+physics_material_override = SubResource( 12 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign12" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 99.6055, -6.52636, -110.188 )
+physics_material_override = SubResource( 13 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign18" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 84.8015, -6.52636, -116.54 )
+physics_material_override = SubResource( 14 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign14" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 100.59, -6.52636, -109.787 )
+physics_material_override = SubResource( 15 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign20" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 85.7859, -6.52636, -116.139 )
+physics_material_override = SubResource( 16 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign13" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 100.227, -5.51428, -109.935 )
+physics_material_override = SubResource( 17 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign19" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 85.423, -5.51428, -116.287 )
+physics_material_override = SubResource( 18 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign11" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 99.163, -5.51428, -110.369 )
+physics_material_override = SubResource( 19 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="CrateDesign17" type="RigidBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.925999, 0, -0.377526, 0, 1, 0, 0.377526, 0, 0.925999, 84.359, -5.51428, -116.721 )
+physics_material_override = SubResource( 20 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 3 )
+object_type = 2
+
+[node name="BarrelDesign01" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 86.8055, 0.548937, -100.84 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign02" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.8832, 0.548937, -100.84 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign07" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.8832, 1.56122, -100.84 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign08" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.8832, 2.57584, -100.84 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign03" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 92.1167, 0.548937, -99.1867 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign04" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.1351, -4.51563, -110.366 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign05" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.75, -6.5301, -108.428 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+
+[node name="BarrelDesign06" type="RigidBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.749, -6.5301, -108.934 )
+script = ExtResource( 2 )
+destroyed_target = ExtResource( 5 )
+

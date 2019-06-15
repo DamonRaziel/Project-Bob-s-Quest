@@ -15,9 +15,6 @@ func _ready():
 	target_collision_shape = $Collision_Shape
 	target_mesh = self
 
-#func _process(delta):
-#	pass
-
 func _physics_process(delta):
 	if target_respawn_timer > 0:
 		target_respawn_timer -= delta

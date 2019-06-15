@@ -22,39 +22,15 @@ var spawned_choice
 var spawned_clone
 
 func _ready():
-#	is_chasing_player = false
-#	is_attacking_player = false
-	#enemy_state = 0
-#	if player == null:
-#		player = get_parent().get_parent().get_node("Player")
-	#enemy = get_node(".")
-	set_physics_process(true)
-	#enemy_origin = enemy.get_global_transform().origin
-	#get_node("AnimationTreePlayer").set_active(true)
-	#hit_sound = $CreatureHit
-	spawn_navmesh = get_parent()#.get_parent()
+	spawn_navmesh = get_parent()
 	spawn_enemy_waypoints = spawn_navmesh.get_node("WaypointsHolder").waypoints
-	
-	spawn_waypoint_numbers_to_choose_from = spawn_navmesh.get_node("WaypointsHolder").waypoints_number# - 1
-	#dtimer = get_node("DecisionTimer")
-	#dtimer.start()
-	
-	#rtimer = get_node("RegenTimer")
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	spawn_waypoint_numbers_to_choose_from = spawn_navmesh.get_node("WaypointsHolder").waypoints_number
 
 func spawn_enemy():
 	randomize()
 	spawn_waypoint_number_chosen = randi()%spawn_waypoint_numbers_to_choose_from
 	spawn_target = spawn_enemy_waypoints[spawn_waypoint_number_chosen]
 	#print ("spawn point chosen = ", spawn_waypoint_number_chosen)
-#	enemy_state = 1
-#	calculate_path()
-	#ptimer.start()
-	#randomize()
 	spawned_choice_number = randi()%10
 	#print ("spawn number chosen = ", spawned_choice_number)
 	if spawned_choice_number == 0:
@@ -80,15 +56,6 @@ func spawn_enemy():
 	elif spawned_choice_number == 10:
 		spawned_clone = zombie_male_spawn.instance()
 	
-	#spawned_clone = sword_scene.instance()
 	self.add_child(spawned_clone) 
-#	spawned_clone.global_transform = self.global_transform
 	spawned_clone.global_transform.origin.x = spawn_target.global_transform.origin.x
 	spawned_clone.global_transform.origin.z = spawn_target.global_transform.origin.z
-
-
-
-
-
-
-

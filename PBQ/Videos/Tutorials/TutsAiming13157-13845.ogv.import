@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/TutsAiming13157-13845.ogv-a259f9cd6b8e278eb0bb8a8b907f9d90.ogvstr"
+
+[deps]
+
+source_file="res://Videos/Tutorials/TutsAiming13157-13845.ogv"
+dest_files=[ "res://.import/TutsAiming13157-13845.ogv-a259f9cd6b8e278eb0bb8a8b907f9d90.ogvstr" ]
+
+[params]
+
+loop=true

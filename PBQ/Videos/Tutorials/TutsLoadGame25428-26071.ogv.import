@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/TutsLoadGame25428-26071.ogv-6509796d40fe061e9ae64894fa2c1d77.ogvstr"
+
+[deps]
+
+source_file="res://Videos/Tutorials/TutsLoadGame25428-26071.ogv"
+dest_files=[ "res://.import/TutsLoadGame25428-26071.ogv-6509796d40fe061e9ae64894fa2c1d77.ogvstr" ]
+
+[params]
+
+loop=true

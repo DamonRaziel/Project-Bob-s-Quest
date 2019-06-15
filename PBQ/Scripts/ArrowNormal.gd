@@ -2,23 +2,15 @@ extends Spatial
 
 var BULLET_SPEED = 70
 var BULLET_DAMAGE = 15
-const KILL_TIMER = 4
-var timer = 0
-var hit_something = false
-
-func _ready():
-	$Area.connect("body_entered", self, "collided")
 
 func _physics_process(delta):
 	var forward_dir = global_transform.basis.z.normalized()
 	global_translate(forward_dir * BULLET_SPEED * delta)
-	timer += delta
-	if timer >= KILL_TIMER:
+
+func _on_Area_body_entered(body):
+	if body.has_method("_hit"):
+		body._hit(BULLET_DAMAGE, 0, self.global_transform.origin)
 		queue_free()
 
-func collided(body):
-	if hit_something == false:
-		if body.has_method("_hit"):
-			body._hit(BULLET_DAMAGE, 0, self.global_transform.origin)
-	hit_something = true
+func _on_Timer_timeout():
 	queue_free()

@@ -12,11 +12,7 @@ var straight_bow_scene = preload("res://Scenes/PlayerScenes/WeaponScenes/WeaponB
 var recurve_bow_scene = preload("res://Scenes/PlayerScenes/WeaponScenes/WeaponBowRecurve.tscn")
 var torch_scene = preload("res://Scenes/PlayerScenes/WeaponScenes/ItemTorch.tscn")
 
-var player_node = null
 var clone
-
-var weapon_number
-var item_number
 
 func _ready():
 	pass
@@ -75,10 +71,3 @@ func add_torch_to_scene():
 	clone = torch_scene.instance()
 	self.add_child(clone)
 	clone.global_transform = self.global_transform
-
-func _process(delta):
-	#for keeping track of the current weapon 
-	#for destruction purposes later
-	weapon_number = PlayerData.Player_Information.player_current_weapon_number
-	item_number = PlayerData.Player_Information.player_current_item_number
-

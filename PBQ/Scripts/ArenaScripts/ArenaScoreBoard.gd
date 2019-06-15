@@ -1,6 +1,6 @@
 extends Spatial
 
-var temp_score # =playerdata.playerinfo.player_points
+var temp_score
 var temp_name
 
 var arena_score1
@@ -72,17 +72,6 @@ func _ready():
 	compare_score(temp_score, temp_name)
 
 func _process(delta):
-#	arena_score1 = PlayerData.arena_scores.score1
-#	arena_score1_char = PlayerData.arena_scores.score1char
-#	arena_score2 = PlayerData.arena_scores.score2
-#	arena_score2_char = PlayerData.arena_scores.score2char
-#	arena_score3 = PlayerData.arena_scores.score3
-#	arena_score3_char = PlayerData.arena_scores.score3char
-#	arena_score4 = PlayerData.arena_scores.score4
-#	arena_score4_char = PlayerData.arena_scores.score4char
-#	arena_score5 = PlayerData.arena_scores.score5
-#	arena_score5_char = PlayerData.arena_scores.score5char
-	
 	#always display current scores
 	rank1_score_label.text = str(arena_score1)
 	rank1_char_label.text = arena_score1_char
@@ -111,8 +100,6 @@ func compare_score(new_score, new_name):
 		arena_score1_char = new_name
 		#highlight
 		new_rank1_rect.show()
-		#stop bumping to prevent overwriting all scores
-		#pass
 	elif new_score >= PlayerData.arena_scores.score2:
 		arena_score5 = arena_score4
 		arena_score5_char = arena_score4_char
@@ -120,63 +107,32 @@ func compare_score(new_score, new_name):
 		arena_score4_char = arena_score3_char
 		arena_score3 = arena_score2
 		arena_score3_char = arena_score2_char
-		#arena_score2 = arena_score1
-		#arena_score2_char = arena_score1_char
 		#add new score
 		arena_score2 = new_score
 		arena_score2_char = new_name
 		#highlight
 		new_rank2_rect.show()
-		#stop bumping to prevent overwriting all scores
-		#pass
 	elif new_score >= PlayerData.arena_scores.score3:
 		arena_score5 = arena_score4
 		arena_score5_char = arena_score4_char
 		arena_score4 = arena_score3
 		arena_score4_char = arena_score3_char
-		#arena_score3 = arena_score2
-		#arena_score3_char = arena_score2_char
-		#arena_score2 = arena_score1
-		#arena_score2_char = arena_score1_char
-		#add new score
 		arena_score3 = new_score
 		arena_score3_char = new_name
 		#highlight
 		new_rank3_rect.show()
-		#stop bumping to prevent overwriting all scores
-		#pass
 	elif new_score >= PlayerData.arena_scores.score4:
 		arena_score5 = arena_score4
 		arena_score5_char = arena_score4_char
-		#arena_score4 = arena_score3
-		#arena_score4_char = arena_score3_char
-		#arena_score3 = arena_score2
-		#arena_score3_char = arena_score2_char
-		#arena_score2 = arena_score1
-		#arena_score2_char = arena_score1_char
-		#add new score
 		arena_score4 = new_score
 		arena_score4_char = new_name
 		#highlight
 		new_rank4_rect.show()
-		#stop bumping to prevent overwriting all scores
-		#pass
 	elif new_score >= PlayerData.arena_scores.score5:
-		#arena_score5 = arena_score4
-		#arena_score5_char = arena_score4_char
-		#arena_score4 = arena_score3
-		#arena_score4_char = arena_score3_char
-		#arena_score3 = arena_score2
-		#arena_score3_char = arena_score2_char
-		#arena_score2 = arena_score1
-		#arena_score2_char = arena_score1_char
-		#add new score
 		arena_score5 = new_score
 		arena_score5_char = new_name
 		#highlight
 		new_rank5_rect.show()
-		#stop bumping to prevent overwriting all scores
-		#pass
 	#set playerdata.arena_scores to match scores here, then save
 	PlayerData.arena_scores.score1 = arena_score1
 	PlayerData.arena_scores.score1char = arena_score1_char
@@ -189,8 +145,6 @@ func compare_score(new_score, new_name):
 	PlayerData.arena_scores.score5 = arena_score5
 	PlayerData.arena_scores.score5char = arena_score5_char
 	Global_Player.save_arena_scores()
-	
 
 func _on_ToMainMenuButton_pressed():
-	#Global_Player.save_arena_scores()
 	get_node("/root/PlayerData").goto_scene("res://Scenes/MenuScenes/MainMenu.tscn")

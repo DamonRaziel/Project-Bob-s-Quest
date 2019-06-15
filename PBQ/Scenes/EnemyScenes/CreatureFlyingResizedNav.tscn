@@ -10,10 +10,7 @@
 [ext_resource path="res://SoundEffects/Hit_Hurt.wav" type="AudioStream" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
-
 resource_name = "Cube.004"
-blend_shape_mode = 1
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 surfaces/0 = {
 "aabb": AABB( -0.0506529, 0.124455, 0.342252, 0.101306, 0.0323204, 0.0270383 ),
 "array_data": PoolByteArray( 240, 41, 160, 48, 135, 53, 0, 60, 82, 88, 39, 0, 21, 20, 30, 0, 235, 214, 219, 21, 56, 19, 0, 0, 55, 40, 4, 49, 121, 53, 0, 60, 29, 115, 42, 0, 21, 30, 20, 0, 85, 209, 198, 30, 226, 15, 0, 0, 67, 40, 220, 48, 149, 53, 0, 60, 30, 100, 71, 0, 21, 30, 20, 0, 97, 202, 26, 32, 131, 21, 0, 0, 97, 41, 155, 48, 158, 53, 0, 60, 63, 88, 65, 0, 21, 20, 30, 0, 243, 205, 167, 26, 99, 23, 0, 0, 209, 36, 228, 48, 135, 53, 0, 60, 221, 111, 50, 0, 21, 30, 20, 0, 36, 182, 149, 54, 68, 19, 0, 0, 19, 36, 155, 48, 194, 53, 0, 60, 216, 77, 92, 0, 21, 30, 20, 0, 142, 163, 148, 60, 219, 31, 0, 0, 177, 37, 152, 48, 197, 53, 0, 60, 254, 80, 98, 0, 21, 30, 20, 0, 157, 173, 27, 48, 69, 34, 0, 0, 44, 38, 200, 48, 158, 53, 0, 60, 253, 104, 71, 0, 21, 30, 20, 0, 64, 186, 95, 45, 95, 24, 0, 0, 33, 39, 247, 47, 232, 53, 0, 60, 0, 18, 125, 0, 21, 20, 30, 0, 42, 153, 161, 71, 50, 31, 0, 0, 62, 41, 3, 48, 218, 53, 0, 60, 58, 18, 111, 0, 21, 20, 30, 0, 245, 170, 216, 63, 48, 21, 0, 0, 238, 40, 53, 48, 212, 53, 0, 60, 45, 50, 107, 0, 21, 20, 30, 0, 76, 178, 192, 52, 242, 24, 0, 0, 173, 39, 48, 48, 221, 53, 0, 60, 12, 50, 115, 0, 21, 20, 30, 0, 234, 166, 236, 56, 40, 32, 0, 0, 39, 40, 145, 48, 196, 53, 0, 60, 25, 79, 95, 0, 21, 20, 30, 0, 215, 186, 138, 35, 156, 33, 0, 0, 188, 41, 106, 48, 181, 53, 0, 60, 61, 71, 84, 0, 21, 20, 30, 0, 8, 199, 135, 35, 111, 21, 0, 0, 44, 38, 73, 48, 212, 53, 0, 60, 248, 49, 116, 0, 21, 20, 30, 0, 2, 164, 98, 51, 153, 40, 0, 0, 209, 36, 33, 48, 218, 53, 0, 60, 215, 30, 116, 0, 21, 20, 30, 0, 11, 148, 130, 62, 112, 45, 0, 0, 123, 42, 84, 48, 171, 53, 0, 60, 89, 55, 70, 0, 21, 20, 30, 0, 224, 204, 205, 33, 81, 17, 0, 0, 240, 169, 160, 48, 135, 53, 0, 60, 174, 88, 39, 0, 30, 20, 21, 0, 236, 214, 218, 21, 55, 19, 0, 0, 97, 169, 155, 48, 158, 53, 0, 60, 193, 88, 65, 0, 30, 20, 21, 0, 245, 205, 165, 26, 99, 23, 0, 0, 67, 168, 220, 48, 149, 53, 0, 60, 226, 100, 71, 0, 30, 21, 20, 0, 99, 202, 25, 32, 130, 21, 0, 0, 55, 168, 4, 49, 121, 53, 0, 60, 227, 115, 42, 0, 30, 21, 20, 0, 86, 209, 198, 30, 225, 15, 0, 0, 209, 164, 228, 48, 135, 53, 0, 60, 35, 111, 50, 0, 30, 21, 20, 0, 37, 182, 149, 54, 67, 19, 0, 0, 44, 166, 200, 48, 158, 53, 0, 60, 3, 104, 71, 0, 30, 21, 20, 0, 65, 186, 95, 45, 93, 24, 0, 0, 177, 165, 152, 48, 197, 53, 0, 60, 2, 80, 98, 0, 30, 21, 20, 0, 159, 173, 27, 48, 67, 34, 0, 0, 19, 164, 155, 48, 194, 53, 0, 60, 40, 77, 92, 0, 30, 21, 20, 0, 144, 163, 147, 60, 218, 31, 0, 0, 33, 167, 247, 47, 232, 53, 0, 60, 0, 18, 125, 0, 30, 20, 21, 0, 48, 153, 155, 71, 50, 31, 0, 0, 173, 167, 48, 48, 221, 53, 0, 60, 244, 50, 115, 0, 30, 20, 21, 0, 239, 166, 231, 56, 40, 32, 0, 0, 238, 168, 53, 48, 212, 53, 0, 60, 211, 50, 107, 0, 30, 20, 21, 0, 80, 178, 187, 52, 242, 24, 0, 0, 62, 169, 3, 48, 218, 53, 0, 60, 198, 18, 111, 0, 30, 20, 21, 0, 251, 170, 210, 63, 48, 21, 0, 0, 39, 168, 145, 48, 196, 53, 0, 60, 231, 79, 95, 0, 30, 20, 21, 0, 217, 186, 136, 35, 156, 33, 0, 0, 188, 169, 106, 48, 181, 53, 0, 60, 195, 71, 84, 0, 30, 20, 21, 0, 11, 199, 132, 35, 111, 21, 0, 0, 44, 166, 73, 48, 212, 53, 0, 60, 8, 49, 116, 0, 30, 20, 21, 0, 6, 164, 95, 51, 152, 40, 0, 0, 209, 164, 33, 48, 218, 53, 0, 60, 41, 30, 116, 0, 30, 20, 21, 0, 15, 148, 127, 62, 111, 45, 0, 0, 123, 170, 84, 48, 171, 53, 0, 60, 167, 55, 70, 0, 30, 20, 21, 0, 226, 204, 202, 33, 81, 17, 0, 0 ),
@@ -41,304 +38,12 @@ surfaces/1 = {
 "vertex_count": 774
 }
 
-[sub_resource type="CapsuleShape" id=17]
-
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.0874867
 height = 0.335187
 
-[sub_resource type="Animation" id=2]
-
-resource_name = "Attack1Handed01"
-length = 0.833333
-loop = false
-step = 0.1
-tracks/0/type = "transform"
-tracks/0/path = NodePath("CreatureFlyingArmature")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0, 1.675, 0.0451679, 0, 0, 0, 1, 0.5, 0.5, 0.5, 0.833333, 1, 0, 1.675, 0.0451679, 0, 0, 0, 1, 0.5, 0.5, 0.5 )
-tracks/1/type = "transform"
-tracks/1/path = NodePath("CreatureFlyingArmature/Skeleton:LegUpper.L")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/keys = PoolRealArray( 0, 1, 2.98023e-008, 3.35276e-008, -1.19209e-007, 9.31323e-010, -1.86265e-009, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, 2.98023e-008, 3.35276e-008, -1.19209e-007, 9.31323e-010, -1.86265e-009, 7.45058e-009, 1, 1, 1, 1 )
-tracks/2/type = "transform"
-tracks/2/path = NodePath("CreatureFlyingArmature/Skeleton:LegLower.L")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/keys = PoolRealArray( 0, 1, 9.49331e-009, 7.7486e-007, -2.51457e-008, -9.31323e-010, 1.32386e-008, 3.02862e-009, 1, 1, 1, 1, 0.833333, 1, 9.49331e-009, 7.7486e-007, -2.51457e-008, -9.31323e-010, 1.32386e-008, 3.02862e-009, 1, 1, 1, 1 )
-tracks/3/type = "transform"
-tracks/3/path = NodePath("CreatureFlyingArmature/Skeleton:LegLowest.L")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/keys = PoolRealArray( 0, 1, 6.06945e-009, -4.36305e-007, 0, -3.24556e-009, 5.15713e-009, -2.91037e-011, 1, 1, 1, 1, 0.833333, 1, 6.06945e-009, -4.36305e-007, 0, -3.24556e-009, 5.15713e-009, -2.91037e-011, 1, 1, 1, 1 )
-tracks/4/type = "transform"
-tracks/4/path = NodePath("CreatureFlyingArmature/Skeleton:FootFront.L")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = true
-tracks/4/enabled = true
-tracks/4/keys = PoolRealArray( 0, 1, -9.0804e-009, 7.45058e-009, 1.19209e-007, -7.45058e-009, 4.65661e-010, -3.72529e-009, 1, 1, 1, 1, 0.833333, 1, -9.0804e-009, 7.45058e-009, 1.19209e-007, -7.45058e-009, 4.65661e-010, -3.72529e-009, 1, 1, 1, 1 )
-tracks/5/type = "transform"
-tracks/5/path = NodePath("CreatureFlyingArmature/Skeleton:FootBack.L")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = true
-tracks/5/enabled = true
-tracks/5/keys = PoolRealArray( 0, 1, 8.3819e-009, 1.49012e-008, -2.98023e-008, 1.49012e-008, 9.31323e-010, 0, 1, 1, 1, 1, 0.833333, 1, 8.3819e-009, 1.49012e-008, -2.98023e-008, 1.49012e-008, 9.31323e-010, 0, 1, 1, 1, 1 )
-tracks/6/type = "transform"
-tracks/6/path = NodePath("CreatureFlyingArmature/Skeleton:LegUpper.R")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = true
-tracks/6/enabled = true
-tracks/6/keys = PoolRealArray( 0, 1, -2.23517e-008, -2.98023e-008, 8.9407e-008, 9.31323e-010, -9.31323e-010, -2.23517e-008, 1, 1, 1, 1, 0.833333, 1, -2.23517e-008, -2.98023e-008, 8.9407e-008, 9.31323e-010, -9.31323e-010, -2.23517e-008, 1, 1, 1, 1 )
-tracks/7/type = "transform"
-tracks/7/path = NodePath("CreatureFlyingArmature/Skeleton:LegLower.R")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = true
-tracks/7/enabled = true
-tracks/7/keys = PoolRealArray( 0, 1, 4.25644e-010, 2.83122e-007, 3.35276e-008, -9.31323e-010, -1.27329e-011, 3.95812e-009, 1, 1, 1, 1, 0.833333, 1, 4.25644e-010, 2.83122e-007, 3.35276e-008, -9.31323e-010, -1.27329e-011, 3.95812e-009, 1, 1, 1, 1 )
-tracks/8/type = "transform"
-tracks/8/path = NodePath("CreatureFlyingArmature/Skeleton:LegLowest.R")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = true
-tracks/8/enabled = true
-tracks/8/keys = PoolRealArray( 0, 1, 1.52677e-008, -1.99713e-007, -1.49012e-008, -8.55039e-010, -4.37103e-010, 1.45519e-010, 1, 1, 1, 1, 0.833333, 1, 1.52677e-008, -1.99713e-007, -1.49012e-008, -8.55039e-010, -4.37103e-010, 1.45519e-010, 1, 1, 1, 1 )
-tracks/9/type = "transform"
-tracks/9/path = NodePath("CreatureFlyingArmature/Skeleton:FootFront.R")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = true
-tracks/9/enabled = true
-tracks/9/keys = PoolRealArray( 0, 1, 1.49012e-008, 2.98023e-008, 1.49012e-007, -1.49012e-008, 9.31323e-010, 1.86265e-009, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, 2.98023e-008, 1.49012e-007, -1.49012e-008, 9.31323e-010, 1.86265e-009, 1, 1, 1, 1 )
-tracks/10/type = "transform"
-tracks/10/path = NodePath("CreatureFlyingArmature/Skeleton:FootBack.R")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = true
-tracks/10/enabled = true
-tracks/10/keys = PoolRealArray( 0, 1, -5.3551e-009, -1.15484e-007, -2.83122e-007, 0, 0, 3.72529e-009, 1, 1, 1, 1, 0.833333, 1, -5.3551e-009, -1.15484e-007, -2.83122e-007, 0, 0, 3.72529e-009, 1, 1, 1, 1 )
-tracks/11/type = "transform"
-tracks/11/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.007")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = true
-tracks/11/enabled = true
-tracks/11/keys = PoolRealArray( 0, 1, -2.38742e-012, -1.19209e-007, 5.96046e-008, 0, 1.42109e-014, 2.84217e-013, 1, 1, 1, 1, 0.833333, 1, -2.38742e-012, -1.19209e-007, 5.96046e-008, 0, 1.42109e-014, 2.84217e-013, 1, 1, 1, 1 )
-tracks/12/type = "transform"
-tracks/12/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.008")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = true
-tracks/12/enabled = true
-tracks/12/keys = PoolRealArray( 0, 1, 2.18137e-012, -1.43424e-007, 0, -3.72529e-009, -4.9738e-014, -5.32907e-015, 1, 1, 1, 1, 0.833333, 1, 2.18137e-012, -1.43424e-007, 0, -3.72529e-009, -4.9738e-014, -5.32907e-015, 1, 1, 1, 1 )
-tracks/13/type = "transform"
-tracks/13/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.009")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = true
-tracks/13/enabled = true
-tracks/13/keys = PoolRealArray( 0, 1, -3.87246e-013, 3.09199e-007, -1.49012e-007, 1.11759e-008, 0, 2.4869e-014, 1, 1, 1, 1, 0.833333, 1, -3.87246e-013, 3.09199e-007, -1.49012e-007, 1.11759e-008, 0, 2.4869e-014, 1, 1, 1, 1 )
-tracks/14/type = "transform"
-tracks/14/path = NodePath("CreatureFlyingArmature/Skeleton:Head")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = true
-tracks/14/enabled = true
-tracks/14/keys = PoolRealArray( 0, 1, 4.16342e-014, -6.89179e-008, 1.41561e-007, 0, -0.0399301, -0.315811, 0.947982, 1, 1, 1, 0.833333, 1, 4.16342e-014, -6.89179e-008, 1.41561e-007, 0, -0.0399301, -0.315811, 0.947982, 1, 1, 1 )
-tracks/15/type = "transform"
-tracks/15/path = NodePath("CreatureFlyingArmature/Skeleton:Ear.L")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = true
-tracks/15/enabled = true
-tracks/15/keys = PoolRealArray( 0, 1, -1.546e-007, 2.57045e-007, -4.02331e-007, -2.23517e-008, 1.49012e-008, -9.31323e-009, 1, 1, 1, 1, 0.833333, 1, -1.546e-007, 2.57045e-007, -4.02331e-007, -2.23517e-008, 1.49012e-008, -9.31323e-009, 1, 1, 1, 1 )
-tracks/16/type = "transform"
-tracks/16/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper.L")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = true
-tracks/16/enabled = true
-tracks/16/keys = PoolRealArray( 0, 1, -3.72529e-008, 4.47035e-008, 2.30968e-007, 3.72529e-009, 2.11876e-008, -1.86265e-009, 1, 1, 1, 1, 0.833333, 1, -3.72529e-008, 4.47035e-008, 2.30968e-007, 3.72529e-009, 2.11876e-008, -1.86265e-009, 1, 1, 1, 1 )
-tracks/17/type = "transform"
-tracks/17/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper2.L")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = true
-tracks/17/enabled = true
-tracks/17/keys = PoolRealArray( 0, 1, 3.7998e-007, 1.25729e-007, -4.76837e-007, -2.79397e-008, 7.45058e-009, -2.32831e-008, 1, 1, 1, 1, 0.833333, 1, 3.7998e-007, 1.25729e-007, -4.76837e-007, -2.79397e-008, 7.45058e-009, -2.32831e-008, 1, 1, 1, 1 )
-tracks/18/type = "transform"
-tracks/18/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle.L")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = true
-tracks/18/enabled = true
-tracks/18/keys = PoolRealArray( 0, 1, 7.45058e-008, 4.61936e-007, 4.02331e-007, -4.47035e-008, -2.98023e-008, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, 7.45058e-008, 4.61936e-007, 4.02331e-007, -4.47035e-008, -2.98023e-008, 7.45058e-009, 1, 1, 1, 1 )
-tracks/19/type = "transform"
-tracks/19/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle2.L")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = true
-tracks/19/enabled = true
-tracks/19/keys = PoolRealArray( 0, 1, 5.96046e-008, -8.13976e-007, 1.78814e-007, -3.72529e-009, -2.23517e-008, -6.98492e-010, 1, 1, 1, 1, 0.833333, 1, 5.96046e-008, -8.13976e-007, 1.78814e-007, -3.72529e-009, -2.23517e-008, -6.98492e-010, 1, 1, 1, 1 )
-tracks/20/type = "transform"
-tracks/20/path = NodePath("CreatureFlyingArmature/Skeleton:WingLower.L")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = true
-tracks/20/enabled = true
-tracks/20/keys = PoolRealArray( 0, 1, 1.49012e-007, 4.39584e-007, -3.8743e-007, 4.09782e-008, -2.98023e-008, -2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.49012e-007, 4.39584e-007, -3.8743e-007, 4.09782e-008, -2.98023e-008, -2.23517e-008, 1, 1, 1, 1 )
-tracks/21/type = "transform"
-tracks/21/path = NodePath("CreatureFlyingArmature/Skeleton:Bone")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = true
-tracks/21/enabled = true
-tracks/21/keys = PoolRealArray( 0, 1, 0, -4.26326e-014, 0, 5.32907e-015, 0, -2.13163e-014, 1, 1, 1, 1, 0.833333, 1, 0, -4.26326e-014, 0, 5.32907e-015, 0, -2.13163e-014, 1, 1, 1, 1 )
-tracks/22/type = "transform"
-tracks/22/path = NodePath("CreatureFlyingArmature/Skeleton:WingLowest.L")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = true
-tracks/22/enabled = true
-tracks/22/keys = PoolRealArray( 0, 1, -2.05024e-008, -2.66709e-007, 4.17233e-007, -2.8742e-008, 1.3599e-008, -2.60771e-008, 1, 1, 1, 1, 0.833333, 1, -2.05024e-008, -2.66709e-007, 4.17233e-007, -2.8742e-008, 1.3599e-008, -2.60771e-008, 1, 1, 1, 1 )
-tracks/23/type = "transform"
-tracks/23/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid.L")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/imported = true
-tracks/23/enabled = true
-tracks/23/keys = PoolRealArray( 0, 1, -2.5332e-007, -4.91738e-007, 8.9407e-008, 7.45058e-009, 2.23517e-008, -1.49012e-008, 1, 1, 1, 1, 0.833333, 1, -2.5332e-007, -4.91738e-007, 8.9407e-008, 7.45058e-009, 2.23517e-008, -1.49012e-008, 1, 1, 1, 1 )
-tracks/24/type = "transform"
-tracks/24/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid2.L")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/imported = true
-tracks/24/enabled = true
-tracks/24/keys = PoolRealArray( 0, 1, 1.77636e-014, 4.94467e-007, -8.9407e-008, -1.62979e-009, -7.45061e-009, 6.7819e-009, 1, 1, 1, 1, 0.833333, 1, 1.77636e-014, 4.94467e-007, -8.9407e-008, -1.62979e-009, -7.45061e-009, 6.7819e-009, 1, 1, 1, 1 )
-tracks/25/type = "transform"
-tracks/25/path = NodePath("CreatureFlyingArmature/Skeleton:Ear.R")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/imported = true
-tracks/25/enabled = true
-tracks/25/keys = PoolRealArray( 0, 1, -9.68575e-008, 1.19209e-007, 4.09782e-007, -7.45058e-009, -7.45058e-009, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, -9.68575e-008, 1.19209e-007, 4.09782e-007, -7.45058e-009, -7.45058e-009, 1.11759e-008, 1, 1, 1, 1 )
-tracks/26/type = "transform"
-tracks/26/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper.R")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/imported = true
-tracks/26/enabled = true
-tracks/26/keys = PoolRealArray( 0, 1, -2.30968e-007, 1.63913e-007, 1.41561e-007, 7.45058e-009, -1.86265e-008, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, -2.30968e-007, 1.63913e-007, 1.41561e-007, 7.45058e-009, -1.86265e-008, 7.45058e-009, 1, 1, 1, 1 )
-tracks/27/type = "transform"
-tracks/27/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper2.R")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/imported = true
-tracks/27/enabled = true
-tracks/27/keys = PoolRealArray( 0, 1, -1.02445e-007, 4.47035e-008, 2.38419e-007, -1.49012e-008, -6.0536e-009, 1.32714e-008, 1, 1, 1, 1, 0.833333, 1, -1.02445e-007, 4.47035e-008, 2.38419e-007, -1.49012e-008, -6.0536e-009, 1.32714e-008, 1, 1, 1, 1 )
-tracks/28/type = "transform"
-tracks/28/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle.R")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/imported = true
-tracks/28/enabled = true
-tracks/28/keys = PoolRealArray( 0, 1, -4.73112e-007, 1.19209e-007, -1.78814e-007, -2.23517e-008, 5.58794e-009, -1.21072e-008, 1, 1, 1, 1, 0.833333, 1, -4.73112e-007, 1.19209e-007, -1.78814e-007, -2.23517e-008, 5.58794e-009, -1.21072e-008, 1, 1, 1, 1 )
-tracks/29/type = "transform"
-tracks/29/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle2.R")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/imported = true
-tracks/29/enabled = true
-tracks/29/keys = PoolRealArray( 0, 1, 2.5332e-007, 2.01166e-007, -1.19209e-007, 2.6077e-008, -1.49012e-008, -1.58325e-008, 1, 1, 1, 1, 0.833333, 1, 2.5332e-007, 2.01166e-007, -1.19209e-007, 2.6077e-008, -1.49012e-008, -1.58325e-008, 1, 1, 1, 1 )
-tracks/30/type = "transform"
-tracks/30/path = NodePath("CreatureFlyingArmature/Skeleton:WingLower.R")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/imported = true
-tracks/30/enabled = true
-tracks/30/keys = PoolRealArray( 0, 1, -5.96046e-008, -7.45058e-008, -4.02331e-007, 3.72529e-008, 1.86265e-008, -7.45058e-009, 1, 1, 1, 1, 0.833333, 1, -5.96046e-008, -7.45058e-008, -4.02331e-007, 3.72529e-008, 1.86265e-008, -7.45058e-009, 1, 1, 1, 1 )
-tracks/31/type = "transform"
-tracks/31/path = NodePath("CreatureFlyingArmature/Skeleton:WingLowest.R")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/imported = true
-tracks/31/enabled = true
-tracks/31/keys = PoolRealArray( 0, 1, 2.17029e-007, 2.73091e-007, 1.19209e-007, -3.89865e-009, 1.76812e-008, 1.49012e-008, 1, 1, 1, 1, 0.833333, 1, 2.17029e-007, 2.73091e-007, 1.19209e-007, -3.89865e-009, 1.76812e-008, 1.49012e-008, 1, 1, 1, 1 )
-tracks/32/type = "transform"
-tracks/32/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.001")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/imported = true
-tracks/32/enabled = true
-tracks/32/keys = PoolRealArray( 0, 1, -4.61853e-014, -3.27826e-007, -2.98023e-008, 0, 2.93099e-014, 1.77636e-015, 1, 1, 1, 1, 0.833333, 1, -4.61853e-014, -3.27826e-007, -2.98023e-008, 0, 2.93099e-014, 1.77636e-015, 1, 1, 1, 1 )
-tracks/33/type = "transform"
-tracks/33/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid.R")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/imported = true
-tracks/33/enabled = true
-tracks/33/keys = PoolRealArray( 0, 1, -1.19209e-007, 5.81145e-007, -1.19209e-007, 1.49012e-008, 3.72529e-008, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, -1.19209e-007, 5.81145e-007, -1.19209e-007, 1.49012e-008, 3.72529e-008, 2.23517e-008, 1, 1, 1, 1 )
-tracks/34/type = "transform"
-tracks/34/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid2.R")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/imported = true
-tracks/34/enabled = true
-tracks/34/keys = PoolRealArray( 0, 1, -8.00938e-008, -6.46996e-008, 5.96046e-008, -6.5338e-009, 7.45058e-009, 1.36745e-008, 1, 1, 1, 1, 0.833333, 1, -8.00938e-008, -6.46996e-008, 5.96046e-008, -6.5338e-009, 7.45058e-009, 1.36745e-008, 1, 1, 1, 1 )
-tracks/35/type = "transform"
-tracks/35/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.002")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/imported = true
-tracks/35/enabled = true
-tracks/35/keys = PoolRealArray( 0, 1, 4.66294e-014, 4.04194e-007, 1.49012e-008, 0, -1.33227e-015, -7.10543e-015, 1, 1, 1, 1, 0.833333, 1, 4.66294e-014, 4.04194e-007, 1.49012e-008, 0, -1.33227e-015, -7.10543e-015, 1, 1, 1, 1 )
-tracks/36/type = "transform"
-tracks/36/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.003")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/imported = true
-tracks/36/enabled = true
-tracks/36/keys = PoolRealArray( 0, 1, -7.47957e-019, -1.38778e-016, -1.49012e-008, 8.88178e-016, 7.6084e-017, -3.50851e-038, 1, 1, 1, 1, 0.833333, 1, -7.47957e-019, -1.38778e-016, -1.49012e-008, 8.88178e-016, 7.6084e-017, -3.50851e-038, 1, 1, 1, 1 )
-tracks/37/type = "transform"
-tracks/37/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.004")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/imported = true
-tracks/37/enabled = true
-tracks/37/keys = PoolRealArray( 0, 1, 3.53768e-016, 2.38186e-007, -7.45058e-009, 0, 1.0468e-016, 8.85264e-016, 1, 1, 1, 1, 0.833333, 1, 3.53768e-016, 2.38186e-007, -7.45058e-009, 0, 1.0468e-016, 8.85264e-016, 1, 1, 1, 1 )
-tracks/38/type = "transform"
-tracks/38/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.005")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/imported = true
-tracks/38/enabled = true
-tracks/38/keys = PoolRealArray( 0, 1, 0, -6.02566e-007, -5.21541e-008, 0, 8.10606e-016, -1.75477e-015, 1, 1, 1, 1, 0.833333, 1, 0, -6.02566e-007, -5.21541e-008, 0, 8.10606e-016, -1.75477e-015, 1, 1, 1, 1 )
-tracks/39/type = "transform"
-tracks/39/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.006")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/imported = true
-tracks/39/enabled = true
-tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
-
 [sub_resource type="Animation" id=3]
-
-resource_name = "Attack1Handed02"
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -621,11 +326,290 @@ tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
 [sub_resource type="Animation" id=4]
-
-resource_name = "Attack2Handed01"
 length = 0.833333
-loop = false
-step = 0.1
+tracks/0/type = "transform"
+tracks/0/path = NodePath("CreatureFlyingArmature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 1.675, 0.0451679, 0, 0, 0, 1, 0.5, 0.5, 0.5, 0.833333, 1, 0, 1.675, 0.0451679, 0, 0, 0, 1, 0.5, 0.5, 0.5 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("CreatureFlyingArmature/Skeleton:LegUpper.L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 2.98023e-008, 3.35276e-008, -1.19209e-007, 9.31323e-010, -1.86265e-009, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, 2.98023e-008, 3.35276e-008, -1.19209e-007, 9.31323e-010, -1.86265e-009, 7.45058e-009, 1, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("CreatureFlyingArmature/Skeleton:LegLower.L")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 9.49331e-009, 7.7486e-007, -2.51457e-008, -9.31323e-010, 1.32386e-008, 3.02862e-009, 1, 1, 1, 1, 0.833333, 1, 9.49331e-009, 7.7486e-007, -2.51457e-008, -9.31323e-010, 1.32386e-008, 3.02862e-009, 1, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("CreatureFlyingArmature/Skeleton:LegLowest.L")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 6.06945e-009, -4.36305e-007, 0, -3.24556e-009, 5.15713e-009, -2.91037e-011, 1, 1, 1, 1, 0.833333, 1, 6.06945e-009, -4.36305e-007, 0, -3.24556e-009, 5.15713e-009, -2.91037e-011, 1, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("CreatureFlyingArmature/Skeleton:FootFront.L")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, -9.0804e-009, 7.45058e-009, 1.19209e-007, -7.45058e-009, 4.65661e-010, -3.72529e-009, 1, 1, 1, 1, 0.833333, 1, -9.0804e-009, 7.45058e-009, 1.19209e-007, -7.45058e-009, 4.65661e-010, -3.72529e-009, 1, 1, 1, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("CreatureFlyingArmature/Skeleton:FootBack.L")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, 8.3819e-009, 1.49012e-008, -2.98023e-008, 1.49012e-008, 9.31323e-010, 0, 1, 1, 1, 1, 0.833333, 1, 8.3819e-009, 1.49012e-008, -2.98023e-008, 1.49012e-008, 9.31323e-010, 0, 1, 1, 1, 1 )
+tracks/6/type = "transform"
+tracks/6/path = NodePath("CreatureFlyingArmature/Skeleton:LegUpper.R")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/keys = PoolRealArray( 0, 1, -2.23517e-008, -2.98023e-008, 8.9407e-008, 9.31323e-010, -9.31323e-010, -2.23517e-008, 1, 1, 1, 1, 0.833333, 1, -2.23517e-008, -2.98023e-008, 8.9407e-008, 9.31323e-010, -9.31323e-010, -2.23517e-008, 1, 1, 1, 1 )
+tracks/7/type = "transform"
+tracks/7/path = NodePath("CreatureFlyingArmature/Skeleton:LegLower.R")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/keys = PoolRealArray( 0, 1, 4.25644e-010, 2.83122e-007, 3.35276e-008, -9.31323e-010, -1.27329e-011, 3.95812e-009, 1, 1, 1, 1, 0.833333, 1, 4.25644e-010, 2.83122e-007, 3.35276e-008, -9.31323e-010, -1.27329e-011, 3.95812e-009, 1, 1, 1, 1 )
+tracks/8/type = "transform"
+tracks/8/path = NodePath("CreatureFlyingArmature/Skeleton:LegLowest.R")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/keys = PoolRealArray( 0, 1, 1.52677e-008, -1.99713e-007, -1.49012e-008, -8.55039e-010, -4.37103e-010, 1.45519e-010, 1, 1, 1, 1, 0.833333, 1, 1.52677e-008, -1.99713e-007, -1.49012e-008, -8.55039e-010, -4.37103e-010, 1.45519e-010, 1, 1, 1, 1 )
+tracks/9/type = "transform"
+tracks/9/path = NodePath("CreatureFlyingArmature/Skeleton:FootFront.R")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/keys = PoolRealArray( 0, 1, 1.49012e-008, 2.98023e-008, 1.49012e-007, -1.49012e-008, 9.31323e-010, 1.86265e-009, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, 2.98023e-008, 1.49012e-007, -1.49012e-008, 9.31323e-010, 1.86265e-009, 1, 1, 1, 1 )
+tracks/10/type = "transform"
+tracks/10/path = NodePath("CreatureFlyingArmature/Skeleton:FootBack.R")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/keys = PoolRealArray( 0, 1, -5.3551e-009, -1.15484e-007, -2.83122e-007, 0, 0, 3.72529e-009, 1, 1, 1, 1, 0.833333, 1, -5.3551e-009, -1.15484e-007, -2.83122e-007, 0, 0, 3.72529e-009, 1, 1, 1, 1 )
+tracks/11/type = "transform"
+tracks/11/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.007")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = true
+tracks/11/enabled = true
+tracks/11/keys = PoolRealArray( 0, 1, -2.38742e-012, -1.19209e-007, 5.96046e-008, 0, 1.42109e-014, 2.84217e-013, 1, 1, 1, 1, 0.833333, 1, -2.38742e-012, -1.19209e-007, 5.96046e-008, 0, 1.42109e-014, 2.84217e-013, 1, 1, 1, 1 )
+tracks/12/type = "transform"
+tracks/12/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.008")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = true
+tracks/12/enabled = true
+tracks/12/keys = PoolRealArray( 0, 1, 2.18137e-012, -1.43424e-007, 0, -3.72529e-009, -4.9738e-014, -5.32907e-015, 1, 1, 1, 1, 0.833333, 1, 2.18137e-012, -1.43424e-007, 0, -3.72529e-009, -4.9738e-014, -5.32907e-015, 1, 1, 1, 1 )
+tracks/13/type = "transform"
+tracks/13/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.009")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = true
+tracks/13/enabled = true
+tracks/13/keys = PoolRealArray( 0, 1, -3.87246e-013, 3.09199e-007, -1.49012e-007, 1.11759e-008, 0, 2.4869e-014, 1, 1, 1, 1, 0.833333, 1, -3.87246e-013, 3.09199e-007, -1.49012e-007, 1.11759e-008, 0, 2.4869e-014, 1, 1, 1, 1 )
+tracks/14/type = "transform"
+tracks/14/path = NodePath("CreatureFlyingArmature/Skeleton:Head")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = true
+tracks/14/enabled = true
+tracks/14/keys = PoolRealArray( 0, 1, 4.16342e-014, -6.89179e-008, 1.41561e-007, 0, -0.0399301, -0.315811, 0.947982, 1, 1, 1, 0.833333, 1, 4.16342e-014, -6.89179e-008, 1.41561e-007, 0, -0.0399301, -0.315811, 0.947982, 1, 1, 1 )
+tracks/15/type = "transform"
+tracks/15/path = NodePath("CreatureFlyingArmature/Skeleton:Ear.L")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = true
+tracks/15/enabled = true
+tracks/15/keys = PoolRealArray( 0, 1, -1.546e-007, 2.57045e-007, -4.02331e-007, -2.23517e-008, 1.49012e-008, -9.31323e-009, 1, 1, 1, 1, 0.833333, 1, -1.546e-007, 2.57045e-007, -4.02331e-007, -2.23517e-008, 1.49012e-008, -9.31323e-009, 1, 1, 1, 1 )
+tracks/16/type = "transform"
+tracks/16/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper.L")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = true
+tracks/16/enabled = true
+tracks/16/keys = PoolRealArray( 0, 1, -3.72529e-008, 4.47035e-008, 2.30968e-007, 3.72529e-009, 2.11876e-008, -1.86265e-009, 1, 1, 1, 1, 0.833333, 1, -3.72529e-008, 4.47035e-008, 2.30968e-007, 3.72529e-009, 2.11876e-008, -1.86265e-009, 1, 1, 1, 1 )
+tracks/17/type = "transform"
+tracks/17/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper2.L")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = true
+tracks/17/enabled = true
+tracks/17/keys = PoolRealArray( 0, 1, 3.7998e-007, 1.25729e-007, -4.76837e-007, -2.79397e-008, 7.45058e-009, -2.32831e-008, 1, 1, 1, 1, 0.833333, 1, 3.7998e-007, 1.25729e-007, -4.76837e-007, -2.79397e-008, 7.45058e-009, -2.32831e-008, 1, 1, 1, 1 )
+tracks/18/type = "transform"
+tracks/18/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle.L")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = true
+tracks/18/enabled = true
+tracks/18/keys = PoolRealArray( 0, 1, 7.45058e-008, 4.61936e-007, 4.02331e-007, -4.47035e-008, -2.98023e-008, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, 7.45058e-008, 4.61936e-007, 4.02331e-007, -4.47035e-008, -2.98023e-008, 7.45058e-009, 1, 1, 1, 1 )
+tracks/19/type = "transform"
+tracks/19/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle2.L")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = true
+tracks/19/enabled = true
+tracks/19/keys = PoolRealArray( 0, 1, 5.96046e-008, -8.13976e-007, 1.78814e-007, -3.72529e-009, -2.23517e-008, -6.98492e-010, 1, 1, 1, 1, 0.833333, 1, 5.96046e-008, -8.13976e-007, 1.78814e-007, -3.72529e-009, -2.23517e-008, -6.98492e-010, 1, 1, 1, 1 )
+tracks/20/type = "transform"
+tracks/20/path = NodePath("CreatureFlyingArmature/Skeleton:WingLower.L")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = true
+tracks/20/enabled = true
+tracks/20/keys = PoolRealArray( 0, 1, 1.49012e-007, 4.39584e-007, -3.8743e-007, 4.09782e-008, -2.98023e-008, -2.23517e-008, 1, 1, 1, 1, 0.833333, 1, 1.49012e-007, 4.39584e-007, -3.8743e-007, 4.09782e-008, -2.98023e-008, -2.23517e-008, 1, 1, 1, 1 )
+tracks/21/type = "transform"
+tracks/21/path = NodePath("CreatureFlyingArmature/Skeleton:Bone")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = true
+tracks/21/enabled = true
+tracks/21/keys = PoolRealArray( 0, 1, 0, -4.26326e-014, 0, 5.32907e-015, 0, -2.13163e-014, 1, 1, 1, 1, 0.833333, 1, 0, -4.26326e-014, 0, 5.32907e-015, 0, -2.13163e-014, 1, 1, 1, 1 )
+tracks/22/type = "transform"
+tracks/22/path = NodePath("CreatureFlyingArmature/Skeleton:WingLowest.L")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = true
+tracks/22/enabled = true
+tracks/22/keys = PoolRealArray( 0, 1, -2.05024e-008, -2.66709e-007, 4.17233e-007, -2.8742e-008, 1.3599e-008, -2.60771e-008, 1, 1, 1, 1, 0.833333, 1, -2.05024e-008, -2.66709e-007, 4.17233e-007, -2.8742e-008, 1.3599e-008, -2.60771e-008, 1, 1, 1, 1 )
+tracks/23/type = "transform"
+tracks/23/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid.L")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = true
+tracks/23/enabled = true
+tracks/23/keys = PoolRealArray( 0, 1, -2.5332e-007, -4.91738e-007, 8.9407e-008, 7.45058e-009, 2.23517e-008, -1.49012e-008, 1, 1, 1, 1, 0.833333, 1, -2.5332e-007, -4.91738e-007, 8.9407e-008, 7.45058e-009, 2.23517e-008, -1.49012e-008, 1, 1, 1, 1 )
+tracks/24/type = "transform"
+tracks/24/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid2.L")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = true
+tracks/24/enabled = true
+tracks/24/keys = PoolRealArray( 0, 1, 1.77636e-014, 4.94467e-007, -8.9407e-008, -1.62979e-009, -7.45061e-009, 6.7819e-009, 1, 1, 1, 1, 0.833333, 1, 1.77636e-014, 4.94467e-007, -8.9407e-008, -1.62979e-009, -7.45061e-009, 6.7819e-009, 1, 1, 1, 1 )
+tracks/25/type = "transform"
+tracks/25/path = NodePath("CreatureFlyingArmature/Skeleton:Ear.R")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = true
+tracks/25/enabled = true
+tracks/25/keys = PoolRealArray( 0, 1, -9.68575e-008, 1.19209e-007, 4.09782e-007, -7.45058e-009, -7.45058e-009, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, -9.68575e-008, 1.19209e-007, 4.09782e-007, -7.45058e-009, -7.45058e-009, 1.11759e-008, 1, 1, 1, 1 )
+tracks/26/type = "transform"
+tracks/26/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper.R")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = true
+tracks/26/enabled = true
+tracks/26/keys = PoolRealArray( 0, 1, -2.30968e-007, 1.63913e-007, 1.41561e-007, 7.45058e-009, -1.86265e-008, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, -2.30968e-007, 1.63913e-007, 1.41561e-007, 7.45058e-009, -1.86265e-008, 7.45058e-009, 1, 1, 1, 1 )
+tracks/27/type = "transform"
+tracks/27/path = NodePath("CreatureFlyingArmature/Skeleton:WingUpper2.R")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = true
+tracks/27/enabled = true
+tracks/27/keys = PoolRealArray( 0, 1, -1.02445e-007, 4.47035e-008, 2.38419e-007, -1.49012e-008, -6.0536e-009, 1.32714e-008, 1, 1, 1, 1, 0.833333, 1, -1.02445e-007, 4.47035e-008, 2.38419e-007, -1.49012e-008, -6.0536e-009, 1.32714e-008, 1, 1, 1, 1 )
+tracks/28/type = "transform"
+tracks/28/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle.R")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = true
+tracks/28/enabled = true
+tracks/28/keys = PoolRealArray( 0, 1, -4.73112e-007, 1.19209e-007, -1.78814e-007, -2.23517e-008, 5.58794e-009, -1.21072e-008, 1, 1, 1, 1, 0.833333, 1, -4.73112e-007, 1.19209e-007, -1.78814e-007, -2.23517e-008, 5.58794e-009, -1.21072e-008, 1, 1, 1, 1 )
+tracks/29/type = "transform"
+tracks/29/path = NodePath("CreatureFlyingArmature/Skeleton:WingMiddle2.R")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = true
+tracks/29/enabled = true
+tracks/29/keys = PoolRealArray( 0, 1, 2.5332e-007, 2.01166e-007, -1.19209e-007, 2.6077e-008, -1.49012e-008, -1.58325e-008, 1, 1, 1, 1, 0.833333, 1, 2.5332e-007, 2.01166e-007, -1.19209e-007, 2.6077e-008, -1.49012e-008, -1.58325e-008, 1, 1, 1, 1 )
+tracks/30/type = "transform"
+tracks/30/path = NodePath("CreatureFlyingArmature/Skeleton:WingLower.R")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = true
+tracks/30/enabled = true
+tracks/30/keys = PoolRealArray( 0, 1, -5.96046e-008, -7.45058e-008, -4.02331e-007, 3.72529e-008, 1.86265e-008, -7.45058e-009, 1, 1, 1, 1, 0.833333, 1, -5.96046e-008, -7.45058e-008, -4.02331e-007, 3.72529e-008, 1.86265e-008, -7.45058e-009, 1, 1, 1, 1 )
+tracks/31/type = "transform"
+tracks/31/path = NodePath("CreatureFlyingArmature/Skeleton:WingLowest.R")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = true
+tracks/31/enabled = true
+tracks/31/keys = PoolRealArray( 0, 1, 2.17029e-007, 2.73091e-007, 1.19209e-007, -3.89865e-009, 1.76812e-008, 1.49012e-008, 1, 1, 1, 1, 0.833333, 1, 2.17029e-007, 2.73091e-007, 1.19209e-007, -3.89865e-009, 1.76812e-008, 1.49012e-008, 1, 1, 1, 1 )
+tracks/32/type = "transform"
+tracks/32/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.001")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = true
+tracks/32/enabled = true
+tracks/32/keys = PoolRealArray( 0, 1, -4.61853e-014, -3.27826e-007, -2.98023e-008, 0, 2.93099e-014, 1.77636e-015, 1, 1, 1, 1, 0.833333, 1, -4.61853e-014, -3.27826e-007, -2.98023e-008, 0, 2.93099e-014, 1.77636e-015, 1, 1, 1, 1 )
+tracks/33/type = "transform"
+tracks/33/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid.R")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = true
+tracks/33/enabled = true
+tracks/33/keys = PoolRealArray( 0, 1, -1.19209e-007, 5.81145e-007, -1.19209e-007, 1.49012e-008, 3.72529e-008, 2.23517e-008, 1, 1, 1, 1, 0.833333, 1, -1.19209e-007, 5.81145e-007, -1.19209e-007, 1.49012e-008, 3.72529e-008, 2.23517e-008, 1, 1, 1, 1 )
+tracks/34/type = "transform"
+tracks/34/path = NodePath("CreatureFlyingArmature/Skeleton:WingMid2.R")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = true
+tracks/34/enabled = true
+tracks/34/keys = PoolRealArray( 0, 1, -8.00938e-008, -6.46996e-008, 5.96046e-008, -6.5338e-009, 7.45058e-009, 1.36745e-008, 1, 1, 1, 1, 0.833333, 1, -8.00938e-008, -6.46996e-008, 5.96046e-008, -6.5338e-009, 7.45058e-009, 1.36745e-008, 1, 1, 1, 1 )
+tracks/35/type = "transform"
+tracks/35/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.002")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = true
+tracks/35/enabled = true
+tracks/35/keys = PoolRealArray( 0, 1, 4.66294e-014, 4.04194e-007, 1.49012e-008, 0, -1.33227e-015, -7.10543e-015, 1, 1, 1, 1, 0.833333, 1, 4.66294e-014, 4.04194e-007, 1.49012e-008, 0, -1.33227e-015, -7.10543e-015, 1, 1, 1, 1 )
+tracks/36/type = "transform"
+tracks/36/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.003")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = true
+tracks/36/enabled = true
+tracks/36/keys = PoolRealArray( 0, 1, -7.47957e-019, -1.38778e-016, -1.49012e-008, 8.88178e-016, 7.6084e-017, -3.50851e-038, 1, 1, 1, 1, 0.833333, 1, -7.47957e-019, -1.38778e-016, -1.49012e-008, 8.88178e-016, 7.6084e-017, -3.50851e-038, 1, 1, 1, 1 )
+tracks/37/type = "transform"
+tracks/37/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.004")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = true
+tracks/37/enabled = true
+tracks/37/keys = PoolRealArray( 0, 1, 3.53768e-016, 2.38186e-007, -7.45058e-009, 0, 1.0468e-016, 8.85264e-016, 1, 1, 1, 1, 0.833333, 1, 3.53768e-016, 2.38186e-007, -7.45058e-009, 0, 1.0468e-016, 8.85264e-016, 1, 1, 1, 1 )
+tracks/38/type = "transform"
+tracks/38/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.005")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = true
+tracks/38/enabled = true
+tracks/38/keys = PoolRealArray( 0, 1, 0, -6.02566e-007, -5.21541e-008, 0, 8.10606e-016, -1.75477e-015, 1, 1, 1, 1, 0.833333, 1, 0, -6.02566e-007, -5.21541e-008, 0, 8.10606e-016, -1.75477e-015, 1, 1, 1, 1 )
+tracks/39/type = "transform"
+tracks/39/path = NodePath("CreatureFlyingArmature/Skeleton:Bone.006")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = true
+tracks/39/enabled = true
+tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=5]
+length = 0.833333
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -907,12 +891,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=5]
-
-resource_name = "Attack2Handed02"
+[sub_resource type="Animation" id=6]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -1194,12 +1174,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=6]
-
-resource_name = "BowDraw"
+[sub_resource type="Animation" id=7]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -1481,12 +1457,9 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=7]
-
-resource_name = "FCreatureFlight01"
+[sub_resource type="Animation" id=8]
 length = 1.20833
 loop = true
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -1779,13 +1752,57 @@ tracks/40/keys = {
 "update": 0,
 "values": [ Vector3( 0, 3.22828, 0 ) ]
 }
+tracks/41/type = "value"
+tracks/41/path = NodePath("CreatureFlyingArmature:rotation_degrees")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("CollisionShape/FrontRay:rotation_degrees")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("CollisionShape/FrontRay:translation")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -0.282 ) ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("CollisionShape/TopRay:translation")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -0.282 ) ]
+}
 
-[sub_resource type="Animation" id=8]
-
-resource_name = "FCreatureFlightHit"
+[sub_resource type="Animation" id=9]
 length = 0.416667
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -2067,12 +2084,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.416667, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=9]
-
-resource_name = "IdlePose.Loop"
+[sub_resource type="Animation" id=10]
 length = 1.25
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -2354,12 +2367,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 1.25, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=10]
-
-resource_name = "Jump.Loop"
+[sub_resource type="Animation" id=11]
 length = 0.416667
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -2641,12 +2650,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.416667, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=11]
-
-resource_name = "Jump1HandedAttack"
+[sub_resource type="Animation" id=12]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -2928,12 +2933,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=12]
-
-resource_name = "Jump2HandedAttack"
+[sub_resource type="Animation" id=13]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -3215,12 +3216,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=13]
-
-resource_name = "JumpUnarmedAttack02"
+[sub_resource type="Animation" id=14]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -3502,12 +3499,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=14]
-
-resource_name = "UnarmedAttack01"
+[sub_resource type="Animation" id=15]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -3789,12 +3782,8 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=15]
-
-resource_name = "UnarmedAttack02"
+[sub_resource type="Animation" id=16]
 length = 0.833333
-loop = false
-step = 0.1
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -4076,12 +4065,7 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 0.833333, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=16]
-
-resource_name = "WalkCycle.Loop"
-length = 1.0
-loop = false
-step = 0.1
+[sub_resource type="Animation" id=17]
 tracks/0/type = "transform"
 tracks/0/path = NodePath("CreatureFlyingArmature")
 tracks/0/interp = 1
@@ -4363,156 +4347,101 @@ tracks/39/imported = true
 tracks/39/enabled = true
 tracks/39/keys = PoolRealArray( 0, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1, 1, 1, -1.50223e-032, 5.81145e-007, 4.47035e-008, 0, -8.32667e-016, 8.88178e-016, 1, 1, 1, 1 )
 
-[sub_resource type="SphereShape" id=22]
-
+[sub_resource type="SphereShape" id=18]
 radius = 3.2
 
 [sub_resource type="SphereShape" id=19]
-
 radius = 18.2
 
-[sub_resource type="SphereShape" id=21]
+[sub_resource type="SphereShape" id=20]
+radius = 20.0
 
-radius = 35.0226
-
-[node name="CreatureFlyingNav" type="KinematicBody" index="0"]
-
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
+[node name="CreatureFlyingNav" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="AttackHolder" type="Spatial" parent="." index="0"]
-
+[node name="AttackHolder" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 1.06581e-014, 0, -1.06581e-014, 1, 0, 3.22828, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackIndicator1" type="Spatial" parent="AttackHolder" index="0"]
-
+[node name="AttackIndicator1" type="Spatial" parent="AttackHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, -1.06581e-014, 0, 1.06581e-014, 1, 0, 0.145117, 0.0768511 )
 
-[node name="Flame01" parent="AttackHolder/AttackIndicator1" index="0" instance=ExtResource( 2 )]
-
+[node name="Flame01" parent="AttackHolder/AttackIndicator1" instance=ExtResource( 2 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.01266, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackIndicator2" type="Spatial" parent="AttackHolder" index="1"]
-
+[node name="AttackIndicator2" type="Spatial" parent="AttackHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, -1.06581e-014, 0, 1.06581e-014, 1, 0, 0.0706732, 0.115934 )
 
-[node name="Flame01" parent="AttackHolder/AttackIndicator2" index="0" instance=ExtResource( 2 )]
-
+[node name="Flame01" parent="AttackHolder/AttackIndicator2" instance=ExtResource( 2 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.125991, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Flame02" parent="AttackHolder/AttackIndicator2" index="1" instance=ExtResource( 2 )]
-
+[node name="Flame02" parent="AttackHolder/AttackIndicator2" instance=ExtResource( 2 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.125991, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackIndicator3" type="Spatial" parent="AttackHolder" index="2"]
-
+[node name="AttackIndicator3" type="Spatial" parent="AttackHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, -1.06581e-014, 0, 1.06581e-014, 1, 0, -0.0363395, 0.158739 )
 
-[node name="Flame01" parent="AttackHolder/AttackIndicator3" index="0" instance=ExtResource( 2 )]
-
+[node name="Flame01" parent="AttackHolder/AttackIndicator3" instance=ExtResource( 2 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.104589, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Flame02" parent="AttackHolder/AttackIndicator3" index="1" instance=ExtResource( 2 )]
-
+[node name="Flame02" parent="AttackHolder/AttackIndicator3" instance=ExtResource( 2 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.104589, 0, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint1" type="Spatial" parent="AttackHolder" index="3"]
-
+[node name="AttackPoint1" type="Spatial" parent="AttackHolder"]
 transform = Transform( 1, 0, 0, 0, 1, -1.06581e-014, 0, 1.06581e-014, 1, 0, -0.196367, 0.244911 )
 script = ExtResource( 3 )
 
-[node name="AttackPoint2" type="Spatial" parent="AttackHolder" index="4"]
-
+[node name="AttackPoint2" type="Spatial" parent="AttackHolder"]
 transform = Transform( 1, 0, 0, 0, 1, -1.06581e-014, 0, 1.06581e-014, 1, 0, -0.196367, 0.244911 )
 script = ExtResource( 4 )
 
-[node name="AttackPoint3" type="Spatial" parent="AttackHolder" index="5"]
-
+[node name="AttackPoint3" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, 0.218222, -0.139163, 0.258819, -0.814417, 0.519362, 1.49012e-008, -0.537683, -0.843147, 0.390847, -0.0895636, 0.189447 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint4" type="Spatial" parent="AttackHolder" index="6"]
-
+[node name="AttackPoint4" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, 0.171981, -0.193416, 0.258819, -0.641841, 0.721839, -1.19209e-007, -0.747303, -0.664483, 0.400726, -0.126433, 0.0829711 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint5" type="Spatial" parent="AttackHolder" index="7"]
-
+[node name="AttackPoint5" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, 0.0287887, -0.257213, 0.258819, -0.107441, 0.959932, 8.9407e-008, -0.993795, -0.111231, 0.409153, -0.157886, -0.00820187 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint6" type="Spatial" parent="AttackHolder" index="8"]
-
+[node name="AttackPoint6" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, -0.133026, -0.222017, 0.258819, 0.49646, 0.828577, -5.96046e-008, -0.857806, 0.513974, 0.401269, -0.128461, -0.165201 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint7" type="Spatial" parent="AttackHolder" index="9"]
-
+[node name="AttackPoint7" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, -0.193995, -0.171328, 0.258819, 0.723998, 0.639406, -5.96046e-008, -0.661962, 0.749537, 0.391366, -0.0915005, -0.288195 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint8" type="Spatial" parent="AttackHolder" index="10"]
-
+[node name="AttackPoint8" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, 0.133026, 0.222017, -0.258819, 0.49646, 0.828577, 5.96046e-008, -0.857806, 0.513974, -0.401269, -0.128461, -0.165201 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint9" type="Spatial" parent="AttackHolder" index="11"]
-
+[node name="AttackPoint9" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, 0.193995, 0.171328, -0.258819, 0.723998, 0.639406, 5.96046e-008, -0.661962, 0.749537, -0.391366, -0.0915005, -0.288195 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint10" type="Spatial" parent="AttackHolder" index="12"]
-
+[node name="AttackPoint10" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, -0.218222, 0.139163, -0.258819, -0.814417, 0.519362, -1.49012e-008, -0.537683, -0.843147, -0.390847, -0.0895636, 0.189447 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint11" type="Spatial" parent="AttackHolder" index="13"]
-
+[node name="AttackPoint11" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, -0.171981, 0.193416, -0.258819, -0.641841, 0.721839, 1.19209e-007, -0.747303, -0.664483, -0.400726, -0.126433, 0.0829711 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AttackPoint12" type="Spatial" parent="AttackHolder" index="14"]
-
+[node name="AttackPoint12" type="Spatial" parent="AttackHolder"]
 transform = Transform( 0.965926, -0.0287887, 0.257213, -0.258819, -0.107441, 0.959932, -8.9407e-008, -0.993795, -0.111231, -0.409153, -0.157886, -0.00820187 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CreatureFlyingArmature" type="Spatial" parent="." index="1"]
+[node name="CreatureFlyingArmature" type="Spatial" parent="."]
+transform = Transform( -0.5, 0, 4.37114e-008, 0, 0.5, 0, -4.37114e-008, 0, -0.5, 0, 3.22828, 0 )
 
-editor/display_folded = true
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.22828, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Skeleton" type="Skeleton" parent="CreatureFlyingArmature" index="0"]
-
+[node name="Skeleton" type="Skeleton" parent="CreatureFlyingArmature"]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform( -4.01339e-007, -1, -7.10543e-015, -0.198786, 2.98023e-008, 0.980043, -0.980043, 4.02331e-007, -0.198786, -2.84217e-014, 0.502247, 0.0524583 )
@@ -4709,260 +4638,111 @@ bones/38/rest = Transform( 1, -3.50928e-007, 0, 3.50928e-007, 1, -8.56816e-008, 
 bones/38/enabled = true
 bones/38/bound_children = [  ]
 
-[node name="CreatureFlying" type="MeshInstance" parent="CreatureFlyingArmature/Skeleton" index="0"]
-
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
+[node name="CreatureFlying" type="MeshInstance" parent="CreatureFlyingArmature/Skeleton"]
 use_in_baked_light = true
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
-skeleton = NodePath("..")
 material/0 = null
 material/1 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
-
+[node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 1.06581e-014, 0, -1.06581e-014, 1, 0, 3.22828, 0 )
-shape = SubResource( 17 )
-disabled = false
-_sections_unfolded = [ "Transform" ]
+shape = SubResource( 2 )
 
-[node name="FrontRay" type="RayCast" parent="CollisionShape" index="0"]
-
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0.281585 )
-enabled = false
-exclude_parent = true
+[node name="FrontRay" type="RayCast" parent="CollisionShape"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, -0.282 )
 cast_to = Vector3( 0, -2, 0 )
-collision_mask = 1
 
-[node name="TopRay" type="RayCast" parent="CollisionShape" index="1"]
-
-transform = Transform( 1, 0, 0, 0, -1, -8.74228e-008, 0, 8.74228e-008, -1, 0, 0, 0.281585 )
-enabled = false
-exclude_parent = true
+[node name="TopRay" type="RayCast" parent="CollisionShape"]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-008, 0, 8.74228e-008, -1, 0, 0, -0.282 )
 cast_to = Vector3( 0, -1.5, 0 )
-collision_mask = 1
 
-[node name="AscendTimer" type="Timer" parent="CollisionShape" index="2"]
-
-process_mode = 1
+[node name="AscendTimer" type="Timer" parent="CollisionShape"]
 wait_time = 3.0
 one_shot = true
-autostart = false
 
-[node name="AudioHit" type="AudioStreamPlayer3D" parent="." index="3"]
-
+[node name="AudioHit" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.22828, 0 )
 stream = ExtResource( 8 )
-attenuation_model = 0
-unit_db = 0.0
-unit_size = 1.0
-max_db = 3.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 0.0
-out_of_range_mode = 0
-bus = "Master"
-area_mask = 1
-emission_angle_enabled = false
-emission_angle_degrees = 45.0
-emission_angle_filter_attenuation_db = -12.0
-attenuation_filter_cutoff_hz = 5000.0
-attenuation_filter_db = -24.0
-doppler_tracking = 0
-_sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
-
-root_node = NodePath("..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "FCreatureFlight01"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Attack1Handed01 = SubResource( 2 )
-anims/Attack1Handed02 = SubResource( 3 )
-anims/Attack2Handed01 = SubResource( 4 )
-anims/Attack2Handed02 = SubResource( 5 )
-anims/BowDraw = SubResource( 6 )
-anims/FCreatureFlight01 = SubResource( 7 )
-anims/FCreatureFlightHit = SubResource( 8 )
-anims/IdlePose.Loop = SubResource( 9 )
-anims/Jump.Loop = SubResource( 10 )
-anims/Jump1HandedAttack = SubResource( 11 )
-anims/Jump2HandedAttack = SubResource( 12 )
-anims/JumpUnarmedAttack02 = SubResource( 13 )
-anims/UnarmedAttack01 = SubResource( 14 )
-anims/UnarmedAttack02 = SubResource( 15 )
-anims/WalkCycle.Loop = SubResource( 16 )
-blend_times = [  ]
+anims/Attack1Handed01 = SubResource( 3 )
+anims/Attack1Handed02 = SubResource( 4 )
+anims/Attack2Handed01 = SubResource( 5 )
+anims/Attack2Handed02 = SubResource( 6 )
+anims/BowDraw = SubResource( 7 )
+anims/FCreatureFlight01 = SubResource( 8 )
+anims/FCreatureFlightHit = SubResource( 9 )
+anims/IdlePose.Loop = SubResource( 10 )
+anims/Jump.Loop = SubResource( 11 )
+anims/Jump1HandedAttack = SubResource( 12 )
+anims/Jump2HandedAttack = SubResource( 13 )
+anims/JumpUnarmedAttack02 = SubResource( 14 )
+anims/UnarmedAttack01 = SubResource( 15 )
+anims/UnarmedAttack02 = SubResource( 16 )
+anims/WalkCycle.Loop = SubResource( 17 )
 
-[node name="Attack_Area" type="Area" parent="." index="5"]
-
+[node name="Attack_Area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879015, 0 )
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Attack_Area" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Attack_Area"]
+shape = SubResource( 18 )
 
-shape = SubResource( 22 )
-disabled = false
-
-[node name="Detect_Area" type="Area" parent="." index="6"]
-
+[node name="Detect_Area" type="Area" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51433, 0 )
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Detect_Area" index="0"]
-
+[node name="CollisionShape" type="CollisionShape" parent="Detect_Area"]
 shape = SubResource( 19 )
-disabled = false
 
-[node name="Map_Area" type="Area" parent="." index="7"]
-
+[node name="Map_Area" type="Area" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51433, 0 )
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Map_Area" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Map_Area"]
+shape = SubResource( 20 )
 
-shape = SubResource( 21 )
-disabled = false
-
-[node name="DecisionTimer" type="Timer" parent="." index="8"]
-
-process_mode = 1
+[node name="DecisionTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-autostart = false
 
-[node name="RegenTimer" type="Timer" parent="." index="9"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="RegenTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
-[node name="AttackTimer1" type="Timer" parent="." index="10"]
-
-process_mode = 1
+[node name="AttackTimer1" type="Timer" parent="."]
 wait_time = 0.33
 one_shot = true
-autostart = false
 
-[node name="AttackTimer2" type="Timer" parent="." index="11"]
-
-process_mode = 1
+[node name="AttackTimer2" type="Timer" parent="."]
 wait_time = 0.66
 one_shot = true
-autostart = false
 
-[node name="AttackTimer3" type="Timer" parent="." index="12"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="AttackTimer3" type="Timer" parent="."]
 one_shot = true
-autostart = false
 
-[node name="AttackTimer4" type="Timer" parent="." index="13"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="AttackTimer4" type="Timer" parent="."]
 one_shot = true
-autostart = false
 
-[node name="AttackTimer5" type="Timer" parent="." index="14"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="AttackTimer5" type="Timer" parent="."]
 one_shot = true
-autostart = false
+
+[node name="TrackerTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="timeout" from="CollisionShape/AscendTimer" to="." method="_on_AscendTimer_timeout"]
-
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
-
 [connection signal="body_exited" from="Attack_Area" to="." method="_on_Attack_Area_body_exited"]
-
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]
-
 [connection signal="body_exited" from="Detect_Area" to="." method="_on_Detect_Area_body_exited"]
-
+[connection signal="body_entered" from="Map_Area" to="." method="_on_Map_Area_body_entered"]
+[connection signal="body_exited" from="Map_Area" to="." method="_on_Map_Area_body_exited"]
 [connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
-
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
-
 [connection signal="timeout" from="AttackTimer1" to="." method="_on_AttackTimer1_timeout"]
-
 [connection signal="timeout" from="AttackTimer2" to="." method="_on_AttackTimer2_timeout"]
-
 [connection signal="timeout" from="AttackTimer3" to="." method="_on_AttackTimer3_timeout"]
-
 [connection signal="timeout" from="AttackTimer4" to="." method="_on_AttackTimer4_timeout"]
-
 [connection signal="timeout" from="AttackTimer5" to="." method="_on_AttackTimer5_timeout"]
-
-
+[connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]

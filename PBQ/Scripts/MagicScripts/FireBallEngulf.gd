@@ -2,12 +2,9 @@ extends Spatial
 
 var initial_damage = 20.0
 
-func _ready():
-	pass
-
 func _process(delta):
 	var scale_amount = get_node("Area").get_scale().x
-	print (scale_amount)
+	print ("flame engulf scale amount : " , scale_amount)
 	var area = $Area
 	var bodies = area.get_overlapping_bodies()
 	var damage_float

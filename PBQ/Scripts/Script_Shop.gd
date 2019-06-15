@@ -80,7 +80,7 @@ func _ready():
 	unpause_inventory()
 	get_tree().paused = false
 	inventory_display.hide()
-	print ("loading shops stuff")
+	print ("Loading Shop Inventory")
 	not_enough_gold_label.text = ""
 	coin_amount_label.text = String(PlayerData.Player_Information.player_coins)
 

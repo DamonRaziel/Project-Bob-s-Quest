@@ -49,6 +49,7 @@ enabled = true
 
 [node name="NavMeshBossCemetery" type="MeshInstance" parent="." index="1"]
 
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1

@@ -12,7 +12,7 @@
 [ext_resource path="res://images/TextureLightGrey20x125.png" type="Texture" id=10]
 [ext_resource path="res://HUDElements/BarPoints.png" type="Texture" id=11]
 
-[node name="HUD" type="Control"]
+[node name="HUD" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -354,7 +354,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Weapon_Rect2" type="NinePatchRect" parent="Background" index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -389,7 +388,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
-text = "Lives"
+text = "L"
 align = 1
 valign = 1
 percent_visible = 1.0

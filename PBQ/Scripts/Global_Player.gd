@@ -33,11 +33,11 @@ onready var gameData = Global_DataParser.load_data(url_game_data)
 onready var arena_scoreboard_data = Global_DataParser.load_data(url_arena_scoreboard)
 
 var inventory = {}
-var inventory_maxSlots = 45 #40
+var inventory_maxSlots = 45 
 
 #shop inventory vars. Reset at certain scenes, eg charcater selection
 var shop_inventory = {}
-var shop_inventory_maxSlots = 54 #40
+var shop_inventory_maxSlots = 54
 
 #original from inventory
 onready var playerData = Global_DataParser.load_data(url_PlayerData)
@@ -148,7 +148,7 @@ func load_data():
 		Global_DataParser.write_data(url_game_data, gameData)
 	else:
 		PlayerData.Game_Data = gameData
-		print (gameData)
+		print ("Game Data: ", gameData)
 	
 	if (arena_scoreboard_data == null):
 		arena_scoreboard_data = PlayerData.arena_scores
@@ -161,13 +161,13 @@ func load_data():
 		Global_DataParser.write_data(url_options_data, options_file)
 	else:
 		PlayerData.Options_Data = options_file
-		print (options_file)
+		print ("Options Files: ", options_file)
 	if (save_files == null):
 		save_files = save_file_status
 		Global_DataParser.write_data(url_savefile_status, save_files)
 	else:
 		save_file_status = save_files
-		print (save_file_status)
+		print ("Save File Status: ", save_file_status)
 	if (playerData == null):
 		var dict = {"inventory":{}}
 		for slot in range (0, inventory_maxSlots):
@@ -432,10 +432,10 @@ func check_if_inventory_is_full():
 			empty_slots_count += 1
 	if empty_slots_count == 0:
 		PlayerData.Player_Information.player_inventory_is_full = true
-		print (empty_slots_count)
+		print ("Empty Slots Count: ", empty_slots_count)
 	elif empty_slots_count >= 1:
 		PlayerData.Player_Information.player_inventory_is_full = false
-		print (empty_slots_count)
+		print ("Empty Slots Count: ", empty_slots_count)
 
 func inventory_getEmptySlot():
 	for slot in range(0, inventory_maxSlots):

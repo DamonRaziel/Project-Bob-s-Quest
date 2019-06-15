@@ -6,9 +6,9 @@ var port_open
 var level_objective_text
 
 func _ready():
-	castle_portcullis = $Castle01/Castle01Portcullis
-	port_closed = $Castle01/PortClosedPos
-	port_open = $Castle01/PortOpenPos
+	castle_portcullis = $Castle01Main/Castle01Portcullis
+	port_closed = $Castle01Main/PortClosedPos
+	port_open = $Castle01Main/PortOpenPos
 	level_objective_text = $LevelObjective
 	castle_portcullis.global_transform = port_closed.global_transform
 

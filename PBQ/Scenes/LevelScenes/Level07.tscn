@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/LevelScripts/Level07Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PlayerScenes/PlayersNew/PlayerSingle.tscn" type="PackedScene" id=2]
@@ -34,1157 +34,642 @@
 [ext_resource path="res://Music/Full On.ogg" type="AudioStream" id=32]
 [ext_resource path="res://Music/Crisis.ogg" type="AudioStream" id=33]
 [ext_resource path="res://Music/Curse of the Scarab.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/Barrel01.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/DeadBodyFemaleLeft01.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/DeadBodyFemaleLeft02.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/DeadBodyFemaleLeft03.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/DeadBodyMaleLeft01.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/DeadBodyMaleLeft02.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/DeadBodyMaleLeft03.tscn" type="PackedScene" id=41]
 
 [sub_resource type="Environment" id=1]
-
 background_mode = 1
-background_sky_custom_fov = 0.0
 background_color = Color( 0.110107, 0, 0.171875, 1 )
 background_energy = 0.5
-background_canvas_max_layer = 0
 ambient_light_color = Color( 0.276418, 0.0686646, 0.351563, 1 )
 ambient_light_energy = 0.5
-ambient_light_sky_contribution = 1.0
 fog_enabled = true
 fog_color = Color( 0.578125, 0.124207, 0.571033, 1 )
-fog_sun_color = Color( 1, 0.9, 0.7, 1 )
-fog_sun_amount = 0.0
-fog_depth_enabled = true
 fog_depth_begin = 15.0
-fog_depth_curve = 1.0
-fog_transmit_enabled = false
-fog_transmit_curve = 1.0
-fog_height_enabled = false
-fog_height_min = 0.0
-fog_height_max = 100.0
-fog_height_curve = 1.0
-tonemap_mode = 0
-tonemap_exposure = 1.0
-tonemap_white = 1.0
-auto_exposure_enabled = false
-auto_exposure_scale = 0.4
-auto_exposure_min_luma = 0.05
-auto_exposure_max_luma = 8.0
-auto_exposure_speed = 0.5
-ss_reflections_enabled = false
-ss_reflections_max_steps = 64
-ss_reflections_fade_in = 0.15
-ss_reflections_fade_out = 2.0
-ss_reflections_depth_tolerance = 0.2
-ss_reflections_roughness = true
-ssao_enabled = false
-ssao_radius = 1.0
-ssao_intensity = 1.0
-ssao_radius2 = 0.0
-ssao_intensity2 = 1.0
-ssao_bias = 0.01
-ssao_light_affect = 0.0
-ssao_color = Color( 0, 0, 0, 1 )
-ssao_quality = 0
-ssao_blur = 3
-ssao_edge_sharpness = 4.0
-dof_blur_far_enabled = false
-dof_blur_far_distance = 10.0
-dof_blur_far_transition = 5.0
-dof_blur_far_amount = 0.1
-dof_blur_far_quality = 1
-dof_blur_near_enabled = false
-dof_blur_near_distance = 2.0
-dof_blur_near_transition = 1.0
-dof_blur_near_amount = 0.1
-dof_blur_near_quality = 1
-glow_enabled = false
-glow_levels/1 = false
-glow_levels/2 = false
-glow_levels/3 = true
-glow_levels/4 = false
-glow_levels/5 = true
-glow_levels/6 = false
-glow_levels/7 = false
-glow_intensity = 0.8
-glow_strength = 1.0
-glow_bloom = 0.0
-glow_blend_mode = 2
-glow_hdr_threshold = 1.0
-glow_hdr_scale = 2.0
-glow_bicubic_upscale = false
-adjustment_enabled = false
-adjustment_brightness = 1.0
-adjustment_contrast = 1.0
-adjustment_saturation = 1.0
-_sections_unfolded = [ "Ambient Light" ]
 
 [sub_resource type="BoxShape" id=2]
-
 extents = Vector3( 7.08577, 3.2806, 1 )
 
-[sub_resource type="SphereMesh" id=5]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+[sub_resource type="SphereMesh" id=3]
 radius = 0.1
 height = 0.2
 radial_segments = 16
 rings = 8
-is_hemisphere = false
 
-[sub_resource type="SpatialMaterial" id=6]
-
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 1, 0, 0.914063, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
 roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
 
-[sub_resource type="BoxShape" id=3]
-
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 1, 9.2187, 28.7213 )
 
-[sub_resource type="BoxShape" id=4]
-
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 18.4931, 9.46502, 1 )
 
-[node name="Level07" type="Spatial" index="0"]
-
+[node name="Level07" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="RespawnPoint" type="Spatial" parent="." index="0"]
-
+[node name="RespawnPoint" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1728, -5.80644, 98.8221 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
-
+[node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2928, -6.00907, 99.0575 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
-
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
-[node name="LevelObjective" type="Label" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="LevelObjective" type="Label" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_bottom = 51.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "LongTestToMakeSureItWillFitAndBeCentered"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
 
-[node name="EndOfLevel" type="Spatial" parent="." index="4"]
-
+[node name="EndOfLevel" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 0.926291, 0, -0.376809, 0, 1, 0, 0.376809, 0, 0.926291, 41.9175, 0.406322, -145.18 )
 script = ExtResource( 4 )
 
-[node name="Area" type="Area" parent="EndOfLevel" index="0"]
+[node name="Area" type="Area" parent="EndOfLevel"]
 
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape" type="CollisionShape" parent="EndOfLevel/Area" index="0"]
-
+[node name="CollisionShape" type="CollisionShape" parent="EndOfLevel/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80655, 0.368965 )
 shape = SubResource( 2 )
-disabled = false
 
-[node name="LevelEndParticles" parent="EndOfLevel/Area" index="1" instance=ExtResource( 5 )]
-
+[node name="LevelEndParticles" parent="EndOfLevel/Area" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
 
-[node name="LightHouseTownVersion02" parent="." index="5" instance=ExtResource( 6 )]
+[node name="LightHouseTownVersion02" parent="." instance=ExtResource( 6 )]
 
-[node name="NavMeshTown03" parent="." index="6" instance=ExtResource( 7 )]
+[node name="NavMeshTown03" parent="." instance=ExtResource( 7 )]
 
-[node name="WaypointsHolder" type="Spatial" parent="NavMeshTown03" index="2"]
-
+[node name="WaypointsHolder" type="Spatial" parent="NavMeshTown03"]
 editor/display_folded = true
 script = ExtResource( 8 )
 
-[node name="Waypoint1" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="0"]
-
+[node name="Waypoint1" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0787, 0.75, -138.863 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint1" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint1"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint2" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="1"]
-
+[node name="Waypoint2" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1379, 0.75, -132.931 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint2" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint2"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint3" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="2"]
-
+[node name="Waypoint3" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3579, 0.75, -90.6968 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint3" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint3"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint4" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="3"]
-
+[node name="Waypoint4" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0459, 0.75, -95.4422 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint4" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint4"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint5" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="4"]
-
+[node name="Waypoint5" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.0597, 0.75, -96.4887 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint5" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint5"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint6" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="5"]
-
+[node name="Waypoint6" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 85.3143, 0.75, -63.8753 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint6" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint6"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint7" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="6"]
-
+[node name="Waypoint7" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1114, 0.75, -51.3183 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint7" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint7"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint8" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="7"]
-
+[node name="Waypoint8" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7487, 0.75, -47.4814 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint8" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint8"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint9" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="8"]
-
+[node name="Waypoint9" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7683, 0.75, -54.5319 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint9" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint9"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint10" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="9"]
-
+[node name="Waypoint10" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1397, 0.75, -14.0704 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint10" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint10"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint11" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="10"]
-
+[node name="Waypoint11" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42218, 0.75, -14.0704 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint11" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint11"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint12" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="11"]
-
+[node name="Waypoint12" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0844, 0.75, -0.990149 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint12" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint12"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint13" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="12"]
-
+[node name="Waypoint13" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32185, 0.75, 30.5768 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint13" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint13"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint14" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="13"]
-
+[node name="Waypoint14" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6291, 0.75, 51.854 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint14" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint14"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint15" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="14"]
-
+[node name="Waypoint15" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9817, -6.29863, 71.0758 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint15" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint15"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint16" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="15"]
-
+[node name="Waypoint16" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2769, -6.29863, 71.0758 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint16" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint16"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Waypoint17" type="Spatial" parent="NavMeshTown03/WaypointsHolder" index="16"]
-
+[node name="Waypoint17" type="Spatial" parent="NavMeshTown03/WaypointsHolder"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7056, -6.29863, 132.191 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint17" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="NavMeshTown03/WaypointsHolder/Waypoint17"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 5 )
-skeleton = NodePath("..")
-material/0 = SubResource( 6 )
-_sections_unfolded = [ "Transform", "material" ]
+[node name="EnemyHolder" type="Spatial" parent="NavMeshTown03"]
 
-[node name="EnemyHolder" type="Spatial" parent="NavMeshTown03" index="3"]
-
-editor/display_folded = true
-
-[node name="ZombieMaleNavTest" parent="NavMeshTown03/EnemyHolder" index="0" instance=ExtResource( 9 )]
-
+[node name="ZombieMaleNavTest" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76517, 0, -9.06436 )
 
-[node name="ZombieMaleNavTest2" parent="NavMeshTown03/EnemyHolder" index="1" instance=ExtResource( 9 )]
-
+[node name="ZombieMaleNavTest2" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34542, 0, -57.1067 )
 
-[node name="ZombieMaleNavTest3" parent="NavMeshTown03/EnemyHolder" index="2" instance=ExtResource( 9 )]
-
+[node name="ZombieMaleNavTest3" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57853, 0, -52.9512 )
 
-[node name="ZombieMaleNavTest4" parent="NavMeshTown03/EnemyHolder" index="3" instance=ExtResource( 9 )]
-
+[node name="ZombieMaleNavTest4" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3238, 0, -102.181 )
 
-[node name="ZombieMaleNavTest5" parent="NavMeshTown03/EnemyHolder" index="4" instance=ExtResource( 9 )]
-
+[node name="ZombieMaleNavTest5" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3238, 0, -72.4705 )
 
-[node name="ZombieFemaleNav" parent="NavMeshTown03/EnemyHolder" index="5" instance=ExtResource( 10 )]
-
+[node name="ZombieFemaleNav" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97001, 0, -4.68649 )
 
-[node name="ZombieFemaleNav2" parent="NavMeshTown03/EnemyHolder" index="6" instance=ExtResource( 10 )]
-
+[node name="ZombieFemaleNav2" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.71713, 0, -52.3972 )
 
-[node name="ZombieFemaleNav3" parent="NavMeshTown03/EnemyHolder" index="7" instance=ExtResource( 10 )]
-
+[node name="ZombieFemaleNav3" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.8729, 0, -47.2721 )
 
-[node name="ZombieFemaleNav4" parent="NavMeshTown03/EnemyHolder" index="8" instance=ExtResource( 10 )]
-
+[node name="ZombieFemaleNav4" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3238, 0, -102.181 )
 
-[node name="ZombieFemaleNav5" parent="NavMeshTown03/EnemyHolder" index="9" instance=ExtResource( 10 )]
-
+[node name="ZombieFemaleNav5" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3238, 0, -72.4705 )
 
-[node name="CreatureNav" parent="NavMeshTown03/EnemyHolder" index="10" instance=ExtResource( 11 )]
-
+[node name="CreatureNav" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.12993, 0, -2.6409 )
 
-[node name="CreatureNav2" parent="NavMeshTown03/EnemyHolder" index="11" instance=ExtResource( 11 )]
-
+[node name="CreatureNav2" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.2346, 0, -49.4191 )
 
-[node name="CreatureNav3" parent="NavMeshTown03/EnemyHolder" index="12" instance=ExtResource( 11 )]
-
+[node name="CreatureNav3" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2917, 0, -54.5467 )
 
-[node name="CreatureNav4" parent="NavMeshTown03/EnemyHolder" index="13" instance=ExtResource( 11 )]
-
+[node name="CreatureNav4" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1174, 0, -123.333 )
 
-[node name="CreatureNav5" parent="NavMeshTown03/EnemyHolder" index="14" instance=ExtResource( 11 )]
-
+[node name="CreatureNav5" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0201, 0, -119.385 )
 
-[node name="CreatureQuadNav" parent="NavMeshTown03/EnemyHolder" index="15" instance=ExtResource( 12 )]
-
+[node name="CreatureQuadNav" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6087, 0, 32.4376 )
 
-[node name="CreatureQuadNav2" parent="NavMeshTown03/EnemyHolder" index="16" instance=ExtResource( 12 )]
-
+[node name="CreatureQuadNav2" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.16396, 0, 38.0616 )
 
-[node name="CreatureQuadNav3" parent="NavMeshTown03/EnemyHolder" index="17" instance=ExtResource( 12 )]
-
+[node name="CreatureQuadNav3" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.941, 0, -85.454 )
 
-[node name="CreatureQuadNav4" parent="NavMeshTown03/EnemyHolder" index="18" instance=ExtResource( 12 )]
-
+[node name="CreatureQuadNav4" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9506, 0, -90.5185 )
 
-[node name="CreatureQuadNav5" parent="NavMeshTown03/EnemyHolder" index="19" instance=ExtResource( 12 )]
-
+[node name="CreatureQuadNav5" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.16587, 0, -88.3199 )
 
-[node name="CreatureFlyingNav" parent="NavMeshTown03/EnemyHolder" index="20" instance=ExtResource( 13 )]
-
+[node name="CreatureFlyingNav" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.809174, 0, -22.0743 )
 
-[node name="CreatureFlyingNav2" parent="NavMeshTown03/EnemyHolder" index="21" instance=ExtResource( 13 )]
-
+[node name="CreatureFlyingNav2" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13206, 0, -23.6527 )
 
-[node name="CreatureFlyingNav3" parent="NavMeshTown03/EnemyHolder" index="22" instance=ExtResource( 13 )]
-
+[node name="CreatureFlyingNav3" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2489, 0, -23.3963 )
 
-[node name="CreatureFlyingNav4" parent="NavMeshTown03/EnemyHolder" index="23" instance=ExtResource( 13 )]
-
+[node name="CreatureFlyingNav4" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82912, 0, -25.0304 )
 
-[node name="CreatureFlyingNav5" parent="NavMeshTown03/EnemyHolder" index="24" instance=ExtResource( 13 )]
-
+[node name="CreatureFlyingNav5" parent="NavMeshTown03/EnemyHolder" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01856, 0, -25.2344 )
 
-[node name="LevelLimits" type="StaticBody" parent="." index="7"]
-
+[node name="LevelLimits" type="StaticBody" parent="."]
 editor/display_folded = true
 transform = Transform( -0.916469, 0, -0.400105, 0, 1, 0, 0.400105, 0, -0.916469, 43.8263, 0, -101.384 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="wall1" type="CollisionShape" parent="LevelLimits" index="0"]
-
+[node name="wall1" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.999579, 0, -0.0290223, 0, 1, 0, 0.0290223, 0, -0.999579, 122.336, 8.07071, -76.1247 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall2" type="CollisionShape" parent="LevelLimits" index="1"]
-
+[node name="wall2" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.422892, 0, -0.906181, 0, 1, 0, 0.906181, 0, 0.422892, 147.626, 8.07071, -106.047 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall3" type="CollisionShape" parent="LevelLimits" index="2"]
-
+[node name="wall3" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.988743, 0, -0.149623, 0, 1, 0, 0.149623, 0, 0.988743, 121.118, 8.07071, -61.3412 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall4" type="CollisionShape" parent="LevelLimits" index="3"]
-
+[node name="wall4" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.865116, 0, -0.501571, 0, 1, 0, 0.501571, 0, 0.865116, 107.312, 8.07071, -23.4551 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall5" type="CollisionShape" parent="LevelLimits" index="4"]
-
+[node name="wall5" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.723145, 0, -0.690695, 0, 1, 0, 0.690695, 0, 0.723145, 104.398, 8.07071, -13.9279 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall13" type="CollisionShape" parent="LevelLimits" index="5"]
-
+[node name="wall13" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.966762, 0, -0.255676, 0, 1, 0, 0.255676, 0, 0.966762, 77.7154, 8.07071, 34.2895 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall14" type="CollisionShape" parent="LevelLimits" index="6"]
-
+[node name="wall14" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.707433, 0, -0.706779, 0, 1, 0, 0.706779, 0, 0.707433, 59.1199, 8.07071, 49.0853 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall15" type="CollisionShape" parent="LevelLimits" index="7"]
-
+[node name="wall15" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.0772941, 0, -0.997007, 0, 1, 0, 0.997007, 0, -0.0772941, 23.7128, 8.07071, 60.708 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall16" type="CollisionShape" parent="LevelLimits" index="8"]
-
+[node name="wall16" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.722261, 0, -0.691618, 0, 1, 0, 0.691618, 0, -0.722261, -16.3303, 8.07071, 43.5563 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall17" type="CollisionShape" parent="LevelLimits" index="9"]
-
+[node name="wall17" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.996341, 0, 0.0854346, 0, 1, 0, -0.0854346, 0, -0.996341, -31.2695, 8.07071, 7.83611 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall6" type="CollisionShape" parent="LevelLimits" index="10"]
-
+[node name="wall6" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.767645, 0, -0.640874, 0, 1, 0, 0.640874, 0, -0.767645, -46.8455, 8.07071, -41.8487 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall7" type="CollisionShape" parent="LevelLimits" index="11"]
-
+[node name="wall7" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.390904, 0, -0.920432, 0, 1, 0, 0.920432, 0, -0.390904, -20.9266, 8.07071, -77.0073 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall8" type="CollisionShape" parent="LevelLimits" index="12"]
-
+[node name="wall8" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.924099, 0, -0.382155, 0, 1, 0, 0.382155, 0, 0.924099, -37.502, 8.07071, -59.5304 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall9" type="CollisionShape" parent="LevelLimits" index="13"]
-
+[node name="wall9" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.904081, 0, -0.42736, 0, 1, 0, 0.42736, 0, 0.904081, 16.4843, 8.07071, -90.9444 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall10" type="CollisionShape" parent="LevelLimits" index="14"]
-
+[node name="wall10" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.333993, 0, -0.942575, 0, 1, 0, 0.942575, 0, 0.333993, 29.8141, 8.07071, -114.801 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall11" type="CollisionShape" parent="LevelLimits" index="15"]
-
+[node name="wall11" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.311246, 0, -0.95033, 0, 1, 0, 0.95033, 0, 0.311246, 69.5947, 8.07071, -128.085 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="wall12" type="CollisionShape" parent="LevelLimits" index="16"]
-
+[node name="wall12" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.169233, 0, -0.985576, 0, 1, 0, 0.985576, 0, -0.169233, 96.3925, 8.07071, -130.931 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall1" type="CollisionShape" parent="LevelLimits" index="17"]
-
+[node name="DockWall1" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.920936, 0, -0.389716, 0, 1, 0, 0.389716, 0, 0.920936, 83.6713, 8.07071, -172.812 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall12" type="CollisionShape" parent="LevelLimits" index="18"]
-
+[node name="DockWall12" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.379193, 0, 0.925318, 0, 1, 0, -0.925318, 0, 0.379193, 98.1231, 8.07071, -137.042 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall5" type="CollisionShape" parent="LevelLimits" index="19"]
-
+[node name="DockWall5" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.920936, 0, -0.389716, 0, 1, 0, 0.389716, 0, 0.920936, 83.6713, 0.200685, -172.812 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall13" type="CollisionShape" parent="LevelLimits" index="20"]
-
+[node name="DockWall13" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.379193, 0, 0.925318, 0, 1, 0, -0.925318, 0, 0.379193, 98.1231, 0.200685, -137.042 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall2" type="CollisionShape" parent="LevelLimits" index="21"]
-
+[node name="DockWall2" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.920936, 0, -0.389716, 0, 1, 0, 0.389716, 0, 0.920936, 98.4507, 0.200685, -208.018 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall3" type="CollisionShape" parent="LevelLimits" index="22"]
-
+[node name="DockWall3" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.920936, 0, -0.389716, 0, 1, 0, 0.389716, 0, 0.920936, 99.9808, 0.200685, -179.776 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall4" type="CollisionShape" parent="LevelLimits" index="23"]
-
+[node name="DockWall4" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.920936, 0, -0.389716, 0, 1, 0, 0.389716, 0, 0.920936, 111.993, 0.200685, -207.776 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall6" type="CollisionShape" parent="LevelLimits" index="24"]
-
+[node name="DockWall6" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.355484, 0, 0.934683, 0, 1, 0, -0.934683, 0, 0.355484, 111.993, 0.200685, -227.776 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall7" type="CollisionShape" parent="LevelLimits" index="25"]
-
+[node name="DockWall7" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.355484, 0, 0.934683, 0, 1, 0, -0.934683, 0, 0.355484, 135.784, 0.200685, -164.189 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall8" type="CollisionShape" parent="LevelLimits" index="26"]
-
+[node name="DockWall8" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.927942, 0, 0.372727, 0, 1, 0, -0.372727, 0, -0.927942, 132.281, 0.200685, -165.534 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall9" type="CollisionShape" parent="LevelLimits" index="27"]
-
+[node name="DockWall9" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.927942, 0, 0.372727, 0, 1, 0, -0.372727, 0, -0.927942, 143.498, 0.200685, -161.383 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall10" type="CollisionShape" parent="LevelLimits" index="28"]
-
+[node name="DockWall10" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.924226, 0, -0.381847, 0, 1, 0, 0.381847, 0, -0.924226, 143.618, 0.200685, -108.753 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="DockWall11" type="CollisionShape" parent="LevelLimits" index="29"]
-
+[node name="DockWall11" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( -0.924226, 0, -0.381847, 0, 1, 0, 0.381847, 0, -0.924226, 143.618, 8.07071, -108.753 )
-shape = SubResource( 3 )
-disabled = false
+shape = SubResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="LevelLimits" index="30"]
-
+[node name="CollisionShape" type="CollisionShape" parent="LevelLimits"]
 transform = Transform( 0.919259, 0, -0.393654, 0, 1, 0, 0.393654, 0, 0.919259, 105.441, 0, -146.914 )
-shape = SubResource( 4 )
-disabled = false
+shape = SubResource( 6 )
 
-[node name="PickupsHolder" type="Spatial" parent="." index="8"]
-
+[node name="PickupsHolder" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="PickupAppleRed" parent="PickupsHolder" index="0" instance=ExtResource( 14 )]
-
+[node name="PickupAppleRed" parent="PickupsHolder" instance=ExtResource( 14 )]
 transform = Transform( 0.0311891, 0, 0.999514, 0, 1, 0, -0.999514, 0, 0.0311891, -11.1032, 0, -4.29275 )
 
-[node name="PickupAppleRed5" parent="PickupsHolder" index="1" instance=ExtResource( 14 )]
-
+[node name="PickupAppleRed5" parent="PickupsHolder" instance=ExtResource( 14 )]
 transform = Transform( 0.996721, 0, -0.0809146, 0, 1, 0, 0.0809146, 0, 0.996721, -14.6776, 0, -61.4087 )
 
-[node name="PickupAppleRed2" parent="PickupsHolder" index="2" instance=ExtResource( 14 )]
-
+[node name="PickupAppleRed2" parent="PickupsHolder" instance=ExtResource( 14 )]
 transform = Transform( 0.0311891, 0, 0.999514, 0, 1, 0, -0.999514, 0, 0.0311891, -11.0184, 0, -7.01187 )
 
-[node name="PickupAppleRed4" parent="PickupsHolder" index="3" instance=ExtResource( 14 )]
-
+[node name="PickupAppleRed4" parent="PickupsHolder" instance=ExtResource( 14 )]
 transform = Transform( 0.996721, 0, -0.0809146, 0, 1, 0, 0.0809146, 0, 0.996721, -11.9661, 0, -61.1886 )
 
-[node name="PickupAppleRed3" parent="PickupsHolder" index="4" instance=ExtResource( 14 )]
-
+[node name="PickupAppleRed3" parent="PickupsHolder" instance=ExtResource( 14 )]
 transform = Transform( 0.0311891, 0, 0.999514, 0, 1, 0, -0.999514, 0, 0.0311891, -10.9326, 0, -9.76261 )
 
-[node name="PickupAppleRed6" parent="PickupsHolder" index="5" instance=ExtResource( 14 )]
-
+[node name="PickupAppleRed6" parent="PickupsHolder" instance=ExtResource( 14 )]
 transform = Transform( 0.996721, 0, -0.0809146, 0, 1, 0, 0.0809146, 0, 0.996721, -9.22303, 0, -60.9659 )
 
-[node name="PickupPotionMana" parent="PickupsHolder" index="6" instance=ExtResource( 15 )]
-
+[node name="PickupPotionMana" parent="PickupsHolder" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.707, 0, -53.796 )
 
-[node name="PickupPotionStrength" parent="PickupsHolder" index="7" instance=ExtResource( 16 )]
-
+[node name="PickupPotionStrength" parent="PickupsHolder" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0948, 0, -103.295 )
 
-[node name="PickupPotionStrength2" parent="PickupsHolder" index="8" instance=ExtResource( 16 )]
-
+[node name="PickupPotionStrength2" parent="PickupsHolder" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7191, 0, -54.3385 )
 
-[node name="PickupPotionSpeed" parent="PickupsHolder" index="9" instance=ExtResource( 17 )]
-
+[node name="PickupPotionSpeed" parent="PickupsHolder" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5489, 0, -47.8021 )
 
-[node name="PickupPotionFortitute" parent="PickupsHolder" index="10" instance=ExtResource( 18 )]
-
+[node name="PickupPotionFortitute" parent="PickupsHolder" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0609, 0, -103.295 )
 
-[node name="PickupTea" parent="PickupsHolder" index="11" instance=ExtResource( 19 )]
-
+[node name="PickupTea" parent="PickupsHolder" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.3864, 0, -61.12 )
 
-[node name="PickupTea2" parent="PickupsHolder" index="12" instance=ExtResource( 19 )]
-
+[node name="PickupTea2" parent="PickupsHolder" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7474, -6.86483, 143.114 )
 
-[node name="PickupEquipHolder" type="Spatial" parent="." index="9"]
-
+[node name="PickupEquipHolder" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="PickupArmourChainmail" parent="PickupEquipHolder" index="0" instance=ExtResource( 20 )]
-
+[node name="PickupArmourChainmail" parent="PickupEquipHolder" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6946, 0, 0 )
 
-[node name="PickupArmourScalemail" parent="PickupEquipHolder" index="1" instance=ExtResource( 21 )]
-
+[node name="PickupArmourScalemail" parent="PickupEquipHolder" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.631, 0, 47.0843 )
 
-[node name="PickupShieldBuckler" parent="PickupEquipHolder" index="2" instance=ExtResource( 22 )]
-
+[node name="PickupShieldBuckler" parent="PickupEquipHolder" instance=ExtResource( 22 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43417, 0, 41.0916 )
 
-[node name="PickupShieldTower" parent="PickupEquipHolder" index="3" instance=ExtResource( 23 )]
-
+[node name="PickupShieldTower" parent="PickupEquipHolder" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.769, -6.82937, 136.907 )
 
-[node name="PickupWeaponAxe" parent="PickupEquipHolder" index="4" instance=ExtResource( 24 )]
-
+[node name="PickupWeaponAxe" parent="PickupEquipHolder" instance=ExtResource( 24 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8938, 0, -52.0609 )
 
-[node name="PickupWeaponClaymore" parent="PickupEquipHolder" index="5" instance=ExtResource( 25 )]
-
+[node name="PickupWeaponClaymore" parent="PickupEquipHolder" instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2909, -6.76269, 129.127 )
 
-[node name="PickupWeaponBowRecurve" parent="PickupEquipHolder" index="6" instance=ExtResource( 26 )]
-
+[node name="PickupWeaponBowRecurve" parent="PickupEquipHolder" instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69147, 0, 19.1021 )
 
-[node name="PickupTorches" parent="PickupEquipHolder" index="7" instance=ExtResource( 27 )]
-
+[node name="PickupTorches" parent="PickupEquipHolder" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17916, 0, 27.5568 )
 
-[node name="PickupArrowsNormal" parent="PickupEquipHolder" index="8" instance=ExtResource( 28 )]
-
+[node name="PickupArrowsNormal" parent="PickupEquipHolder" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0791, 0, 21.63 )
 
-[node name="PickupArrowsNormal2" parent="PickupEquipHolder" index="9" instance=ExtResource( 28 )]
-
+[node name="PickupArrowsNormal2" parent="PickupEquipHolder" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.9367, 0, -45.3356 )
 
-[node name="PickupArrowsNormal3" parent="PickupEquipHolder" index="10" instance=ExtResource( 28 )]
-
+[node name="PickupArrowsNormal3" parent="PickupEquipHolder" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5586, 0, -45.3356 )
 
-[node name="PickupArrowsNormal4" parent="PickupEquipHolder" index="11" instance=ExtResource( 28 )]
-
+[node name="PickupArrowsNormal4" parent="PickupEquipHolder" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3363, 0, -122.05 )
 
-[node name="PickupArrowsNormal5" parent="PickupEquipHolder" index="12" instance=ExtResource( 28 )]
-
+[node name="PickupArrowsNormal5" parent="PickupEquipHolder" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2164, 0, -99.7654 )
 
-[node name="Planks" type="Spatial" parent="." index="10"]
-
+[node name="Planks" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7659, 0 )
 
-[node name="CoinsHolder" type="Spatial" parent="." index="11"]
-
+[node name="CoinsHolder" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="NewCoins" parent="CoinsHolder" index="0" instance=ExtResource( 29 )]
-
+[node name="NewCoins" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 31.5973, 0, -8.01507 )
 
-[node name="NewCoins2" parent="CoinsHolder" index="1" instance=ExtResource( 29 )]
-
+[node name="NewCoins2" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 34.7446, 0, -8.15867 )
 
-[node name="NewCoins3" parent="CoinsHolder" index="2" instance=ExtResource( 29 )]
-
+[node name="NewCoins3" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 38.2151, 0, -8.38605 )
 
-[node name="NewCoins6" parent="CoinsHolder" index="3" instance=ExtResource( 29 )]
-
+[node name="NewCoins6" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 0.879566, 0, 1.79621, 0, 2, 0, -1.79621, 0, 0.879566, 71.9908, 0, -70.3265 )
 
-[node name="NewCoins5" parent="CoinsHolder" index="4" instance=ExtResource( 29 )]
-
+[node name="NewCoins5" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 0.879566, 0, 1.79621, 0, 2, 0, -1.79621, 0, 0.879566, 74.568, 0, -76.4331 )
 
-[node name="NewCoins4" parent="CoinsHolder" index="5" instance=ExtResource( 29 )]
-
+[node name="NewCoins4" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 0.879566, 0, 1.79621, 0, 2, 0, -1.79621, 0, 0.879566, 73.246, 0, -73.2163 )
 
-[node name="NewCoins8" parent="CoinsHolder" index="6" instance=ExtResource( 29 )]
-
+[node name="NewCoins8" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 1.81326, 0, -0.843844, 0, 2, 0, 0.843844, 0, 1.81326, 19.8095, 0, -147.168 )
 
-[node name="NewCoins7" parent="CoinsHolder" index="7" instance=ExtResource( 29 )]
-
+[node name="NewCoins7" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 1.81326, 0, -0.843844, 0, 2, 0, 0.843844, 0, 1.81326, 22.7236, 0, -145.97 )
 
-[node name="NewCoins9" parent="CoinsHolder" index="8" instance=ExtResource( 29 )]
-
+[node name="NewCoins9" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 1.81326, 0, -0.843844, 0, 2, 0, 0.843844, 0, 1.81326, 25.9659, 0, -144.712 )
 
-[node name="NewCoins11" parent="CoinsHolder" index="9" instance=ExtResource( 29 )]
-
+[node name="NewCoins11" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 0.0968308, 0, -1.99765, 0, 2, 0, 1.99765, 0, 0.0968308, -23.7646, 0, -115.323 )
 
-[node name="NewCoins10" parent="CoinsHolder" index="10" instance=ExtResource( 29 )]
-
+[node name="NewCoins10" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 0.0968308, 0, -1.99765, 0, 2, 0, 1.99765, 0, 0.0968308, -23.0736, 0, -108.731 )
 
-[node name="NewCoins12" parent="CoinsHolder" index="11" instance=ExtResource( 29 )]
-
+[node name="NewCoins12" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 0.0968308, 0, -1.99765, 0, 2, 0, 1.99765, 0, 0.0968308, -23.4687, 0, -112.186 )
 
-[node name="NewCoins15" parent="CoinsHolder" index="12" instance=ExtResource( 29 )]
-
+[node name="NewCoins15" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 1.54297, 0, 1.2725, 0, 2, 0, -1.2725, 0, 1.54297, 37.7335, 0, 30.8823 )
 
-[node name="NewCoins13" parent="CoinsHolder" index="13" instance=ExtResource( 29 )]
-
+[node name="NewCoins13" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 1.54297, 0, 1.2725, 0, 2, 0, -1.2725, 0, 1.54297, 40.0702, 0, 28.769 )
 
-[node name="NewCoins14" parent="CoinsHolder" index="14" instance=ExtResource( 29 )]
-
+[node name="NewCoins14" parent="CoinsHolder" instance=ExtResource( 29 )]
 transform = Transform( 1.54297, 0, 1.2725, 0, 2, 0, -1.2725, 0, 1.54297, 42.603, 0, 26.3856 )
 
-[node name="MusicController" type="Node" parent="." index="12"]
-
+[node name="MusicController" type="Node" parent="."]
 pause_mode = 2
 editor/display_folded = true
 script = ExtResource( 30 )
-_sections_unfolded = [ "Pause" ]
 
-[node name="AudioStreamHYR" type="AudioStreamPlayer" parent="MusicController" index="0"]
-
+[node name="AudioStreamHYR" type="AudioStreamPlayer" parent="MusicController"]
 stream = ExtResource( 31 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
 bus = "MusicBus"
 
-[node name="AudioStreamFO" type="AudioStreamPlayer" parent="MusicController" index="1"]
-
+[node name="AudioStreamFO" type="AudioStreamPlayer" parent="MusicController"]
 stream = ExtResource( 32 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
 bus = "MusicBus"
 
-[node name="AudioStreamC" type="AudioStreamPlayer" parent="MusicController" index="2"]
-
+[node name="AudioStreamC" type="AudioStreamPlayer" parent="MusicController"]
 stream = ExtResource( 33 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
 bus = "MusicBus"
 
-[node name="AudioStreamCotS" type="AudioStreamPlayer" parent="MusicController" index="3"]
-
+[node name="AudioStreamCotS" type="AudioStreamPlayer" parent="MusicController"]
 stream = ExtResource( 34 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
 bus = "MusicBus"
 
+[node name="ExtrasHolder" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="BarrelDesign01" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721773, 0.523611, -1.32513 )
+
+[node name="BarrelDesign02" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3983, 0.523611, -1.32513 )
+
+[node name="BarrelDesign03" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5272, 0.523611, -46.5007 )
+
+[node name="BarrelDesign04" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.909, 0.523611, -48.7775 )
+
+[node name="BarrelDesign05" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3969, 0.523611, -50.9034 )
+
+[node name="BarrelDesign06" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3276, 0.523611, -90.0181 )
+
+[node name="BarrelDesign07" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3276, 0.523611, -93.4787 )
+
+[node name="BarrelDesign08" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3743, 0.523611, -93.1159 )
+
+[node name="BarrelDesign09" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3231, 0.523611, -84.297 )
+
+[node name="BarrelDesign10" parent="ExtrasHolder" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8813, 0.523611, -86.8087 )
+
+[node name="BodyHolder" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0133953, -11.0488 )
+
+[node name="DeadFemale01" parent="BodyHolder" instance=ExtResource( 36 )]
+transform = Transform( 0.408811, 0, -0.912619, 0, 1, 0, 0.912619, 0, 0.408811, 8.4812, 0, 28.8477 )
+
+[node name="DeadFemale02" parent="BodyHolder" instance=ExtResource( 37 )]
+transform = Transform( 0.702723, 0, 0.711463, 0, 1, 0, -0.711463, 0, 0.702723, 1.37115, 0.4171, 3.07015 )
+
+[node name="DeadFemale03" parent="BodyHolder" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.619, 0, -81.0743 )
+
+[node name="DeadMale01" parent="BodyHolder" instance=ExtResource( 39 )]
+transform = Transform( -0.255388, 0, 0.966838, 0, 1, 0, -0.966838, 0, -0.255388, -7.20292, 0, 7.10162 )
+
+[node name="DeadMale02" parent="BodyHolder" instance=ExtResource( 40 )]
+transform = Transform( 0.969405, 0, -0.245466, 0, 1, 0, 0.245466, 0, 0.969405, -0.0264744, 0.4171, -54.6996 )
+
+[node name="DeadMale03" parent="BodyHolder" instance=ExtResource( 41 )]
+transform = Transform( -0.650245, 0, -0.759724, 0, 1, 0, 0.759724, 0, -0.650245, 31.6339, 0, -33.9192 )
+
+[connection signal="body_entered" from="EndOfLevel/Area" to="EndOfLevel" method="_on_Area_body_entered"]
 [connection signal="finished" from="MusicController/AudioStreamHYR" to="MusicController" method="_on_AudioStreamHYR_finished"]
-
 [connection signal="finished" from="MusicController/AudioStreamFO" to="MusicController" method="_on_AudioStreamFO_finished"]
-
 [connection signal="finished" from="MusicController/AudioStreamC" to="MusicController" method="_on_AudioStreamC_finished"]
-
 [connection signal="finished" from="MusicController/AudioStreamCotS" to="MusicController" method="_on_AudioStreamCotS_finished"]
-
-

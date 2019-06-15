@@ -56,6 +56,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="NavMeshCitadelInner" type="MeshInstance" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049395, 0 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1

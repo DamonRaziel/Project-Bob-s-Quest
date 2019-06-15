@@ -5,7 +5,6 @@ var small_scene = preload("res://Scenes/PlayerScenes/WeaponScenes/ShieldSmall.ts
 var medium_scene = preload("res://Scenes/PlayerScenes/WeaponScenes/ShieldMedium.tscn")
 var tower_scene = preload("res://Scenes/PlayerScenes/WeaponScenes/ShieldTower.tscn")
 
-var player_node = null
 var shield_clone
 
 var shield_number

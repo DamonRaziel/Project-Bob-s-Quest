@@ -1,12 +1,21 @@
 extends Spatial
 
-var item_player_node = null
 export var this_item_number = 3
 
-func _process(delta):
-	if PlayerData.Player_Information.player_current_item_number != this_item_number:
-		destroy_thyself()
+onready var timer = $Timer
+
+func _ready():
+	timer.start()
 
 func destroy_thyself():
 	queue_free()
 
+func _on_Timer_timeout():
+	check_item()
+
+func check_item():
+	#check every half a second, if no longer this, destroy, if still this, restart timer
+	if PlayerData.Player_Information.player_current_item_number != this_item_number:
+		destroy_thyself()
+	else:
+		timer.start()

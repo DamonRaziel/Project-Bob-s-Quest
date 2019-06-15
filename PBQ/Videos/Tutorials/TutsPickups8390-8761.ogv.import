@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/TutsPickups8390-8761.ogv-72cd402e4696b019809952ae1531e05d.ogvstr"
+
+[deps]
+
+source_file="res://Videos/Tutorials/TutsPickups8390-8761.ogv"
+dest_files=[ "res://.import/TutsPickups8390-8761.ogv-72cd402e4696b019809952ae1531e05d.ogvstr" ]
+
+[params]
+
+loop=true

@@ -215,15 +215,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#setup equipment and attack points
 	arrow_point = $ArmaturePlayer01/Skeleton/UpperSpineBone/ArrowPoint02
-	arrow_point.player_node = self
+	#arrow_point.player_node = self
 	arrow_timer = $rotation_target/target/ArrowTimer
 	magic_point = $ArmaturePlayer01/Skeleton/UpperSpineBone/MagicPoint
-	magic_point.player_node = self
+	#magic_point.player_node = self
 	magic_timer = $rotation_target/target/MagicTimer
 	weapon_left_point = $ArmaturePlayer01/Skeleton/LeftHand/Spatial
-	weapon_left_point.player_node = self
+	#weapon_left_point.player_node = self
 	weapon_right_point = $ArmaturePlayer01/Skeleton/RightHand/Spatial
-	weapon_right_point.player_node = self
+	#weapon_right_point.player_node = self
 	shield_right_point=$ArmaturePlayer01/Skeleton/RShieldAttach/ShieldAttachR
 	#setup aiming nodes
 	skel = $ArmaturePlayer01/Skeleton
@@ -239,39 +239,141 @@ func _ready():
 	effects_timer = $EffectTimer
 	map = $rotation_target/target/Camera/MapContainer/Viewport/Map
 	#set up player equiped weapons
-	if PlayerData.Player_Information.player_current_weapon_number == 1:
+	#print ("player weapon slot is : ", PlayerData.Player_Information.player_current_weapon_slot_number)
+#	if PlayerData.Player_Information.player_current_weapon_slot_number == 1:
+#		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1 # weapon_to_assign
+#		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
+#			weapon_left_point.add_sword_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 1
+#		elif PlayerData.Player_Information.player_current_weapon_number == 2 && PlayerData.Player_Information.player_weapon_in_scene != 2:
+#			weapon_left_point.add_lightning_sword_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 2
+#		elif PlayerData.Player_Information.player_current_weapon_number == 3 && PlayerData.Player_Information.player_weapon_in_scene != 3:
+#			weapon_left_point.add_axe_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 3
+#		elif PlayerData.Player_Information.player_current_weapon_number == 4 && PlayerData.Player_Information.player_weapon_in_scene != 4:
+#			weapon_left_point.add_ice_axe_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 4
+#		elif PlayerData.Player_Information.player_current_weapon_number == 5 && PlayerData.Player_Information.player_weapon_in_scene != 5:
+#			weapon_left_point.add_claymore_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 5
+#		elif PlayerData.Player_Information.player_current_weapon_number == 6 && PlayerData.Player_Information.player_weapon_in_scene != 6:
+#			weapon_left_point.add_fire_claymore_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 6
+#		elif PlayerData.Player_Information.player_current_weapon_number == 7 && PlayerData.Player_Information.player_weapon_in_scene != 7:
+#			weapon_left_point.add_warhammer_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 7
+#		elif PlayerData.Player_Information.player_current_weapon_number == 8 && PlayerData.Player_Information.player_weapon_in_scene != 8:
+#			weapon_left_point.add_earth_warhammer_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 8
+#		elif PlayerData.Player_Information.player_current_weapon_number == 9 && PlayerData.Player_Information.player_weapon_in_scene != 9:
+#			weapon_right_point.add_straight_bow_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 9
+#		elif PlayerData.Player_Information.player_current_weapon_number == 10 && PlayerData.Player_Information.player_weapon_in_scene != 10:
+#			weapon_right_point.add_recurve_bow_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 10
+#	elif PlayerData.Player_Information.player_current_weapon_slot_number == 2:
+#		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1 # weapon_to_assign
+#		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
+#			weapon_left_point.add_sword_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 1
+#		elif PlayerData.Player_Information.player_current_weapon_number == 2 && PlayerData.Player_Information.player_weapon_in_scene != 2:
+#			weapon_left_point.add_lightning_sword_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 2
+#		elif PlayerData.Player_Information.player_current_weapon_number == 3 && PlayerData.Player_Information.player_weapon_in_scene != 3:
+#			weapon_left_point.add_axe_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 3
+#		elif PlayerData.Player_Information.player_current_weapon_number == 4 && PlayerData.Player_Information.player_weapon_in_scene != 4:
+#			weapon_left_point.add_ice_axe_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 4
+#		elif PlayerData.Player_Information.player_current_weapon_number == 5 && PlayerData.Player_Information.player_weapon_in_scene != 5:
+#			weapon_left_point.add_claymore_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 5
+#		elif PlayerData.Player_Information.player_current_weapon_number == 6 && PlayerData.Player_Information.player_weapon_in_scene != 6:
+#			weapon_left_point.add_fire_claymore_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 6
+#		elif PlayerData.Player_Information.player_current_weapon_number == 7 && PlayerData.Player_Information.player_weapon_in_scene != 7:
+#			weapon_left_point.add_warhammer_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 7
+#		elif PlayerData.Player_Information.player_current_weapon_number == 8 && PlayerData.Player_Information.player_weapon_in_scene != 8:
+#			weapon_left_point.add_earth_warhammer_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 8
+#		elif PlayerData.Player_Information.player_current_weapon_number == 9 && PlayerData.Player_Information.player_weapon_in_scene != 9:
+#			weapon_right_point.add_straight_bow_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 9
+#		elif PlayerData.Player_Information.player_current_weapon_number == 10 && PlayerData.Player_Information.player_weapon_in_scene != 10:
+#			weapon_right_point.add_recurve_bow_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 10
+#	elif PlayerData.Player_Information.player_current_weapon_slot_number == 3:
+#		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1 # weapon_to_assign
+#		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
+#			weapon_left_point.add_sword_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 1
+#		elif PlayerData.Player_Information.player_current_weapon_number == 2 && PlayerData.Player_Information.player_weapon_in_scene != 2:
+#			weapon_left_point.add_lightning_sword_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 2
+#		elif PlayerData.Player_Information.player_current_weapon_number == 3 && PlayerData.Player_Information.player_weapon_in_scene != 3:
+#			weapon_left_point.add_axe_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 3
+#		elif PlayerData.Player_Information.player_current_weapon_number == 4 && PlayerData.Player_Information.player_weapon_in_scene != 4:
+#			weapon_left_point.add_ice_axe_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 4
+#		elif PlayerData.Player_Information.player_current_weapon_number == 5 && PlayerData.Player_Information.player_weapon_in_scene != 5:
+#			weapon_left_point.add_claymore_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 5
+#		elif PlayerData.Player_Information.player_current_weapon_number == 6 && PlayerData.Player_Information.player_weapon_in_scene != 6:
+#			weapon_left_point.add_fire_claymore_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 6
+#		elif PlayerData.Player_Information.player_current_weapon_number == 7 && PlayerData.Player_Information.player_weapon_in_scene != 7:
+#			weapon_left_point.add_warhammer_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 7
+#		elif PlayerData.Player_Information.player_current_weapon_number == 8 && PlayerData.Player_Information.player_weapon_in_scene != 8:
+#			weapon_left_point.add_earth_warhammer_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 8
+#		elif PlayerData.Player_Information.player_current_weapon_number == 9 && PlayerData.Player_Information.player_weapon_in_scene != 9:
+#			weapon_right_point.add_straight_bow_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 9
+#		elif PlayerData.Player_Information.player_current_weapon_number == 10 && PlayerData.Player_Information.player_weapon_in_scene != 10:
+#			weapon_right_point.add_recurve_bow_to_scene()
+#			PlayerData.Player_Information.player_weapon_in_scene = 10
+#	else:
+#		PlayerData.Player_Information.player_current_weapon_number = 0
+#		PlayerData.Player_Information.player_weapon_in_scene = 0
+	
+	if PlayerData.Player_Information.player_current_weapon_number == 1:# && PlayerData.Player_Information.player_weapon_in_scene != 1:
 		weapon_left_point.add_sword_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 1
-	elif PlayerData.Player_Information.player_current_weapon_number == 2:
+	elif PlayerData.Player_Information.player_current_weapon_number == 2:# && PlayerData.Player_Information.player_weapon_in_scene != 2:
 		weapon_left_point.add_lightning_sword_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 2
-	elif PlayerData.Player_Information.player_current_weapon_number == 3:
+	elif PlayerData.Player_Information.player_current_weapon_number == 3:# && PlayerData.Player_Information.player_weapon_in_scene != 3:
 		weapon_left_point.add_axe_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 3
-	elif PlayerData.Player_Information.player_current_weapon_number == 4:
+	elif PlayerData.Player_Information.player_current_weapon_number == 4:# && PlayerData.Player_Information.player_weapon_in_scene != 4:
 		weapon_left_point.add_ice_axe_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 4
-	elif PlayerData.Player_Information.player_current_weapon_number == 5:
+	elif PlayerData.Player_Information.player_current_weapon_number == 5:# && PlayerData.Player_Information.player_weapon_in_scene != 5:
 		weapon_left_point.add_claymore_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 5
-	elif PlayerData.Player_Information.player_current_weapon_number == 6:
+	elif PlayerData.Player_Information.player_current_weapon_number == 6:# && PlayerData.Player_Information.player_weapon_in_scene != 6:
 		weapon_left_point.add_fire_claymore_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 6
-	elif PlayerData.Player_Information.player_current_weapon_number == 7:
+	elif PlayerData.Player_Information.player_current_weapon_number == 7:# && PlayerData.Player_Information.player_weapon_in_scene != 7:
 		weapon_left_point.add_warhammer_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 7
-	elif PlayerData.Player_Information.player_current_weapon_number == 8:
+	elif PlayerData.Player_Information.player_current_weapon_number == 8:# && PlayerData.Player_Information.player_weapon_in_scene != 8:
 		weapon_left_point.add_earth_warhammer_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 8
-	elif PlayerData.Player_Information.player_current_weapon_number == 9:
+	elif PlayerData.Player_Information.player_current_weapon_number == 9:# && PlayerData.Player_Information.player_weapon_in_scene != 9:
 		weapon_right_point.add_straight_bow_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 9
-	elif PlayerData.Player_Information.player_current_weapon_number == 10:
+	elif PlayerData.Player_Information.player_current_weapon_number == 10:# && PlayerData.Player_Information.player_weapon_in_scene != 10:
 		weapon_right_point.add_recurve_bow_to_scene()
 		PlayerData.Player_Information.player_weapon_in_scene = 10
 	else:
-		PlayerData.Player_Information.player_current_weapon_number = 0
-		PlayerData.Player_Information.player_weapon_in_scene = 0
+		PlayerData.Player_Information.player_current_weapon_number = -1 #0
+		PlayerData.Player_Information.player_weapon_in_scene = -1 #0
+	
 	#check arrows to load numbers
 	Global_Player.arrows_check()
 	#set up equiped armour and shields
@@ -319,7 +421,7 @@ func _ready():
 	elif PlayerData.Options_Data.slots_hint_show == 1:
 		slots_hint_shower.hide()
 	
-	if PlayerData.Player_Information.player_current_weapon_number != 0:
+	if PlayerData.Player_Information.player_current_weapon_number != -1:
 		weapon_display_image.show()
 		var slot_image_getter = PlayerData.Player_Information.player_current_weapon_number
 		weapon_display_image.set_texture(ResourceLoader.load(Global_ItemDatabase.get_item(slot_image_getter)["hudicon"]))
@@ -339,22 +441,71 @@ func set_bone_rot(bone, ang):
 	skel.set_bone_pose(b, newpose)
 
 func process_UI(delta):
-	#set the HUD
-	UI_Status_Label_01.text = "Health: " + str(PlayerData.Player_Information.player_health) + "/" + str(PlayerData.Player_Information.player_max_health)
-	UI_Status_Label_02.text = "Mana: " + str(PlayerData.Player_Information.player_mana) + "/" + str(PlayerData.Player_Information.player_max_mana)
-	UI_Status_Label_03.text = "Coins: " + str(Global_Player.coin_counter) + " / Aiming: " + str(PlayerData.current_player_aiming_style)
-	if PlayerData.Player_Information.player_current_weapon_number >=0 and PlayerData.Player_Information.player_current_weapon_number <=8:
-		UI_Status_Label_04.text = "Weapon: " + str(PlayerData.Player_Information.player_current_weapon_number)
-	elif PlayerData.Player_Information.player_current_weapon_number >=9:
-		UI_Status_Label_04.text = "Weapon: " + str(PlayerData.Player_Information.player_current_weapon_number) + "Arrows: " + str(Global_Player.normal_arrow_counter)
-	if PlayerData.Player_Information.player_current_weapon_number == 9 or PlayerData.Player_Information.player_current_weapon_number == 10:
-		arrows_display.text = str(Global_Player.normal_arrow_counter)
-	else:
-		arrows_display.text = ""
-	UI_Status_Label_05.text = str(PlayerData.Player_Information.player_lives) #"Lives: " + str(PlayerData.Player_Information.player_lives)
-	UI_Status_label_07.text = "FPS: " + str(Engine.get_frames_per_second())
-	UI_Status_Label_08.text = "Points: " + str(PlayerData.Player_Information.player_points)
-	UI_Status_Label_09.text = "Pitch:" + str(cam_pitch) + " /Yaw:" + str(cam_yaw)
+	#set the HUD, keep some hashed out, can be used for debug/checks
+#	UI_Status_Label_01.text = "Health: " + str(PlayerData.Player_Information.player_health) + "/" + str(PlayerData.Player_Information.player_max_health)
+#	UI_Status_Label_02.text = "Mana: " + str(PlayerData.Player_Information.player_mana) + "/" + str(PlayerData.Player_Information.player_max_mana)
+#	UI_Status_Label_03.text = "Coins: " + str(Global_Player.coin_counter) + " / Aiming: " + str(PlayerData.current_player_aiming_style)
+#	if PlayerData.Player_Information.player_current_weapon_number >=0 and PlayerData.Player_Information.player_current_weapon_number <=8:
+#		UI_Status_Label_04.text = "Weapon: " + str(PlayerData.Player_Information.player_current_weapon_number)
+#	elif PlayerData.Player_Information.player_current_weapon_number >=9:
+#		UI_Status_Label_04.text = "Weapon: " + str(PlayerData.Player_Information.player_current_weapon_number) + "Arrows: " + str(Global_Player.normal_arrow_counter)
+#	if PlayerData.Player_Information.player_current_weapon_number == 9 or PlayerData.Player_Information.player_current_weapon_number == 10:
+#		arrows_display.text = str(Global_Player.normal_arrow_counter)
+#	else:
+#		arrows_display.text = ""
+#	UI_Status_Label_05.text = str(PlayerData.Player_Information.player_lives) #"Lives: " + str(PlayerData.Player_Information.player_lives)
+#	UI_Status_label_07.text = "FPS: " + str(Engine.get_frames_per_second())
+#	UI_Status_Label_08.text = "Points: " + str(PlayerData.Player_Information.player_points)
+#	UI_Status_Label_09.text = "Pitch:" + str(cam_pitch) + " /Yaw:" + str(cam_yaw)
+	if PlayerData.Options_Data.language == "English":
+		UI_Status_Label_01.text = "Health: " + str(PlayerData.Player_Information.player_health) + "/" + str(PlayerData.Player_Information.player_max_health)
+		UI_Status_Label_02.text = "Mana: " + str(PlayerData.Player_Information.player_mana) + "/" + str(PlayerData.Player_Information.player_max_mana)
+		UI_Status_Label_03.text = "Coins: " + str(Global_Player.coin_counter) + " / Aiming: " + str(PlayerData.current_player_aiming_style)
+		if PlayerData.Player_Information.player_current_weapon_number >=0 and PlayerData.Player_Information.player_current_weapon_number <=8:
+			UI_Status_Label_04.text = "Weapon: " + str(PlayerData.Player_Information.player_current_weapon_number)
+		elif PlayerData.Player_Information.player_current_weapon_number >=9:
+			UI_Status_Label_04.text = "Weapon: " + str(PlayerData.Player_Information.player_current_weapon_number) + "Arrows: " + str(Global_Player.normal_arrow_counter)
+		if PlayerData.Player_Information.player_current_weapon_number == 9 or PlayerData.Player_Information.player_current_weapon_number == 10:
+			arrows_display.text = str(Global_Player.normal_arrow_counter)
+		else:
+			arrows_display.text = ""
+		UI_Status_Label_05.text = str(PlayerData.Player_Information.player_lives) #"Lives: " + str(PlayerData.Player_Information.player_lives)
+		UI_Status_label_07.text = "FPS: " + str(Engine.get_frames_per_second())
+		UI_Status_Label_08.text = "Points: " + str(PlayerData.Player_Information.player_points)
+		UI_Status_Label_09.text = "Pitch:" + str(cam_pitch) + " /Yaw:" + str(cam_yaw)
+	elif PlayerData.Options_Data.language == "Spanish":
+		UI_Status_Label_01.text = "Salud: " + str(PlayerData.Player_Information.player_health) + "/" + str(PlayerData.Player_Information.player_max_health)
+		UI_Status_Label_02.text = "Mana: " + str(PlayerData.Player_Information.player_mana) + "/" + str(PlayerData.Player_Information.player_max_mana)
+		UI_Status_Label_03.text = "Monedas: " + str(Global_Player.coin_counter) + " / Punteria: " + str(PlayerData.current_player_aiming_style)
+		if PlayerData.Player_Information.player_current_weapon_number >=0 and PlayerData.Player_Information.player_current_weapon_number <=8:
+			UI_Status_Label_04.text = "Arma: " + str(PlayerData.Player_Information.player_current_weapon_number)
+		elif PlayerData.Player_Information.player_current_weapon_number >=9:
+			UI_Status_Label_04.text = "Arma: " + str(PlayerData.Player_Information.player_current_weapon_number) + "Flechas: " + str(Global_Player.normal_arrow_counter)
+		if PlayerData.Player_Information.player_current_weapon_number == 9 or PlayerData.Player_Information.player_current_weapon_number == 10:
+			arrows_display.text = str(Global_Player.normal_arrow_counter)
+		else:
+			arrows_display.text = ""
+		UI_Status_Label_05.text = str(PlayerData.Player_Information.player_lives) #"Lives: " + str(PlayerData.Player_Information.player_lives)
+		UI_Status_label_07.text = "FPS: " + str(Engine.get_frames_per_second())
+		UI_Status_Label_08.text = "Puntos: " + str(PlayerData.Player_Information.player_points)
+		UI_Status_Label_09.text = "Tono:" + str(cam_pitch) + " /Guinada:" + str(cam_yaw)
+	elif PlayerData.Options_Data.language == "Filipino":
+		UI_Status_Label_01.text = "Kalusugan: " + str(PlayerData.Player_Information.player_health) + "/" + str(PlayerData.Player_Information.player_max_health)
+		UI_Status_Label_02.text = "Mana: " + str(PlayerData.Player_Information.player_mana) + "/" + str(PlayerData.Player_Information.player_max_mana)
+		UI_Status_Label_03.text = "Barya: " + str(Global_Player.coin_counter) + " / Pagpuntirya: " + str(PlayerData.current_player_aiming_style)
+		if PlayerData.Player_Information.player_current_weapon_number >=0 and PlayerData.Player_Information.player_current_weapon_number <=8:
+			UI_Status_Label_04.text = "Armas: " + str(PlayerData.Player_Information.player_current_weapon_number)
+		elif PlayerData.Player_Information.player_current_weapon_number >=9:
+			UI_Status_Label_04.text = "Armas: " + str(PlayerData.Player_Information.player_current_weapon_number) + "Mga Arrow: " + str(Global_Player.normal_arrow_counter)
+		if PlayerData.Player_Information.player_current_weapon_number == 9 or PlayerData.Player_Information.player_current_weapon_number == 10:
+			arrows_display.text = str(Global_Player.normal_arrow_counter)
+		else:
+			arrows_display.text = ""
+		UI_Status_Label_05.text = str(PlayerData.Player_Information.player_lives) #"Lives: " + str(PlayerData.Player_Information.player_lives)
+		UI_Status_label_07.text = "FPS: " + str(Engine.get_frames_per_second())
+		UI_Status_Label_08.text = "Mga Puntos: " + str(PlayerData.Player_Information.player_points)
+		UI_Status_Label_09.text = "Pitch:" + str(cam_pitch) + " /Yaw:" + str(cam_yaw)
+	
 	HP_Progress_Bar.max_value = PlayerData.Player_Information.player_max_health
 	HP_Progress_Bar.value = PlayerData.Player_Information.player_health
 	Mana_Progress_Bar.max_value = PlayerData.Player_Information.player_max_mana
@@ -365,7 +516,7 @@ func process_UI(delta):
 	elif PlayerData.Options_Data.slots_hint_show == 1:
 		slots_hint_shower.hide()
 	
-	if PlayerData.Player_Information.player_current_weapon_number != 0:
+	if PlayerData.Player_Information.player_current_weapon_number > 0: # != -1:
 		weapon_display_image.show()
 		var slot_image_getter = PlayerData.Player_Information.player_current_weapon_number
 		weapon_display_image.set_texture(ResourceLoader.load(Global_ItemDatabase.get_item(slot_image_getter)["hudicon"]))
@@ -389,7 +540,7 @@ func process_UI(delta):
 	elif combo == 3:
 		combo_counter.set_texture(combo_count3)
 
-func _process(delta):
+func _input(event): 
 	#shield quick equip added
 	#meant to toggle, but doesn't work yet
 	if Input.is_action_just_pressed("zero"):
@@ -407,9 +558,12 @@ func _process(delta):
 			PlayerData.Player_Information.player_current_shield_number = 0
 	#---- Weapon Quick Change ----#
 	if Input.is_action_just_pressed("one"):
+		PlayerData.Player_Information.player_current_weapon_slot_number = 1
 		if carrying_object == true:
 			throw_object()
 		if Global_Player.inventory_equiped_items.inventory_weapons1 != -1:
+			#could condense this part into a separate function that is called instead?
+			#would save repeating blocks of code
 			PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1
 			if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
 				weapon_left_point.add_sword_to_scene()
@@ -442,9 +596,10 @@ func _process(delta):
 				weapon_right_point.add_recurve_bow_to_scene()
 				PlayerData.Player_Information.player_weapon_in_scene = 10
 		else:
-			PlayerData.Player_Information.player_current_weapon_number = 0
-			PlayerData.Player_Information.player_weapon_in_scene = 0
+			PlayerData.Player_Information.player_current_weapon_number = -1 #0
+			PlayerData.Player_Information.player_weapon_in_scene = -1 #0
 	if Input.is_action_just_pressed("two"):
+		PlayerData.Player_Information.player_current_weapon_slot_number = 2
 		if carrying_object == true:
 			throw_object()
 		if Global_Player.inventory_equiped_items.inventory_weapons2 != -1:
@@ -480,9 +635,10 @@ func _process(delta):
 				weapon_right_point.add_recurve_bow_to_scene()
 				PlayerData.Player_Information.player_weapon_in_scene = 10
 		else:
-			PlayerData.Player_Information.player_current_weapon_number = 0
-			PlayerData.Player_Information.player_weapon_in_scene = 0
+			PlayerData.Player_Information.player_current_weapon_number = -1 #0
+			PlayerData.Player_Information.player_weapon_in_scene = -1 #0
 	if Input.is_action_just_pressed("three"):
+		PlayerData.Player_Information.player_current_weapon_slot_number = 3
 		if carrying_object == true:
 			throw_object()
 		if Global_Player.inventory_equiped_items.inventory_weapons3 != -1:
@@ -518,21 +674,10 @@ func _process(delta):
 				weapon_right_point.add_recurve_bow_to_scene()
 				PlayerData.Player_Information.player_weapon_in_scene = 10
 		else:
-			PlayerData.Player_Information.player_current_weapon_number = 0
-			PlayerData.Player_Information.player_weapon_in_scene = 0
+			PlayerData.Player_Information.player_current_weapon_number = -1 #0
+			PlayerData.Player_Information.player_weapon_in_scene = -1 #0
 	#check if we need to show any armours
-	if PlayerData.Player_Information.player_current_armour_number == 16:
-		chainmail_mesh.show()
-	else:
-		chainmail_mesh.hide()
-	if PlayerData.Player_Information.player_current_armour_number == 17:
-		scalemail_mesh.show()
-	else:
-		scalemail_mesh.hide()
-	if PlayerData.Player_Information.player_current_armour_number == 18:
-		fullplate_mesh.show()
-	else:
-		fullplate_mesh.hide()
+	#moved
 	#item quick keys
 	if Input.is_action_just_pressed("four"):
 		PlayerData.Player_Information.player_current_item_number = Global_Player.inventory_equiped_items.inventory_items1
@@ -900,6 +1045,23 @@ func _process(delta):
 		else:
 			PlayerData.Player_Information.player_item_in_scene = 0
 		inventory_node.update_slot6_amount()
+
+func _process(delta):
+	#update HUD
+	process_UI(delta)
+	#check if we need to show any armours, doesn't need to be in process, where to move it??
+	if PlayerData.Player_Information.player_current_armour_number == 16:
+		chainmail_mesh.show()
+	else:
+		chainmail_mesh.hide()
+	if PlayerData.Player_Information.player_current_armour_number == 17:
+		scalemail_mesh.show()
+	else:
+		scalemail_mesh.hide()
+	if PlayerData.Player_Information.player_current_armour_number == 18:
+		fullplate_mesh.show()
+	else:
+		fullplate_mesh.hide()
 	
 	#how character should be if aiming
 	if Input.is_action_pressed("right_mouse"):
@@ -919,8 +1081,6 @@ func _process(delta):
 		skel.transform = non_aim_pos.transform
 
 func _physics_process(delta):
-	#update HUD
-	process_UI(delta)
 	#---- Character Movement Section ----#
 	#main movement section
 	camera = get_node("rotation_target/target/Camera").get_global_transform()
@@ -1000,7 +1160,7 @@ func _physics_process(delta):
 	#character rotation
 	if PlayerData.current_player_aiming_style == 0:
 		cursor.hide()
-		#character rotation, has to be after hv has been sorted out
+		#character rotation, has to be after hv has been sorted out, as used by angle var
 		if is_moving:
 			var angle = atan2(hv.x, hv.z)
 			var char_rot = character.get_rotation()
@@ -1132,16 +1292,17 @@ func _physics_process(delta):
 		elif PlayerData.Player_Information.player_current_weapon_number == 9 or PlayerData.Player_Information.player_current_weapon_number == 10:
 			if Global_Player.normal_arrow_counter > 0:
 				if attack_timer >= attack_time:
-					if PlayerData.current_player_aiming_style == 0:
+					#if PlayerData.current_player_aiming_style == 0:
+					if is_on_floor():
 						attacking = true
 						bowdrawanimplay = true
 						attack_timer = 0.0
 						_attackbow1()
-					elif PlayerData.current_player_aiming_style == 1:
-						attacking = true
-						bowreleaseanimplay = true
-						attack_timer = 0.0
-						_attackbow1()
+#					elif PlayerData.current_player_aiming_style == 1:
+#						attacking = true
+#						bowreleaseanimplay = true
+#						attack_timer = 0.0
+#						_attackbow1()
 	else:
 		unarmedcombo1animplay = false
 		unarmedcombo2animplay = false
@@ -1545,6 +1706,7 @@ func pickups_handler(item_id, item_amount):
 
 #---- Player Damage and Reset ----#
 func _hit(damage_received, type, hit_position):
+	print ("player was hit")
 	#need to add magic resistances to player
 	var armour_value
 	if PlayerData.Player_Information.player_current_armour_number == 16:

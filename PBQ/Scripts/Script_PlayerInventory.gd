@@ -53,7 +53,7 @@ onready var item_slot5_label= get_node("Panel/EquipmentSlotsHolder2/ItemSlot5/It
 onready var item_slot6_label= get_node("Panel/EquipmentSlotsHolder2/ItemSlot6/ItemTextureSlot6/SlotLabel6")
 
 var currently_selected_weapon_id = 0
-#change to item not weapon, as used for all
+#change to item not weapon, as used for all??
 #is still weapon, for ease of use
 
 onready var weaponslot1label = get_node("Panel/EquipmentSlotsHolder/WeaponSlot1/WeaponSlot1Texture/Label")
@@ -78,6 +78,11 @@ onready var slot_icon9 = get_node("SlotsPanel/SlotIcon9")
 onready var item_dropper_rotator = get_node("DropperRotator")
 onready var item_dropper = get_node("DropperRotator/Dropper")
 
+onready var player_node = get_parent()
+onready var player_left_weapon_point =  get_parent().get_node("ArmaturePlayer01/Skeleton/LeftHand/Spatial")#player_node.get_node("ArmaturePlayer01/Skeleton/LeftHand/Spatial")
+onready var player_right_weapon_point = get_parent().get_node("ArmaturePlayer01/Skeleton/RightHand/Spatial")
+#add shields and armour as well if possible
+
 func _ready():
 	# Initialize Item List
 	itemList.set_max_columns(10)
@@ -94,7 +99,7 @@ func _ready():
 	
 	#reused from pause menu
 	unpause_inventory()
-	print ("loading inventory")
+	print ("Loading Inventory")
 	coin_amount_label.text = String(PlayerData.Player_Information.player_coins)
 
 func _process(delta):
@@ -389,6 +394,41 @@ func _on_ItemMenu_Button_EquipItem_pressed():
 #slot assignment section begin#
 func _assign_weapon_slot_1(weapon_to_assign):
 	Global_Player.inventory_equiped_items.inventory_weapons1 = weapon_to_assign
+	if PlayerData.Player_Information.player_current_weapon_slot_number == 1:
+		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1 # weapon_to_assign
+		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
+			player_left_weapon_point.add_sword_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 1
+		elif PlayerData.Player_Information.player_current_weapon_number == 2 && PlayerData.Player_Information.player_weapon_in_scene != 2:
+			player_left_weapon_point.add_lightning_sword_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 2
+		elif PlayerData.Player_Information.player_current_weapon_number == 3 && PlayerData.Player_Information.player_weapon_in_scene != 3:
+			player_left_weapon_point.add_axe_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 3
+		elif PlayerData.Player_Information.player_current_weapon_number == 4 && PlayerData.Player_Information.player_weapon_in_scene != 4:
+			player_left_weapon_point.add_ice_axe_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 4
+		elif PlayerData.Player_Information.player_current_weapon_number == 5 && PlayerData.Player_Information.player_weapon_in_scene != 5:
+			player_left_weapon_point.add_claymore_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 5
+		elif PlayerData.Player_Information.player_current_weapon_number == 6 && PlayerData.Player_Information.player_weapon_in_scene != 6:
+			player_left_weapon_point.add_fire_claymore_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 6
+		elif PlayerData.Player_Information.player_current_weapon_number == 7 && PlayerData.Player_Information.player_weapon_in_scene != 7:
+			player_left_weapon_point.add_warhammer_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 7
+		elif PlayerData.Player_Information.player_current_weapon_number == 8 && PlayerData.Player_Information.player_weapon_in_scene != 8:
+			player_left_weapon_point.add_earth_warhammer_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 8
+		elif PlayerData.Player_Information.player_current_weapon_number == 9 && PlayerData.Player_Information.player_weapon_in_scene != 9:
+			player_right_weapon_point.add_straight_bow_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 9
+		elif PlayerData.Player_Information.player_current_weapon_number == 10 && PlayerData.Player_Information.player_weapon_in_scene != 10:
+			player_right_weapon_point.add_recurve_bow_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 10
+	else:
+		PlayerData.Player_Information.player_current_weapon_number = 0
+		PlayerData.Player_Information.player_weapon_in_scene = 0
 	#print ("weapon in slot 1 is " + str(weapon_to_assign))
 	weapon_slot_selection_window.hide()
 	if Global_Player.inventory_equiped_items.inventory_weapons1 != -1:
@@ -403,6 +443,41 @@ func _assign_weapon_slot_1(weapon_to_assign):
 
 func _assign_weapon_slot_2(weapon_to_assign):
 	Global_Player.inventory_equiped_items.inventory_weapons2 = weapon_to_assign
+	if PlayerData.Player_Information.player_current_weapon_slot_number == 2:
+		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons2 # weapon_to_assign
+		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
+			player_left_weapon_point.add_sword_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 1
+		elif PlayerData.Player_Information.player_current_weapon_number == 2 && PlayerData.Player_Information.player_weapon_in_scene != 2:
+			player_left_weapon_point.add_lightning_sword_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 2
+		elif PlayerData.Player_Information.player_current_weapon_number == 3 && PlayerData.Player_Information.player_weapon_in_scene != 3:
+			player_left_weapon_point.add_axe_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 3
+		elif PlayerData.Player_Information.player_current_weapon_number == 4 && PlayerData.Player_Information.player_weapon_in_scene != 4:
+			player_left_weapon_point.add_ice_axe_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 4
+		elif PlayerData.Player_Information.player_current_weapon_number == 5 && PlayerData.Player_Information.player_weapon_in_scene != 5:
+			player_left_weapon_point.add_claymore_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 5
+		elif PlayerData.Player_Information.player_current_weapon_number == 6 && PlayerData.Player_Information.player_weapon_in_scene != 6:
+			player_left_weapon_point.add_fire_claymore_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 6
+		elif PlayerData.Player_Information.player_current_weapon_number == 7 && PlayerData.Player_Information.player_weapon_in_scene != 7:
+			player_left_weapon_point.add_warhammer_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 7
+		elif PlayerData.Player_Information.player_current_weapon_number == 8 && PlayerData.Player_Information.player_weapon_in_scene != 8:
+			player_left_weapon_point.add_earth_warhammer_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 8
+		elif PlayerData.Player_Information.player_current_weapon_number == 9 && PlayerData.Player_Information.player_weapon_in_scene != 9:
+			player_right_weapon_point.add_straight_bow_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 9
+		elif PlayerData.Player_Information.player_current_weapon_number == 10 && PlayerData.Player_Information.player_weapon_in_scene != 10:
+			player_right_weapon_point.add_recurve_bow_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 10
+	else:
+		PlayerData.Player_Information.player_current_weapon_number = 0
+		PlayerData.Player_Information.player_weapon_in_scene = 0
 	#print ("weapon in slot 2 is " + str(weapon_to_assign))
 	weapon_slot_selection_window.hide()
 	if Global_Player.inventory_equiped_items.inventory_weapons2 != -1:
@@ -417,6 +492,41 @@ func _assign_weapon_slot_2(weapon_to_assign):
 
 func _assign_weapon_slot_3(weapon_to_assign):
 	Global_Player.inventory_equiped_items.inventory_weapons3 = weapon_to_assign
+	if PlayerData.Player_Information.player_current_weapon_slot_number == 3:
+		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons3 # weapon_to_assign
+		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
+			player_left_weapon_point.add_sword_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 1
+		elif PlayerData.Player_Information.player_current_weapon_number == 2 && PlayerData.Player_Information.player_weapon_in_scene != 2:
+			player_left_weapon_point.add_lightning_sword_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 2
+		elif PlayerData.Player_Information.player_current_weapon_number == 3 && PlayerData.Player_Information.player_weapon_in_scene != 3:
+			player_left_weapon_point.add_axe_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 3
+		elif PlayerData.Player_Information.player_current_weapon_number == 4 && PlayerData.Player_Information.player_weapon_in_scene != 4:
+			player_left_weapon_point.add_ice_axe_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 4
+		elif PlayerData.Player_Information.player_current_weapon_number == 5 && PlayerData.Player_Information.player_weapon_in_scene != 5:
+			player_left_weapon_point.add_claymore_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 5
+		elif PlayerData.Player_Information.player_current_weapon_number == 6 && PlayerData.Player_Information.player_weapon_in_scene != 6:
+			player_left_weapon_point.add_fire_claymore_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 6
+		elif PlayerData.Player_Information.player_current_weapon_number == 7 && PlayerData.Player_Information.player_weapon_in_scene != 7:
+			player_left_weapon_point.add_warhammer_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 7
+		elif PlayerData.Player_Information.player_current_weapon_number == 8 && PlayerData.Player_Information.player_weapon_in_scene != 8:
+			player_left_weapon_point.add_earth_warhammer_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 8
+		elif PlayerData.Player_Information.player_current_weapon_number == 9 && PlayerData.Player_Information.player_weapon_in_scene != 9:
+			player_right_weapon_point.add_straight_bow_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 9
+		elif PlayerData.Player_Information.player_current_weapon_number == 10 && PlayerData.Player_Information.player_weapon_in_scene != 10:
+			player_right_weapon_point.add_recurve_bow_to_scene()
+			PlayerData.Player_Information.player_weapon_in_scene = 10
+	else:
+		PlayerData.Player_Information.player_current_weapon_number = 0
+		PlayerData.Player_Information.player_weapon_in_scene = 0
 	#print ("weapon in slot 3 is " + str(weapon_to_assign))
 	weapon_slot_selection_window.hide()
 	if Global_Player.inventory_equiped_items.inventory_weapons3 != -1:
@@ -446,7 +556,7 @@ func update_slot5_amount():
 
 func update_slot6_amount():
 	item_slot6_label.text = str(Global_Player.inventory_equiped_items.inventory_items6_amount)
-	print(Global_Player.inventory_equiped_items.inventory_items6_amount)
+	#print(Global_Player.inventory_equiped_items.inventory_items6_amount)
 
 func _assign_item_slot_1(item_to_assign, amount_to_assign):
 	Global_Player.inventory_equiped_items.inventory_items1 = item_to_assign
