@@ -7,10 +7,10 @@
 [ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/EnemyScenes/ZombieMaleNavTest.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/EnemyScenes/ZombieFemaleNav.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scripts/LevelScripts/Level02Complete.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=9]
-[ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=10]
-[ext_resource path="res://Scenes/NPCScenes/Town01Guard.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/NPCScenes/Town01Guard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/LevelScripts/Level02Complete.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://OtherHolder/rm-albion/RM Albion font big.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Scenes/PickupScenes/PickupTea.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/PickupScenes/PickupPotionHealth.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/PickupScenes/PickupPotionMana.tscn" type="PackedScene" id=14]
@@ -80,9 +80,9 @@ environment = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0301552, 0, 0 )
 
 [node name="NavMeshTown01Part01" parent="." instance=ExtResource( 4 )]
-editor/display_folded = true
 
 [node name="WaypointsHolder" type="Spatial" parent="NavMeshTown01Part01"]
+editor/display_folded = true
 script = ExtResource( 5 )
 
 [node name="Waypoint1" type="Spatial" parent="NavMeshTown01Part01/WaypointsHolder"]
@@ -166,6 +166,7 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="EnemyHolder" type="Spatial" parent="NavMeshTown01Part01"]
+editor/display_folded = true
 
 [node name="ZombieMaleNavTest" parent="NavMeshTown01Part01/EnemyHolder" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6012, 0.0623946, -41.4421 )
@@ -197,8 +198,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9537, 0.062395, 10.5765 )
 [node name="ZombieFemaleNav5" parent="NavMeshTown01Part01/EnemyHolder" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.8189, 0.062395, 13.528 )
 
+[node name="OtherHolder" type="Spatial" parent="NavMeshTown01Part01"]
+
+[node name="Town01Guard" parent="NavMeshTown01Part01/OtherHolder" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.881, 0.062, 59.691 )
+
 [node name="ToWorldMap" type="Node" parent="."]
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="Area" type="Area" parent="ToWorldMap"]
 editor/display_folded = true
@@ -208,7 +214,7 @@ transform = Transform( 0.948104, 0, 0.31796, 0, 1, 0, -0.31796, 0, 0.948104, -84
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80655, 0.368965 )
 shape = SubResource( 4 )
 
-[node name="LevelEndParticles" parent="ToWorldMap/Area" instance=ExtResource( 9 )]
+[node name="LevelEndParticles" parent="ToWorldMap/Area" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62939e-006, -0.421509, -56.8543 )
 
 [node name="LevelText" type="Label" parent="."]
@@ -216,7 +222,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -51.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
 text = "LongTestToMakeSureItWillFitAndBeCentered"
 align = 1
 valign = 1
@@ -224,16 +230,10 @@ valign = 1
 [node name="LevelObjective" type="Label" parent="."]
 anchor_right = 1.0
 margin_bottom = 51.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
 text = "LongTestToMakeSureItWillFitAndBeCentered"
 align = 1
 valign = 1
-
-[node name="OtherHolder" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="Town01Guard" parent="OtherHolder" instance=ExtResource( 11 )]
-transform = Transform( -0.993437, 0, 0.114383, 0, 1, 0, -0.114383, 0, -0.993437, -86.8811, 1.03715, 59.6911 )
 
 [node name="LevelLimits" type="StaticBody" parent="."]
 editor/display_folded = true

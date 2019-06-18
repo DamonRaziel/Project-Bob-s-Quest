@@ -74,6 +74,11 @@ var enemy_waypoints
 
 var is_active = false
 
+onready var death_timer = get_node("DeathTimer")
+
+var zombie_dying = false
+var guard_target
+
 func _ready():
 	enemy = get_node(".")
 	get_node("AnimationTreePlayer").set_active(true)
@@ -83,6 +88,7 @@ func _ready():
 	waypoint_numbers_to_choose_from = navmesh.get_node("WaypointsHolder").waypoints_number# - 1
 	dtimer = get_node("DecisionTimer")
 	rtimer = get_node("RegenTimer")
+#	death_timer = get_node("DeathTimer")
 	if is_active == true:
 		track_timer.start()
 		idle_for_a_moment()
@@ -264,6 +270,18 @@ func _physics_process(delta):
 		get_node("AnimationTreePlayer").blend2_node_set_amount("ZIdleOrMove", 0)
 		if attacking == true:
 			get_node("AnimationTreePlayer").oneshot_node_start("ZOneShot")
+	
+	if zombie_dying == true:
+		var void_area = $Map_Area
+		var bodies = void_area.get_overlapping_bodies()
+		for abody in bodies:
+			if abody == self:
+				continue
+			if abody.has_method("ally_tracker"): #_hit"):
+				print ("voiding")
+				abody.remove_targets()
+				#abody.idle_for_a_moment()
+		queue_free()
 
 func zombie_attack():
 	var area = $Area
@@ -302,10 +320,11 @@ func _on_Detect_Area_body_entered(body):
 			dtimer.stop()
 
 func _on_Detect_Area_body_exited(body):
-	if body.has_method("process_UI"):
-		#set zombie to idle before going back to random
-		target = null
-		idle_for_a_moment()
+	if current_health > 0:
+		if body.has_method("process_UI"):
+			#set zombie to idle before going back to random
+			target = null
+			idle_for_a_moment()
 
 func _on_Attack_Area_body_entered(body):
 	if body.has_method("process_UI"):
@@ -323,44 +342,75 @@ func _on_Attack_Area_body_exited(body):
 			pick_retreat_waypoint()
 
 func _hit(damage, type, _hit_pos):
-	randomize()
-	var hit_points_lost
-	if type == 0:
-		hit_points_lost = damage - enemy_fort
-		hit_points_lost = clamp(hit_points_lost, 0, 500)
-		current_health -= hit_points_lost
-		#print (hit_points_lost)
-	elif type == 1:
-		hit_points_lost = damage - enemy_lightning_res
-		hit_points_lost = clamp(hit_points_lost, 0, 500)
-		current_health -= hit_points_lost
-	elif type == 2:
-		hit_points_lost = damage - enemy_ice_res
-		hit_points_lost = clamp(hit_points_lost, 0, 500)
-		current_health -= hit_points_lost
-	elif type == 3:
-		hit_points_lost = damage - enemy_fire_res
-		hit_points_lost = clamp(hit_points_lost, 0, 500)
-		current_health -= hit_points_lost
-	elif type == 4:
-		hit_points_lost = damage - enemy_earth_res
-		hit_points_lost = clamp(hit_points_lost, 0, 500)
-		current_health -= hit_points_lost
-	hit_sound.play()
-	chance_of_attack = randi()%100+1
-	chance_of_attack_blocked = ((damage*2)-enemy_fort)
-	if chance_of_attack <= chance_of_attack_blocked:
-		can_attack_timer = 0.0
-	PlayerData.points_add(damage)
-	if current_health < retreat_health:
-		pick_retreat_waypoint()
-	if current_health <= 0:
-		zombie_die()
+	if current_health > 0:
+		randomize()
+		var hit_points_lost
+		if type == 0:
+			hit_points_lost = damage - enemy_fort
+			hit_points_lost = clamp(hit_points_lost, 0, 500)
+			current_health -= hit_points_lost
+			#print (hit_points_lost)
+		elif type == 1:
+			hit_points_lost = damage - enemy_lightning_res
+			hit_points_lost = clamp(hit_points_lost, 0, 500)
+			current_health -= hit_points_lost
+		elif type == 2:
+			hit_points_lost = damage - enemy_ice_res
+			hit_points_lost = clamp(hit_points_lost, 0, 500)
+			current_health -= hit_points_lost
+		elif type == 3:
+			hit_points_lost = damage - enemy_fire_res
+			hit_points_lost = clamp(hit_points_lost, 0, 500)
+			current_health -= hit_points_lost
+		elif type == 4:
+			hit_points_lost = damage - enemy_earth_res
+			hit_points_lost = clamp(hit_points_lost, 0, 500)
+			current_health -= hit_points_lost
+		hit_sound.play()
+		chance_of_attack = randi()%100+1
+		chance_of_attack_blocked = ((damage*2)-enemy_fort)
+		if chance_of_attack <= chance_of_attack_blocked:
+			can_attack_timer = 0.0
+		PlayerData.points_add(damage)
+		if current_health < retreat_health:
+			pick_retreat_waypoint()
+		if current_health <= 0:
+			zombie_die()
 
 func zombie_die():
+#	var void_area = $Map_Area
+#	var bodies = void_area.get_overlapping_bodies()
+#	for abody in bodies:
+#		if abody == self:
+#			continue
+#		if abody.has_method("ally_tracker"): #_hit"):
+#			print ("voiding")
+#			abody.target = null
+#			abody.idle_for_a_moment()
+			#call_deferred("guard_kill")
+			#remove_and_skip()
+#			abody._hit(damage, 0, void_area.global_transform.origin)
+	#death_timer.start()
+	#remove_and_skip()
+#	can_attack_timer = 0.0
+#	attack_timer = 0.0
 	PlayerData.points_add(30)
 	PlayerData.xp_add(150)
-	queue_free()
+	zombie_dying = true
+	set_physics_process(true)
+#	call_deferred("zombie_death")
+#	queue_free()
+
+#func guard_kill():
+#	remove_and_skip()
+#
+#func zombie_death():
+#	queue_free()
+
+#func _on_DeathTimer_timeout():
+#	PlayerData.points_add(30)
+#	PlayerData.xp_add(150)
+#	queue_free()
 
 func _on_DecisionTimer_timeout():
 	if is_active == true:
@@ -437,3 +487,5 @@ func _on_Map_Area_body_exited(body):
 		dtimer.stop()
 	else:
 		pass
+
+

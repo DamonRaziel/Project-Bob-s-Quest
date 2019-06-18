@@ -4117,18 +4117,12 @@ anims/QCreatureWalk = SubResource( 14 )
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "COneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZMoveTimeScale", "COneShot", 0, "CAttackBlend", "COneShot", 1, "Attack1", "CAttackBlend", 0, "Attack2", "CAttackBlend", 1, "Attack3", "CAttackBlend", 2 ],
+"connections": [ "COneShot", "out", 0, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZMoveTimeScale", "COneShot", 0, "CAttackBlend", "COneShot", 1, "Attack1", "CAttackBlend", 0, "Attack2", "CAttackBlend", 1, "Attack3", "CAttackBlend", 2 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
 "position": Vector2( 745, 104 ),
 "type": "output"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "ZIdleOrMove",
-"position": Vector2( 222, 71 ),
-"type": "blend2"
 }, {
 "filter": [  ],
 "from": "CreatureWalk.Loop",
@@ -4147,17 +4141,11 @@ data = {
 "scale": 1.0,
 "type": "timescale"
 }, {
+"blend": 0.0,
 "filter": [  ],
-"from": "CreatureAttack01",
-"id": "Attack1",
-"position": Vector2( 236, 219 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "CreatureAttack02",
-"id": "Attack2",
-"position": Vector2( 234, 339 ),
-"type": "animation"
+"id": "ZIdleOrMove",
+"position": Vector2( 222, 71 ),
+"type": "blend2"
 }, {
 "filter": [  ],
 "from": "CreatureAttack03",
@@ -4180,6 +4168,18 @@ data = {
 "id": "CAttackBlend",
 "position": Vector2( 409, 243 ),
 "type": "blend3"
+}, {
+"filter": [  ],
+"from": "CreatureAttack02",
+"id": "Attack2",
+"position": Vector2( 234, 339 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "CreatureAttack01",
+"id": "Attack1",
+"position": Vector2( 236, 219 ),
+"type": "animation"
 } ]
 }
 

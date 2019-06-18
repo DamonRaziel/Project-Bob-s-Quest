@@ -23468,7 +23468,7 @@ anims/ZombieWalk.Loop = SubResource( 56 )
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "DJOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "Attack1", "DJAttackBlend", 0, "Attack2", "DJAttackBlend", 1, "Attack3", "DJAttackBlend", 2, "ZMoveTimeScale", "DJOneShot", 0, "DJAttackBlend", "DJOneShot", 1 ],
+"connections": [ "DJOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZMoveTimeScale", "DJOneShot", 0, "DJAttackBlend", "DJOneShot", 1, "Attack1", "DJAttackBlend", 0, "Attack2", "DJAttackBlend", 1, "Attack3", "DJAttackBlend", 2 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
@@ -23498,15 +23498,22 @@ data = {
 "scale": 1.0,
 "type": "timescale"
 }, {
-"blend": 0.0,
-"id": "DJAttackBlend",
-"position": Vector2( 422, 244 ),
-"type": "blend3"
-}, {
 "filter": [  ],
 "from": "ZombieAttack01",
 "id": "Attack1",
 "position": Vector2( 236, 219 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "UnarmedAttack01",
+"id": "Attack2",
+"position": Vector2( 235, 340 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "UnarmedAttack02",
+"id": "Attack3",
+"position": Vector2( 234, 454 ),
 "type": "animation"
 }, {
 "autorestart": false,
@@ -23520,17 +23527,10 @@ data = {
 "position": Vector2( 594, 102 ),
 "type": "oneshot"
 }, {
-"filter": [  ],
-"from": "UnarmedAttack01",
-"id": "Attack2",
-"position": Vector2( 235, 340 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "UnarmedAttack02",
-"id": "Attack3",
-"position": Vector2( 234, 454 ),
-"type": "animation"
+"blend": 0.0,
+"id": "DJAttackBlend",
+"position": Vector2( 422, 244 ),
+"type": "blend3"
 } ]
 }
 
@@ -23546,14 +23546,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.285048, -0.608216 )
 shape = SubResource( 58 )
 
 [node name="Detect_Area" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981679, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Detect_Area"]
 shape = SubResource( 59 )
 
 [node name="Attack_Area" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981679, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Attack_Area"]

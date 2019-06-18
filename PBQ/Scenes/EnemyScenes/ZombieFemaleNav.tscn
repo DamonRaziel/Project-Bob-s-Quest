@@ -23397,23 +23397,12 @@ anims/ZombieWalk.Loop = SubResource( 56 )
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "ZOneShot", "out", 0, "ZMoveTimeScale", "ZOneShot", 0, "ZAttack", "ZOneShot", 1, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0 ],
+"connections": [ "ZOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZMoveTimeScale", "ZOneShot", 0, "ZAttack", "ZOneShot", 1 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
 "position": Vector2( 745, 104 ),
 "type": "output"
-}, {
-"autorestart": false,
-"autorestart_delay": 1.0,
-"autorestart_random_delay": 0.809804,
-"fade_in": 0.1,
-"fade_out": 0.1,
-"filter": [  ],
-"id": "ZOneShot",
-"mix": false,
-"position": Vector2( 594, 102 ),
-"type": "oneshot"
 }, {
 "blend": 0.0,
 "filter": [  ],
@@ -23433,16 +23422,27 @@ data = {
 "position": Vector2( 43, 49 ),
 "type": "animation"
 }, {
+"id": "ZMoveTimeScale",
+"position": Vector2( 394, 81 ),
+"scale": 1.0,
+"type": "timescale"
+}, {
 "filter": [  ],
 "from": "ZombieAttack01",
 "id": "ZAttack",
 "position": Vector2( 236, 219 ),
 "type": "animation"
 }, {
-"id": "ZMoveTimeScale",
-"position": Vector2( 394, 81 ),
-"scale": 1.0,
-"type": "timescale"
+"autorestart": false,
+"autorestart_delay": 1.0,
+"autorestart_random_delay": 0.809804,
+"fade_in": 0.1,
+"fade_out": 0.1,
+"filter": [  ],
+"id": "ZOneShot",
+"mix": false,
+"position": Vector2( 594, 102 ),
+"type": "oneshot"
 } ]
 }
 
@@ -23496,6 +23496,10 @@ one_shot = true
 [node name="BeginNode" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
 
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]
 [connection signal="body_exited" from="Detect_Area" to="." method="_on_Detect_Area_body_exited"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
@@ -23505,3 +23509,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
 [connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

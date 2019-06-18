@@ -1,10 +1,11 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scripts/NPCScripts/Town02Guard.gd" type="Script" id=1]
 [ext_resource path="res://ModelsNew/ModelsCharacters/GuardMat.material" type="Material" id=2]
 [ext_resource path="res://ModelsNew/ModelsCharacters/HairDarkMat.material" type="Material" id=3]
+[ext_resource path="res://Scenes/NPCScenes/GuardWeaponArmingSword.tscn" type="PackedScene" id=4]
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=63]
 resource_name = "Cube.069"
 surfaces/0 = {
 "aabb": AABB( -0.567068, -0.99498, -0.141719, 1.13414, 1.98459, 0.340719 ),
@@ -20,7 +21,7 @@ surfaces/0 = {
 "vertex_count": 5480
 }
 
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=64]
 resource_name = "Cube.070"
 surfaces/0 = {
 "aabb": AABB( -0.128682, 0.672861, -0.150721, 0.257364, 0.325584, 0.293847 ),
@@ -36,7 +37,7 @@ surfaces/0 = {
 "vertex_count": 1600
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=65]
 resource_name = "Attack1Handed01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -459,8 +460,116 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, -1.49012e-008, -1.49012e-008, 1.86265e-009, -3.72529e-009, 6.40284e-009, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, -1.49012e-008, -2.98023e-008, 1.30385e-008, -3.72529e-009, 6.40284e-009, 7.45058e-009, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ), Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ), Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=66]
 resource_name = "Attack1Handed02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -883,8 +992,116 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, -1.49012e-008, -2.98023e-008, 1.30385e-008, -3.72529e-009, 6.40284e-009, 7.45058e-009, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, -2.98023e-008, -2.04891e-008, -1.11759e-008, -2.28174e-008, 1.11759e-008, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ), Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ), Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=67]
 resource_name = "Attack1Handed03"
 length = 0.833333
 tracks/0/type = "transform"
@@ -1307,8 +1524,116 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 4.47035e-008, 1.49012e-008, -2.79397e-008, -1.30385e-008, -3.05008e-008, 1.86265e-008, 1, 1, 1, 1, 0.833333, 1, 0, 1.49012e-008, -1.86265e-009, -7.45058e-009, -8.14907e-009, 9.31323e-009, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ), Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ), Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0, 0.822038 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=68]
 resource_name = "Attack2Handed01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -1732,7 +2057,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 4.47035e-008, -2.98023e-008, -3.53903e-008, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=69]
 resource_name = "Attack2Handed02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -2156,7 +2481,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1, 0.833333, 1, 4.47035e-008, -4.47035e-008, -1.67638e-008, 0, -1.04774e-009, 1.30385e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=70]
 resource_name = "Attack2Handed03"
 length = 0.833333
 tracks/0/type = "transform"
@@ -2580,7 +2905,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, 0, -7.45058e-009, 0, -1.04774e-009, 1.30385e-008, 1, 1, 1, 1, 0.833333, 1, 0, -1.49012e-008, -1.67638e-008, -5.58794e-009, -1.58325e-008, 5.58794e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=71]
 resource_name = "BowDraw"
 length = 0.833333
 tracks/0/type = "transform"
@@ -3004,7 +3329,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=72]
 resource_name = "BowFull"
 length = 1.25
 tracks/0/type = "transform"
@@ -3428,7 +3753,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=73]
 resource_name = "BowRelease"
 length = 0.833333
 tracks/0/type = "transform"
@@ -3852,7 +4177,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=74]
 resource_name = "Defend01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -4276,7 +4601,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -5.58794e-009, -1.11759e-008, -8.14907e-009, 5.58794e-009, 1, 1, 1, 1, 0.833333, 1, 0, -1.49012e-008, -5.58794e-009, -1.11759e-008, -8.14907e-009, 5.58794e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=75]
 resource_name = "Hit"
 length = 0.833333
 tracks/0/type = "transform"
@@ -4700,7 +5025,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -7.45058e-009, 6.98492e-009, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -7.45058e-009, 6.98492e-009, 9.31323e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=76]
 resource_name = "IdlePose.Loop"
 length = 1.25
 loop = true
@@ -5124,8 +5449,116 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ), Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ), Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=77]
 resource_name = "IdlePose.Loop.007"
 length = 1.25
 tracks/0/type = "transform"
@@ -5549,7 +5982,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=78]
 resource_name = "IdlePose.Loop.008"
 length = 1.25
 tracks/0/type = "transform"
@@ -5973,7 +6406,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=79]
 resource_name = "IdlePose.Loop.009"
 length = 1.25
 tracks/0/type = "transform"
@@ -6397,7 +6830,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=80]
 resource_name = "IdlePose.Loop.011"
 length = 1.25
 tracks/0/type = "transform"
@@ -6821,7 +7254,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=81]
 resource_name = "IdlePose.Loop.012"
 length = 1.25
 tracks/0/type = "transform"
@@ -7245,7 +7678,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=82]
 resource_name = "IdlePose.Loop.013"
 length = 1.25
 tracks/0/type = "transform"
@@ -7669,7 +8102,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=83]
 resource_name = "IdlePose.Loop.014"
 length = 1.25
 tracks/0/type = "transform"
@@ -8093,7 +8526,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=84]
 resource_name = "IdlePose.Loop.015"
 length = 1.25
 tracks/0/type = "transform"
@@ -8517,7 +8950,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=85]
 resource_name = "IdlePose.Loop.016"
 length = 1.25
 tracks/0/type = "transform"
@@ -8941,7 +9374,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=86]
 resource_name = "IdlePose.Loop.017"
 length = 1.25
 tracks/0/type = "transform"
@@ -9365,7 +9798,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=87]
 resource_name = "IdlePose.Loop.018"
 length = 1.25
 tracks/0/type = "transform"
@@ -9789,7 +10222,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=88]
 resource_name = "IdlePose.Loop.019"
 length = 1.25
 tracks/0/type = "transform"
@@ -10213,7 +10646,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=89]
 resource_name = "IdlePose.Loop.020"
 length = 1.25
 tracks/0/type = "transform"
@@ -10637,7 +11070,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=90]
 resource_name = "IdlePose.Loop.021"
 length = 1.25
 tracks/0/type = "transform"
@@ -11061,7 +11494,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=91]
 resource_name = "IdlePose.Loop.022"
 length = 1.25
 tracks/0/type = "transform"
@@ -11485,7 +11918,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=92]
 resource_name = "IdlePose.Loop.024"
 length = 1.25
 tracks/0/type = "transform"
@@ -11909,7 +12342,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=93]
 resource_name = "IdlePose.Loop.026"
 length = 1.25
 tracks/0/type = "transform"
@@ -12333,7 +12766,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=94]
 resource_name = "IdlePose.Loop.029"
 length = 1.25
 tracks/0/type = "transform"
@@ -12757,7 +13190,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=95]
 resource_name = "IdlePose.Loop.031"
 length = 1.25
 tracks/0/type = "transform"
@@ -13181,7 +13614,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=96]
 resource_name = "IdlePose.Loop.033"
 length = 1.25
 tracks/0/type = "transform"
@@ -13605,7 +14038,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=97]
 resource_name = "IdlePose.Loop.035"
 length = 1.25
 tracks/0/type = "transform"
@@ -14029,7 +14462,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=98]
 resource_name = "IdlePose.Loop.037"
 length = 1.25
 tracks/0/type = "transform"
@@ -14453,7 +14886,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=99]
 resource_name = "IdlePose.Loop.039"
 length = 1.25
 tracks/0/type = "transform"
@@ -14877,7 +15310,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=100]
 resource_name = "IdlePose.Loop.041"
 length = 1.25
 tracks/0/type = "transform"
@@ -15301,7 +15734,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=101]
 resource_name = "IdlePose.Loop.043"
 length = 1.25
 tracks/0/type = "transform"
@@ -15725,7 +16158,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=102]
 resource_name = "Jump.Loop"
 length = 0.416667
 tracks/0/type = "transform"
@@ -16149,7 +16582,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 0.416667, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=103]
 resource_name = "Jump1HandedAttack"
 length = 0.833333
 tracks/0/type = "transform"
@@ -16573,7 +17006,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -5.58794e-009, -7.45058e-009, -9.31323e-010, 5.58794e-009, 1, 1, 1, 1, 0.833333, 1, 0, -1.49012e-008, -9.31323e-009, -1.86265e-009, 6.40284e-009, 5.58794e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=104]
 resource_name = "Jump2HandedAttack"
 length = 0.833333
 tracks/0/type = "transform"
@@ -16997,7 +17430,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=105]
 resource_name = "Jump2HandedAttack.001"
 length = 0.833333
 tracks/0/type = "transform"
@@ -17421,7 +17854,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=44]
+[sub_resource type="Animation" id=106]
 resource_name = "Jump2HandedAttack.002"
 length = 0.833333
 tracks/0/type = "transform"
@@ -17845,7 +18278,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=45]
+[sub_resource type="Animation" id=107]
 resource_name = "JumpUnarmedAttack"
 length = 0.833333
 tracks/0/type = "transform"
@@ -18269,7 +18702,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, 1.49012e-008, -9.31323e-009, -1.11759e-008, -4.65661e-010, 3.72529e-009, 1, 1, 1, 1, 0.833333, 1, 0, 1.49012e-008, -9.31323e-009, -1.11759e-008, -4.65661e-010, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=108]
 resource_name = "JumpUnarmedAttack02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -18693,7 +19126,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=109]
 resource_name = "RunCycle.Loop"
 length = 0.5
 tracks/0/type = "transform"
@@ -19117,7 +19550,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 1.49012e-008, 2.98023e-008, -9.31323e-009, 0, -1.97906e-009, -1.11759e-008, 1, 1, 1, 1, 0.5, 1, 1.49012e-008, 2.98023e-008, -9.31323e-009, 0, -1.97906e-009, -1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=110]
 resource_name = "UnarmedAttack01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -19541,7 +19974,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, 1.86265e-009, -7.45058e-009, -1.16415e-010, 1.30385e-008, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, -2.98023e-008, -1.30385e-008, -1.11759e-008, -7.567e-009, 1.49012e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=111]
 resource_name = "UnarmedAttack02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -19964,8 +20397,116 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -4.47035e-008, -3.72529e-009, -1.11759e-008, -7.567e-009, 1.49012e-008, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, -5.96046e-008, -2.98023e-008, -3.72529e-009, -1.04774e-009, 5.58794e-009, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=112]
 resource_name = "UnarmedAttack03"
 length = 0.833333
 tracks/0/type = "transform"
@@ -20388,9 +20929,118 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 2.98023e-008, -1.49012e-008, 2.04891e-008, -3.72529e-009, -1.04774e-009, 5.58794e-009, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, -2.98023e-008, -2.79397e-008, -5.58794e-009, -1.53668e-008, 5.58794e-009, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=113]
 resource_name = "WalkCycle.Loop"
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("GuardArmatureFemale")
 tracks/0/interp = 1
@@ -20811,8 +21461,116 @@ tracks/59/loop_wrap = true
 tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 1.49012e-008, -1.49012e-008, 1.86265e-009, -3.72529e-009, -3.49246e-010, 1.30385e-008, 1, 1, 1, 1, 1, 1, 0, -1.49012e-008, -5.58794e-009, -3.72529e-009, -3.49246e-010, 1.30385e-008, 1, 1, 1, 1 )
+tracks/60/type = "value"
+tracks/60/path = NodePath("GuardArmatureFemale:translation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("GuardArmatureFemale:rotation_degrees")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("CollisionShape:translation")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.982, 0 ), Vector3( 0, 0.982, 0 ) ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("CollisionShape:rotation_degrees")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("InteractionArea/CollisionShape:translation")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, -0.509 ), Vector3( 0, 0.99, -0.509 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Map_Area/CollisionShape:translation")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("DetectArea/CollisionShape:translation")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("AttackArea/CollisionShape:translation")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.99, 0 ), Vector3( 0, 0.99, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Area/CollisionShape:translation")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
+}
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=114]
 resource_name = "ZombieAttack01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -21236,7 +21994,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=115]
 resource_name = "ZombieIdle.Loop"
 length = 1.25
 tracks/0/type = "transform"
@@ -21660,7 +22418,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=116]
 resource_name = "ZombieIdle.Loop.001"
 length = 1.25
 tracks/0/type = "transform"
@@ -22084,7 +22842,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=117]
 resource_name = "ZombieIdle.Loop.002"
 length = 1.25
 tracks/0/type = "transform"
@@ -22508,7 +23266,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=118]
 resource_name = "ZombieWalk.Loop"
 tracks/0/type = "transform"
 tracks/0/path = NodePath("GuardArmatureFemale")
@@ -22931,20 +23689,32 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 1.49012e-008, -1.49012e-008, 1.86265e-009, -3.72529e-009, -3.49246e-010, 1.30385e-008, 1, 1, 1, 1, 1, 1, 0, -1.49012e-008, -5.58794e-009, -3.72529e-009, -3.49246e-010, 1.30385e-008, 1, 1, 1, 1 )
 
-[sub_resource type="BoxShape" id=57]
-extents = Vector3( 0.47009, 0.947696, 0.225951 )
+[sub_resource type="CapsuleShape" id=57]
+radius = 0.25
+height = 1.48
 
-[sub_resource type="BoxShape" id=58]
-extents = Vector3( 0.637455, 0.913365, 0.707611 )
+[sub_resource type="CylinderShape" id=58]
+radius = 1.50627
+height = 1.86727
 
 [sub_resource type="SphereShape" id=59]
 radius = 35.0226
+
+[sub_resource type="SphereShape" id=60]
+radius = 9.0
+
+[sub_resource type="SphereShape" id=61]
+radius = 0.79
+
+[sub_resource type="BoxShape" id=62]
+extents = Vector3( 0.467066, 0.613184, 0.4844 )
 
 [node name="Town02Guard" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="GuardArmatureFemale" type="Spatial" parent="."]
 editor/display_folded = true
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0.99, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="GuardArmatureFemale"]
 bones/0/name = "FootControl.L"
@@ -23245,84 +24015,182 @@ bones/58/bound_children = [  ]
 
 [node name="GuardBaseFemale" type="MeshInstance" parent="GuardArmatureFemale/Skeleton"]
 use_in_baked_light = true
-mesh = SubResource( 1 )
+mesh = SubResource( 63 )
 material/0 = null
 
 [node name="GuardHairFemale" type="MeshInstance" parent="GuardArmatureFemale/Skeleton"]
 use_in_baked_light = true
-mesh = SubResource( 2 )
+mesh = SubResource( 64 )
 material/0 = null
+
+[node name="WeaponAttachment" type="BoneAttachment" parent="GuardArmatureFemale/Skeleton"]
+transform = Transform( 0.503877, 0.849946, -0.153951, -0.09771, 0.233171, 0.967515, 0.858232, -0.472466, 0.200537, 0.3842, -0.226367, 0.00772856 )
+bone_name = "ItemBone.L"
+
+[node name="Sword" type="Spatial" parent="GuardArmatureFemale/Skeleton/WeaponAttachment" instance=ExtResource( 4 )]
+transform = Transform( -0.0794519, -0.104703, 0.991324, -0.0100134, 0.994502, 0.104236, -0.996788, -0.00164483, -0.0800634, -0.110446, -0.0120168, -0.0018452 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "IdlePose.Loop"
-anims/Attack1Handed01 = SubResource( 3 )
-anims/Attack1Handed02 = SubResource( 4 )
-anims/Attack1Handed03 = SubResource( 5 )
-anims/Attack2Handed01 = SubResource( 6 )
-anims/Attack2Handed02 = SubResource( 7 )
-anims/Attack2Handed03 = SubResource( 8 )
-anims/BowDraw = SubResource( 9 )
-anims/BowFull = SubResource( 10 )
-anims/BowRelease = SubResource( 11 )
-anims/Defend01 = SubResource( 12 )
-anims/Hit = SubResource( 13 )
-anims/IdlePose.Loop = SubResource( 14 )
-anims/IdlePose.Loop.007 = SubResource( 15 )
-anims/IdlePose.Loop.008 = SubResource( 16 )
-anims/IdlePose.Loop.009 = SubResource( 17 )
-anims/IdlePose.Loop.011 = SubResource( 18 )
-anims/IdlePose.Loop.012 = SubResource( 19 )
-anims/IdlePose.Loop.013 = SubResource( 20 )
-anims/IdlePose.Loop.014 = SubResource( 21 )
-anims/IdlePose.Loop.015 = SubResource( 22 )
-anims/IdlePose.Loop.016 = SubResource( 23 )
-anims/IdlePose.Loop.017 = SubResource( 24 )
-anims/IdlePose.Loop.018 = SubResource( 25 )
-anims/IdlePose.Loop.019 = SubResource( 26 )
-anims/IdlePose.Loop.020 = SubResource( 27 )
-anims/IdlePose.Loop.021 = SubResource( 28 )
-anims/IdlePose.Loop.022 = SubResource( 29 )
-anims/IdlePose.Loop.024 = SubResource( 30 )
-anims/IdlePose.Loop.026 = SubResource( 31 )
-anims/IdlePose.Loop.029 = SubResource( 32 )
-anims/IdlePose.Loop.031 = SubResource( 33 )
-anims/IdlePose.Loop.033 = SubResource( 34 )
-anims/IdlePose.Loop.035 = SubResource( 35 )
-anims/IdlePose.Loop.037 = SubResource( 36 )
-anims/IdlePose.Loop.039 = SubResource( 37 )
-anims/IdlePose.Loop.041 = SubResource( 38 )
-anims/IdlePose.Loop.043 = SubResource( 39 )
-anims/Jump.Loop = SubResource( 40 )
-anims/Jump1HandedAttack = SubResource( 41 )
-anims/Jump2HandedAttack = SubResource( 42 )
-anims/Jump2HandedAttack.001 = SubResource( 43 )
-anims/Jump2HandedAttack.002 = SubResource( 44 )
-anims/JumpUnarmedAttack = SubResource( 45 )
-anims/JumpUnarmedAttack02 = SubResource( 46 )
-anims/RunCycle.Loop = SubResource( 47 )
-anims/UnarmedAttack01 = SubResource( 48 )
-anims/UnarmedAttack02 = SubResource( 49 )
-anims/UnarmedAttack03 = SubResource( 50 )
-anims/WalkCycle.Loop = SubResource( 51 )
-anims/ZombieAttack01 = SubResource( 52 )
-anims/ZombieIdle.Loop = SubResource( 53 )
-anims/ZombieIdle.Loop.001 = SubResource( 54 )
-anims/ZombieIdle.Loop.002 = SubResource( 55 )
-anims/ZombieWalk.Loop = SubResource( 56 )
+anims/Attack1Handed01 = SubResource( 65 )
+anims/Attack1Handed02 = SubResource( 66 )
+anims/Attack1Handed03 = SubResource( 67 )
+anims/Attack2Handed01 = SubResource( 68 )
+anims/Attack2Handed02 = SubResource( 69 )
+anims/Attack2Handed03 = SubResource( 70 )
+anims/BowDraw = SubResource( 71 )
+anims/BowFull = SubResource( 72 )
+anims/BowRelease = SubResource( 73 )
+anims/Defend01 = SubResource( 74 )
+anims/Hit = SubResource( 75 )
+anims/IdlePose.Loop = SubResource( 76 )
+anims/IdlePose.Loop.007 = SubResource( 77 )
+anims/IdlePose.Loop.008 = SubResource( 78 )
+anims/IdlePose.Loop.009 = SubResource( 79 )
+anims/IdlePose.Loop.011 = SubResource( 80 )
+anims/IdlePose.Loop.012 = SubResource( 81 )
+anims/IdlePose.Loop.013 = SubResource( 82 )
+anims/IdlePose.Loop.014 = SubResource( 83 )
+anims/IdlePose.Loop.015 = SubResource( 84 )
+anims/IdlePose.Loop.016 = SubResource( 85 )
+anims/IdlePose.Loop.017 = SubResource( 86 )
+anims/IdlePose.Loop.018 = SubResource( 87 )
+anims/IdlePose.Loop.019 = SubResource( 88 )
+anims/IdlePose.Loop.020 = SubResource( 89 )
+anims/IdlePose.Loop.021 = SubResource( 90 )
+anims/IdlePose.Loop.022 = SubResource( 91 )
+anims/IdlePose.Loop.024 = SubResource( 92 )
+anims/IdlePose.Loop.026 = SubResource( 93 )
+anims/IdlePose.Loop.029 = SubResource( 94 )
+anims/IdlePose.Loop.031 = SubResource( 95 )
+anims/IdlePose.Loop.033 = SubResource( 96 )
+anims/IdlePose.Loop.035 = SubResource( 97 )
+anims/IdlePose.Loop.037 = SubResource( 98 )
+anims/IdlePose.Loop.039 = SubResource( 99 )
+anims/IdlePose.Loop.041 = SubResource( 100 )
+anims/IdlePose.Loop.043 = SubResource( 101 )
+anims/Jump.Loop = SubResource( 102 )
+anims/Jump1HandedAttack = SubResource( 103 )
+anims/Jump2HandedAttack = SubResource( 104 )
+anims/Jump2HandedAttack.001 = SubResource( 105 )
+anims/Jump2HandedAttack.002 = SubResource( 106 )
+anims/JumpUnarmedAttack = SubResource( 107 )
+anims/JumpUnarmedAttack02 = SubResource( 108 )
+anims/RunCycle.Loop = SubResource( 109 )
+anims/UnarmedAttack01 = SubResource( 110 )
+anims/UnarmedAttack02 = SubResource( 111 )
+anims/UnarmedAttack03 = SubResource( 112 )
+anims/WalkCycle.Loop = SubResource( 113 )
+anims/ZombieAttack01 = SubResource( 114 )
+anims/ZombieIdle.Loop = SubResource( 115 )
+anims/ZombieIdle.Loop.001 = SubResource( 116 )
+anims/ZombieIdle.Loop.002 = SubResource( 117 )
+anims/ZombieWalk.Loop = SubResource( 118 )
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="."]
+master_player = NodePath("../AnimationPlayer")
+data = {
+"active": false,
+"connections": [ "AttOneShot", "out", 0, "AttAnim1", "AttTransition", 0, "AttAnim2", "AttTransition", 1, "AttAnim3", "AttTransition", 2, "AttAnim4", "AttTransition", 3, "AttAnim5", "AttTransition", 4, "IdleAnim", "IdleOrMove", 0, "WalkAnim", "IdleOrMove", 1, "IdleOrMove", "AttOneShot", 0, "AttTransition", "AttOneShot", 1 ],
+"master": NodePath("../AnimationPlayer"),
+"nodes": [ {
+"id": "out",
+"position": Vector2( 965, 71 ),
+"type": "output"
+}, {
+"filter": [  ],
+"from": "UnarmedAttack03",
+"id": "AttAnim5",
+"position": Vector2( 381, 656 ),
+"type": "animation"
+}, {
+"id": "AttTransition",
+"position": Vector2( 587, 235 ),
+"transitions": [ {
+"auto_advance": false
+}, {
+"auto_advance": false
+}, {
+"auto_advance": false
+}, {
+"auto_advance": false
+}, {
+"auto_advance": false
+} ],
+"type": "transition",
+"xfade": 0.0
+}, {
+"filter": [  ],
+"from": "Attack1Handed01",
+"id": "AttAnim1",
+"position": Vector2( 375, 197 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "Attack1Handed02",
+"id": "AttAnim2",
+"position": Vector2( 377, 310 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "IdleOrMove",
+"position": Vector2( 284, 53 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "UnarmedAttack02",
+"id": "AttAnim4",
+"position": Vector2( 380, 544 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "IdlePose.Loop",
+"id": "IdleAnim",
+"position": Vector2( 69, 53 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "Attack1Handed03",
+"id": "AttAnim3",
+"position": Vector2( 379, 429 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "WalkCycle.Loop",
+"id": "WalkAnim",
+"position": Vector2( 70, 185 ),
+"type": "animation"
+}, {
+"autorestart": false,
+"autorestart_delay": 1.0,
+"autorestart_random_delay": 3.60134e-043,
+"fade_in": 0.0,
+"fade_out": 0.0,
+"filter": [  ],
+"id": "AttOneShot",
+"mix": false,
+"position": Vector2( 765, 71 ),
+"type": "oneshot"
+} ]
+}
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0422015, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.982, 0 )
 shape = SubResource( 57 )
 
 [node name="InteractionArea" type="Area" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape" type="CollisionShape" parent="InteractionArea"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0410198, 0.508646 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, -0.509 )
 shape = SubResource( 58 )
 
 [node name="Map_Area" type="Area" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Map_Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 0 )
 shape = SubResource( 59 )
 
 [node name="AllyTrackerTimer" type="Timer" parent="."]
@@ -23330,6 +24198,42 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
+[node name="DetectArea" type="Area" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="DetectArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 0 )
+shape = SubResource( 60 )
+
+[node name="AttackArea" type="Area" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="AttackArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 0 )
+shape = SubResource( 61 )
+
+[node name="Area" type="Area" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23976, -0.697451 )
+shape = SubResource( 62 )
+
+[node name="DecisionTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RestoreAreasTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_InteractionArea_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_InteractionArea_body_exited"]
+[connection signal="body_entered" from="Map_Area" to="." method="_on_Map_Area_body_entered"]
+[connection signal="body_exited" from="Map_Area" to="." method="_on_Map_Area_body_exited"]
 [connection signal="timeout" from="AllyTrackerTimer" to="." method="_on_AllyTrackerTimer_timeout"]
+[connection signal="body_entered" from="DetectArea" to="." method="_on_DetectArea_body_entered"]
+[connection signal="body_exited" from="DetectArea" to="." method="_on_DetectArea_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]
+[connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
+[connection signal="timeout" from="RestoreAreasTimer" to="." method="_on_RestoreAreasTimer_timeout"]

@@ -231,7 +231,7 @@ func _physics_process(delta):
 	#----End of Movement Section----#
 	
 	#----Attack Section----#
-	elif enemy_state == 3:
+	if enemy_state == 3:
 		if can_attack_timer >=can_attack_time:
 			if attack_timer>=attack_time:
 				randomize()

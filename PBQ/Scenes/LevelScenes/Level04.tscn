@@ -6,12 +6,12 @@
 [ext_resource path="res://Scenes/LevelScenes/BaseScenes/CitadelTownPart01.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/LevelScripts/Level04Complete.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/LevelScenes/LevelExtras/LevelEndParticles.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/NPCScenes/Town02Guard.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/LevelScenes/NavMeshScenes/NavMeshTown02Part01.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/EnemyScenes/ZombieMaleNavTest.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/EnemyScenes/ZombieFemaleNav.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/EnemyScenes/CreatureNav.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/LevelScenes/NavMeshScenes/NavMeshTown02Part01.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/EnemyScripts/WaypointsHolder.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieMaleNavTest.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyScenes/ZombieFemaleNav.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/EnemyScenes/CreatureNav.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/NPCScenes/Town02Guard.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/PickupScenes/PickupAppleGreen.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/PickupScenes/PickupPotionHealth.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/PickupScenes/PickupPotionMana.tscn" type="PackedScene" id=15]
@@ -104,6 +104,7 @@ valign = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0509033, 0, 0 )
 
 [node name="EndOfLevel" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 0.987462, 0, -0.157855, 0, 1, 0, 0.157855, 0, 0.987462, -44.7315, 0, -15.2799 )
 script = ExtResource( 5 )
 
@@ -116,25 +117,18 @@ shape = SubResource( 2 )
 [node name="LevelEndParticles" parent="EndOfLevel/Area" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.421509, -56.8543 )
 
+[node name="EndOfLevelHide" type="Spatial" parent="."]
+transform = Transform( 0.981927, 0, -0.189261, 0, 1, 0, 0.189261, 0, 0.981927, -44.699, -50, -15.28 )
+
 [node name="EndOfLevelShow" type="Spatial" parent="."]
 transform = Transform( 0.981927, 0, -0.189261, 0, 1, 0, 0.189261, 0, 0.981927, -44.6988, 0, -15.2798 )
 
-[node name="EndOfLevelHide" type="Spatial" parent="."]
-transform = Transform( 0.981927, 0, -0.189261, 0, 1, 0, 0.189261, 0, 0.981927, -44.6988, -21.7417, -15.2798 )
-
-[node name="OtherHolder" type="Spatial" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.03106, 44 )
-
-[node name="Town02Guard" parent="OtherHolder" instance=ExtResource( 7 )]
-transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -51, 0, 6 )
-
-[node name="NavMeshTown02Part01" parent="." instance=ExtResource( 8 )]
+[node name="NavMeshTown02Part01" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
 
 [node name="WaypointsHolder" type="Spatial" parent="NavMeshTown02Part01"]
 editor/display_folded = true
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="Waypoint1" type="Spatial" parent="NavMeshTown02Part01/WaypointsHolder"]
 editor/display_folded = true
@@ -259,50 +253,59 @@ material/0 = SubResource( 4 )
 [node name="EnemyHolder" type="Spatial" parent="NavMeshTown02Part01"]
 editor/display_folded = true
 
-[node name="ZombieMaleNavTest" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
+[node name="ZombieMaleNavTest" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96818, 0.0502197, 88.9812 )
 
-[node name="ZombieMaleNavTest2" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
+[node name="ZombieMaleNavTest2" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40597, 0.0502197, 113.85 )
 
-[node name="ZombieMaleNavTest3" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
+[node name="ZombieMaleNavTest3" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0255, 0.0502197, 60.914 )
 
-[node name="ZombieMaleNavTest4" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
+[node name="ZombieMaleNavTest4" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9307, 0.0502197, 3.16444 )
 
-[node name="ZombieMaleNavTest5" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
+[node name="ZombieMaleNavTest5" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14419, 0.0502197, 121.326 )
 
-[node name="ZombieFemaleNav" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
+[node name="ZombieFemaleNav" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86488, 0.0502197, 92.1166 )
 
-[node name="ZombieFemaleNav2" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
+[node name="ZombieFemaleNav2" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0781, 0.0502197, 126.772 )
 
-[node name="ZombieFemaleNav3" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
+[node name="ZombieFemaleNav3" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9554, 0.0502197, 49.9105 )
 
-[node name="ZombieFemaleNav4" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
+[node name="ZombieFemaleNav4" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9699, 0.0502197, 6.48957 )
 
-[node name="ZombieFemaleNav5" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
+[node name="ZombieFemaleNav5" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.217, 0.0502197, 116.516 )
 
-[node name="CreatureNav" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 12 )]
+[node name="CreatureNav" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9627, 0.0607472, 88.5962 )
 
-[node name="CreatureNav2" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 12 )]
+[node name="CreatureNav2" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94912, 0.0607472, 116.169 )
 
-[node name="CreatureNav3" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 12 )]
+[node name="CreatureNav3" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8014, 0.0607472, 42.1804 )
 
-[node name="CreatureNav4" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 12 )]
+[node name="CreatureNav4" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.8357, 0.0607472, 27.9841 )
 
-[node name="CreatureNav5" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 12 )]
+[node name="CreatureNav5" parent="NavMeshTown02Part01/EnemyHolder" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1083, 0.0607472, 29.9171 )
+
+[node name="EndOfLevelHide" type="Spatial" parent="NavMeshTown02Part01"]
+transform = Transform( 0.981927, 0, -0.189261, 0, 1, 0, 0.189261, 0, 0.981927, -44.6988, -21.7417, -15.2798 )
+
+[node name="OtherHolder" type="Spatial" parent="NavMeshTown02Part01"]
+editor/display_folded = true
+
+[node name="Town02Guard" parent="NavMeshTown02Part01/OtherHolder" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -81, 0.062, 50 )
 
 [node name="LevelLimits" type="StaticBody" parent="."]
 editor/display_folded = true
