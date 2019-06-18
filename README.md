@@ -38,3 +38,4 @@ PBQ (Main Folder)-
 
 
 Released under same MIT licence as Godot Game Engine.
+https://godotengine.org/license
