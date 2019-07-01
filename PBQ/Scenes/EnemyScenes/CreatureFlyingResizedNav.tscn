@@ -4439,6 +4439,7 @@ transform = Transform( 0.965926, -0.0287887, 0.257213, -0.258819, -0.107441, 0.9
 script = ExtResource( 5 )
 
 [node name="CreatureFlyingArmature" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( -0.5, 0, 4.37114e-008, 0, 0.5, 0, -4.37114e-008, 0, -0.5, 0, 3.22828, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="CreatureFlyingArmature"]
@@ -4645,6 +4646,7 @@ material/0 = null
 material/1 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 1.06581e-014, 0, -1.06581e-014, 1, 0, 3.22828, 0 )
 shape = SubResource( 2 )
 
@@ -4683,6 +4685,7 @@ anims/UnarmedAttack02 = SubResource( 16 )
 anims/WalkCycle.Loop = SubResource( 17 )
 
 [node name="Attack_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879015, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Attack_Area"]
@@ -4731,6 +4734,14 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="Scan_Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="Scan_Timer2" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="timeout" from="CollisionShape/AscendTimer" to="." method="_on_AscendTimer_timeout"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
 [connection signal="body_exited" from="Attack_Area" to="." method="_on_Attack_Area_body_exited"]
@@ -4746,3 +4757,5 @@ one_shot = true
 [connection signal="timeout" from="AttackTimer4" to="." method="_on_AttackTimer4_timeout"]
 [connection signal="timeout" from="AttackTimer5" to="." method="_on_AttackTimer5_timeout"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_Scan_Timer_timeout"]
+[connection signal="timeout" from="Scan_Timer2" to="." method="_on_Scan_Timer2_timeout"]

@@ -4662,7 +4662,7 @@ anims/QCreatureWalk = SubResource( 15 )
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "AttackOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "WingsAttackBlend", "AttackBlend", 1, "ZMoveTimeScale", "AttackOneShot", 0, "HandAttackBlend", "AttackOneShot", 1, "WingsAttack1", "WingsAttackBlend", 0, "WingsAttack2", "WingsAttackBlend", 1, "WingsAttack3", "WingsAttackBlend", 2, "Attack1", "HandAttackBlend", 0, "Attack2", "HandAttackBlend", 1, "Attack3", "HandAttackBlend", 2 ],
+"connections": [ "AttackOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZMoveTimeScale", "AttackOneShot", 0, "HandAttackBlend", "AttackOneShot", 1, "Attack1", "HandAttackBlend", 0, "Attack2", "HandAttackBlend", 1, "Attack3", "HandAttackBlend", 2, "ZIdleOrMove", "ZMoveTimeScale", 0, "WingsAttackBlend", "AttackBlend", 1, "WingsAttack1", "WingsAttackBlend", 0, "WingsAttack2", "WingsAttackBlend", 1, "WingsAttack3", "WingsAttackBlend", 2 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
@@ -4676,44 +4676,9 @@ data = {
 "type": "blend2"
 }, {
 "filter": [  ],
-"from": "CreatureBossWalk.Loop",
-"id": "ZWalk",
-"position": Vector2( 35, 319 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "CreatureBossIdleGround.Loop",
-"id": "ZIdle",
-"position": Vector2( 38, 209 ),
-"type": "animation"
-}, {
-"id": "ZMoveTimeScale",
-"position": Vector2( 543, 243 ),
-"scale": 1.0,
-"type": "timescale"
-}, {
-"filter": [  ],
-"from": "CreatureBossAttack01",
-"id": "Attack1",
-"position": Vector2( 237, 322 ),
-"type": "animation"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "AttackBlend",
-"position": Vector2( 812, 492 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "CreatureBossAttack02",
-"id": "Attack2",
-"position": Vector2( 236, 425 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "CreatureBossAttack03",
-"id": "Attack3",
-"position": Vector2( 235, 526 ),
+"from": "CreatureBossWingsGRAtt",
+"id": "WingsAttack2",
+"position": Vector2( 225, 731 ),
 "type": "animation"
 }, {
 "autorestart": false,
@@ -4728,6 +4693,52 @@ data = {
 "type": "oneshot"
 }, {
 "filter": [  ],
+"from": "CreatureBossAttack02",
+"id": "Attack2",
+"position": Vector2( 236, 425 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "CreatureBossWingsGBAtt",
+"id": "WingsAttack3",
+"position": Vector2( 224, 833 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "CreatureBossWalk.Loop",
+"id": "ZWalk",
+"position": Vector2( 35, 319 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "CreatureBossAttack03",
+"id": "Attack3",
+"position": Vector2( 235, 526 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"id": "HandAttackBlend",
+"position": Vector2( 473, 442 ),
+"type": "blend3"
+}, {
+"id": "ZMoveTimeScale",
+"position": Vector2( 543, 243 ),
+"scale": 1.0,
+"type": "timescale"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "AttackBlend",
+"position": Vector2( 812, 492 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "CreatureBossIdleGround.Loop",
+"id": "ZIdle",
+"position": Vector2( 38, 209 ),
+"type": "animation"
+}, {
+"filter": [  ],
 "from": "CreatureBossWingsGLAtt",
 "id": "WingsAttack1",
 "position": Vector2( 227, 630 ),
@@ -4738,21 +4749,10 @@ data = {
 "position": Vector2( 473, 685 ),
 "type": "blend3"
 }, {
-"blend": 0.0,
-"id": "HandAttackBlend",
-"position": Vector2( 473, 442 ),
-"type": "blend3"
-}, {
 "filter": [  ],
-"from": "CreatureBossWingsGRAtt",
-"id": "WingsAttack2",
-"position": Vector2( 225, 731 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "CreatureBossWingsGBAtt",
-"id": "WingsAttack3",
-"position": Vector2( 224, 833 ),
+"from": "CreatureBossAttack01",
+"id": "Attack1",
+"position": Vector2( 237, 322 ),
 "type": "animation"
 } ]
 }
@@ -4762,6 +4762,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.
 shape = SubResource( 16 )
 
 [node name="Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 1.24575, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
@@ -4787,6 +4788,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
 stream = ExtResource( 11 )
 
 [node name="Map_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24575, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map_Area"]
@@ -4804,6 +4806,14 @@ autostart = true
 wait_time = 0.5
 one_shot = true
 
+[node name="Scan_Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="Scan_Timer2" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]
 [connection signal="body_exited" from="Detect_Area" to="." method="_on_Detect_Area_body_exited"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
@@ -4813,3 +4823,5 @@ one_shot = true
 [connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_Scan_Timer_timeout"]
+[connection signal="timeout" from="Scan_Timer2" to="." method="_on_Scan_Timer2_timeout"]

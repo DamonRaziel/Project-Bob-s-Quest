@@ -70,6 +70,9 @@ onready var track_timer = $TrackerTimer
 
 var is_active = false
 
+onready var s_timer = get_node("Scan_Timer")
+onready var s_timer2 = get_node("Scan_Timer2")
+
 func _ready():
 	enemy = get_node(".")
 	get_node("AnimationTreePlayer").set_active(true)
@@ -138,7 +141,7 @@ func _process(delta):
 			
 			if (path.size() < 2):
 				path = []
-				calculate_path()
+				start_rescan() #calculate_path()
 	
 	elif enemy_state == 4:
 		var to_walk = delta*speed
@@ -463,3 +466,29 @@ func _on_Map_Area_body_exited(body):
 		dtimer.stop()
 	else:
 		pass
+
+func start_rescan():
+	set_process(false)
+	s_timer.start()
+
+func rescan_for_target():
+	var scan_area = $Detect_Area
+	var scan_bodies = scan_area.get_overlapping_bodies()
+#	var damage
+#	damage = zombie_damage
+	for scan_body in scan_bodies:
+		if scan_body == self:
+			continue
+		if scan_body.has_method("process_UI"): #_hit"):
+#			print ("viable body")
+			calculate_path()
+#			scan_body._hit(damage, 0, scan_area.global_transform.origin)
+#	can_attack_timer = 0.0
+#	attack_timer = 0.0
+
+func _on_Scan_Timer_timeout():
+	rescan_for_target()
+
+func _on_Scan_Timer2_timeout():
+	rescan_for_target()
+	s_timer2.start()

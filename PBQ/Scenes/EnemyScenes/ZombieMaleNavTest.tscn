@@ -23405,21 +23405,15 @@ data = {
 "position": Vector2( 42, 152 ),
 "type": "animation"
 }, {
-"filter": [  ],
-"from": "ZombieIdle.Loop",
-"id": "ZIdle",
-"position": Vector2( 43, 49 ),
-"type": "animation"
-}, {
 "id": "ZMoveTimeScale",
 "position": Vector2( 394, 81 ),
 "scale": 1.0,
 "type": "timescale"
 }, {
 "filter": [  ],
-"from": "ZombieAttack01",
-"id": "ZAttack",
-"position": Vector2( 236, 219 ),
+"from": "ZombieIdle.Loop",
+"id": "ZIdle",
+"position": Vector2( 43, 49 ),
 "type": "animation"
 }, {
 "autorestart": false,
@@ -23432,6 +23426,12 @@ data = {
 "mix": false,
 "position": Vector2( 594, 102 ),
 "type": "oneshot"
+}, {
+"filter": [  ],
+"from": "ZombieAttack01",
+"id": "ZAttack",
+"position": Vector2( 236, 219 ),
+"type": "animation"
 } ]
 }
 
@@ -23491,6 +23491,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
 wait_time = 0.1
 one_shot = true
 
+[node name="Scan_Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="Scan_Timer2" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]
 [connection signal="body_exited" from="Detect_Area" to="." method="_on_Detect_Area_body_exited"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
@@ -23501,3 +23509,5 @@ one_shot = true
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_Scan_Timer_timeout"]
+[connection signal="timeout" from="Scan_Timer2" to="." method="_on_Scan_Timer2_timeout"]

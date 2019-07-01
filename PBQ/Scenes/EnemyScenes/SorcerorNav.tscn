@@ -23492,7 +23492,7 @@ anims/ZombieWalk.Loop = SubResource( 56 )
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "SOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZMoveTimeScale", "SOneShot", 0, "AttackBlend", "SOneShot", 1, "Attack1", "AttackBlend", 0, "Attack2", "AttackBlend", 1, "Attack3", "AttackBlend", 2 ],
+"connections": [ "SOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "Attack1", "AttackBlend", 0, "Attack2", "AttackBlend", 1, "Attack3", "AttackBlend", 2, "ZMoveTimeScale", "SOneShot", 0, "AttackBlend", "SOneShot", 1 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
@@ -23506,15 +23506,21 @@ data = {
 "type": "blend2"
 }, {
 "filter": [  ],
+"from": "UnarmedAttack02",
+"id": "Attack2",
+"position": Vector2( 235, 328 ),
+"type": "animation"
+}, {
+"filter": [  ],
 "from": "WalkCycle.Loop",
 "id": "ZWalk",
 "position": Vector2( 42, 152 ),
 "type": "animation"
 }, {
 "filter": [  ],
-"from": "IdlePose.Loop",
-"id": "ZIdle",
-"position": Vector2( 43, 49 ),
+"from": "UnarmedAttack03",
+"id": "Attack3",
+"position": Vector2( 234, 439 ),
 "type": "animation"
 }, {
 "id": "ZMoveTimeScale",
@@ -23522,22 +23528,21 @@ data = {
 "scale": 1.0,
 "type": "timescale"
 }, {
+"blend": 0.0,
+"id": "AttackBlend",
+"position": Vector2( 450, 264 ),
+"type": "blend3"
+}, {
+"filter": [  ],
+"from": "IdlePose.Loop",
+"id": "ZIdle",
+"position": Vector2( 43, 49 ),
+"type": "animation"
+}, {
 "filter": [  ],
 "from": "UnarmedAttack01",
 "id": "Attack1",
 "position": Vector2( 236, 219 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "UnarmedAttack02",
-"id": "Attack2",
-"position": Vector2( 235, 328 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "UnarmedAttack03",
-"id": "Attack3",
-"position": Vector2( 234, 439 ),
 "type": "animation"
 }, {
 "autorestart": false,
@@ -23550,11 +23555,6 @@ data = {
 "mix": false,
 "position": Vector2( 594, 102 ),
 "type": "oneshot"
-}, {
-"blend": 0.0,
-"id": "AttackBlend",
-"position": Vector2( 450, 264 ),
-"type": "blend3"
 } ]
 }
 
@@ -23563,6 +23563,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.
 shape = SubResource( 57 )
 
 [node name="Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0.982004, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
@@ -23577,6 +23578,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982004, 0 )
 shape = SubResource( 59 )
 
 [node name="Attack_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982004, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Attack_Area"]
@@ -23587,6 +23589,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982004, 0 )
 stream = ExtResource( 4 )
 
 [node name="Map_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982004, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map_Area"]
@@ -23604,6 +23607,14 @@ autostart = true
 wait_time = 0.5
 one_shot = true
 
+[node name="Scan_Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="Scan_Timer2" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]
 [connection signal="body_exited" from="Detect_Area" to="." method="_on_Detect_Area_body_exited"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
@@ -23613,3 +23624,5 @@ one_shot = true
 [connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_Scan_Timer_timeout"]
+[connection signal="timeout" from="Scan_Timer2" to="." method="_on_Scan_Timer2_timeout"]

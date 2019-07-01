@@ -77,13 +77,23 @@ var ally_waypoints
 var is_active = false
 
 var prev_target
-#var player_target
+var player_target
 #onready var reset_areas_timer = get_node("RestoreAreasTimer")
 #onready var att_area = get_node("AttackArea")
 #onready var int_area = get_node("InteractionArea")
 #onready var det_area = get_node("DetectArea")
 
+var possible_targets = []
+var chosen_target
+var chosen_target_number
+
+onready var p_timer = get_node("PauseTimer")
+
+onready var s_timer = get_node("Scan_Timer")
+onready var s_timer2 = get_node("Scan_Timer2")
+
 func _ready():
+	level_text.text = ""
 	ally = get_node(".")
 	get_node("AnimationTreePlayer").set_active(true)
 #	hit_sound = $DJHit
@@ -109,7 +119,7 @@ func _input(event):
 				level_text.text = "Someone needs to beat the big zombie. /T-cont."
 #				prev_target = target
 #				target = player_target
-				calculate_path()
+				#calculate_path()
 #				ally_state = 5
 				if PlayerData.Player_Information.spoken_to_guard01 == false:
 					PlayerData.Player_Information.spoken_to_guard01 = true
@@ -183,32 +193,35 @@ func _process(delta):
 				idle_for_a_moment()
 	
 	elif ally_state == 2:
-		var to_walk = delta*speed
-		var to_watch = Vector3(0, 1, 0)
-		while(to_walk > 0 and path.size() >= 2):
-			var pfrom = path[path.size() - 1]
-			var pto = path[path.size() - 2]
-			to_watch = (pto - pfrom).normalized()
-			var d = pfrom.distance_to(pto)
-			if (d <= to_walk):
-				path.remove(path.size() - 1)
-				to_walk -= d
-			else:
-				path[path.size() - 1] = pfrom.linear_interpolate(pto, to_walk/d)
-				to_walk = 0
-			
-			var atpos = path[path.size() - 1]
-			var atdir = to_watch
-			atdir.y = 0
-			
-			var t = Transform()
-			t.origin = atpos
-			t=t.looking_at(atpos + atdir, Vector3(0, 1, 0))
-			self.set_transform(t)
-			
-			if (path.size() < 2):
-				path = []
-				call_deferred("calculate_path")
+		if target == null:
+			rescan_targets()
+		elif target != null:
+			var to_walk = delta*speed
+			var to_watch = Vector3(0, 1, 0)
+			while(to_walk > 0 and path.size() >= 2):
+				var pfrom = path[path.size() - 1]
+				var pto = path[path.size() - 2]
+				to_watch = (pto - pfrom).normalized()
+				var d = pfrom.distance_to(pto)
+				if (d <= to_walk):
+					path.remove(path.size() - 1)
+					to_walk -= d
+				else:
+					path[path.size() - 1] = pfrom.linear_interpolate(pto, to_walk/d)
+					to_walk = 0
+				
+				var atpos = path[path.size() - 1]
+				var atdir = to_watch
+				atdir.y = 0
+				
+				var t = Transform()
+				t.origin = atpos
+				t=t.looking_at(atpos + atdir, Vector3(0, 1, 0))
+				self.set_transform(t)
+				
+				if (path.size() < 2):
+					path = []
+					start_rescan() #call_deferred("calculate_path")
 	
 	elif ally_state == 4:
 		var to_walk = delta*speed
@@ -447,7 +460,9 @@ func _physics_process(delta):
 	#----Ally Movement Setion----#
 	ally_origin = ally.get_global_transform().origin
 	var offset = Vector3()
-	if target != null:
+	if target == null:
+		offset = null
+	elif target != null:
 		offset = target.get_global_transform().origin - ally_origin
 	else:
 		offset = null
@@ -580,8 +595,63 @@ func remove_targets():
 #	reset_areas_timer.start()
 	
 	target = null
-	idle_for_a_moment()
 	print ("target : ", target)
+	set_process(false)
+	set_physics_process(false)
+	pause_for_a_moment()
+#	rescan_targets()
+#	idle_for_a_moment()
+#	print ("target : ", target)
+
+func rescan_targets():
+#	pass
+	possible_targets = []
+	target = null
+	var rescan_area = $DetectArea
+	var bodies = rescan_area.get_overlapping_bodies()
+#	var damage
+#	damage = ally_damage
+	var number_of_targets
+	for abody in bodies:
+		if abody == self:
+			continue
+		if abody.has_method("zombie_die"): #_hit"):
+#			abody._hit(damage, 0, rescan_area.global_transform.origin)
+			possible_targets.append(abody)
+	
+	number_of_targets = possible_targets.size()
+	print ("number of targets is : ", number_of_targets)
+	if number_of_targets == 0:
+		set_process(false)
+		set_physics_process(false)
+		target = null
+		idle_for_a_moment()
+	if number_of_targets > 0:
+		randomize()
+		chosen_target_number = randi()%number_of_targets
+		chosen_target = possible_targets[chosen_target_number]
+#		target = chosen_target
+		if current_health >= retreat_health:
+			is_active = true
+			target = chosen_target
+			ally_state = 2
+			dtimer.stop()
+			calculate_path()
+		else:
+			is_active = true
+			pick_retreat_waypoint()
+			dtimer.stop()
+	print ("rescan target : ", target)
+	
+	#can_attack_timer = 0.0
+	#attack_timer = 0.0
+	#rescan, make array, chose target, set target, clear array etc, if no viable targets, make null
+
+func pause_for_a_moment():
+	p_timer.start()
+
+func _on_PauseTimer_timeout():
+	rescan_targets()
 
 #func _on_RestoreAreasTimer_timeout():
 #	att_area.show()
@@ -654,39 +724,41 @@ func ally_attack5():
 	attack_timer = 0.0
 
 func _on_DetectArea_body_entered(body):
-	if body.has_method("zombie_die"): #process_UI"):
-		if current_health >= retreat_health:
-			is_active = true
-			target = body
-			ally_state = 2
-			dtimer.stop()
-			calculate_path()
-		else:
-			is_active = true
-			pick_retreat_waypoint()
-			dtimer.stop()
+	rescan_targets()
+#	if body.has_method("zombie_die"): #process_UI"):
+#		if current_health >= retreat_health:
+#			is_active = true
+#			target = body
+#			ally_state = 2
+#			dtimer.stop()
+#			calculate_path()
+#		else:
+#			is_active = true
+#			pick_retreat_waypoint()
+#			dtimer.stop()
 
 func _on_DetectArea_body_exited(body):
-	if body.has_method("zombie_die"):
-		is_active = false
-		target = null
-		idle_for_a_moment()
+	rescan_targets()
+#	if body.has_method("zombie_die"):
+#		is_active = false
+#		target = null
+#		idle_for_a_moment()
 
 func _on_AttackArea_body_entered(body):
 	if body.has_method("zombie_die"):
 		ally_state = 3
 		set_physics_process(true)
 		set_process(false)
-	elif body.has_method("process_UI"):
-		ally_state = 0
-		set_physics_process(false)
-		set_process(false)
-		idle_for_a_moment()
+#	elif body.has_method("process_UI"):
+#		ally_state = 0
+#		set_physics_process(false)
+#		set_process(false)
+#		idle_for_a_moment()
 
 func _on_AttackArea_body_exited(body):
 	if body.has_method("zombie_die"):
 		if current_health >= retreat_health:
-			target = body
+#			target = body
 			ally_state = 2
 			calculate_path()
 		else:
@@ -776,12 +848,25 @@ func pick_retreat_waypoint():
 #		pass
 
 func calculate_path():
+	var wr = weakref(target)
+	if (!wr.get_ref()):
+		#target has been erased
+		target = null
+	else:
+		#object is fine so you can do something with it:
+		#wr.get_ref().doSomeOperation();
+		target = wr.get_ref()
+	
 	if target == null:
 		idle_for_a_moment()
 		pass
 	elif target != null:
-		begin = self.global_transform.origin
-		end = target.global_transform.origin
+		begin = navmesh.get_closest_point(self.get_translation())
+		end = navmesh.get_closest_point(target.get_translation())
+#		begin = self.global_transform.origin
+#		#make if target != player? as seems to move towards player before crashing out.
+#		#only a problem if guard collides with player after killing an enemy
+#		end = target.global_transform.origin
 	
 	var p = navmesh.get_simple_path(begin, end, true)
 	path = Array(p)
@@ -814,3 +899,44 @@ func _on_Map_Area_body_exited(body):
 	else:
 		pass
 
+
+
+
+func start_rescan():
+	set_process(false)
+	s_timer.start()
+
+func rescan_for_target():
+	var wr = weakref(target)
+	if (!wr.get_ref()):
+		#target has been erased
+		target = null
+	else:
+		#object is fine so you can do something with it:
+		#wr.get_ref().doSomeOperation();
+		target = wr.get_ref()
+	
+	if target == null:
+		idle_for_a_moment()
+	elif target != null:
+		var scan_area = $DetectArea
+		var scan_bodies = scan_area.get_overlapping_bodies()
+	#	var damage
+	#	damage = zombie_damage
+		for scan_body in scan_bodies:
+			if scan_body == self:
+				continue
+			
+			if scan_body == target: #.has_method("process_UI"): #_hit"):
+	#			print ("viable body")
+				calculate_path()
+#			scan_body._hit(damage, 0, scan_area.global_transform.origin)
+#	can_attack_timer = 0.0
+#	attack_timer = 0.0
+
+func _on_Scan_Timer_timeout():
+	rescan_for_target()
+
+func _on_Scan_Timer2_timeout():
+	rescan_for_target()
+	s_timer2.start()

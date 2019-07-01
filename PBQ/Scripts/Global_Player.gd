@@ -317,10 +317,27 @@ func load_file04():
 	PlayerData.Player_Information = player_stats_to_save
 
 func load_info_to_display():
-	save_file01_info = playerStats["stats"]
-	save_file02_info = playerStats2["stats"]
-	save_file03_info = playerStats3["stats"]
-	save_file04_info = playerStats4["stats"]
+	#need to make so that it can still load something if files are blank/null/not setup yet
+	#problem found after reload without previous player data files
+	if playerStats != null:
+		save_file01_info = playerStats["stats"]
+	else:
+		save_file01_info = {}
+	if playerStats2 != null:
+		save_file02_info = playerStats2["stats"]
+	else:
+		save_file02_info = {}
+	if playerStats3 != null:
+		save_file03_info = playerStats3["stats"]
+	else:
+		save_file03_info = {}
+	if playerStats4 != null:
+		save_file04_info = playerStats4["stats"]
+	else:
+		save_file04_info = {}
+#	save_file02_info = playerStats2["stats"]
+#	save_file03_info = playerStats3["stats"]
+#	save_file04_info = playerStats4["stats"]
 
 func reset_data():
 	for slot in range(0, inventory_maxSlots):

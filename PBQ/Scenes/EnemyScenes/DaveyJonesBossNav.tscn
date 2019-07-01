@@ -23468,53 +23468,12 @@ anims/ZombieWalk.Loop = SubResource( 56 )
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "DJOneShot", "out", 0, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0, "ZMoveTimeScale", "DJOneShot", 0, "DJAttackBlend", "DJOneShot", 1, "Attack1", "DJAttackBlend", 0, "Attack2", "DJAttackBlend", 1, "Attack3", "DJAttackBlend", 2 ],
+"connections": [ "DJOneShot", "out", 0, "ZMoveTimeScale", "DJOneShot", 0, "DJAttackBlend", "DJOneShot", 1, "Attack1", "DJAttackBlend", 0, "Attack2", "DJAttackBlend", 1, "Attack3", "DJAttackBlend", 2, "ZIdle", "ZIdleOrMove", 0, "ZWalk", "ZIdleOrMove", 1, "ZIdleOrMove", "ZMoveTimeScale", 0 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
 "position": Vector2( 745, 104 ),
 "type": "output"
-}, {
-"blend": 0.0,
-"filter": [  ],
-"id": "ZIdleOrMove",
-"position": Vector2( 222, 71 ),
-"type": "blend2"
-}, {
-"filter": [  ],
-"from": "ZombieWalk.Loop",
-"id": "ZWalk",
-"position": Vector2( 42, 152 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "ZombieIdle.Loop",
-"id": "ZIdle",
-"position": Vector2( 43, 49 ),
-"type": "animation"
-}, {
-"id": "ZMoveTimeScale",
-"position": Vector2( 394, 81 ),
-"scale": 1.0,
-"type": "timescale"
-}, {
-"filter": [  ],
-"from": "ZombieAttack01",
-"id": "Attack1",
-"position": Vector2( 236, 219 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "UnarmedAttack01",
-"id": "Attack2",
-"position": Vector2( 235, 340 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "UnarmedAttack02",
-"id": "Attack3",
-"position": Vector2( 234, 454 ),
-"type": "animation"
 }, {
 "autorestart": false,
 "autorestart_delay": 1.0,
@@ -23531,6 +23490,47 @@ data = {
 "id": "DJAttackBlend",
 "position": Vector2( 422, 244 ),
 "type": "blend3"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "ZIdleOrMove",
+"position": Vector2( 222, 71 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "UnarmedAttack01",
+"id": "Attack2",
+"position": Vector2( 235, 340 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "ZombieWalk.Loop",
+"id": "ZWalk",
+"position": Vector2( 42, 152 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "UnarmedAttack02",
+"id": "Attack3",
+"position": Vector2( 234, 454 ),
+"type": "animation"
+}, {
+"id": "ZMoveTimeScale",
+"position": Vector2( 394, 81 ),
+"scale": 1.0,
+"type": "timescale"
+}, {
+"filter": [  ],
+"from": "ZombieIdle.Loop",
+"id": "ZIdle",
+"position": Vector2( 43, 49 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "ZombieAttack01",
+"id": "Attack1",
+"position": Vector2( 236, 219 ),
+"type": "animation"
 } ]
 }
 
@@ -23539,6 +23539,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.
 shape = SubResource( 57 )
 
 [node name="Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0.981679, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
@@ -23546,12 +23547,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.285048, -0.608216 )
 shape = SubResource( 58 )
 
 [node name="Detect_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981679, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Detect_Area"]
 shape = SubResource( 59 )
 
 [node name="Attack_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981679, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Attack_Area"]
@@ -23562,6 +23565,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981679, 0 )
 stream = ExtResource( 4 )
 
 [node name="Map_Area" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981679, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map_Area"]
@@ -23579,6 +23583,14 @@ autostart = true
 wait_time = 0.5
 one_shot = true
 
+[node name="Scan_Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="Scan_Timer2" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="body_entered" from="Detect_Area" to="." method="_on_Detect_Area_body_entered"]
 [connection signal="body_exited" from="Detect_Area" to="." method="_on_Detect_Area_body_exited"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_Attack_Area_body_entered"]
@@ -23588,3 +23600,5 @@ one_shot = true
 [connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
 [connection signal="timeout" from="TrackerTimer" to="." method="_on_TrackerTimer_timeout"]
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_Scan_Timer_timeout"]
+[connection signal="timeout" from="Scan_Timer2" to="." method="_on_Scan_Timer2_timeout"]

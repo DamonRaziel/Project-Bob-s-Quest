@@ -5,7 +5,7 @@
 [ext_resource path="res://ModelsNew/ModelsCharacters/HairDarkMat.material" type="Material" id=3]
 [ext_resource path="res://Scenes/NPCScenes/GuardWeaponArmingSword.tscn" type="PackedScene" id=4]
 
-[sub_resource type="ArrayMesh" id=63]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.069"
 surfaces/0 = {
 "aabb": AABB( -0.567068, -0.99498, -0.141719, 1.13414, 1.98459, 0.340719 ),
@@ -21,7 +21,7 @@ surfaces/0 = {
 "vertex_count": 5480
 }
 
-[sub_resource type="ArrayMesh" id=64]
+[sub_resource type="ArrayMesh" id=2]
 resource_name = "Cube.070"
 surfaces/0 = {
 "aabb": AABB( -0.128682, 0.672861, -0.150721, 0.257364, 0.325584, 0.293847 ),
@@ -37,7 +37,7 @@ surfaces/0 = {
 "vertex_count": 1600
 }
 
-[sub_resource type="Animation" id=65]
+[sub_resource type="Animation" id=3]
 resource_name = "Attack1Handed01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -569,7 +569,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=66]
+[sub_resource type="Animation" id=4]
 resource_name = "Attack1Handed02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -1101,7 +1101,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=67]
+[sub_resource type="Animation" id=5]
 resource_name = "Attack1Handed03"
 length = 0.833333
 tracks/0/type = "transform"
@@ -1633,7 +1633,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=68]
+[sub_resource type="Animation" id=6]
 resource_name = "Attack2Handed01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -2057,7 +2057,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 4.47035e-008, -2.98023e-008, -3.53903e-008, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=69]
+[sub_resource type="Animation" id=7]
 resource_name = "Attack2Handed02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -2481,7 +2481,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1, 0.833333, 1, 4.47035e-008, -4.47035e-008, -1.67638e-008, 0, -1.04774e-009, 1.30385e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=70]
+[sub_resource type="Animation" id=8]
 resource_name = "Attack2Handed03"
 length = 0.833333
 tracks/0/type = "transform"
@@ -2905,7 +2905,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, 0, -7.45058e-009, 0, -1.04774e-009, 1.30385e-008, 1, 1, 1, 1, 0.833333, 1, 0, -1.49012e-008, -1.67638e-008, -5.58794e-009, -1.58325e-008, 5.58794e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=71]
+[sub_resource type="Animation" id=9]
 resource_name = "BowDraw"
 length = 0.833333
 tracks/0/type = "transform"
@@ -3329,7 +3329,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=72]
+[sub_resource type="Animation" id=10]
 resource_name = "BowFull"
 length = 1.25
 tracks/0/type = "transform"
@@ -3753,7 +3753,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=73]
+[sub_resource type="Animation" id=11]
 resource_name = "BowRelease"
 length = 0.833333
 tracks/0/type = "transform"
@@ -4177,7 +4177,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 2.98023e-008, 4.47035e-008, -3.72529e-009, -1.86265e-009, -3.05008e-008, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=74]
+[sub_resource type="Animation" id=12]
 resource_name = "Defend01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -4601,7 +4601,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -5.58794e-009, -1.11759e-008, -8.14907e-009, 5.58794e-009, 1, 1, 1, 1, 0.833333, 1, 0, -1.49012e-008, -5.58794e-009, -1.11759e-008, -8.14907e-009, 5.58794e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=75]
+[sub_resource type="Animation" id=13]
 resource_name = "Hit"
 length = 0.833333
 tracks/0/type = "transform"
@@ -5025,7 +5025,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -7.45058e-009, 6.98492e-009, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -7.45058e-009, 6.98492e-009, 9.31323e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=76]
+[sub_resource type="Animation" id=14]
 resource_name = "IdlePose.Loop"
 length = 1.25
 loop = true
@@ -5558,7 +5558,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=77]
+[sub_resource type="Animation" id=15]
 resource_name = "IdlePose.Loop.007"
 length = 1.25
 tracks/0/type = "transform"
@@ -5982,7 +5982,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=78]
+[sub_resource type="Animation" id=16]
 resource_name = "IdlePose.Loop.008"
 length = 1.25
 tracks/0/type = "transform"
@@ -6406,7 +6406,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=79]
+[sub_resource type="Animation" id=17]
 resource_name = "IdlePose.Loop.009"
 length = 1.25
 tracks/0/type = "transform"
@@ -6830,7 +6830,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=80]
+[sub_resource type="Animation" id=18]
 resource_name = "IdlePose.Loop.011"
 length = 1.25
 tracks/0/type = "transform"
@@ -7254,7 +7254,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=81]
+[sub_resource type="Animation" id=19]
 resource_name = "IdlePose.Loop.012"
 length = 1.25
 tracks/0/type = "transform"
@@ -7678,7 +7678,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=82]
+[sub_resource type="Animation" id=20]
 resource_name = "IdlePose.Loop.013"
 length = 1.25
 tracks/0/type = "transform"
@@ -8102,7 +8102,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=83]
+[sub_resource type="Animation" id=21]
 resource_name = "IdlePose.Loop.014"
 length = 1.25
 tracks/0/type = "transform"
@@ -8526,7 +8526,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=84]
+[sub_resource type="Animation" id=22]
 resource_name = "IdlePose.Loop.015"
 length = 1.25
 tracks/0/type = "transform"
@@ -8950,7 +8950,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=85]
+[sub_resource type="Animation" id=23]
 resource_name = "IdlePose.Loop.016"
 length = 1.25
 tracks/0/type = "transform"
@@ -9374,7 +9374,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=86]
+[sub_resource type="Animation" id=24]
 resource_name = "IdlePose.Loop.017"
 length = 1.25
 tracks/0/type = "transform"
@@ -9798,7 +9798,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=87]
+[sub_resource type="Animation" id=25]
 resource_name = "IdlePose.Loop.018"
 length = 1.25
 tracks/0/type = "transform"
@@ -10222,7 +10222,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=88]
+[sub_resource type="Animation" id=26]
 resource_name = "IdlePose.Loop.019"
 length = 1.25
 tracks/0/type = "transform"
@@ -10646,7 +10646,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=89]
+[sub_resource type="Animation" id=27]
 resource_name = "IdlePose.Loop.020"
 length = 1.25
 tracks/0/type = "transform"
@@ -11070,7 +11070,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=90]
+[sub_resource type="Animation" id=28]
 resource_name = "IdlePose.Loop.021"
 length = 1.25
 tracks/0/type = "transform"
@@ -11494,7 +11494,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=91]
+[sub_resource type="Animation" id=29]
 resource_name = "IdlePose.Loop.022"
 length = 1.25
 tracks/0/type = "transform"
@@ -11918,7 +11918,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=92]
+[sub_resource type="Animation" id=30]
 resource_name = "IdlePose.Loop.024"
 length = 1.25
 tracks/0/type = "transform"
@@ -12342,7 +12342,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=93]
+[sub_resource type="Animation" id=31]
 resource_name = "IdlePose.Loop.026"
 length = 1.25
 tracks/0/type = "transform"
@@ -12766,7 +12766,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=94]
+[sub_resource type="Animation" id=32]
 resource_name = "IdlePose.Loop.029"
 length = 1.25
 tracks/0/type = "transform"
@@ -13190,7 +13190,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=95]
+[sub_resource type="Animation" id=33]
 resource_name = "IdlePose.Loop.031"
 length = 1.25
 tracks/0/type = "transform"
@@ -13614,7 +13614,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=96]
+[sub_resource type="Animation" id=34]
 resource_name = "IdlePose.Loop.033"
 length = 1.25
 tracks/0/type = "transform"
@@ -14038,7 +14038,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=97]
+[sub_resource type="Animation" id=35]
 resource_name = "IdlePose.Loop.035"
 length = 1.25
 tracks/0/type = "transform"
@@ -14462,7 +14462,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=98]
+[sub_resource type="Animation" id=36]
 resource_name = "IdlePose.Loop.037"
 length = 1.25
 tracks/0/type = "transform"
@@ -14886,7 +14886,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=99]
+[sub_resource type="Animation" id=37]
 resource_name = "IdlePose.Loop.039"
 length = 1.25
 tracks/0/type = "transform"
@@ -15310,7 +15310,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=100]
+[sub_resource type="Animation" id=38]
 resource_name = "IdlePose.Loop.041"
 length = 1.25
 tracks/0/type = "transform"
@@ -15734,7 +15734,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=101]
+[sub_resource type="Animation" id=39]
 resource_name = "IdlePose.Loop.043"
 length = 1.25
 tracks/0/type = "transform"
@@ -16158,7 +16158,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=102]
+[sub_resource type="Animation" id=40]
 resource_name = "Jump.Loop"
 length = 0.416667
 tracks/0/type = "transform"
@@ -16582,7 +16582,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 0.416667, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=103]
+[sub_resource type="Animation" id=41]
 resource_name = "Jump1HandedAttack"
 length = 0.833333
 tracks/0/type = "transform"
@@ -17006,7 +17006,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -5.58794e-009, -7.45058e-009, -9.31323e-010, 5.58794e-009, 1, 1, 1, 1, 0.833333, 1, 0, -1.49012e-008, -9.31323e-009, -1.86265e-009, 6.40284e-009, 5.58794e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=104]
+[sub_resource type="Animation" id=42]
 resource_name = "Jump2HandedAttack"
 length = 0.833333
 tracks/0/type = "transform"
@@ -17430,7 +17430,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=105]
+[sub_resource type="Animation" id=43]
 resource_name = "Jump2HandedAttack.001"
 length = 0.833333
 tracks/0/type = "transform"
@@ -17854,7 +17854,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=106]
+[sub_resource type="Animation" id=44]
 resource_name = "Jump2HandedAttack.002"
 length = 0.833333
 tracks/0/type = "transform"
@@ -18278,7 +18278,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, -2.04891e-008, -7.45058e-009, -3.05008e-008, 9.31323e-009, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, 3.62052e-008, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=107]
+[sub_resource type="Animation" id=45]
 resource_name = "JumpUnarmedAttack"
 length = 0.833333
 tracks/0/type = "transform"
@@ -18702,7 +18702,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, 1.49012e-008, -9.31323e-009, -1.11759e-008, -4.65661e-010, 3.72529e-009, 1, 1, 1, 1, 0.833333, 1, 0, 1.49012e-008, -9.31323e-009, -1.11759e-008, -4.65661e-010, 3.72529e-009, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=108]
+[sub_resource type="Animation" id=46]
 resource_name = "JumpUnarmedAttack02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -19126,7 +19126,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=109]
+[sub_resource type="Animation" id=47]
 resource_name = "RunCycle.Loop"
 length = 0.5
 tracks/0/type = "transform"
@@ -19550,7 +19550,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 1.49012e-008, 2.98023e-008, -9.31323e-009, 0, -1.97906e-009, -1.11759e-008, 1, 1, 1, 1, 0.5, 1, 1.49012e-008, 2.98023e-008, -9.31323e-009, 0, -1.97906e-009, -1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=110]
+[sub_resource type="Animation" id=48]
 resource_name = "UnarmedAttack01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -19974,7 +19974,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -1.49012e-008, 1.86265e-009, -7.45058e-009, -1.16415e-010, 1.30385e-008, 1, 1, 1, 1, 0.833333, 1, 1.49012e-008, -2.98023e-008, -1.30385e-008, -1.11759e-008, -7.567e-009, 1.49012e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=111]
+[sub_resource type="Animation" id=49]
 resource_name = "UnarmedAttack02"
 length = 0.833333
 tracks/0/type = "transform"
@@ -20506,7 +20506,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=112]
+[sub_resource type="Animation" id=50]
 resource_name = "UnarmedAttack03"
 length = 0.833333
 tracks/0/type = "transform"
@@ -21038,7 +21038,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=113]
+[sub_resource type="Animation" id=51]
 resource_name = "WalkCycle.Loop"
 loop = true
 tracks/0/type = "transform"
@@ -21570,7 +21570,7 @@ tracks/68/keys = {
 "values": [ Vector3( 0, 1.23976, -0.697451 ), Vector3( 0, 1.23976, -0.697451 ) ]
 }
 
-[sub_resource type="Animation" id=114]
+[sub_resource type="Animation" id=52]
 resource_name = "ZombieAttack01"
 length = 0.833333
 tracks/0/type = "transform"
@@ -21994,7 +21994,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 0.833333, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=115]
+[sub_resource type="Animation" id=53]
 resource_name = "ZombieIdle.Loop"
 length = 1.25
 tracks/0/type = "transform"
@@ -22418,7 +22418,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=116]
+[sub_resource type="Animation" id=54]
 resource_name = "ZombieIdle.Loop.001"
 length = 1.25
 tracks/0/type = "transform"
@@ -22842,7 +22842,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=117]
+[sub_resource type="Animation" id=55]
 resource_name = "ZombieIdle.Loop.002"
 length = 1.25
 tracks/0/type = "transform"
@@ -23266,7 +23266,7 @@ tracks/59/imported = true
 tracks/59/enabled = true
 tracks/59/keys = PoolRealArray( 0, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1, 1.25, 1, 0, -2.98023e-008, -5.58794e-009, -5.58794e-009, -9.31323e-010, 1.11759e-008, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=118]
+[sub_resource type="Animation" id=56]
 resource_name = "ZombieWalk.Loop"
 tracks/0/type = "transform"
 tracks/0/path = NodePath("GuardArmatureFemale")
@@ -24015,94 +24015,88 @@ bones/58/bound_children = [  ]
 
 [node name="GuardBaseFemale" type="MeshInstance" parent="GuardArmatureFemale/Skeleton"]
 use_in_baked_light = true
-mesh = SubResource( 63 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="GuardHairFemale" type="MeshInstance" parent="GuardArmatureFemale/Skeleton"]
 use_in_baked_light = true
-mesh = SubResource( 64 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="WeaponAttachment" type="BoneAttachment" parent="GuardArmatureFemale/Skeleton"]
-transform = Transform( 0.503877, 0.849946, -0.153951, -0.09771, 0.233171, 0.967515, 0.858232, -0.472466, 0.200537, 0.3842, -0.226367, 0.00772856 )
+transform = Transform( 0.999043, 0.0296936, -0.0321416, 0.0296936, 0.0794772, 0.996395, 0.0321409, -0.996395, 0.0785186, 0.403385, -0.145157, 0.0184336 )
 bone_name = "ItemBone.L"
 
-[node name="Sword" type="Spatial" parent="GuardArmatureFemale/Skeleton/WeaponAttachment" instance=ExtResource( 4 )]
+[node name="Sword" parent="GuardArmatureFemale/Skeleton/WeaponAttachment" instance=ExtResource( 4 )]
 transform = Transform( -0.0794519, -0.104703, 0.991324, -0.0100134, 0.994502, 0.104236, -0.996788, -0.00164483, -0.0800634, -0.110446, -0.0120168, -0.0018452 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "IdlePose.Loop"
-anims/Attack1Handed01 = SubResource( 65 )
-anims/Attack1Handed02 = SubResource( 66 )
-anims/Attack1Handed03 = SubResource( 67 )
-anims/Attack2Handed01 = SubResource( 68 )
-anims/Attack2Handed02 = SubResource( 69 )
-anims/Attack2Handed03 = SubResource( 70 )
-anims/BowDraw = SubResource( 71 )
-anims/BowFull = SubResource( 72 )
-anims/BowRelease = SubResource( 73 )
-anims/Defend01 = SubResource( 74 )
-anims/Hit = SubResource( 75 )
-anims/IdlePose.Loop = SubResource( 76 )
-anims/IdlePose.Loop.007 = SubResource( 77 )
-anims/IdlePose.Loop.008 = SubResource( 78 )
-anims/IdlePose.Loop.009 = SubResource( 79 )
-anims/IdlePose.Loop.011 = SubResource( 80 )
-anims/IdlePose.Loop.012 = SubResource( 81 )
-anims/IdlePose.Loop.013 = SubResource( 82 )
-anims/IdlePose.Loop.014 = SubResource( 83 )
-anims/IdlePose.Loop.015 = SubResource( 84 )
-anims/IdlePose.Loop.016 = SubResource( 85 )
-anims/IdlePose.Loop.017 = SubResource( 86 )
-anims/IdlePose.Loop.018 = SubResource( 87 )
-anims/IdlePose.Loop.019 = SubResource( 88 )
-anims/IdlePose.Loop.020 = SubResource( 89 )
-anims/IdlePose.Loop.021 = SubResource( 90 )
-anims/IdlePose.Loop.022 = SubResource( 91 )
-anims/IdlePose.Loop.024 = SubResource( 92 )
-anims/IdlePose.Loop.026 = SubResource( 93 )
-anims/IdlePose.Loop.029 = SubResource( 94 )
-anims/IdlePose.Loop.031 = SubResource( 95 )
-anims/IdlePose.Loop.033 = SubResource( 96 )
-anims/IdlePose.Loop.035 = SubResource( 97 )
-anims/IdlePose.Loop.037 = SubResource( 98 )
-anims/IdlePose.Loop.039 = SubResource( 99 )
-anims/IdlePose.Loop.041 = SubResource( 100 )
-anims/IdlePose.Loop.043 = SubResource( 101 )
-anims/Jump.Loop = SubResource( 102 )
-anims/Jump1HandedAttack = SubResource( 103 )
-anims/Jump2HandedAttack = SubResource( 104 )
-anims/Jump2HandedAttack.001 = SubResource( 105 )
-anims/Jump2HandedAttack.002 = SubResource( 106 )
-anims/JumpUnarmedAttack = SubResource( 107 )
-anims/JumpUnarmedAttack02 = SubResource( 108 )
-anims/RunCycle.Loop = SubResource( 109 )
-anims/UnarmedAttack01 = SubResource( 110 )
-anims/UnarmedAttack02 = SubResource( 111 )
-anims/UnarmedAttack03 = SubResource( 112 )
-anims/WalkCycle.Loop = SubResource( 113 )
-anims/ZombieAttack01 = SubResource( 114 )
-anims/ZombieIdle.Loop = SubResource( 115 )
-anims/ZombieIdle.Loop.001 = SubResource( 116 )
-anims/ZombieIdle.Loop.002 = SubResource( 117 )
-anims/ZombieWalk.Loop = SubResource( 118 )
+anims/Attack1Handed01 = SubResource( 3 )
+anims/Attack1Handed02 = SubResource( 4 )
+anims/Attack1Handed03 = SubResource( 5 )
+anims/Attack2Handed01 = SubResource( 6 )
+anims/Attack2Handed02 = SubResource( 7 )
+anims/Attack2Handed03 = SubResource( 8 )
+anims/BowDraw = SubResource( 9 )
+anims/BowFull = SubResource( 10 )
+anims/BowRelease = SubResource( 11 )
+anims/Defend01 = SubResource( 12 )
+anims/Hit = SubResource( 13 )
+anims/IdlePose.Loop = SubResource( 14 )
+anims/IdlePose.Loop.007 = SubResource( 15 )
+anims/IdlePose.Loop.008 = SubResource( 16 )
+anims/IdlePose.Loop.009 = SubResource( 17 )
+anims/IdlePose.Loop.011 = SubResource( 18 )
+anims/IdlePose.Loop.012 = SubResource( 19 )
+anims/IdlePose.Loop.013 = SubResource( 20 )
+anims/IdlePose.Loop.014 = SubResource( 21 )
+anims/IdlePose.Loop.015 = SubResource( 22 )
+anims/IdlePose.Loop.016 = SubResource( 23 )
+anims/IdlePose.Loop.017 = SubResource( 24 )
+anims/IdlePose.Loop.018 = SubResource( 25 )
+anims/IdlePose.Loop.019 = SubResource( 26 )
+anims/IdlePose.Loop.020 = SubResource( 27 )
+anims/IdlePose.Loop.021 = SubResource( 28 )
+anims/IdlePose.Loop.022 = SubResource( 29 )
+anims/IdlePose.Loop.024 = SubResource( 30 )
+anims/IdlePose.Loop.026 = SubResource( 31 )
+anims/IdlePose.Loop.029 = SubResource( 32 )
+anims/IdlePose.Loop.031 = SubResource( 33 )
+anims/IdlePose.Loop.033 = SubResource( 34 )
+anims/IdlePose.Loop.035 = SubResource( 35 )
+anims/IdlePose.Loop.037 = SubResource( 36 )
+anims/IdlePose.Loop.039 = SubResource( 37 )
+anims/IdlePose.Loop.041 = SubResource( 38 )
+anims/IdlePose.Loop.043 = SubResource( 39 )
+anims/Jump.Loop = SubResource( 40 )
+anims/Jump1HandedAttack = SubResource( 41 )
+anims/Jump2HandedAttack = SubResource( 42 )
+anims/Jump2HandedAttack.001 = SubResource( 43 )
+anims/Jump2HandedAttack.002 = SubResource( 44 )
+anims/JumpUnarmedAttack = SubResource( 45 )
+anims/JumpUnarmedAttack02 = SubResource( 46 )
+anims/RunCycle.Loop = SubResource( 47 )
+anims/UnarmedAttack01 = SubResource( 48 )
+anims/UnarmedAttack02 = SubResource( 49 )
+anims/UnarmedAttack03 = SubResource( 50 )
+anims/WalkCycle.Loop = SubResource( 51 )
+anims/ZombieAttack01 = SubResource( 52 )
+anims/ZombieIdle.Loop = SubResource( 53 )
+anims/ZombieIdle.Loop.001 = SubResource( 54 )
+anims/ZombieIdle.Loop.002 = SubResource( 55 )
+anims/ZombieWalk.Loop = SubResource( 56 )
 
 [node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="."]
 master_player = NodePath("../AnimationPlayer")
 data = {
 "active": false,
-"connections": [ "AttOneShot", "out", 0, "AttAnim1", "AttTransition", 0, "AttAnim2", "AttTransition", 1, "AttAnim3", "AttTransition", 2, "AttAnim4", "AttTransition", 3, "AttAnim5", "AttTransition", 4, "IdleAnim", "IdleOrMove", 0, "WalkAnim", "IdleOrMove", 1, "IdleOrMove", "AttOneShot", 0, "AttTransition", "AttOneShot", 1 ],
+"connections": [ "AttOneShot", "out", 0, "AttAnim1", "AttTransition", 0, "AttAnim2", "AttTransition", 1, "AttAnim3", "AttTransition", 2, "AttAnim4", "AttTransition", 3, "AttAnim5", "AttTransition", 4, "IdleOrMove", "AttOneShot", 0, "AttTransition", "AttOneShot", 1, "IdleAnim", "IdleOrMove", 0, "WalkAnim", "IdleOrMove", 1 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "id": "out",
 "position": Vector2( 965, 71 ),
 "type": "output"
-}, {
-"filter": [  ],
-"from": "UnarmedAttack03",
-"id": "AttAnim5",
-"position": Vector2( 381, 656 ),
-"type": "animation"
 }, {
 "id": "AttTransition",
 "position": Vector2( 587, 235 ),
@@ -24127,39 +24121,21 @@ data = {
 "type": "animation"
 }, {
 "filter": [  ],
-"from": "Attack1Handed02",
-"id": "AttAnim2",
-"position": Vector2( 377, 310 ),
+"from": "WalkCycle.Loop",
+"id": "WalkAnim",
+"position": Vector2( 70, 185 ),
 "type": "animation"
 }, {
-"blend": 0.0,
 "filter": [  ],
-"id": "IdleOrMove",
-"position": Vector2( 284, 53 ),
-"type": "blend2"
+"from": "UnarmedAttack03",
+"id": "AttAnim5",
+"position": Vector2( 381, 656 ),
+"type": "animation"
 }, {
 "filter": [  ],
 "from": "UnarmedAttack02",
 "id": "AttAnim4",
 "position": Vector2( 380, 544 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "IdlePose.Loop",
-"id": "IdleAnim",
-"position": Vector2( 69, 53 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "Attack1Handed03",
-"id": "AttAnim3",
-"position": Vector2( 379, 429 ),
-"type": "animation"
-}, {
-"filter": [  ],
-"from": "WalkCycle.Loop",
-"id": "WalkAnim",
-"position": Vector2( 70, 185 ),
 "type": "animation"
 }, {
 "autorestart": false,
@@ -24172,6 +24148,30 @@ data = {
 "mix": false,
 "position": Vector2( 765, 71 ),
 "type": "oneshot"
+}, {
+"filter": [  ],
+"from": "IdlePose.Loop",
+"id": "IdleAnim",
+"position": Vector2( 69, 53 ),
+"type": "animation"
+}, {
+"filter": [  ],
+"from": "Attack1Handed02",
+"id": "AttAnim2",
+"position": Vector2( 377, 310 ),
+"type": "animation"
+}, {
+"blend": 0.0,
+"filter": [  ],
+"id": "IdleOrMove",
+"position": Vector2( 284, 53 ),
+"type": "blend2"
+}, {
+"filter": [  ],
+"from": "Attack1Handed03",
+"id": "AttAnim3",
+"position": Vector2( 379, 429 ),
+"type": "animation"
 } ]
 }
 
@@ -24226,6 +24226,14 @@ one_shot = true
 [node name="RestoreAreasTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Scan_Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="Scan_Timer2" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_InteractionArea_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_InteractionArea_body_exited"]
 [connection signal="body_entered" from="Map_Area" to="." method="_on_Map_Area_body_entered"]
@@ -24237,3 +24245,5 @@ one_shot = true
 [connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]
 [connection signal="timeout" from="DecisionTimer" to="." method="_on_DecisionTimer_timeout"]
 [connection signal="timeout" from="RestoreAreasTimer" to="." method="_on_RestoreAreasTimer_timeout"]
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_Scan_Timer_timeout"]
+[connection signal="timeout" from="Scan_Timer2" to="." method="_on_Scan_Timer2_timeout"]

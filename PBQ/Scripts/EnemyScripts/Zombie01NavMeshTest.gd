@@ -79,6 +79,11 @@ onready var death_timer = get_node("DeathTimer")
 var zombie_dying = false
 var guard_target
 
+var end_target
+
+onready var s_timer = get_node("Scan_Timer")
+onready var s_timer2 = get_node("Scan_Timer2")
+
 func _ready():
 	enemy = get_node(".")
 	get_node("AnimationTreePlayer").set_active(true)
@@ -153,7 +158,7 @@ func _process(delta):
 				self.set_transform(t)
 				if (path.size() < 2):
 					path = []
-					calculate_path()
+					start_rescan() #calculate_path()
 		else:
 			set_process(false)
 	#--Retreating--#
@@ -292,7 +297,7 @@ func zombie_attack():
 		if abody == self:
 			continue
 		if abody.has_method("process_UI"): #_hit"):
-			print ("viable body")
+#			print ("viable body")
 			abody._hit(damage, 0, area.global_transform.origin)
 	can_attack_timer = 0.0
 	attack_timer = 0.0
@@ -460,8 +465,21 @@ func _on_RegenTimer_timeout():
 		pass
 
 func calculate_path():
-	begin = self.global_transform.origin
-	end = target.global_transform.origin
+#	begin = self.global_transform.origin
+#	end = target.global_transform.origin
+#	begin = self.global_transform.origin
+#	end_target = to_local(target.global_transform.origin)
+#	end = navmesh.get_closest_point(to_local(target.global_transform.origin)) #end_target) #target.global_transform.origin)
+#	begin = self.get_translation() #global_transform.origin
+#	end = target.get_translation() #global_transform.origin
+	begin = navmesh.get_closest_point(self.get_translation())
+	end = navmesh.get_closest_point(target.get_translation())
+
+#	print ("begin is : ", begin)
+#	print ("end is : ", end)
+	
+#	print ("end is : ", end)
+#	print ("and end target is : ", end_target)
 	var p = navmesh.get_simple_path(begin, end, true) #(self.global_transform.origin, target.global_transform.origin, true)
 	path = Array(p)
 	path.invert()
@@ -488,4 +506,29 @@ func _on_Map_Area_body_exited(body):
 	else:
 		pass
 
+func start_rescan():
+	set_process(false)
+	s_timer.start()
+
+func rescan_for_target():
+	var scan_area = $Detect_Area
+	var scan_bodies = scan_area.get_overlapping_bodies()
+#	var damage
+#	damage = zombie_damage
+	for scan_body in scan_bodies:
+		if scan_body == self:
+			continue
+		if scan_body.has_method("process_UI"): #_hit"):
+#			print ("viable body")
+			calculate_path()
+#			scan_body._hit(damage, 0, scan_area.global_transform.origin)
+#	can_attack_timer = 0.0
+#	attack_timer = 0.0
+
+func _on_Scan_Timer_timeout():
+	rescan_for_target()
+
+func _on_Scan_Timer2_timeout():
+	rescan_for_target()
+	s_timer2.start()
 
