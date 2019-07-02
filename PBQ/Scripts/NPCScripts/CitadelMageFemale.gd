@@ -39,3 +39,6 @@ func ally_tracker():
 func _on_AllyTrackerTimer_timeout():
 	ally_tracker()
 	track_timer.start()
+
+func remove_targets():
+	pass

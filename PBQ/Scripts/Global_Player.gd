@@ -69,11 +69,16 @@ var torches_itemID = 38
 
 var inventory_equiped_items = {
 	inventory_weapons1 = -1,
+	inventory_weapons1_upgrades = 0,
 	inventory_weapons2 = -1,
+	inventory_weapons2_upgrades = 0,
 	inventory_weapons3 = -1,
+	inventory_weapons3_upgrades = 0,
 	inventory_armour1 = -1,
+	inventory_armour1_upgrades = 0,
 	inventory_helmet1 = -1,
 	inventory_shield1 = -1,
+	inventory_shield1_upgrades = 0,
 	inventory_items1 = -1,
 	inventory_items1_amount = -1,
 	inventory_items2 = -1,
@@ -111,35 +116,35 @@ func _ready():
 	reset_shop_stock()
 	#reset shop so there are not multiple copies of items
 	#add weapons to the shop
-	shop_addItem(1, 1)
-	shop_addItem(3, 1)
-	shop_addItem(5, 1)
-	shop_addItem(7, 1)
-	shop_addItem(9, 1)
-	shop_addItem(10, 1)
-	shop_addItem(11, 1)
-	shop_addItem(2, 1)
-	shop_addItem(4, 1)
-	shop_addItem(6, 1)
-	shop_addItem(8, 1)
+	shop_addItem(1, 1, 0)
+	shop_addItem(3, 1, 0)
+	shop_addItem(5, 1, 0)
+	shop_addItem(7, 1, 0)
+	shop_addItem(9, 1, 0)
+	shop_addItem(10, 1, 0)
+	shop_addItem(11, 1, 0)
+	shop_addItem(2, 1, 0)
+	shop_addItem(4, 1, 0)
+	shop_addItem(6, 1, 0)
+	shop_addItem(8, 1, 0)
 	
-	shop_addItem(16, 1)
-	shop_addItem(17, 1)
-	shop_addItem(18, 1)
-	shop_addItem(39, 1)
-	shop_addItem(40, 1)
-	shop_addItem(41, 1)
-	shop_addItem(42, 1)
+	shop_addItem(16, 1, 0)
+	shop_addItem(17, 1, 0)
+	shop_addItem(18, 1, 0)
+	shop_addItem(39, 1, 0)
+	shop_addItem(40, 1, 0)
+	shop_addItem(41, 1, 0)
+	shop_addItem(42, 1, 0)
 	
-	shop_addItem(28, 1)
-	shop_addItem(29, 1)
-	shop_addItem(30, 1)
-	shop_addItem(32, 1)
-	shop_addItem(34, 1)
-	shop_addItem(35, 1)
-	shop_addItem(36, 1)
-	shop_addItem(37, 1)
-	shop_addItem(38, 1)
+	shop_addItem(28, 1, 0)
+	shop_addItem(29, 1, 0)
+	shop_addItem(30, 1, 0)
+	shop_addItem(32, 1, 0)
+	shop_addItem(34, 1, 0)
+	shop_addItem(35, 1, 0)
+	shop_addItem(36, 1, 0)
+	shop_addItem(37, 1, 0)
+	shop_addItem(38, 1, 0)
 
 #initial setup of files
 func load_data():
@@ -171,7 +176,7 @@ func load_data():
 	if (playerData == null):
 		var dict = {"inventory":{}}
 		for slot in range (0, inventory_maxSlots):
-			dict["inventory"][String(slot)] = {"id": "0", "amount": 0}
+			dict["inventory"][String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		Global_DataParser.write_data(url_PlayerData, dict)
 		inventory = dict["inventory"]
 	else:
@@ -198,7 +203,7 @@ func load_data():
 	if (playerData2 == null):
 		var dict = {"inventory":{}}
 		for slot in range (0, inventory_maxSlots):
-			dict["inventory"][String(slot)] = {"id": "0", "amount": 0}
+			dict["inventory"][String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		Global_DataParser.write_data(url_PlayerData_02, dict)
 		inventory = dict["inventory"]
 	else:
@@ -224,7 +229,7 @@ func load_data():
 	if (playerData3 == null):
 		var dict = {"inventory":{}}
 		for slot in range (0, inventory_maxSlots):
-			dict["inventory"][String(slot)] = {"id": "0", "amount": 0}
+			dict["inventory"][String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		Global_DataParser.write_data(url_PlayerData_03, dict)
 		inventory = dict["inventory"]
 	else:
@@ -251,7 +256,7 @@ func load_data():
 	if (playerData4 == null):
 		var dict = {"inventory":{}}
 		for slot in range (0, inventory_maxSlots):
-			dict["inventory"][String(slot)] = {"id": "0", "amount": 0}
+			dict["inventory"][String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		Global_DataParser.write_data(url_PlayerData_04, dict)
 		inventory = dict["inventory"]
 	else:
@@ -317,27 +322,10 @@ func load_file04():
 	PlayerData.Player_Information = player_stats_to_save
 
 func load_info_to_display():
-	#need to make so that it can still load something if files are blank/null/not setup yet
-	#problem found after reload without previous player data files
-	if playerStats != null:
-		save_file01_info = playerStats["stats"]
-	else:
-		save_file01_info = {}
-	if playerStats2 != null:
-		save_file02_info = playerStats2["stats"]
-	else:
-		save_file02_info = {}
-	if playerStats3 != null:
-		save_file03_info = playerStats3["stats"]
-	else:
-		save_file03_info = {}
-	if playerStats4 != null:
-		save_file04_info = playerStats4["stats"]
-	else:
-		save_file04_info = {}
-#	save_file02_info = playerStats2["stats"]
-#	save_file03_info = playerStats3["stats"]
-#	save_file04_info = playerStats4["stats"]
+	save_file01_info = playerStats["stats"]
+	save_file02_info = playerStats2["stats"]
+	save_file03_info = playerStats3["stats"]
+	save_file04_info = playerStats4["stats"]
 
 func reset_data():
 	for slot in range(0, inventory_maxSlots):
@@ -345,11 +333,16 @@ func reset_data():
 	
 	inventory_equiped_items = {
 		inventory_weapons1 = -1,
+		inventory_weapons1_upgrades = 0,
 		inventory_weapons2 = -1,
+		inventory_weapons2_upgrades = 0,
 		inventory_weapons3 = -1,
+		inventory_weapons3_upgrades = 0,
 		inventory_armour1 = -1,
+		inventory_armour1_upgrades = 0,
 		inventory_helmet1 = -1,
 		inventory_shield1 = -1,
+		inventory_shield1_upgrades = 0,
 		inventory_items1 = -1,
 		inventory_items1_amount = -1,
 		inventory_items2 = -1,
@@ -461,7 +454,7 @@ func inventory_getEmptySlot():
 	print ("Inventory is full!")
 	return -1
 
-func inventory_addItem(itemId, item_amount):
+func inventory_addItem(itemId, item_amount, item_upgrades):
 	var itemData = Global_ItemDatabase.get_item(String(itemId))
 	if (itemData == null): 
 		return -1
@@ -470,9 +463,9 @@ func inventory_addItem(itemId, item_amount):
 		if (slot < 0): 
 			return -1
 		if item_amount != null:
-			inventory[String(slot)] = {"id": String(itemId), "amount": item_amount}
+			inventory[String(slot)] = {"id": String(itemId), "amount": item_amount, "upgrades": item_upgrades}
 		elif item_amount == null:
-			inventory[String(slot)] = {"id": String(itemId), "amount": 1}
+			inventory[String(slot)] = {"id": String(itemId), "amount": 1, "upgrades": item_upgrades}
 		return slot
 	for slot in range (0, inventory_maxSlots):
 		if (inventory[String(slot)]["id"] == String(itemId)):
@@ -489,21 +482,22 @@ func inventory_addItem(itemId, item_amount):
 	if (slot < 0): 
 		return -1
 	if item_amount != null:
-		inventory[String(slot)] = {"id": String(itemId), "amount": item_amount}
+		inventory[String(slot)] = {"id": String(itemId), "amount": item_amount, "upgrades": item_upgrades}
 		if (inventory[String(slot)]["id"] == String(normal_arrow_itemID)):
 			normal_arrows_controller(inventory[String(slot)]["amount"])
 	elif item_amount == null:
-		inventory[String(slot)] = {"id": String(itemId), "amount": 1}
+		inventory[String(slot)] = {"id": String(itemId), "amount": 1, "upgrades": item_upgrades}
 		if (inventory[String(slot)]["id"] == String(normal_arrow_itemID)):
 			normal_arrows_controller(inventory[String(slot)]["amount"])
 	return slot
+	#why doubled code from above??
 	#print ("added item: " + str(itemId) + " : " + str(item_amount))
 
 func inventory_removeItem(slot):
 	var newAmount = inventory[String(slot)]["amount"] - 1
 	#make arrows and torched droppable by 5 unless player has less than 5?
 	if (newAmount < 1):
-		inventory[String(slot)] = {"id": "0", "amount": 0}
+		inventory[String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		return 0
 	inventory[String(slot)]["amount"] = newAmount
 	if (inventory[String(slot)]["id"] == String(normal_arrow_itemID)):
@@ -513,7 +507,7 @@ func inventory_removeItem(slot):
 func inventory_removeItem_all(slot):
 	var newAmount = 0
 	if (newAmount < 1):
-		inventory[String(slot)] = {"id": "0", "amount": 0}
+		inventory[String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		return 0
 	inventory[String(slot)]["amount"] = newAmount
 	return newAmount
@@ -541,7 +535,7 @@ func shop_getEmptySlot():
 	print ("Shops are full!")
 	return -1
 
-func shop_addItem(itemId, item_amount):
+func shop_addItem(itemId, item_amount, item_upgrades):
 	var itemData = Global_ItemDatabase.get_item(String(itemId))
 	if (itemData == null): 
 		return -1
@@ -550,9 +544,9 @@ func shop_addItem(itemId, item_amount):
 		if (slot < 0): 
 			return -1
 		if item_amount != null:
-			shop_inventory[String(slot)] = {"id": String(itemId), "amount": item_amount}
+			shop_inventory[String(slot)] = {"id": String(itemId), "amount": item_amount, "upgrades": item_upgrades}
 		elif item_amount == null:
-			shop_inventory[String(slot)] = {"id": String(itemId), "amount": 1}
+			shop_inventory[String(slot)] = {"id": String(itemId), "amount": 1, "upgrades": item_upgrades}
 		return slot
 	for slot in range (0, shop_inventory_maxSlots):
 		if (shop_inventory[String(slot)]["id"] == String(itemId)):
@@ -565,16 +559,16 @@ func shop_addItem(itemId, item_amount):
 	if (slot < 0): 
 		return -1
 	if item_amount != null:
-		shop_inventory[String(slot)] = {"id": String(itemId), "amount": item_amount}
+		shop_inventory[String(slot)] = {"id": String(itemId), "amount": item_amount, "upgrades": item_upgrades}
 	elif item_amount == null:
-		shop_inventory[String(slot)] = {"id": String(itemId), "amount": 1}
+		shop_inventory[String(slot)] = {"id": String(itemId), "amount": 1, "upgrades": item_upgrades}
 	return slot
 	#print ("shops have added item: " + str(itemId) + " : " + str(item_amount))
 
 func shop_removeItem(slot):
 	var newAmount = shop_inventory[String(slot)]["amount"] - 1
 	if (newAmount < 1):
-		shop_inventory[String(slot)] = {"id": "0", "amount": 0}
+		shop_inventory[String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		return 0
 	shop_inventory[String(slot)]["amount"] = newAmount
 	return newAmount
@@ -586,7 +580,7 @@ func reset_shop_stock():
 func shop_removeItem_all(slot):
 	var newAmount = 0
 	if (newAmount < 1):
-		shop_inventory[String(slot)] = {"id": "0", "amount": 0}
+		shop_inventory[String(slot)] = {"id": "0", "amount": 0, "upgrades": 0}
 		return 0
 	shop_inventory[String(slot)]["amount"] = newAmount
 	return newAmount

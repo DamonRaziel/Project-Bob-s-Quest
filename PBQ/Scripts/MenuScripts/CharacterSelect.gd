@@ -282,11 +282,16 @@ func _on_SelectButton_pressed():
 		#weapons and equipment, starts in slots
 		Global_Player.inventory_equiped_items = {
 			inventory_weapons1 = 1,
+			inventory_weapons1_upgrades = 0,
 			inventory_weapons2 = -1,
+			inventory_weapons2_upgrades = 0,
 			inventory_weapons3 = -1,
+			inventory_weapons3_upgrades = 0,
 			inventory_armour1 = -1,
+			inventory_armour1_upgrades = 0,
 			inventory_helmet1 = -1,
 			inventory_shield1 = -1,
+			inventory_shield1_upgrades = 0,
 			inventory_items1 = -1,
 			inventory_items1_amount = -1,
 			inventory_items2 = -1,
@@ -304,9 +309,9 @@ func _on_SelectButton_pressed():
 		#Inventory setup, items here are added to the main inventory
 		#Global_Player.inventory_addItem(itemID, itemAmount) < general format
 		#Global_Player.inventory_addItem(1, 1) # sword < moved to already equiped items
-		Global_Player.inventory_addItem(32, 2) # hp large
-		Global_Player.inventory_addItem(35, 3) # tea
-		Global_Player.inventory_addItem(38, 2) # torches
+		Global_Player.inventory_addItem(32, 2, 0) # hp large
+		Global_Player.inventory_addItem(35, 3, 0) # tea
+		Global_Player.inventory_addItem(38, 2, 0) # torches
 	
 	elif character_name_number == 2:
 		PlayerData.Player_Information = {
@@ -399,11 +404,16 @@ func _on_SelectButton_pressed():
 		}
 		Global_Player.inventory_equiped_items = {
 			inventory_weapons1 = 3,
+			inventory_weapons1_upgrades = 0,
 			inventory_weapons2 = -1,
+			inventory_weapons2_upgrades = 0,
 			inventory_weapons3 = -1,
+			inventory_weapons3_upgrades = 0,
 			inventory_armour1 = -1,
+			inventory_armour1_upgrades = 0,
 			inventory_helmet1 = -1,
 			inventory_shield1 = -1,
+			inventory_shield1_upgrades = 0,
 			inventory_items1 = -1,
 			inventory_items1_amount = -1,
 			inventory_items2 = -1,
@@ -418,9 +428,9 @@ func _on_SelectButton_pressed():
 			inventory_items6_amount = -1
 		}
 		
-		Global_Player.inventory_addItem(32, 4) # hp high
-		Global_Player.inventory_addItem(35, 3) # tea
-		Global_Player.inventory_addItem(38, 2) # torches
+		Global_Player.inventory_addItem(32, 4, 0) # hp high
+		Global_Player.inventory_addItem(35, 3, 0) # tea
+		Global_Player.inventory_addItem(38, 2, 0) # torches
 		
 	elif character_name_number == 3:
 		PlayerData.Player_Information = {
@@ -514,11 +524,16 @@ func _on_SelectButton_pressed():
 		
 		Global_Player.inventory_equiped_items = {
 			inventory_weapons1 = 9,
+			inventory_weapons1_upgrades = 0,
 			inventory_weapons2 = -1,
+			inventory_weapons2_upgrades = 0,
 			inventory_weapons3 = -1,
+			inventory_weapons3_upgrades = 0,
 			inventory_armour1 = -1,
+			inventory_armour1_upgrades = 0,
 			inventory_helmet1 = -1,
 			inventory_shield1 = -1,
+			inventory_shield1_upgrades = 0,
 			inventory_items1 = -1,
 			inventory_items1_amount = -1,
 			inventory_items2 = -1,
@@ -533,11 +548,11 @@ func _on_SelectButton_pressed():
 			inventory_items6_amount = -1
 		}
 		
-		Global_Player.inventory_addItem(1, 1) # sword
-		Global_Player.inventory_addItem(11, 25) #arrows
-		Global_Player.inventory_addItem(32, 4) # hp high
-		Global_Player.inventory_addItem(35, 3) # tea
-		Global_Player.inventory_addItem(38, 2) # torches
+		Global_Player.inventory_addItem(1, 1, 0) # sword
+		Global_Player.inventory_addItem(11, 25, 0) #arrows
+		Global_Player.inventory_addItem(32, 4, 0) # hp high
+		Global_Player.inventory_addItem(35, 3, 0) # tea
+		Global_Player.inventory_addItem(38, 2, 0) # torches
 		
 	elif character_name_number == 4:
 		PlayerData.Player_Information = {
@@ -631,11 +646,16 @@ func _on_SelectButton_pressed():
 		
 		Global_Player.inventory_equiped_items = {
 			inventory_weapons1 = 1,
+			inventory_weapons1_upgrades = 0,
 			inventory_weapons2 = -1,
+			inventory_weapons2_upgrades = 0,
 			inventory_weapons3 = -1,
+			inventory_weapons3_upgrades = 0,
 			inventory_armour1 = -1,
+			inventory_armour1_upgrades = 0,
 			inventory_helmet1 = -1,
 			inventory_shield1 = -1,
+			inventory_shield1_upgrades = 0,
 			inventory_items1 = -1,
 			inventory_items1_amount = -1,
 			inventory_items2 = -1,
@@ -650,9 +670,9 @@ func _on_SelectButton_pressed():
 			inventory_items6_amount = -1
 		}
 		
-		Global_Player.inventory_addItem(32, 2) # hp high
-		Global_Player.inventory_addItem(35, 3) # tea
-		Global_Player.inventory_addItem(38, 2) # torches
+		Global_Player.inventory_addItem(32, 2, 0) # hp high
+		Global_Player.inventory_addItem(35, 3, 0) # tea
+		Global_Player.inventory_addItem(38, 2, 0) # torches
 	
 	elif character_name_number == 5:
 		PlayerData.Player_Information = {
@@ -746,11 +766,16 @@ func _on_SelectButton_pressed():
 		
 		Global_Player.inventory_equiped_items = {
 			inventory_weapons1 = 3,
+			inventory_weapons1_upgrades = 0,
 			inventory_weapons2 = -1,
+			inventory_weapons2_upgrades = 0,
 			inventory_weapons3 = -1,
+			inventory_weapons3_upgrades = 0,
 			inventory_armour1 = -1,
+			inventory_armour1_upgrades = 0,
 			inventory_helmet1 = -1,
 			inventory_shield1 = -1,
+			inventory_shield1_upgrades = 0,
 			inventory_items1 = -1,
 			inventory_items1_amount = -1,
 			inventory_items2 = -1,
@@ -765,9 +790,9 @@ func _on_SelectButton_pressed():
 			inventory_items6_amount = -1
 		}
 		
-		Global_Player.inventory_addItem(31, 4) # hp low
-		Global_Player.inventory_addItem(35, 3) # tea
-		Global_Player.inventory_addItem(38, 2) # torches
+		Global_Player.inventory_addItem(31, 4, 0) # hp low
+		Global_Player.inventory_addItem(35, 3, 0) # tea
+		Global_Player.inventory_addItem(38, 2, 0) # torches
 		
 	elif character_name_number == 6:
 		PlayerData.Player_Information = {
@@ -861,11 +886,16 @@ func _on_SelectButton_pressed():
 		
 		Global_Player.inventory_equiped_items = {
 			inventory_weapons1 = 9,
+			inventory_weapons1_upgrades = 0,
 			inventory_weapons2 = -1,
+			inventory_weapons2_upgrades = 0,
 			inventory_weapons3 = -1,
+			inventory_weapons3_upgrades = 0,
 			inventory_armour1 = -1,
+			inventory_armour1_upgrades = 0,
 			inventory_helmet1 = -1,
 			inventory_shield1 = -1,
+			inventory_shield1_upgrades = 0,
 			inventory_items1 = -1,
 			inventory_items1_amount = -1,
 			inventory_items2 = -1,
@@ -880,11 +910,11 @@ func _on_SelectButton_pressed():
 			inventory_items6_amount = -1
 		}
 		
-		Global_Player.inventory_addItem(1, 1) # sword
-		Global_Player.inventory_addItem(11, 25) #arrows
-		Global_Player.inventory_addItem(32, 4) # hp high
-		Global_Player.inventory_addItem(35, 3) # tea
-		Global_Player.inventory_addItem(38, 2) # torches
+		Global_Player.inventory_addItem(1, 1, 0) # sword
+		Global_Player.inventory_addItem(11, 25, 0) #arrows
+		Global_Player.inventory_addItem(32, 4, 0) # hp high
+		Global_Player.inventory_addItem(35, 3, 0) # tea
+		Global_Player.inventory_addItem(38, 2, 0) # torches
 		
 	get_node("/root/PlayerData").goto_scene("res://Scenes/LevelScenes/Intro.tscn")
 

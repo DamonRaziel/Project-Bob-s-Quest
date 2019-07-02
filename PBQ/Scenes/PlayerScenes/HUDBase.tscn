@@ -12,90 +12,33 @@
 [ext_resource path="res://images/TextureLightGrey20x125.png" type="Texture" id=10]
 [ext_resource path="res://HUDElements/BarPoints.png" type="Texture" id=11]
 
-[node name="HUD" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Background" type="TextureRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Background" type="TextureRect" parent="."]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 60.0
 margin_bottom = 183.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Health_Rect" type="Control" parent="Background" index="0"]
-
+[node name="Health_Rect" type="Control" parent="Background"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 34.0
 margin_right = 176.0
 margin_bottom = 25.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="HPTextProg" type="TextureProgress" parent="Background/Health_Rect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HPTextProg" type="TextureProgress" parent="Background/Health_Rect"]
 margin_right = 260.0
 margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
 texture_under = ExtResource( 1 )
 texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
-_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Health_Label" type="Label" parent="Background/Health_Rect" index="1"]
-
+[node name="Health_Label" type="Label" parent="Background/Health_Rect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -104,71 +47,27 @@ margin_left = -51.0
 margin_top = -12.5
 margin_right = 171.0
 margin_bottom = 24.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Health: 5000/5000"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Mana_Rect" type="Control" parent="Background" index="1"]
-
+[node name="Mana_Rect" type="Control" parent="Background"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 34.0
 margin_top = 42.0
 margin_right = 159.0
 margin_bottom = 62.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="ManaTextProg" type="TextureProgress" parent="Background/Mana_Rect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ManaTextProg" type="TextureProgress" parent="Background/Mana_Rect"]
 margin_right = 260.0
 margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
 texture_under = ExtResource( 1 )
 texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 5 )
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
-_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Mana_Label" type="Label" parent="Background/Mana_Rect" index="1"]
-
+[node name="Mana_Label" type="Label" parent="Background/Mana_Rect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -177,112 +76,42 @@ margin_left = -42.5
 margin_top = -10.0
 margin_right = 179.5
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Mana"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Gold_Rect" type="Control" parent="Background" index="2"]
-
+[node name="Gold_Rect" type="Control" parent="Background"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 40.0
 margin_top = 126.0
 margin_right = 165.0
 margin_bottom = 146.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Gold_Label" type="Label" parent="Background/Gold_Rect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Gold_Label" type="Label" parent="Background/Gold_Rect"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 43.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Coins"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Weapon_Rect" type="Control" parent="Background" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Weapon_Rect" type="Control" parent="Background"]
+editor/display_folded = true
 margin_left = 34.0
 margin_top = 126.0
 margin_right = 159.0
 margin_bottom = 146.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="WeaponBG" type="TextureProgress" parent="Background/Weapon_Rect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="WeaponBG" type="TextureProgress" parent="Background/Weapon_Rect"]
 margin_right = 260.0
 margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
 texture_under = ExtResource( 1 )
 texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
-_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Weapon_Label" type="Label" parent="Background/Weapon_Rect" index="1"]
-
+[node name="Weapon_Label" type="Label" parent="Background/Weapon_Rect"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -292,44 +121,20 @@ margin_left = -42.5
 margin_top = -10.0
 margin_right = 179.5
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Weapon: 50"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="WeaponDisplay" type="TextureRect" parent="Background/Weapon_Rect" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="WeaponDisplay" type="TextureRect" parent="Background/Weapon_Rect"]
 margin_left = 25.0
 margin_top = 4.0
 margin_right = 233.0
 margin_bottom = 33.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 6 )
 expand = true
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="ArrowLabel" type="Label" parent="Background/Weapon_Rect" index="3"]
-
+[node name="ArrowLabel" type="Label" parent="Background/Weapon_Rect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -338,41 +143,19 @@ margin_left = 95.5
 margin_top = -10.0
 margin_right = 317.5
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Arrows"
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Weapon_Rect2" type="NinePatchRect" parent="Background" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Weapon_Rect2" type="NinePatchRect" parent="Background"]
+editor/display_folded = true
 margin_left = -12.0
 margin_top = -12.0
 margin_right = 48.0
 margin_bottom = 48.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Item_Label" type="Label" parent="Background/Weapon_Rect2" index="0"]
-
+[node name="Item_Label" type="Label" parent="Background/Weapon_Rect2"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -381,196 +164,86 @@ margin_left = -46.5
 margin_top = -18.5
 margin_right = 46.5
 margin_bottom = 18.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "L"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Combo_Rect" type="Control" parent="Background" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Combo_Rect" type="Control" parent="Background"]
+editor/display_folded = true
 margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="ComboLabel" type="Label" parent="Background/Combo_Rect" index="0"]
-
+[node name="ComboLabel" type="Label" parent="Background/Combo_Rect"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 224.0
 margin_top = 153.0
 margin_right = 317.0
 margin_bottom = 167.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Combo Stuff"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
 
-[node name="ComboCounter" type="TextureRect" parent="Background/Combo_Rect" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ComboCounter" type="TextureRect" parent="Background/Combo_Rect"]
 margin_left = 221.0
 margin_top = 150.0
 margin_right = 287.0
 margin_bottom = 179.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 8 )
 expand = true
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Combo_Ind" type="TextureRect" parent="Background/Combo_Rect" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Combo_Ind" type="TextureRect" parent="Background/Combo_Rect"]
 margin_left = 221.0
 margin_top = 150.0
 margin_right = 287.0
 margin_bottom = 179.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 9 )
 expand = true
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="FPS_Rect" type="TextureRect" parent="Background" index="6"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FPS_Rect" type="TextureRect" parent="Background"]
 margin_left = 171.0
 margin_top = 173.0
 margin_right = 296.0
 margin_bottom = 193.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 10 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="FPSLabel" type="Label" parent="Background/FPS_Rect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FPSLabel" type="Label" parent="Background/FPS_Rect"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 96.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "FPS"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Points_Rect" type="Control" parent="Background" index="7"]
+[node name="Player_Vol" type="TextureRect" parent="Background"]
+margin_left = 31.0
+margin_top = 173.0
+margin_right = 156.0
+margin_bottom = 193.0
+texture = ExtResource( 10 )
 
+[node name="Player_Vol_Label" type="Label" parent="Background/Player_Vol"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 96.0
+margin_bottom = 17.0
+text = "FPS"
+
+[node name="Points_Rect" type="Control" parent="Background"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 34.0
 margin_top = 84.0
 margin_right = 159.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="PointsBG" type="TextureProgress" parent="Background/Points_Rect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PointsBG" type="TextureProgress" parent="Background/Points_Rect"]
 margin_right = 260.0
 margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
 texture_under = ExtResource( 11 )
 texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
-_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="PointsLabel" type="Label" parent="Background/Points_Rect" index="1"]
-
+[node name="PointsLabel" type="Label" parent="Background/Points_Rect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -579,63 +252,26 @@ margin_left = -42.5
 margin_top = -10.0
 margin_right = 179.5
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Points Here"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="PitchAndYaw" type="TextureRect" parent="Background" index="8"]
-
+[node name="PitchAndYaw" type="TextureRect" parent="Background"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 327.0
 margin_top = 30.0
 margin_right = 452.0
 margin_bottom = 50.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 10 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="PYLabel" type="Label" parent="Background/PitchAndYaw" index="0"]
-
-anchor_left = 0.0
+[node name="PYLabel" type="Label" parent="Background/PitchAndYaw"]
 anchor_top = 0.5
-anchor_right = 0.0
 anchor_bottom = 0.5
 margin_left = 3.0
 margin_top = -7.0
 margin_right = 122.0
 margin_bottom = 7.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Pitch and Yaw"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
 

@@ -1800,6 +1800,18 @@ tracks/44/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, -0.282 ) ]
 }
+tracks/45/type = "value"
+tracks/45/path = NodePath("AttackHolder:rotation_degrees")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 length = 0.416667
@@ -4360,8 +4372,7 @@ radius = 20.0
 script = ExtResource( 1 )
 
 [node name="AttackHolder" type="Spatial" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 1.06581e-014, 0, -1.06581e-014, 1, 0, 3.22828, 0 )
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, 0, 3.22828, 0 )
 
 [node name="AttackIndicator1" type="Spatial" parent="AttackHolder"]
 editor/display_folded = true

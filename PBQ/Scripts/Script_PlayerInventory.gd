@@ -53,12 +53,14 @@ onready var item_slot5_label= get_node("Panel/EquipmentSlotsHolder2/ItemSlot5/It
 onready var item_slot6_label= get_node("Panel/EquipmentSlotsHolder2/ItemSlot6/ItemTextureSlot6/SlotLabel6")
 
 var currently_selected_weapon_id = 0
+var currently_selected_weapon_id_upgrades = 0
 #change to item not weapon, as used for all??
 #is still weapon, for ease of use
 
 onready var weaponslot1label = get_node("Panel/EquipmentSlotsHolder/WeaponSlot1/WeaponSlot1Texture/Label")
 onready var type_of_item_selected
 onready var amount_of_item_selected
+onready var amount_of_upgrades_of_selected
 
 onready var coin_amount_label = get_node("Panel/EquipmentSlotsHolder/CoinsTexture/CoinsLabel")
 
@@ -176,21 +178,26 @@ func load_items():
 	#weapon slots
 	if Global_Player.inventory_equiped_items.inventory_weapons1 != -1:
 		var weapon_in_slot1 = Global_Player.inventory_equiped_items.inventory_weapons1
-		_assign_weapon_slot_1(weapon_in_slot1)
+		var weapon_upgrades_in_slot1 = Global_Player.inventory_equiped_items.inventory_weapons1_upgrades
+		_assign_weapon_slot_1(weapon_in_slot1, weapon_upgrades_in_slot1)
 	if Global_Player.inventory_equiped_items.inventory_weapons2 != -1:
 		var weapon_in_slot2 = Global_Player.inventory_equiped_items.inventory_weapons2
-		_assign_weapon_slot_2(weapon_in_slot2)
+		var weapon_upgrades_in_slot2 = Global_Player.inventory_equiped_items.inventory_weapons2_upgrades
+		_assign_weapon_slot_2(weapon_in_slot2, weapon_upgrades_in_slot2)
 	if Global_Player.inventory_equiped_items.inventory_weapons3 != -1:
 		var weapon_in_slot3 = Global_Player.inventory_equiped_items.inventory_weapons3
-		_assign_weapon_slot_3(weapon_in_slot3)
+		var weapon_upgrades_in_slot3 = Global_Player.inventory_equiped_items.inventory_weapons3_upgrades
+		_assign_weapon_slot_3(weapon_in_slot3, weapon_upgrades_in_slot3)
 	
 	#armour and shield slots
 	if Global_Player.inventory_equiped_items.inventory_armour1 != -1:
 		var armour_in_slot = Global_Player.inventory_equiped_items.inventory_armour1
-		_assign_armour_slot(armour_in_slot)
+		var armour_upgrades_in_slot = Global_Player.inventory_equiped_items.inventory_armour1_upgrades
+		_assign_armour_slot(armour_in_slot, armour_upgrades_in_slot)
 	if Global_Player.inventory_equiped_items.inventory_shield1 != 1:
 		var shield_in_slot = Global_Player.inventory_equiped_items.inventory_shield1
-		_assign_shield_slot(shield_in_slot)
+		var shield_upgrades_in_slot = Global_Player.inventory_equiped_items.inventory_shield1_upgrades
+		_assign_shield_slot(shield_in_slot, shield_upgrades_in_slot)
 	
 	#item slots
 	if Global_Player.inventory_equiped_items.inventory_items1 != -1:
@@ -223,7 +230,9 @@ func update_slot(slot):
 	var itemMetaData = Global_ItemDatabase.get_item(inventoryItem["id"])
 	var icon = ResourceLoader.load(itemMetaData["icon"])
 	var amount = int(inventoryItem["amount"])
+	var upgrades = int(inventoryItem["upgrades"])
 	
+	itemMetaData["upgrades"] = upgrades
 	itemMetaData["amount"] = amount
 	if (!itemMetaData["stackable"]): 
 		amount = " "
@@ -248,13 +257,13 @@ func _on_AddItemWindow_Button_AddItem_pressed():
 	#in next line, change the additwmwindowspinner data sent to the id number of the item itself, sent from the pickups
 	#have pickups sent their data to the inventory script, not the player script??
 	#need to change to from collisions with pickups, instead of button press
-	var affectedSlot = Global_Player.inventory_addItem(addItemWindow_SpinBox_ItemId.get_value(), 1)
-	if (affectedSlot >= 0): 
+	var affectedSlot = Global_Player.inventory_addItem(addItemWindow_SpinBox_ItemId.get_value(), 1, 0)
+	if (affectedSlot >= 0):
 		update_slot(affectedSlot)
 
-func _on_pickup_acquired(itemID, itemAmount):
+func _on_pickup_acquired(itemID, itemAmount, itemUpgrades):
 	#adapted from add button pressed code
-	var affectedSlot = Global_Player.inventory_addItem(itemID, itemAmount)
+	var affectedSlot = Global_Player.inventory_addItem(itemID, itemAmount, itemUpgrades)
 	if (affectedSlot >= 0): 
 		update_slot(affectedSlot)
 
@@ -268,9 +277,11 @@ func _on_ItemList_item_rmb_selected(index, atpos):
 	if (int(itemData["id"])) < 1: return
 	var strItemInfo = ""
 	
-	_change_currently_selected_item_id(int(itemData["id"]))
+#	_change_currently_selected_item_id(int(itemData["id"]))
 	type_of_item_selected = itemData["type"]
 	amount_of_item_selected = itemData["amount"]
+	amount_of_upgrades_of_selected = itemData["upgrades"]
+	_change_currently_selected_item_id(int(itemData["id"]), amount_of_upgrades_of_selected)
 	#print ("current item ID: " + str(itemData["id"]) + ". Type: " + str(itemData["type"]))
 	
 	itemMenu.set_position(get_viewport().get_mouse_position())
@@ -370,8 +381,9 @@ func _on_ItemList_mouse_exited():
 	cursor_insideItemList = false;
 
 #slot selection section begin#
-func _change_currently_selected_item_id(id_to_change_to):
+func _change_currently_selected_item_id(id_to_change_to, id_to_change_to_upgrades):
 	currently_selected_weapon_id = id_to_change_to
+	currently_selected_weapon_id_upgrades = id_to_change_to_upgrades
 	#can be moved up to rmb section??
 
 func _on_ItemMenu_Button_EquipItem_pressed():
@@ -383,17 +395,19 @@ func _on_ItemMenu_Button_EquipItem_pressed():
 		item_slot_selection_window.set_position(get_viewport().get_mouse_position())
 	elif type_of_item_selected == "Armour":
 		_on_ArmourSlotUequipButton_pressed()
-		_assign_armour_slot(currently_selected_weapon_id)
+		_assign_armour_slot(currently_selected_weapon_id, currently_selected_weapon_id_upgrades)
 		_on_ItemMenu_EquipedItem()
 	elif type_of_item_selected == "Shield":
 		_on_ShieldSlotUequipButton_pressed()
-		_assign_shield_slot(currently_selected_weapon_id)
+		_assign_shield_slot(currently_selected_weapon_id, currently_selected_weapon_id_upgrades)
 		_on_ItemMenu_EquipedItem()
 #slot selection section end#
 
 #slot assignment section begin#
-func _assign_weapon_slot_1(weapon_to_assign):
+# "upgrades": 0
+func _assign_weapon_slot_1(weapon_to_assign, weapon_to_assign_upgrades):
 	Global_Player.inventory_equiped_items.inventory_weapons1 = weapon_to_assign
+	Global_Player.inventory_equiped_items.inventory_weapons1_upgrades = weapon_to_assign_upgrades
 	if PlayerData.Player_Information.player_current_weapon_slot_number == 1:
 		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons1 # weapon_to_assign
 		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
@@ -441,8 +455,9 @@ func _assign_weapon_slot_1(weapon_to_assign):
 		weapon_slot1_icon.hide()
 		slot_icon1.hide()
 
-func _assign_weapon_slot_2(weapon_to_assign):
+func _assign_weapon_slot_2(weapon_to_assign, weapon_to_assign_upgrades):
 	Global_Player.inventory_equiped_items.inventory_weapons2 = weapon_to_assign
+	Global_Player.inventory_equiped_items.inventory_weapons2_upgrades = weapon_to_assign_upgrades
 	if PlayerData.Player_Information.player_current_weapon_slot_number == 2:
 		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons2 # weapon_to_assign
 		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
@@ -490,8 +505,9 @@ func _assign_weapon_slot_2(weapon_to_assign):
 		weapon_slot2_icon.hide()
 		slot_icon2.hide()
 
-func _assign_weapon_slot_3(weapon_to_assign):
+func _assign_weapon_slot_3(weapon_to_assign, weapon_to_assign_upgrades):
 	Global_Player.inventory_equiped_items.inventory_weapons3 = weapon_to_assign
+	Global_Player.inventory_equiped_items.inventory_weapons3_upgrades = weapon_to_assign_upgrades
 	if PlayerData.Player_Information.player_current_weapon_slot_number == 3:
 		PlayerData.Player_Information.player_current_weapon_number = Global_Player.inventory_equiped_items.inventory_weapons3 # weapon_to_assign
 		if PlayerData.Player_Information.player_current_weapon_number == 1 && PlayerData.Player_Information.player_weapon_in_scene != 1:
@@ -658,17 +674,17 @@ func _assign_item_slot_6(item_to_assign, amount_to_assign):
 #slot assignment buttons pressed section begin#
 func _on_WeaponSlot1Button_pressed():
 	_on_WeaponSlot1UnequipButton_pressed()
-	_assign_weapon_slot_1(currently_selected_weapon_id)
+	_assign_weapon_slot_1(currently_selected_weapon_id, currently_selected_weapon_id_upgrades)
 	_on_ItemMenu_EquipedItem()
 
 func _on_WeaponSlot2Button_pressed():
 	_on_WeaponSlot2UnequipButton_pressed()
-	_assign_weapon_slot_2(currently_selected_weapon_id)
+	_assign_weapon_slot_2(currently_selected_weapon_id, currently_selected_weapon_id_upgrades)
 	_on_ItemMenu_EquipedItem()
 
 func _on_WeaponSlot3Button_pressed():
 	_on_WeaponSlot3UnequipButton_pressed()
-	_assign_weapon_slot_3(currently_selected_weapon_id)
+	_assign_weapon_slot_3(currently_selected_weapon_id, currently_selected_weapon_id_upgrades)
 	_on_ItemMenu_EquipedItem()
 
 func _on_ItemSlot1Button_pressed():
@@ -743,35 +759,41 @@ func _on_WeaponSlot1UnequipButton_pressed():
 	var globalItemID = Global_Player.inventory_equiped_items.inventory_weapons1
 	var itemID = globalItemID
 	var itemAmount = 1
+	var itemUpgrades = Global_Player.inventory_equiped_items.inventory_weapons1_upgrades
 	#make so if inventory is full, drops item, if inventory has space, add to main area
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, itemUpgrades)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
-	_assign_weapon_slot_1(-1)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
+	_assign_weapon_slot_1(-1, 0)
 
 func _on_WeaponSlot2UnequipButton_pressed():
 	var globalItemID = Global_Player.inventory_equiped_items.inventory_weapons2
 	var itemID = globalItemID
 	var itemAmount = 1
+	var itemUpgrades = Global_Player.inventory_equiped_items.inventory_weapons2_upgrades
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, itemUpgrades)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
-	_assign_weapon_slot_2(-1)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
+	_assign_weapon_slot_2(-1, 0)
 
 func _on_WeaponSlot3UnequipButton_pressed():
 	var globalItemID = Global_Player.inventory_equiped_items.inventory_weapons3
 	var itemID = globalItemID
 	var itemAmount = 1
+	var itemUpgrades = Global_Player.inventory_equiped_items.inventory_weapons3_upgrades
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, itemUpgrades)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
-	_assign_weapon_slot_3(-1)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
+	_assign_weapon_slot_3(-1, 0)
 
 func _on_ItemUnequipButtonSlot1_pressed():
 	var globalItemID = Global_Player.inventory_equiped_items.inventory_items1
@@ -780,9 +802,10 @@ func _on_ItemUnequipButtonSlot1_pressed():
 	#need to add amounts for items to ensure the correct amount gets returned
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, 0)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
 	_assign_item_slot_1(-1, -1)
 
 func _on_ItemUnequipButtonSlot2_pressed():
@@ -792,9 +815,10 @@ func _on_ItemUnequipButtonSlot2_pressed():
 	#need to add amounts for items to ensure the correct amount gets returned
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, 0)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
 	_assign_item_slot_2(-1, -1)
 
 func _on_ItemUnequipButtonSlot3_pressed():
@@ -804,9 +828,10 @@ func _on_ItemUnequipButtonSlot3_pressed():
 	#need to add amounts for items to ensure the correct amount gets returned
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, 0)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
 	_assign_item_slot_3(-1, -1)
 
 func _on_ItemUnequipButtonSlot4_pressed():
@@ -816,9 +841,10 @@ func _on_ItemUnequipButtonSlot4_pressed():
 	#need to add amounts for items to ensure the correct amount gets returned
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, 0)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
 	_assign_item_slot_4(-1, -1)
 
 func _on_ItemUnequipButtonSlot5_pressed():
@@ -828,9 +854,10 @@ func _on_ItemUnequipButtonSlot5_pressed():
 	#need to add amounts for items to ensure the correct amount gets returned
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, 0)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
 	_assign_item_slot_5(-1, -1)
 
 func _on_ItemUnequipButtonSlot6_pressed():
@@ -840,13 +867,14 @@ func _on_ItemUnequipButtonSlot6_pressed():
 	#need to add amounts for items to ensure the correct amount gets returned
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, 0)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
 	_assign_item_slot_6(-1, -1)
 #slot unassignment/unequip buttons pressed section end#
 
-func _assign_armour_slot(armour_to_assign):
+func _assign_armour_slot(armour_to_assign, armour_to_assign_upgrades):
 	Global_Player.inventory_equiped_items.inventory_armour1 = armour_to_assign
 	PlayerData.Player_Information.player_current_armour_number = Global_Player.inventory_equiped_items.inventory_armour1
 	#print ("armour number: " + str(Global_Player.inventory_equiped_items.inventory_armour1))
@@ -861,14 +889,16 @@ func _on_ArmourSlotUequipButton_pressed():
 	var globalItemID = Global_Player.inventory_equiped_items.inventory_armour1
 	var itemID = globalItemID
 	var itemAmount = 1
+	var itemUpgrades = Global_Player.inventory_equiped_items.inventory_armour1_upgrades
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, itemUpgrades)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
-	_assign_armour_slot(-1)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
+	_assign_armour_slot(-1, 0)
 
-func _assign_shield_slot(shield_to_assign):
+func _assign_shield_slot(shield_to_assign, shield_to_assign_upgrades):
 	Global_Player.inventory_equiped_items.inventory_shield1 = shield_to_assign
 	PlayerData.Player_Information.player_current_shield_number = Global_Player.inventory_equiped_items.inventory_shield1
 	if Global_Player.inventory_equiped_items.inventory_shield1 != -1:
@@ -882,12 +912,14 @@ func _on_ShieldSlotUequipButton_pressed():
 	var globalItemID = Global_Player.inventory_equiped_items.inventory_shield1
 	var itemID = globalItemID
 	var itemAmount = 1
+	var itemUpgrades = Global_Player.inventory_equiped_items.inventory_shield1_upgrades
 	Global_Player.check_if_inventory_is_full()
 	if PlayerData.Player_Information.player_inventory_is_full == false:
-		_on_pickup_acquired(itemID, itemAmount)
+		_on_pickup_acquired(itemID, itemAmount, itemUpgrades)
 	elif PlayerData.Player_Information.player_inventory_is_full == true:
-		item_dropper.add_item_drop(itemID)
-	_assign_shield_slot(-1)
+		if itemID > 0:
+			item_dropper.add_item_drop(itemID)
+	_assign_shield_slot(-1, 0)
 
 func _on_Close_Button_pressed():
 	itemMenu.hide()

@@ -72,6 +72,7 @@ var UI_Status_Label_06
 var UI_Status_label_07
 var UI_Status_Label_08
 var UI_Status_Label_09
+var UI_Status_Label_10
 
 var HP_Progress_Bar
 var Mana_Progress_Bar
@@ -155,6 +156,10 @@ var object_being_carried = null
 var grabbed_object_pos
 var grabbed_object_pos2
 
+var player_sound_listener
+var player_sound_volume
+var player_sound_stream
+
 func _ready():
 	#first check which player we are meant to be, and setup meshes and materials for character
 	if PlayerData.Player_Information.player_name == "Bob":
@@ -206,6 +211,7 @@ func _ready():
 	UI_Status_label_07 = $HUD/Background/FPS_Rect/FPSLabel
 	UI_Status_Label_08 = $HUD/Background/Points_Rect/PointsLabel
 	UI_Status_Label_09 = $HUD/Background/PitchAndYaw/PYLabel
+	UI_Status_Label_10 = $HUD/Background/Player_Vol/Player_Vol_Label
 	HP_Progress_Bar = $HUD/Background/Health_Rect/HPTextProg
 	Mana_Progress_Bar = $HUD/Background/Mana_Rect/ManaTextProg
 	#setup the animation nodes
@@ -432,6 +438,9 @@ func _ready():
 	combo_counter.hide()
 	grabbed_object_pos = $ArmaturePlayer01/Skeleton/UpperSpineBone/GrabArea/GrabbedHoldPos
 	grabbed_object_pos2 = $ArmaturePlayer01/Skeleton/UpperSpineBone/GrabArea/GrabbedHoldPos2
+	
+	player_sound_listener = $Sounds/PlayerListener
+	player_sound_stream = $Sounds/PlayerWeapon
 
 func set_bone_rot(bone, ang):
 	#used for aiming, adapted from skeleton demo
@@ -539,6 +548,9 @@ func process_UI(delta):
 		combo_counter.set_texture(combo_count2)
 	elif combo == 3:
 		combo_counter.set_texture(combo_count3)
+	
+	#display player volume
+	UI_Status_Label_10.text = str(player_sound_volume)
 
 func _input(event): 
 	#shield quick equip added
@@ -1047,6 +1059,10 @@ func _input(event):
 		inventory_node.update_slot6_amount()
 
 func _process(delta):
+	#check player volume, and use for enemy detection later
+#	player_sound_volume = player_sound_stream.get_unit_db() #get_volume_db() #AudioServer.get_bus_volume_db(3) # player_sound_listener.get_bus_volume_db(3)
+	player_sound_volume = AudioServer.get_bus_volume_db(3) # player_sound_listener.get_bus_volume_db(3)
+	
 	#update HUD
 	process_UI(delta)
 	#check if we need to show any armours, doesn't need to be in process, where to move it??
@@ -1653,14 +1669,15 @@ func magic_attack():
 
 #---- Arrow Firing Control ----#
 #can move to arrow point??
-func fire_arrows(item_id, number_fired): #fire as in shoot, not remove
+func fire_arrows(item_id, number_fired, arrows_upgrades): #fire as in shoot, not remove
 	var itemID = item_id
 	var itemAmount = number_fired
-	inventory_node._on_pickup_acquired(itemID, itemAmount)
+	var itemUpgrade = arrows_upgrades
+	inventory_node._on_pickup_acquired(itemID, itemAmount, arrows_upgrades)
 
 func _on_ArrowTimer_timeout():
 	arrow_point.fire_weapon()
-	fire_arrows(11, -1)
+	fire_arrows(11, -1, 0)
 #why 2 functions to fire an arrow? could move inventory_node._on_pickup_acquired(itemID, itemAmount) here instead?
 
 func _on_MagicTimer_timeout():
@@ -1698,15 +1715,16 @@ func gain_mana(mana_gained_amount):
 func increase_max_mana(max_mana_increase_gained):
 	PlayerData.Player_Information.player_max_mana += max_mana_increase_gained
 
-func pickups_handler(item_id, item_amount):
+func pickups_handler(item_id, item_amount, item_upgrades):
 	var itemID = item_id
 	var itemAmount = item_amount
+	var itemUpgrades = item_upgrades
 	p_pickup.play()
-	inventory_node._on_pickup_acquired(itemID, itemAmount)
+	inventory_node._on_pickup_acquired(itemID, itemAmount, itemUpgrades)
 
 #---- Player Damage and Reset ----#
 func _hit(damage_received, type, hit_position):
-	print ("player was hit")
+#	print ("player was hit")
 	#need to add magic resistances to player
 	var armour_value
 	if PlayerData.Player_Information.player_current_armour_number == 16:

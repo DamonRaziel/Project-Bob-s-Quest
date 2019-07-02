@@ -38,10 +38,12 @@ onready var resume_button = get_node("Control/TextureRect/Button_Return_To_World
 onready var inventory_display = get_node("Control")
 
 var currently_selected_weapon_id = 0
+var currently_selected_weapon_id_upgrades = 0
 #change to item not weapon, as used for all, left for same reasons as inventory script
 
 onready var type_of_item_selected
 onready var amount_of_item_selected
+onready var amount_of_upgrades_of_selected
 
 var selling_price
 var buying_price
@@ -176,7 +178,9 @@ func update_slot(slot):
 	var itemMetaData = Global_ItemDatabase.get_item(inventoryItem["id"])
 	var icon = ResourceLoader.load(itemMetaData["icon"])
 	var amount = int(inventoryItem["amount"])
+	var upgrades = int(inventoryItem["upgrades"])
 	
+	itemMetaData["upgrades"] = upgrades
 	itemMetaData["amount"] = amount
 	if (!itemMetaData["stackable"]): 
 		amount = " "
@@ -192,7 +196,9 @@ func update_slot_shop(slot):
 	var itemMetaDatashop = Global_ItemDatabase.get_item(inventoryItemshop["id"])
 	var iconshop = ResourceLoader.load(itemMetaDatashop["icon"])
 	var amountshop = int(inventoryItemshop["amount"])
-
+	var upgradesshop = int(inventoryItemshop["upgrades"])
+	
+	itemMetaDatashop["upgrades"] = upgradesshop
 	itemMetaDatashop["amount"] = amountshop
 	if (!itemMetaDatashop["stackable"]): 
 		amountshop = " "
@@ -203,9 +209,9 @@ func update_slot_shop(slot):
 #	itemList2.set_item_tooltip(slot, itemMetaData["name"])
 	itemList2.set_item_tooltip_enabled(slot, int(inventoryItemshop["id"]) > 0)
 
-func _on_pickup_acquired(itemID, itemAmount):
+func _on_pickup_acquired(itemID, itemAmount, itemUpgrades):
 	#adapted from add button pressed code
-	var affectedSlot = Global_Player.inventory_addItem(itemID, itemAmount)
+	var affectedSlot = Global_Player.inventory_addItem(itemID, itemAmount, itemUpgrades)
 	if (affectedSlot >= 0): 
 		update_slot(affectedSlot)
 
@@ -220,10 +226,12 @@ func _on_ItemList_item_rmb_selected(index, atpos):
 	if (int(itemData["id"])) < 1: return
 	var strItemInfo = ""
 
-	_change_currently_selected_item_id(int(itemData["id"]))
+	
 	type_of_item_selected = itemData["type"]
 	amount_of_item_selected = itemData["amount"]
 	selling_price = itemData["sell_price"]
+	amount_of_upgrades_of_selected = itemData["upgrades"]
+	_change_currently_selected_item_id(int(itemData["id"]), amount_of_upgrades_of_selected)
 	#print ("current item ID: " + str(itemData["id"]) + ". Type: " + str(itemData["type"]))
 
 	itemMenu.set_position(get_viewport().get_mouse_position())
@@ -261,10 +269,12 @@ func _on_ItemList2_item_rmb_selected(index2, at_position):
 	if (int(itemData2["id"])) < 1: return
 	var strItemInfo2 = ""
 
-	_change_currently_selected_item_id(int(itemData2["id"]))
+	
 	type_of_item_selected = itemData2["type"]
 	amount_of_item_selected = itemData2["amount"]
 	buying_price = itemData2["buy_price"]
+	amount_of_upgrades_of_selected = itemData2["upgrades"]
+	_change_currently_selected_item_id(int(itemData2["id"]), amount_of_upgrades_of_selected)
 	#print ("current item ID: " + str(itemData["id"]) + ". Type: " + str(itemData["type"]))
 
 	itemMenu2.set_position(get_viewport().get_mouse_position())
@@ -386,8 +396,12 @@ func _on_ItemList2_mouse_entered():
 func _on_ItemList2_mouse_exited():
 	cursor_insideItemList2 = false;
 
-func _change_currently_selected_item_id(id_to_change_to):
+#func _change_currently_selected_item_id(id_to_change_to):
+#	currently_selected_weapon_id = id_to_change_to
+
+func _change_currently_selected_item_id(id_to_change_to, id_to_change_to_upgrades):
 	currently_selected_weapon_id = id_to_change_to
+	currently_selected_weapon_id_upgrades = id_to_change_to_upgrades
 
 func _on_Button_Return_To_World_pressed():
 	unpause_inventory()
@@ -415,7 +429,7 @@ func _on_ItemSell_Button_SellItem_pressed():
 func _on_ItemBuy_Button_BuyItem_pressed():
 	gold_coins = PlayerData.Player_Information.player_coins
 	if gold_coins >= buying_price:
-		_on_pickup_acquired(currently_selected_weapon_id, 1)
+		_on_pickup_acquired(currently_selected_weapon_id, 1, 0)
 		PlayerData.Player_Information.player_coins -= buying_price
 		load_items()
 		#load_items_shop() #if using dynamic inventory for shop
